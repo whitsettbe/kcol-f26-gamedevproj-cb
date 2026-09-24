@@ -1,15 +1,18 @@
 # Game Design Document (GDD)
 ### Team's Project Template
 
+**Team: Computer Business**
+**Authors: Calvin Nyeholt, Clara Siefke, Phoebe Tozer, Benjamin Whitsett**
+
 ## 1. Game Concept
 
-**Working Title:**  
+**Working Title: Asunder**  
 
 **Genre:**  
 
-**Platform(s):**  
+**Platform(s): PC**  
 
-**Elevator Pitch (1-2 sentences):** 
+**Elevator Pitch (1-2 sentences): In a couch-co-op sokoban, your character has been torn asunder. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.** 
 
 **Target Audience:** 
 
