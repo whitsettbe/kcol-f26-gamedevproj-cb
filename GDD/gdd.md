@@ -47,7 +47,7 @@ After a plane crash, two halves of Leroy's body have been buried in separate dim
 
 **Main Characters:**
 
-The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they hold two halves of the same mind, they can coordinate the movements of connected fragments which block their paths.
+The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they are two halves of the same mind, they can communicate with each other and work together. Like themselves, there are fragments of the wreckage that are also linked. Moving a fragment in one dimension moves its linked counterpart in the other. Leonard and Roy must use this to their advantage to help each other escape.
 
 **Conflict/Goal:**
 
