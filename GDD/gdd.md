@@ -39,13 +39,19 @@
 
 ---
 
-## 4. Story & Narrative *(when applicable)*
+## 4. Story & Narrative
 
 **Premise (What is the story/world about?):**
 
+After a plane crash, two halves of Leroy's body have been burried in separate dimensions. They each must solve puzzles and traverse an elaborate maze, taking advantage of the fragments connecting their universes. Though torn asunder, they may reunite as one.
+
 **Main Characters:**
 
-**Conflict/Goal (What drives the player?):**
+The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they hold two halves of the same mind, they can coordinate the movements of connected fragments which block their paths.
+
+**Conflict/Goal:**
+
+Naturally, Leonard and Roy do not want to be burried alive and in separate dimensions. It would make sense that escaping the underground mazes would make it easier to find each other. And if they find each other, they can be Leroy again.
 
 ---
 
