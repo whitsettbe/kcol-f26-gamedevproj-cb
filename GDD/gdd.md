@@ -43,15 +43,15 @@
 
 **Premise (What is the story/world about?):**
 
-After a plane crash, two halves of Leroy's body have been buried in separate dimensions. They each must solve puzzles and traverse an elaborate maze, taking advantage of the fragments connecting their universes to help each other. Though torn asunder, they may yet reunite as one.
+After a plane crash, the two halves of Leroy's body have been buried alive in separate dimensions, still sharing a mind. Much like themselves, linked fragments fill the elaborate mazes which imprison them. Leroy's halves must use these linked fragments to help each other escape. Though torn asunder, they may yet reunite as one.
 
 **Main Characters:**
 
-The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they are two halves of the same mind, they can communicate with each other and work together. Like themselves, there are fragments of the wreckage that are also linked. Moving a fragment in one dimension moves its linked counterpart in the other. Leonard and Roy must use this to their advantage to help each other escape.
+The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they are two halves of the same mind, they can communicate with each other and work together.
 
 **Conflict/Goal:**
 
-Naturally, Leonard and Roy do not want to be buried alive and in separate dimensions. It would make sense that escaping the underground mazes might make it easier to find each other. And if they find each other, they can be Leroy again.
+Naturally, Leonard and Roy do not want to be buried alive and in separate dimensions. Escaping these puzzling maze dimensions will bring them together. If they find each other, they can be Leroy again.
 
 ---
 
