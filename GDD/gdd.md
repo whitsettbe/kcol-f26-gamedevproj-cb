@@ -119,13 +119,13 @@ There may be a few hidden "secret" parts of levels which can surprise the player
 
 ## 8. Technical Requirements
 
-**Engine:**
+**Engine: Godot**
 
-**Programming Language(s):**
+**Programming Language(s): GDScript**
 
-**Tools for Assets (art, sound, etc.):**
+**Tools for Assets (art, sound, etc.): (TBD)**
 
-**Deployment Platform (PC build, web, mobile, etc.):**
+**Deployment Platform (PC build, web, mobile, etc.): Desktop (Windows/Linux)**
 
 ---
 
