@@ -23,7 +23,7 @@
 
 *Describe the main repeating cycle of your game (what the player does over and over)*:
 
-The two players will respectively move around the maze and push fragments, filling holes in the floor as needed. The effect of these actions will be advancement of players from the bottom of each level to the top, or them falling into holes and restarting the level. Each time both players reach the top of the level, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
+The two players will respectively move around the maze and push blocks, filling holes in the floor as needed. The effect of these actions will be advancement of players from a designated entrance to a designated exit, or them falling into holes and restarting the level. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
 
 ---
 
@@ -31,19 +31,19 @@ The two players will respectively move around the maze and push fragments, filli
 
 **Player Actions (What can the player do?):**
 
-Each player can move their characters up, down, left, or right one grid square at a time. In so doing, a player may "push" a fragment blocking their path, depending on permissions specific to the block, or else be rebuffed from motion. Fragments can be pushed into other fragments or fill holes in the player map. If either character falls into a hole, the current level will restart for both of them.
+Each player can move their character up, down, left, or right one grid square at a time. In so doing, a player may "push" a block impeding their path, depending on permissions specific to the block, or else be rebuffed from motion. Blocks can be pushed into other blocks or fill holes in the player map. If either character falls into a hole, the current level will restart for both of them.
 
 **Interactions (How do players interact with the game or characters? Controls setup?):**
 
-On PC, the left character will be controlled with WASD, and the right character will be controlled with arrow keys. *(Holding a key to initiate a "run" may or may not be allowed).* There will also be keyboard shortcuts to undo a move or restart a level *(TBD)*. In a later stage of development, these shortcuts could be identified with game controller buttons.
+On desktop, the left character will be controlled with WASD, and the right character will be controlled with arrow keys. Holding a key will enable multiple steps to be attempted in sequence. There will also be keyboard shortcuts to undo a move or restart a level *(TBD)*. In a later stage of development, these shortcuts could be identified with game controller buttons.
 
 A game menu will also be openable by mouse click from a button in the HUD. Level selection and setting selection will be done by mouse in this phase of development.
 
 **Rules (What constraints or systems define the gameplay?):**
 
-Neither character can walk through walls in the grid. Some fragments are "unentangled" and can be pushed by either player (but not into a wall). "Entangled" fragments occupy the same location in both the left and right worlds, and will each be movable by only one of the characters, as will be visually indicated. While fragments can be pushed into each other, players cannot themselves be pushed. If an entangled fragment falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
+Neither character can walk through walls in the grid. Some blocks are "unentangled" and can be pushed by either player (but not into a wall). "Entangled" blocks occupy the same location in both the left and right worlds, and will each be movable by only one of the characters, as will be visually indicated. While blocks can be pushed into each other, players cannot themselves be pushed. If an entangled block falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
 
-An entangled fragment can be indirectly pushed by an unentangled fragment, but only if the player ultimately responsible for the push would be allowed to push that entangled fragment directly.
+An entangled block can be indirectly pushed by an unentangled block, but only if the player ultimately responsible for the push would be allowed to push that entangled block directly.
 
 **Rewards (How does your game reward the players after completing tasks or in the gameplay? What kind of reward system do you envision?):**
 
@@ -59,7 +59,7 @@ Audio-visual cues during the level will be neutral in nature, as the same player
 
 **Premise (What is the story/world about?):**
 
-After a plane crash, the two halves of Leroy's body have been buried alive in separate dimensions, still sharing a mind. Much like themselves, linked fragments fill the elaborate mazes which imprison them. Leroy's halves must use these linked fragments to help each other escape. Though torn asunder, they may yet reunite as one.
+After a plane crash, the two halves of Leroy's body have been buried alive in separate dimensions, still sharing a mind. Much like themselves, linked blocks fill the elaborate mazes which imprison them. Leroy's halves must use these linked blocks to help each other escape. Though torn asunder, they may yet reunite as one.
 
 **Main Characters:**
 
@@ -85,7 +85,7 @@ The game will have a linear structure, with an embedded narrative. There will on
 
 **Tutorial/Onboarding (How will players learn mechanics?):**
 
-Players will learn the games mechanics through a series of very simple tutorial levels. At all times they will have access to a menu with the movement controls, as well as the ability to re-map the controls if needed. Each level will introduce a new mechanic, and/or interaction. First, simply movement from entrance to exit, then block pushing regular blocks, and then pushing entangled blocks. Later in the game, more interactions will be introduced, such as holes, portals, blocks pushing blocks, and blocks pushing players. Even though the game does not have many mechanics, it will continue to challenge the player to use the tools they already have at their disposal in new and creative ways they previously haven't considered.  
+Players will learn the games mechanics through a series of very simple tutorial levels. At all times they will have access to a menu with the movement controls, as well as the ability to re-map the controls if needed. Each level will introduce a new mechanic, and/or interaction. First, simply movement from entrance to exit, then block pushing regular blocks, and then pushing entangled blocks. Later in the game, more interactions will be introduced, such as holes, portals (possibly), blocks pushing blocks, and (possibly) blocks pushing players. Even though the game does not have many mechanics, it will continue to challenge the player to use the tools they already have at their disposal in new and creative ways they previously haven't considered.  
 
 **Progression (How does your game increase in difficulty or complexity?):**
 
@@ -93,7 +93,7 @@ We are going to shoot for a gradual difficulty curve with an interesting balance
 
 **Exploration/Challenges/Puzzles (if applicable):**
 
-There will be a few hidden "secret" parts of levels which can surprise the player into more aspects of exploration. 
+There may be a few hidden "secret" parts of levels which can surprise the player into more aspects of exploration. 
 
 ---
 
