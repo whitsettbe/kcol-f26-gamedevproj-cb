@@ -57,15 +57,27 @@ Naturally, Leonard and Roy do not want to be buried alive and in separate dimens
 
 ## 5. Level & World Design
 
-**Setting/Theme:**
+**Setting/Theme:** 
+
+This is a cooperative escape game where both halves of our hero have been trapped against their will in a series of elaborate maze like tunnels. Teamwork, communication, and collaboration between the two players will be necessary to complete levels and progress towards freedom. Only if they are able to think as one will the two halves of our hero be able to escape the tunnels and re-unite.
+
+The setting is an interdimensional series of tunnels, with certain entangled blocks existing in two dimensions. The world is full of interdimensional magic, and quantum weirdness which causes different blocks to behave in strange ways. 
 
 **Level Structure (linear, open world, hub-based?):**
 
+The game will have a linear structure, with an embedded narrative. There will only be one possible ending. Each level will have a short level name which will provide the players with hints in order to solve it. Players will go sequentially through the levels, always working on the same level simultaneously. 
+
 **Tutorial/Onboarding (How will players learn mechanics?):**
+
+Players will learn the games mechanics through a series of very simple tutorial levels. At all times they will have access to a menu with the movement controls, as well as the ability to re-map the controls if needed. Each level will introduce a new mechanic, and/or interaction. First, simply movement from entrance to exit, then block pushing regular blocks, and then pushing entangled blocks. Later in the game, more interactions will be introduced, such as holes, portals, blocks pushing blocks, and blocks pushing players. Even though the game does not have many mechanics, it will continue to challenge the player to use the tools they already have at their disposal in new and creative ways they previously haven't considered.  
 
 **Progression (How does your game increase in difficulty or complexity?):**
 
+We are going to shoot for a gradual difficulty curve with an interesting balance of challenging levels, as well as levels where the players are able to get into a flow state and progress quickly. Some levels will be very short and simple, whereas others will be designed to take more experimentation and time. If players ever get totally stuck, hints will be available if the player chooses to use them. 
+
 **Exploration/Challenges/Puzzles (if applicable):**
+
+There will be a few hidden "secret" parts of levels which can surprise the player into more aspects of exploration. 
 
 ---
 
