@@ -8,13 +8,13 @@
 
 **Working Title: Asunder**  
 
-**Genre:**  
+**Genre: Sokoban**  
 
-**Platform(s): PC**  
+**Platform(s): Windows, Linux**  
 
 **Elevator Pitch (1-2 sentences): In a couch-co-op sokoban, your character has been torn asunder. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.** 
 
-**Target Audience:** 
+**Target Audience: People who have been cut in half and/or who have been buried alive** 
 
 
 ---
