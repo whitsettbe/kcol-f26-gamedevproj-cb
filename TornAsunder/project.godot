@@ -17,8 +17,13 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/benja/Videos/Captures/godot_capture.avi"
 
 [input]
 
