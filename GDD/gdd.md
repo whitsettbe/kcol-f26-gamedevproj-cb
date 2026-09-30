@@ -99,21 +99,42 @@ There may be a few hidden "secret" parts of levels which can surprise the player
 
 ## 6. Visual & Audio Style
 
-**Art Style Reference (pixel art, 3D, realistic, low poly, etc.):**
+**Art Style Reference (pixel art, 3D, realistic, low poly, etc.): small size pixel art**
 
-**Color Palette:**
+**Color Palette: limited color pallet (tbd)**
 
-**Music/Audio Resources (to complement the theme of your game):**
+The color palette for the environment will be a two tone palette, with one tone providing most of the palette of varying value. The second tone will serve as a highlight. The players and level objects will have their own palette to contrast the environment and make levels more readable.
 
+Mock ups are being done with the palette below, called "Darkworld Palette", by Solitaire on lospec.com
+
+https://lospec.com/palette-list/darkworld
+
+```
+0	0	0	000000
+36	1	66	240142
+41	5	115	290573
+74	28	184	4a1cb8
+115	18	252	7312fc
+160	101	227	a065e3
+207	132	240	cf84f0
+227	178	252	e3b2fc
+253	205	134	fdcd86
+```
+
+**Music/Audio Resources (to complement the theme of your game): tbd**
+
+https://www.bfxr.net
+https://sfbgames.itch.io/chiptone
+https://yurisizov.itch.io/boscaceoil-blue
 ---
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.):**
+**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): progress tracking**
 
-**Menus (main, pause, inventory, etc.):**
+**Menus (main, pause, inventory, etc.): map, level select**
 
-**Accessibility Features (if any):**
+**Accessibility Features (if any): hint menu?**
 
 ---
 
