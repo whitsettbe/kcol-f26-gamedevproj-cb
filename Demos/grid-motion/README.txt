@@ -1,1 +1,0 @@
-Based on tutorial at https://kidscancode.org/godot_recipes/4.x/2d/grid_movement/
