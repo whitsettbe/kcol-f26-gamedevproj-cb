@@ -151,7 +151,7 @@ At top of screen:
         - Accessibility
         - Configuration
             - Key Inputs
-        - Audiol
+        - Audio
             - Music Value
             - Sound Effect Volume
     - Quit
