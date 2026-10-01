@@ -148,7 +148,7 @@ At top of screen:
             - Layer 1
                 - Level 1
     - Settings
-        - Accessability
+        - Accessibility
         - Configuration
             - Key Inputs
         - Audiol
