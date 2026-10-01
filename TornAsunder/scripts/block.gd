@@ -38,50 +38,8 @@ func get_all_successors(dir_vect: Vector2) -> Dictionary:
 	
 	return total
 	
-
-# Find which objects must move
-#  in order for this block to move
-func get_successors(dir_vect : Vector2) -> Array:
-	
-	var out = Array()
-	
-	# Get the directly intervening raycast
-	ray.target_position = dir_vect
-	ray.force_raycast_update()
-	var collider = ray.get_collider()
-	if collider != null:
-		out.push_back(collider)
-	
-	return out
-
-# Check if this block is allowed to move
-#  by the requested offset
-#  (assumption: one grid square away)
-func can_move(dir_vect):
-	
-	var successors = get_successors(dir_vect)
-	for succ in successors:
-		if not (succ.has_method("can_move") \
-				and succ.can_move(dir_vect)):
-			return false
-	return true
 	
 # Move *only* this block by the desired amount
+# (assuming such a move has been deemed possible)
 func move_single(dir_vect):
-	position += dir_vect
-		
-# Move the block by the requested offset
-#  (assumption: one grid square away)
-#  (assumption: can_move(dir_vect) == True)
-func move(dir_vect):
-	
-	print(self, dir_vect, Time.get_ticks_msec())
-	
-	# Move successors
-	var successors = get_successors(dir_vect)
-	for succ in successors:
-		if succ.has_method("move"):
-			succ.move(dir_vect)
-			
-	# After telling successors to move, we can now move
 	position += dir_vect

@@ -1,12 +1,6 @@
 class_name Player
 extends Block
 
-#@export var sprite_scale : Vector2 :
-#	set(new_value):
-#		$Sprite2D.scale = new_value
-#	get:
-#		return $Sprite2D.scale
-
 var inputs = { # mapping pressable actions to translation directions
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
@@ -23,14 +17,9 @@ func _ready() -> void:
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
-			move_if_possible_v2(dir)
-	
-func move_if_possible(dir):
-	var dir_vect = inputs[dir] * TILE_SIZE
-	if can_move(dir_vect):
-		move(dir_vect)
+			move_if_possible(dir)
 		
-func move_if_possible_v2(dir) -> void:
+func move_if_possible(dir) -> void:
 	
 	# Compute successors
 	var dir_vect = inputs[dir] * TILE_SIZE
