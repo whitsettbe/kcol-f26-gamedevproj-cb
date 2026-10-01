@@ -158,9 +158,13 @@ At top of screen:
 - Pause Menu
     - Resume
     - Settings
+    - Hint?
     - Main Menu
 
-**Accessibility Features (if any):**
+**Accessibility Features:**
+
+- Currently working on color blind friendly blocks.
+- Hint option?
 
 ---
 
