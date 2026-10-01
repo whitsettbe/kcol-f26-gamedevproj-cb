@@ -111,6 +111,10 @@ There may be a few hidden "secret" parts of levels which can surprise the player
 
 **HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.):**
 
+At top of screen:
+ - Current Layer
+ - Current Level/Levels in Layer
+
 **Menus (main, pause, inventory, etc.):**
 
 - Main Menu
