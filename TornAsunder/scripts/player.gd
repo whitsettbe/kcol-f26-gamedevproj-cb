@@ -23,9 +23,24 @@ func _ready() -> void:
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
-			move_if_possible(dir)
+			move_if_possible_v2(dir)
 	
 func move_if_possible(dir):
 	var dir_vect = inputs[dir] * TILE_SIZE
 	if can_move(dir_vect):
 		move(dir_vect)
+		
+func move_if_possible_v2(dir) -> void:
+	
+	# Compute successors
+	var dir_vect = inputs[dir] * TILE_SIZE
+	var successors = get_all_successors(dir_vect)
+	
+	# If some successor was marked unmovable, don't move
+	if false in successors.values():
+		return
+		
+	# Otherwise, move this block and the successors
+	move_single(dir_vect)
+	for successor in successors:
+		successor.move_single(dir_vect)

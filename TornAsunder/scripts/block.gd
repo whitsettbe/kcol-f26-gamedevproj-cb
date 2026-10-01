@@ -13,6 +13,31 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+# Find the complete set of objects which must move
+#  with the player.
+#
+# Return: dictionary of [intervening object] -> [is movable object type?]
+func get_all_successors(dir_vect: Vector2) -> Dictionary:
+	
+	var immediate = Dictionary()
+	var total = Dictionary()
+	
+	# Get the directly intervening raycast
+	ray.target_position = dir_vect
+	ray.force_raycast_update()
+	var collider = ray.get_collider()
+	if collider != null:
+		immediate[collider] = (collider is Block)
+		
+	# Add successors of later blocks
+	for successor in immediate:
+		total[successor] = (successor is Block)
+		if successor is Block:
+			total.merge(successor.get_all_successors(dir_vect))
+	
+	return total
+	
 
 # Find which objects must move
 #  in order for this block to move
@@ -40,6 +65,10 @@ func can_move(dir_vect):
 				and succ.can_move(dir_vect)):
 			return false
 	return true
+	
+# Move *only* this block by the desired amount
+func move_single(dir_vect):
+	position += dir_vect
 		
 # Move the block by the requested offset
 #  (assumption: one grid square away)
