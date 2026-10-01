@@ -37,10 +37,8 @@ script = ExtResource("3_h2yge")
 position = Vector2(352, 160)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled2")
-primary = false
 
 [node name="Entangled2" parent="." unique_id=2101799114 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
 position = Vector2(928, 160)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled1")
-primary = true
