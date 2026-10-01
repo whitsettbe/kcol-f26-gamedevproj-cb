@@ -1,6 +1,12 @@
 class_name Player
 extends Block
 
+#@export var sprite_scale : Vector2 :
+#	set(new_value):
+#		$Sprite2D.scale = new_value
+#	get:
+#		return $Sprite2D.scale
+
 var inputs = { # mapping pressable actions to translation directions
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
@@ -11,7 +17,7 @@ var inputs = { # mapping pressable actions to translation directions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super() # call the inherited version of this overridden function
-	$Sprite2D.scale = Vector2.ONE * .5
+	#$Sprite2D.scale = Vector2.ONE * .5
 
 # Called on input
 func _unhandled_input(event):

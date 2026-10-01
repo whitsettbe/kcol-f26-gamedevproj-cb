@@ -2,7 +2,6 @@ class_name Entangled
 extends Block
 
 @export var partner : Entangled
-#@export var primary : bool
 
 func _ready():
 	assert(partner != null,
@@ -28,6 +27,8 @@ func get_successors(
 		# Request partner's successors, treating it
 		# as a child
 		out += partner.get_successors(dir_vect, false)
+		
+	print("get_successors:", self, out)
 		
 	return out
 		

@@ -46,6 +46,8 @@ func can_move(dir_vect):
 #  (assumption: can_move(dir_vect) == True)
 func move(dir_vect):
 	
+	print(self, dir_vect, Time.get_ticks_msec())
+	
 	# Move successors
 	var successors = get_successors(dir_vect)
 	for succ in successors:
