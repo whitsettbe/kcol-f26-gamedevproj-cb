@@ -111,9 +111,60 @@ There may be a few hidden "secret" parts of levels which can surprise the player
 
 **HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.):**
 
+At top of screen:
+ - Current Layer
+ - Current Level/Levels in Layer
+
 **Menus (main, pause, inventory, etc.):**
 
-**Accessibility Features (if any):**
+- Main Menu
+    - Continue
+        - Level Navigator
+            - Layer 3
+                - Level n
+                - ...
+                - Level 2
+                - Level 1
+            - Layer 2
+                - Level m
+                - ...
+                - Level 2
+                - Level 1
+            - Layer 1
+                - Level p
+                - ...
+                - Level 2
+                - Level 1
+    - Load Game
+        - Save 1
+            - Level Navigator
+        - Save 2
+            - Level Navigator
+        - ...
+        - Save q
+            - Level Navigator
+    - New Game
+        - Level Navigator
+            - Layer 1
+                - Level 1
+    - Settings
+        - Accessibility
+        - Configuration
+            - Key Inputs
+        - Audio
+            - Music Value
+            - Sound Effect Volume
+    - Quit
+- Pause Menu
+    - Resume
+    - Settings
+    - Hint?
+    - Main Menu
+
+**Accessibility Features:**
+
+- Currently working on color blind friendly blocks.
+- Hint option?
 
 ---
 
