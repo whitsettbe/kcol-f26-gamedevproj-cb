@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7vpam2yvrrjg" path="res://simple_tiles.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://block.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://player.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://entangled.gd" id="4_1bvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_0xm2m")
@@ -31,3 +32,15 @@ position = Vector2(160, 288)
 [node name="Player" parent="." unique_id=1125575546 instance=ExtResource("1_ig7tw")]
 position = Vector2(96, 96)
 script = ExtResource("3_h2yge")
+
+[node name="Entangled1" parent="." unique_id=725656176 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
+position = Vector2(352, 160)
+script = ExtResource("4_1bvp3")
+partner = NodePath("../Entangled2")
+primary = false
+
+[node name="Entangled2" parent="." unique_id=2101799114 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
+position = Vector2(928, 160)
+script = ExtResource("4_1bvp3")
+partner = NodePath("../Entangled1")
+primary = true

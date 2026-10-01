@@ -1,6 +1,6 @@
+class_name Player
 extends Block
 
-var tile_size = 64
 var inputs = { # mapping pressable actions to translation directions
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
@@ -20,6 +20,6 @@ func _unhandled_input(event):
 			move_if_possible(dir)
 	
 func move_if_possible(dir):
-	var dir_vect = inputs[dir] * tile_size
+	var dir_vect = inputs[dir] * TILE_SIZE
 	if can_move(dir_vect):
 		move(dir_vect)

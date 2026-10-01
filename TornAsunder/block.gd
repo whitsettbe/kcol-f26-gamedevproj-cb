@@ -1,6 +1,8 @@
 class_name Block
 extends Area2D
 
+const TILE_SIZE = 64
+
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
 
