@@ -113,6 +113,49 @@ There may be a few hidden "secret" parts of levels which can surprise the player
 
 **Menus (main, pause, inventory, etc.):**
 
+- Main Menu
+    - Continue
+        - Level Navigator
+            - Layer 3
+                - Level n
+                - ...
+                - Level 2
+                - Level 1
+            - Layer 2
+                - Level m
+                - ...
+                - Level 2
+                - Level 1
+            - Layer 1
+                - Level p
+                - ...
+                - Level 2
+                - Level 1
+    - Load Game
+        - Save 1
+            - Level Navigator
+        - Save 2
+            - Level Navigator
+        - ...
+        - Save q
+            - Level Navigator
+    - New Game
+        - Level Navigator
+            - Layer 1
+                - Level 1
+    - Settings
+        - Accessability
+        - Configuration
+            - Key Inputs
+        - Audiol
+            - Music Value
+            - Sound Effect Volume
+    - Quit
+- Pause Menu
+    - Resume
+    - Settings
+    - Main Menu
+
 **Accessibility Features (if any):**
 
 ---
