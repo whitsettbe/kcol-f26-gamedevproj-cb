@@ -1,4 +1,4 @@
-extends Node2D
+extends Block
 
 var tile_size = 64
 var inputs = { # mapping pressable actions to translation directions
@@ -10,13 +10,9 @@ var inputs = { # mapping pressable actions to translation directions
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Block/Sprite2D.scale = Vector2.ONE * .5
+	super() # call the inherited version of this overridden function
+	$Sprite2D.scale = Vector2.ONE * .5
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 # Called on input
 func _unhandled_input(event):
 	for dir in inputs.keys():
@@ -25,5 +21,5 @@ func _unhandled_input(event):
 	
 func move_if_possible(dir):
 	var dir_vect = inputs[dir] * tile_size
-	if $Block.can_move(dir_vect):
-		$Block.move(dir_vect)
+	if can_move(dir_vect):
+		move(dir_vect)

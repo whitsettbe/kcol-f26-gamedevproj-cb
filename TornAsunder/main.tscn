@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7vpam2yvrrjg" path="res://simple_tiles.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://block.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://bvoo3wrbdvbom" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://player.gd" id="3_h2yge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_0xm2m")
@@ -28,5 +28,6 @@ position = Vector2(160, 160)
 [node name="Block2" parent="." unique_id=2121153980 instance=ExtResource("1_ig7tw")]
 position = Vector2(160, 288)
 
-[node name="Player" parent="." unique_id=174336531 instance=ExtResource("3_h2yge")]
-position = Vector2(288, 160)
+[node name="Player" parent="." unique_id=1125575546 instance=ExtResource("1_ig7tw")]
+position = Vector2(96, 96)
+script = ExtResource("3_h2yge")
