@@ -3,6 +3,11 @@ extends Area2D
 
 const TILE_SIZE = 64
 
+# Make an enum dropdown for block type
+#  (level listens to this and attaches scripts automatically)
+enum BlockType {BLOCK, PLAYER, ENTANGLED}
+@export var blockType : BlockType
+
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
 
