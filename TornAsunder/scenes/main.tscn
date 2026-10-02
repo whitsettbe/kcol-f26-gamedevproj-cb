@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7vpam2yvrrjg" path="res://simple_tiles.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://scenes/block.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://scripts/entangled.gd" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bvoo3wrbdvbom" path="res://scenes/player.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://h86qf0ftw2xj" path="res://scenes/super_block.tscn" id="5_tbgi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_0xm2m")
@@ -39,5 +39,14 @@ position = Vector2(928, 160)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled1")
 
-[node name="Player" parent="." unique_id=1270936871 instance=ExtResource("5_lquwl")]
+[node name="Player" parent="." unique_id=578057202 instance=ExtResource("5_tbgi4")]
 position = Vector2(96, 96)
+block_type = 1
+
+[node name="Entangled3" parent="." unique_id=970118693 instance=ExtResource("5_tbgi4")]
+position = Vector2(352, 288)
+
+[node name="Entangled4" parent="." unique_id=88118041 node_paths=PackedStringArray("partner") instance=ExtResource("5_tbgi4")]
+position = Vector2(928, 288)
+block_type = 2
+partner = NodePath("../Entangled3")
