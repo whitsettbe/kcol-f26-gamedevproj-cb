@@ -1,7 +1,7 @@
 class_name Player
 extends Block
 
-var inputs = { # mapping pressable actions to translation directions
+const inputs = { # mapping pressable actions to translation directions
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
 	"move_down": Vector2.DOWN,
@@ -14,10 +14,10 @@ func _ready() -> void:
 	#$Sprite2D.scale = Vector2.ONE * .5
 
 # Called on input
-func _unhandled_input(event):
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move_if_possible(dir)
+#func _unhandled_input(event):
+#	for dir in inputs.keys():
+#		if event.is_action_pressed(dir):
+#			move_if_possible(dir)
 		
 func move_if_possible(dir) -> void:
 	

@@ -2,6 +2,8 @@ class_name Block
 extends Area2D
 
 const TILE_SIZE = 32
+const PUSH_DURATION = 0.05 # seconds
+var tween : Tween
 
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
@@ -47,4 +49,12 @@ func get_all_successors(dir_vect: Vector2) -> Dictionary:
 # Move *only* this block by the desired amount
 # (assuming such a move has been deemed possible)
 func move_single(dir_vect):
-	position += dir_vect
+	tween = create_tween()
+	tween.tween_property(self, "position",
+			position + dir_vect, PUSH_DURATION
+	).set_ease(Tween.EASE_IN_OUT)
+
+
+# Indicate whether the movement tween is running
+func still_animating():
+	return (tween and tween.is_running())
