@@ -7,11 +7,16 @@ const scripts = {
 	Block.BlockType.PLAYER : preload("res://scripts/player.gd"),
 	Block.BlockType.ENTANGLED : preload("res://scripts/entangled.gd")
 }
-const scales = {
-	Block.BlockType.BLOCK : 0.4,
-	Block.BlockType.PLAYER : 0.5,
-	Block.BlockType.ENTANGLED : -0.4
+const tiles = {
+	Block.BlockType.BLOCK : Vector2i(2,0),
+	Block.BlockType.PLAYER: Vector2i(8,1),
+	Block.BlockType.ENTANGLED: Vector2i(1,1)
 }
+#const scales = {
+#	Block.BlockType.BLOCK : 1.0,
+#	Block.BlockType.PLAYER : 1.0,
+#	Block.BlockType.ENTANGLED : 1.0
+#}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,5 +40,8 @@ func align_block_designs():
 				node.set_script(scripts[blockType])
 				node.blockType = blockType # prevent reset on script reload
 			
-			node.get_node("Sprite2D").scale = \
-					Vector2.ONE * scales[blockType]
+			#node.get_node("Sprite2D").scale = \
+			#		Vector2.ONE * scales[blockType]
+			node.get_node("TileMapLayer").set_cell(
+				Vector2i(0,0), 0, tiles[blockType]
+			)

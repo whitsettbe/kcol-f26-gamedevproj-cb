@@ -1,7 +1,7 @@
 class_name Block
 extends Area2D
 
-const TILE_SIZE = 64
+const TILE_SIZE = 32
 
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
