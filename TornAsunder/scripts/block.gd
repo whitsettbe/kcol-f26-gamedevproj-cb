@@ -63,7 +63,6 @@ func move_single(dir_vect):
 	
 
 func fill_hole():
-	print(self, get_tile())
 	if get_tile() == TILE_IDS["hole"]:
 		set_tile(TILE_IDS["floor"])
 		# Hide and disable physics with the block
@@ -79,7 +78,7 @@ func still_animating():
 # Get the current floor map identifier
 func get_tile() -> Vector2i:
 	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
-	grid_pos = Vector2i(grid_pos)
+	grid_pos = Vector2i(grid_pos.round())
 	return get_parent().get_node(
 		"TileMapLayer").get_cell_atlas_coords(grid_pos)
 	
@@ -88,7 +87,7 @@ func get_tile() -> Vector2i:
 #  to the provided atlas coordinates
 func set_tile(atlas_coords : Vector2i):
 	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
-	grid_pos = Vector2i(grid_pos)
+	grid_pos = Vector2i(grid_pos.round())
 	get_parent().get_node("TileMapLayer").set_cell(
 		grid_pos, 0, atlas_coords
 	)

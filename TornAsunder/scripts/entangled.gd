@@ -36,6 +36,10 @@ func fill_hole(as_parent: bool = true):
 	if as_parent \
 			and $CollisionShape2D.disabled:
 		partner.fill_hole(false)
+			# ASSUMPTION: partner is close enough to
+			#  finishing their motion tween
+			#  that their position will be converted
+			#  accurately
 		
 		# If the partner did not become a hole,
 		#  turn it into a wall
