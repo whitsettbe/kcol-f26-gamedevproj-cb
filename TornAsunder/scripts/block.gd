@@ -5,6 +5,12 @@ const TILE_SIZE = 32
 const PUSH_DURATION = 0.05 # seconds
 var tween : Tween
 
+const TILE_IDS = {
+	"hole" : Vector2i(4,0),
+	"floor": Vector2i(0,0),
+	"wall": Vector2i(9,0)
+}
+
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
@@ -53,8 +59,36 @@ func move_single(dir_vect):
 	tween.tween_property(self, "position",
 			position + dir_vect, PUSH_DURATION
 	).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_callback(fill_hole)
+	
+
+func fill_hole():
+	print(self, get_tile())
+	if get_tile() == TILE_IDS["hole"]:
+		set_tile(TILE_IDS["floor"])
+		# Hide and disable physics with the block
+		hide()
+		$CollisionShape2D.disabled = true
 
 
 # Indicate whether the movement tween is running
 func still_animating():
 	return (tween and tween.is_running())
+	
+	
+# Get the current floor map identifier
+func get_tile() -> Vector2i:
+	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
+	grid_pos = Vector2i(grid_pos)
+	return get_parent().get_node(
+		"TileMapLayer").get_cell_atlas_coords(grid_pos)
+	
+	
+# Set the currently stood-upon tile
+#  to the provided atlas coordinates
+func set_tile(atlas_coords : Vector2i):
+	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
+	grid_pos = Vector2i(grid_pos)
+	get_parent().get_node("TileMapLayer").set_cell(
+		grid_pos, 0, atlas_coords
+	)

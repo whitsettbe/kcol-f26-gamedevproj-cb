@@ -24,3 +24,22 @@ func get_all_successors(
 		out[partner] = true # partner had better be a block :) 
 		out.merge(partner.get_all_successors(dir_vect, false))
 	return out
+	
+
+# Fill a hole under this tile,
+#  then try to do so with entangled partner,
+#  then petrify it (convert it to a wall) if needed
+func fill_hole(as_parent: bool = true):
+	super()
+	
+	# If this block filled a hole, check with its partner
+	if as_parent \
+			and $CollisionShape2D.disabled:
+		partner.fill_hole(false)
+		
+		# If the partner did not become a hole,
+		#  turn it into a wall
+		if not partner.get_node("CollisionShape2D").disabled:
+			partner.set_tile(TILE_IDS["wall"])
+			partner.hide()
+			partner.get_node("CollisionShape2D").disabled = true
