@@ -62,6 +62,9 @@ func move_single(dir_vect):
 	tween.tween_callback(fill_hole)
 	
 
+# Replace the current tile with a floor
+# if it is a hole, making this block
+# inactive if so
 func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
 		set_tile(TILE_IDS["floor"])

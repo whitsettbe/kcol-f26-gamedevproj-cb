@@ -24,7 +24,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		align_block_designs()
-		
+
+
 # Pass inputs to the player (during game)
 func _unhandled_input(event):
 	
@@ -35,7 +36,8 @@ func _unhandled_input(event):
 				for node in get_children():
 					if node is Player:
 						node.move_if_possible(dir)
-		
+
+
 # Ensure child properties align with their block type
 func align_block_designs():
 			
@@ -46,12 +48,13 @@ func align_block_designs():
 				node.set_script(scripts[blockType])
 				node.blockType = blockType # prevent reset on script reload
 			
-			#node.get_node("Sprite2D").scale = \
-			#		Vector2.ONE * scales[blockType]
 			node.get_node("TileMapLayer").set_cell(
 				Vector2i(0,0), 0, tiles[blockType]
 			)
 
+
+# Determine whether any of the children blocks
+#  are in the middle of an animation
 func still_animating() -> bool:
 	for node in get_children():
 		if node is Block:

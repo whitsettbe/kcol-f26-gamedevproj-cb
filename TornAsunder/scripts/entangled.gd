@@ -3,6 +3,7 @@ extends Block
 
 @export var partner : Entangled
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(partner != null,
 		"{0} needs a partner".format([self]))
@@ -11,7 +12,8 @@ func _ready():
 	assert(partner.partner == self,
 		"{0} must be the partner of its partner".format([self]))
 	super()
-	
+
+
 # Find all successors of this block (and partner),
 #  as dictionary keys (values are "is this movable?")
 func get_all_successors(
@@ -24,7 +26,7 @@ func get_all_successors(
 		out[partner] = true # partner had better be a block :) 
 		out.merge(partner.get_all_successors(dir_vect, false))
 	return out
-	
+
 
 # Fill a hole under this tile,
 #  then try to do so with entangled partner,

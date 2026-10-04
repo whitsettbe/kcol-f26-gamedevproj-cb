@@ -8,18 +8,12 @@ const inputs = { # mapping pressable actions to translation directions
 	"move_up": Vector2.UP
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	super() # call the inherited version of this overridden function
-	#$Sprite2D.scale = Vector2.ONE * .5
 
-# Called on input
-#func _unhandled_input(event):
-#	for dir in inputs.keys():
-#		if event.is_action_pressed(dir):
-#			move_if_possible(dir)
-		
-func move_if_possible(dir) -> void:
+# Query successor blocks to see if they can move,
+#  and push them if so;
+#  the success status of the move is returned
+#  as a boolean for player feedback
+func move_if_possible(dir) -> bool:
 	
 	# Compute successors
 	var dir_vect = inputs[dir] * TILE_SIZE
@@ -27,9 +21,10 @@ func move_if_possible(dir) -> void:
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():
-		return
+		return false
 		
 	# Otherwise, move this block and the successors
 	move_single(dir_vect)
 	for successor in successors:
 		successor.move_single(dir_vect)
+	return true
