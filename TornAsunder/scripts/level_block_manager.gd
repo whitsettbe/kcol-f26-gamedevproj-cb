@@ -8,8 +8,8 @@ const scripts = {
 	Block.BlockType.ENTANGLED : preload("res://scripts/entangled.gd")
 }
 const tiles = {
-	Block.BlockType.BLOCK : Vector2i(2,0),
-	Block.BlockType.PLAYER: Vector2i(8,1),
+	Block.BlockType.BLOCK : Vector2i(0,0),
+	Block.BlockType.PLAYER: Vector2i(4,1),
 	Block.BlockType.ENTANGLED: Vector2i(1,1)
 }
 

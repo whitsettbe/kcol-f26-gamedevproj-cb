@@ -6,9 +6,9 @@ const PUSH_DURATION = 0.05 # seconds
 var tween : Tween
 
 const TILE_IDS = {
-	"hole" : Vector2i(4,0),
-	"floor": Vector2i(0,0),
-	"wall": Vector2i(9,0)
+	"hole" : Vector2i(3,3),
+	"floor": Vector2i(4,3),
+	"wall": Vector2i(5,3)
 }
 
 # Make an enum dropdown for block type
