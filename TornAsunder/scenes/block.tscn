@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmgltflbc15gb"]
+
+[ext_resource type="Script" uid="uid://cg52wm5e18vm" path="res://scripts/block.gd" id="1_xfwl5"]
+[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_cgrg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]
+size = Vector2(32, 32)
+
+[node name="Block" type="Area2D" unique_id=1094868734]
+script = ExtResource("1_xfwl5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1540548268]
+shape = SubResource("RectangleShape2D_xa11k")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1244578858]
+target_position = Vector2(0, 32)
+collide_with_areas = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=4190965]
+position = Vector2(-16, -16)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_cgrg5")
+collision_enabled = false
