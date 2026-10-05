@@ -141,33 +141,13 @@ At top of screen:
 - Main Menu
     - Continue
         - Level Navigator
-            - Layer 3
-                - Level n
-                - ...
-                - Level 2
-                - Level 1
-            - Layer 2
-                - Level m
-                - ...
-                - Level 2
-                - Level 1
-            - Layer 1
-                - Level p
-                - ...
-                - Level 2
-                - Level 1
-    - Load Game
-        - Save 1
-            - Level Navigator
-        - Save 2
-            - Level Navigator
-        - ...
-        - Save q
-            - Level Navigator
+            - Level n
+            - ...
+            - Level 2
+            - Level 1
     - New Game
         - Level Navigator
-            - Layer 1
-                - Level 1
+            - Level 1
     - Settings
         - Accessibility
         - Configuration
