@@ -22,20 +22,24 @@ position = Vector2(144, 144)
 
 [node name="Block2" parent="." unique_id=2121153980 instance=ExtResource("1_ig7tw")]
 position = Vector2(720, 272)
+blockColor = 2
 
 [node name="Entangled1" parent="." unique_id=725656176 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
 position = Vector2(336, 144)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled2")
 blockType = 2
+blockColor = 1
 
 [node name="Entangled2" parent="." unique_id=2101799114 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
 position = Vector2(912, 144)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled1")
 blockType = 2
+blockColor = 1
 
 [node name="PlayerBlock" parent="." unique_id=157698511 instance=ExtResource("1_ig7tw")]
 position = Vector2(80, 80)
 script = ExtResource("5_tbgi4")
 blockType = 1
+blockColor = 1

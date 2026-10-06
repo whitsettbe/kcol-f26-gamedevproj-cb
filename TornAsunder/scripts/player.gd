@@ -17,7 +17,7 @@ func move_if_possible(dir) -> bool:
 	
 	# Compute successors
 	var dir_vect = inputs[dir] * TILE_SIZE
-	var successors = get_all_successors(dir_vect)
+	var successors = get_all_successors(dir_vect, blockColor)
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():

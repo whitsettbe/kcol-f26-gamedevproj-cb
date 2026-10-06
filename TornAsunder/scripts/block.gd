@@ -15,6 +15,8 @@ const TILE_IDS = {
 #  (level listens to this and attaches scripts automatically)
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
 @export var blockType : BlockType
+enum BlockColor {NONE, BLUE, RED}
+@export var blockColor: BlockColor
 
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
@@ -26,12 +28,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 	
 # Find the complete set of objects which must move
-#  with the player.
+#  with the player, given the player color
 #
-# Return: dictionary of [intervening object] -> [is movable object type?]
-func get_all_successors(dir_vect: Vector2) -> Dictionary:
+# Return: dictionary of [intervening object] ->
+#  [is movable given the pusher?]
+func get_all_successors(
+	dir_vect: Vector2,
+	pusher_color: BlockColor
+	) -> Dictionary:
 	
 	var immediate = Dictionary()
 	var total = Dictionary()
@@ -45,9 +52,10 @@ func get_all_successors(dir_vect: Vector2) -> Dictionary:
 		
 	# Add successors of later blocks
 	for successor in immediate:
-		total[successor] = (successor is Block)
+		total[successor] = (successor is Block and
+				successor.blockColor in [BlockColor.NONE, pusher_color])
 		if successor is Block:
-			total.merge(successor.get_all_successors(dir_vect))
+			total.merge(successor.get_all_successors(dir_vect, pusher_color))
 	
 	return total
 	

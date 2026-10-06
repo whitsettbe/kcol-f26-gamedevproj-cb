@@ -9,8 +9,8 @@ const scripts = {
 }
 const tiles = {
 	Block.BlockType.BLOCK : Vector2i(0,0),
-	Block.BlockType.PLAYER: Vector2i(4,1),
-	Block.BlockType.ENTANGLED: Vector2i(1,1)
+	Block.BlockType.PLAYER: Vector2i(4,0),
+	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
 
 
@@ -44,12 +44,14 @@ func align_block_designs():
 	for node in get_children():
 		if node is Block:
 			var blockType = node.blockType
+			var blockColor = node.blockColor
 			if node.get_script() != scripts[blockType]:
 				node.set_script(scripts[blockType])
 				node.blockType = blockType # prevent reset on script reload
 			
 			node.get_node("TileMapLayer").set_cell(
-				Vector2i(0,0), 0, tiles[blockType]
+				Vector2i(0,0), 0,
+				tiles[blockType] + Vector2i(0, blockColor)
 			)
 
 
