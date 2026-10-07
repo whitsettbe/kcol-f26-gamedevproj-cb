@@ -35,7 +35,13 @@ func _unhandled_input(event):
 			if event.is_action_pressed(dir):
 				for node in get_children():
 					if node is Player:
-						node.move_if_possible(dir)
+						# Check if the event is for
+						# this player in particular
+						var isLeftPlayer = (node.side
+								== Player.PlayerSide.LeftPlayer)
+						var isLeftMotion = (dir[0] == "L")
+						if isLeftPlayer == isLeftMotion:
+							node.move_if_possible(dir)
 
 
 # Ensure child properties align with their block type
@@ -51,7 +57,11 @@ func align_block_designs():
 			
 			node.get_node("TileMapLayer").set_cell(
 				Vector2i(0,0), 0,
-				tiles[blockType] + Vector2i(0, blockColor)
+				tiles[blockType]
+				+ Vector2i(0, blockColor)
+					# change row based on color
+				+ Vector2i(node.side if node is Player else 0, 0)
+					# change column for Roy (default player is Leo)
 			)
 
 
