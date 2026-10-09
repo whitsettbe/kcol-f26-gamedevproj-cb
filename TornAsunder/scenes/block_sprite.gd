@@ -10,7 +10,7 @@ func _ready() -> void:
 	targ_loc = Vector2.ONE * -self.get_parent().TILE_SIZE / 2
 	motion_speed = self.get_parent().TILE_SIZE \
 			/ self.get_parent().PUSH_DURATION
-	alpha_speed = 1 / self.get_parent().PUSH_DURATION
+	alpha_speed = 1 / self.get_parent().FADE_DURATION
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

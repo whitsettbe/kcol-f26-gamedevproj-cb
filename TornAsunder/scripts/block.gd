@@ -1,8 +1,9 @@
 class_name Block
 extends Area2D
 
-const TILE_SIZE = 32
-const PUSH_DURATION = 0.1 # seconds
+const TILE_SIZE = 32 # pixels
+const PUSH_DURATION = 0.05 # seconds
+const FADE_DURATION = 0.4 # seconds
 var dead = false
 
 const TILE_IDS = {
@@ -99,6 +100,7 @@ func get_tile() -> Vector2i:
 #  to the provided atlas coordinates,
 #  delaying the visual change if requested
 func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
+	var Floor = get_parent().get_node("Floor")
 	var FalseOverlays = get_parent().get_node("FalseOverlays")
 	var FloorOverlays = get_parent().get_node("FloorOverlays")
 	
@@ -107,8 +109,13 @@ func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
 	grid_pos = Vector2i(grid_pos.round())
 	
 	# Copy the old tile to a false overlay
+	var old_tile = FloorOverlays.get_cell_atlas_coords(grid_pos)
+	if old_tile == Vector2i.ONE * -1:
+		# If there's nothing there, use the underlying
+		#  floor tile as cover instead
+		old_tile = Floor.get_cell_atlas_coords(grid_pos)
 	FalseOverlays.set_cell(
-		grid_pos, 0, FloorOverlays.get_cell_atlas_coords(grid_pos)
+		grid_pos, 0, old_tile
 	)
 	
 	# Replace the underlying tile
