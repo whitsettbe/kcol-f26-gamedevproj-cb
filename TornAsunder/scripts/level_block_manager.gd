@@ -29,8 +29,7 @@ func _process(delta: float) -> void:
 # Pass inputs to the player (during game)
 func _unhandled_input(event):
 	
-	if not Engine.is_editor_hint() \
-			and not still_animating():
+	if not Engine.is_editor_hint():
 		for dir in Player.inputs.keys():
 			if event.is_action_pressed(dir):
 				for node in get_children():
@@ -63,13 +62,3 @@ func align_block_designs():
 				+ Vector2i(node.side if node is Player else 0, 0)
 					# change column for Roy (default player is Leo)
 			)
-
-
-# Determine whether any of the children blocks
-#  are in the middle of an animation
-func still_animating() -> bool:
-	for node in get_children():
-		if node is Block:
-			if node.still_animating():
-				return true
-	return false

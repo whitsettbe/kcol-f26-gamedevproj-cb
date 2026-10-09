@@ -2,8 +2,7 @@ class_name Block
 extends Area2D
 
 const TILE_SIZE = 32
-const PUSH_DURATION = 0.1 # seconds
-var tween : Tween
+const PUSH_DURATION = 0.05 # seconds
 var dead = false
 
 const TILE_IDS = {
@@ -73,11 +72,6 @@ func move_single(dir_vect):
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
 	fill_hole()
-	#tween = create_tween()
-	#tween.tween_property(self, "position",
-	#		position + dir_vect, PUSH_DURATION
-	#).set_ease(Tween.EASE_IN_OUT)
-	#tween.tween_callback(fill_hole)
 	
 
 # Replace the current tile with a floor
@@ -85,19 +79,15 @@ func move_single(dir_vect):
 # inactive if so
 func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
+		
+		# Replace the floor tile, delaying a visual change
+		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
-		# disable block physics and mark the block as "dead"
+		
+		# Disable block physics and mark the block as "dead"
 		# (triggers fade-out by the SpriteTile)
 		$CollisionShape2D.disabled = true
 		dead = true
-		#tween = create_tween()
-		#tween.tween_property(self, "modulate:a",
-		#		0, PUSH_DURATION)
-
-
-# Indicate whether the movement tween is running
-func still_animating():
-	return (tween and tween.is_running())
 	
 	
 # Get the current floor map identifier
