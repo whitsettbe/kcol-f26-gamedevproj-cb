@@ -2,8 +2,9 @@ class_name Block
 extends Area2D
 
 const TILE_SIZE = 32
-const PUSH_DURATION = 0.2 # seconds
+const PUSH_DURATION = 0.1 # seconds
 var tween : Tween
+var dead = false
 
 const TILE_IDS = {
 	"hole" : Vector2i(3,3),
@@ -85,11 +86,13 @@ func move_single(dir_vect):
 func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
 		set_tile(TILE_IDS["floor"])
-		# Hide and disable physics with the block
+		# disable block physics and mark the block as "dead"
+		# (triggers fade-out by the SpriteTile)
 		$CollisionShape2D.disabled = true
-		tween = create_tween()
-		tween.tween_property(self, "modulate:a",
-				0, PUSH_DURATION)
+		dead = true
+		#tween = create_tween()
+		#tween.tween_property(self, "modulate:a",
+		#		0, PUSH_DURATION)
 
 
 # Indicate whether the movement tween is running
