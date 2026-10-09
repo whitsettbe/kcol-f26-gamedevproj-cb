@@ -2,11 +2,18 @@ class_name Player
 extends Block
 
 const inputs = { # mapping pressable actions to translation directions
-	"move_right": Vector2.RIGHT,
-	"move_left": Vector2.LEFT,
-	"move_down": Vector2.DOWN,
-	"move_up": Vector2.UP
+	"L_right": Vector2.RIGHT,
+	"L_left": Vector2.LEFT,
+	"L_down": Vector2.DOWN,
+	"L_up": Vector2.UP,
+	"R_right": Vector2.RIGHT,
+	"R_left": Vector2.LEFT,
+	"R_down": Vector2.DOWN,
+	"R_up": Vector2.UP
 }
+
+enum PlayerSide {LeftPlayer, RightPlayer}
+@export var side : PlayerSide
 
 
 # Query successor blocks to see if they can move,
@@ -17,7 +24,7 @@ func move_if_possible(dir) -> bool:
 	
 	# Compute successors
 	var dir_vect = inputs[dir] * TILE_SIZE
-	var successors = get_all_successors(dir_vect)
+	var successors = get_all_successors(dir_vect, blockColor)
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():

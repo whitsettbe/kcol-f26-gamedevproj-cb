@@ -8,9 +8,9 @@ const scripts = {
 	Block.BlockType.ENTANGLED : preload("res://scripts/entangled.gd")
 }
 const tiles = {
-	Block.BlockType.BLOCK : Vector2i(2,0),
-	Block.BlockType.PLAYER: Vector2i(8,1),
-	Block.BlockType.ENTANGLED: Vector2i(1,1)
+	Block.BlockType.BLOCK : Vector2i(0,0),
+	Block.BlockType.PLAYER: Vector2i(4,0),
+	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
 
 
@@ -35,7 +35,13 @@ func _unhandled_input(event):
 			if event.is_action_pressed(dir):
 				for node in get_children():
 					if node is Player:
-						node.move_if_possible(dir)
+						# Check if the event is for
+						# this player in particular
+						var isLeftPlayer = (node.side
+								== Player.PlayerSide.LeftPlayer)
+						var isLeftMotion = (dir[0] == "L")
+						if isLeftPlayer == isLeftMotion:
+							node.move_if_possible(dir)
 
 
 # Ensure child properties align with their block type
@@ -44,12 +50,18 @@ func align_block_designs():
 	for node in get_children():
 		if node is Block:
 			var blockType = node.blockType
+			var blockColor = node.blockColor
 			if node.get_script() != scripts[blockType]:
 				node.set_script(scripts[blockType])
 				node.blockType = blockType # prevent reset on script reload
 			
 			node.get_node("TileMapLayer").set_cell(
-				Vector2i(0,0), 0, tiles[blockType]
+				Vector2i(0,0), 0,
+				tiles[blockType]
+				+ Vector2i(0, blockColor)
+					# change row based on color
+				+ Vector2i(node.side if node is Player else 0, 0)
+					# change column for Roy (default player is Leo)
 			)
 
 
