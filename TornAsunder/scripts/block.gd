@@ -85,7 +85,7 @@ func move_single(dir_vect):
 # inactive if so
 func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
-		set_tile(TILE_IDS["floor"])
+		set_tile(TILE_IDS["floor"], PUSH_DURATION)
 		# disable block physics and mark the block as "dead"
 		# (triggers fade-out by the SpriteTile)
 		$CollisionShape2D.disabled = true
@@ -109,10 +109,28 @@ func get_tile() -> Vector2i:
 	
 	
 # Set the currently stood-upon tile
-#  to the provided atlas coordinates
-func set_tile(atlas_coords : Vector2i):
+#  to the provided atlas coordinates,
+#  delaying the visual change if requested
+func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
+	var FalseOverlays = get_parent().get_node("FalseOverlays")
+	var FloorOverlays = get_parent().get_node("FloorOverlays")
+	
+	# Compute the grid position for the new tile
 	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
 	grid_pos = Vector2i(grid_pos.round())
-	get_parent().get_node("FloorOverlays").set_cell(
+	
+	# Copy the old tile to a false overlay
+	FalseOverlays.set_cell(
+		grid_pos, 0, FloorOverlays.get_cell_atlas_coords(grid_pos)
+	)
+	
+	# Replace the underlying tile
+	FloorOverlays.set_cell(
 		grid_pos, 0, atlas_coords
+	)
+	
+	# Hide the false tile after the delay has passed
+	await get_tree().create_timer(delay_sec).timeout
+	FalseOverlays.set_cell(
+		grid_pos, 0, -Vector2i.ONE
 	)
