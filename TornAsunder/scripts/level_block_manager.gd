@@ -55,7 +55,7 @@ func align_block_designs():
 				node.set_script(scripts[blockType])
 				node.blockType = blockType # prevent reset on script reload
 			
-			node.get_node("TileMapLayer").set_cell(
+			node.get_node("SpriteTile").set_cell(
 				Vector2i(0,0), 0,
 				tiles[blockType]
 				+ Vector2i(0, blockColor)

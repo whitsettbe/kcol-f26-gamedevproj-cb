@@ -2,7 +2,7 @@ class_name Block
 extends Area2D
 
 const TILE_SIZE = 32
-const PUSH_DURATION = 0.05 # seconds
+const PUSH_DURATION = 0.2 # seconds
 var tween : Tween
 
 const TILE_IDS = {
@@ -62,12 +62,21 @@ func get_all_successors(
 	
 # Move *only* this block by the desired amount
 # (assuming such a move has been deemed possible)
+#
+# To do so, move the entire block and lag the sprite,
+# which will automatically try to "catch up"
+# (see block_sprite.gd);
+#
+# Also trigger hole-filling.
 func move_single(dir_vect):
-	tween = create_tween()
-	tween.tween_property(self, "position",
-			position + dir_vect, PUSH_DURATION
-	).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_callback(fill_hole)
+	$SpriteTile.position -= dir_vect
+	position += dir_vect
+	fill_hole()
+	#tween = create_tween()
+	#tween.tween_property(self, "position",
+	#		position + dir_vect, PUSH_DURATION
+	#).set_ease(Tween.EASE_IN_OUT)
+	#tween.tween_callback(fill_hole)
 	
 
 # Replace the current tile with a floor
@@ -77,8 +86,10 @@ func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
 		set_tile(TILE_IDS["floor"])
 		# Hide and disable physics with the block
-		hide()
 		$CollisionShape2D.disabled = true
+		tween = create_tween()
+		tween.tween_property(self, "modulate:a",
+				0, PUSH_DURATION)
 
 
 # Indicate whether the movement tween is running
