@@ -46,14 +46,3 @@ func fill_hole():
 		set_tile(TILE_IDS["wall"], PUSH_DURATION)
 		$CollisionShape2D.disabled = true
 		dead = true
-	
-	# If this block filled a hole, check with its partner
-	#if as_parent and dead:
-	#	partner.fill_hole(false)
-		
-		# If the partner did not become a hole,
-		#  turn it into a wall
-	#	if not partner.dead:
-	#		partner.set_tile(TILE_IDS["wall"], PUSH_DURATION)
-	#		partner.get_node("CollisionShape2D").disabled = true
-	#		partner.dead = true
