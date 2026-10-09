@@ -30,8 +30,12 @@ func move_if_possible(dir) -> bool:
 	if false in successors.values():
 		return false
 		
-	# Otherwise, move this block and the successors
+	# Otherwise, move this block and the successors,
+	# then trigger hole-filling after the moves are done
 	move_single(dir_vect)
 	for successor in successors:
 		successor.move_single(dir_vect)
+	fill_hole()
+	for successor in successors:
+		successor.fill_hole()
 	return true

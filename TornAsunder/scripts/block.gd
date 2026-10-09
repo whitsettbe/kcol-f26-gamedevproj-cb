@@ -2,7 +2,7 @@ class_name Block
 extends Area2D
 
 const TILE_SIZE = 32
-const PUSH_DURATION = 0.05 # seconds
+const PUSH_DURATION = 0.1 # seconds
 var dead = false
 
 const TILE_IDS = {
@@ -66,12 +66,9 @@ func get_all_successors(
 # To do so, move the entire block and lag the sprite,
 # which will automatically try to "catch up"
 # (see block_sprite.gd);
-#
-# Also trigger hole-filling.
 func move_single(dir_vect):
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
-	fill_hole()
 	
 
 # Replace the current tile with a floor

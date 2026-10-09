@@ -42,7 +42,7 @@ func fill_hole():
 			# alert partner that something changed
 	
 	if not dead and partner.dead:
-		# petrify self in response to partner death
+		# petrify self in response to partner hole-filling
 		set_tile(TILE_IDS["wall"], PUSH_DURATION)
 		$CollisionShape2D.disabled = true
 		dead = true
