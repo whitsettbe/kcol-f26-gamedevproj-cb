@@ -97,8 +97,15 @@ func get_tile() -> Vector2i:
 	
 	
 # Set the currently stood-upon tile
-#  to the provided atlas coordinates,
-#  delaying the visual change if requested
+#  to the provided atlas coordinates.
+#
+# 1. Copy the current floor overlay tile to a temporary
+#    ("false") overlay node visible to the user.
+# 2. Replace the actual floor tile with the requested one.
+# 3. After a time delay, remove the temporary overlay tile.
+# 
+# Assumption: the parent scene has TileMapLayer nodes
+#    named Floor, FalseOverlays, and FloorOverlays
 func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
 	var Floor = get_parent().get_node("Floor")
 	var FalseOverlays = get_parent().get_node("FalseOverlays")
