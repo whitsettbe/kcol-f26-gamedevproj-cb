@@ -33,23 +33,16 @@ func get_all_successors(
 
 
 # Fill a hole under this tile,
-#  then try to do so with entangled partner,
-#  then petrify it (convert it to a wall) if needed
-func fill_hole(as_parent: bool = true):
-	super()
+#  or petrify it if the partner filled a hole
+func fill_hole():
+	if not dead:
+		super()
+		if dead:
+			partner.fill_hole()
+			# alert partner that something changed
 	
-	# If this block filled a hole, check with its partner
-	if as_parent \
-			and $CollisionShape2D.disabled:
-		partner.fill_hole(false)
-			# ASSUMPTION: partner is close enough to
-			#  finishing their motion tween
-			#  that their position will be converted
-			#  accurately
-		
-		# If the partner did not become a hole,
-		#  turn it into a wall
-		if not partner.get_node("CollisionShape2D").disabled:
-			partner.set_tile(TILE_IDS["wall"])
-			partner.hide()
-			partner.get_node("CollisionShape2D").disabled = true
+	if not dead and partner.dead:
+		# petrify self in response to partner hole-filling
+		set_tile(TILE_IDS["wall"], PUSH_DURATION)
+		$CollisionShape2D.disabled = true
+		dead = true

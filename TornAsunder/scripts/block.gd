@@ -1,9 +1,10 @@
 class_name Block
 extends Area2D
 
-const TILE_SIZE = 32
+const TILE_SIZE = 32 # pixels
 const PUSH_DURATION = 0.05 # seconds
-var tween : Tween
+const FADE_DURATION = 0.4 # seconds
+var dead = false
 
 const TILE_IDS = {
 	"hole" : Vector2i(3,3),
@@ -62,12 +63,13 @@ func get_all_successors(
 	
 # Move *only* this block by the desired amount
 # (assuming such a move has been deemed possible)
+#
+# To do so, move the entire block and lag the sprite,
+# which will automatically try to "catch up"
+# (see block_sprite.gd);
 func move_single(dir_vect):
-	tween = create_tween()
-	tween.tween_property(self, "position",
-			position + dir_vect, PUSH_DURATION
-	).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_callback(fill_hole)
+	$SpriteTile.position -= dir_vect
+	position += dir_vect
 	
 
 # Replace the current tile with a floor
@@ -75,15 +77,15 @@ func move_single(dir_vect):
 # inactive if so
 func fill_hole():
 	if get_tile() == TILE_IDS["hole"]:
-		set_tile(TILE_IDS["floor"])
-		# Hide and disable physics with the block
-		hide()
+		
+		# Replace the floor tile, delaying a visual change
+		#  until the push is over
+		set_tile(TILE_IDS["floor"], PUSH_DURATION)
+		
+		# Disable block physics and mark the block as "dead"
+		# (triggers fade-out by the SpriteTile)
 		$CollisionShape2D.disabled = true
-
-
-# Indicate whether the movement tween is running
-func still_animating():
-	return (tween and tween.is_running())
+		dead = true
 	
 	
 # Get the current floor map identifier
@@ -95,10 +97,34 @@ func get_tile() -> Vector2i:
 	
 	
 # Set the currently stood-upon tile
-#  to the provided atlas coordinates
-func set_tile(atlas_coords : Vector2i):
+#  to the provided atlas coordinates,
+#  delaying the visual change if requested
+func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
+	var Floor = get_parent().get_node("Floor")
+	var FalseOverlays = get_parent().get_node("FalseOverlays")
+	var FloorOverlays = get_parent().get_node("FloorOverlays")
+	
+	# Compute the grid position for the new tile
 	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
 	grid_pos = Vector2i(grid_pos.round())
-	get_parent().get_node("FloorOverlays").set_cell(
+	
+	# Copy the old tile to a false overlay
+	var old_tile = FloorOverlays.get_cell_atlas_coords(grid_pos)
+	if old_tile == Vector2i.ONE * -1:
+		# If there's nothing there, use the underlying
+		#  floor tile as cover instead
+		old_tile = Floor.get_cell_atlas_coords(grid_pos)
+	FalseOverlays.set_cell(
+		grid_pos, 0, old_tile
+	)
+	
+	# Replace the underlying tile
+	FloorOverlays.set_cell(
 		grid_pos, 0, atlas_coords
+	)
+	
+	# Hide the false tile after the delay has passed
+	await get_tree().create_timer(delay_sec).timeout
+	FalseOverlays.set_cell(
+		grid_pos, 0, -Vector2i.ONE
 	)
