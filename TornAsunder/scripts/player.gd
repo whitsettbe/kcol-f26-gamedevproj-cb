@@ -50,6 +50,11 @@ func move_if_possible(dir) -> bool:
 	for successor in successors:
 		successor.check_for_paint()
 	return true
+	
+
+# Player should be pushable by any color agent
+func pushable_by_color(col : BlockColor):
+	return true
 
 
 # If *player* stands on paint,

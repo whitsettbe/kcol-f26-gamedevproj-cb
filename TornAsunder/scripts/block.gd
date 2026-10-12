@@ -59,11 +59,19 @@ func get_all_successors(
 	# Add successors of later blocks
 	for successor in immediate:
 		total[successor] = (successor is Block and
-				successor.blockColor in [BlockColor.NONE, pusher_color])
+				successor.pushable_by_color(pusher_color))
 		if successor is Block:
 			total.merge(successor.get_all_successors(dir_vect, pusher_color))
 	
 	return total
+	
+
+# Determine whether this block is pushable
+#  by an agent of a particular color
+func pushable_by_color(col : BlockColor):
+	if blockColor == BlockColor.NONE:
+		return true
+	return col == blockColor
 	
 	
 # Move *only* this block by the desired amount
