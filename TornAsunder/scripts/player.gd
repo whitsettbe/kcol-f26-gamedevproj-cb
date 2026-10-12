@@ -30,12 +30,36 @@ func move_if_possible(dir) -> bool:
 	if false in successors.values():
 		return false
 		
-	# Otherwise, move this block and the successors,
-	# then trigger hole-filling after the moves are done
+	# Otherwise, move this block and the successors
 	move_single(dir_vect)
 	for successor in successors:
 		successor.move_single(dir_vect)
+		
+	# Check for holes in need of filling
 	fill_hole()
 	for successor in successors:
 		successor.fill_hole()
+		
+	# Check for paint in need of wiping
+	# (or player-recoloring)
+	check_for_paint()
+	for successor in successors:
+		successor.check_for_paint()
 	return true
+
+
+# If *player* stands on paint,
+#  don't destroy the paint,
+#  rather taking on the paint's color
+#
+# Assumption: parent scene has a script defining
+#  align_block_design(Block) which will
+#  update our sprite to match the new color
+func check_for_paint():
+	if is_paint(get_tile()):
+		
+		# Inherit the paint color
+		self.blockColor = get_paint_color(get_tile())
+		
+		# Request a sprite update from the parent scene
+		get_parent().align_block_design(self)
