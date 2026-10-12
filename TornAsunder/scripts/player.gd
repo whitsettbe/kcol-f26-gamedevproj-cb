@@ -21,6 +21,10 @@ enum PlayerSide {LeftPlayer, RightPlayer}
 #  the success status of the move is returned
 #  as a boolean for player feedback
 func move_if_possible(dir) -> bool:
+	if dead:
+		# If the player has already fallen into a hole,
+		#  then they can't move...
+		return false
 	
 	# Compute successors
 	var dir_vect = inputs[dir] * TILE_SIZE
