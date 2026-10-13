@@ -22,5 +22,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if not area is Player:
 		return
 		
+	# If the portal output is covered, do nothing
+	if target.has_overlapping_areas():
+		return
+		
 	# Teleport the block to the output
 	area.position += (target.position - self.position)
