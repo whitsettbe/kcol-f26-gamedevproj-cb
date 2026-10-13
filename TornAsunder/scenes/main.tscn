@@ -5,6 +5,8 @@
 [ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://scripts/entangled.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://scripts/player.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://scenes/portal_in.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://scenes/portal_out.tscn" id="6_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1700300613]
 script = ExtResource("1_tefeu")
@@ -19,6 +21,20 @@ tile_set = ExtResource("2_tbgi4")
 
 [node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=434705776]
 tile_set = ExtResource("2_tbgi4")
+
+[node name="PortalIn1" parent="." unique_id=33506769 node_paths=PackedStringArray("target") instance=ExtResource("5_tefeu")]
+position = Vector2(464, 528)
+target = NodePath("../PortalOut1")
+
+[node name="PortalIn2" parent="." unique_id=623405446 node_paths=PackedStringArray("target") instance=ExtResource("5_tefeu")]
+position = Vector2(1040, 560)
+target = NodePath("../PortalOut2")
+
+[node name="PortalOut1" parent="." unique_id=2021694748 instance=ExtResource("6_o6xl0")]
+position = Vector2(496, 112)
+
+[node name="PortalOut2" parent="." unique_id=4450017 instance=ExtResource("6_o6xl0")]
+position = Vector2(1072, 80)
 
 [node name="Block" parent="." unique_id=1094868734 instance=ExtResource("1_ig7tw")]
 position = Vector2(80, 80)
