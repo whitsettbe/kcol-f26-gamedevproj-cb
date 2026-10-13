@@ -1,5 +1,5 @@
-extends Area2D
 class_name PortalIn
+extends GridArea2D
 
 @export var target : PortalOut
 
