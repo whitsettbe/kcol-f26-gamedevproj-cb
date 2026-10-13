@@ -48,17 +48,22 @@ func align_block_designs():
 			
 	for node in get_children():
 		if node is Block:
-			var blockType = node.blockType
-			var blockColor = node.blockColor
-			if node.get_script() != scripts[blockType]:
-				node.set_script(scripts[blockType])
-				node.blockType = blockType # prevent reset on script reload
+			align_block_design(node)
 			
-			node.get_node("SpriteTile").set_cell(
-				Vector2i(0,0), 0,
-				tiles[blockType]
-				+ Vector2i(0, blockColor)
-					# change row based on color
-				+ Vector2i(node.side if node is Player else 0, 0)
-					# change column for Roy (default player is Leo)
-			)
+# Ensure Block properties align with its type
+func align_block_design(node : Block):
+	
+	var blockType = node.blockType
+	var blockColor = node.blockColor
+	if node.get_script() != scripts[blockType]:
+		node.set_script(scripts[blockType])
+		node.blockType = blockType # prevent reset on script reload
+	
+	node.get_node("SpriteTile").set_cell(
+		Vector2i(0,0), 0,
+		tiles[blockType]
+		+ Vector2i(0, blockColor)
+			# change row based on color
+		+ Vector2i(node.side if node is Player else 0, 0)
+			# change column for Roy (default player is Leo)
+	)

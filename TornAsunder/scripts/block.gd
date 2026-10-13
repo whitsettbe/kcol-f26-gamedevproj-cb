@@ -6,11 +6,16 @@ const PUSH_DURATION = 0.05 # seconds
 const FADE_DURATION = 0.4 # seconds
 var dead = false
 
+# Indicate how to identify different tile types
 const TILE_IDS = {
 	"hole" : Vector2i(3,3),
 	"floor": Vector2i(-1,-1), # empty overlay
 	"wall": Vector2i(5,3)
 }
+func is_paint(t:Vector2i) -> bool:
+	return t.x == 6 and 0 <= t.y and t.y <= 2
+func get_paint_color(t:Vector2i) -> BlockColor:
+	return t.y
 
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
@@ -54,11 +59,19 @@ func get_all_successors(
 	# Add successors of later blocks
 	for successor in immediate:
 		total[successor] = (successor is Block and
-				successor.blockColor in [BlockColor.NONE, pusher_color])
+				successor.pushable_by_color(pusher_color))
 		if successor is Block:
 			total.merge(successor.get_all_successors(dir_vect, pusher_color))
 	
 	return total
+	
+
+# Determine whether this block is pushable
+#  by an agent of a particular color
+func pushable_by_color(col : BlockColor):
+	if blockColor == BlockColor.NONE:
+		return true
+	return col == blockColor
 	
 	
 # Move *only* this block by the desired amount
@@ -86,6 +99,15 @@ func fill_hole():
 		# (triggers fade-out by the SpriteTile)
 		$CollisionShape2D.disabled = true
 		dead = true
+
+
+# Replace the current tile with just floor
+# if it is paint, leaving this block unaffected.
+func check_for_paint():
+	if is_paint(get_tile()):
+		# Replace the floor tile, delaying a visual change
+		#  until the push is over
+		set_tile(TILE_IDS["floor"], PUSH_DURATION)
 	
 	
 # Get the current floor map identifier
@@ -97,8 +119,15 @@ func get_tile() -> Vector2i:
 	
 	
 # Set the currently stood-upon tile
-#  to the provided atlas coordinates,
-#  delaying the visual change if requested
+#  to the provided atlas coordinates.
+#
+# 1. Copy the current floor overlay tile to a temporary
+#    ("false") overlay node visible to the user.
+# 2. Replace the actual floor tile with the requested one.
+# 3. After a time delay, remove the temporary overlay tile.
+# 
+# Assumption: the parent scene has TileMapLayer nodes
+#    named Floor, FalseOverlays, and FloorOverlays
 func set_tile(atlas_coords : Vector2i, delay_sec : float = 0):
 	var Floor = get_parent().get_node("Floor")
 	var FalseOverlays = get_parent().get_node("FalseOverlays")
