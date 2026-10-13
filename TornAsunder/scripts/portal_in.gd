@@ -23,7 +23,7 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 		
 	# If the portal output is covered, do nothing
-	if target.has_overlapping_areas():
+	if target.is_covered():
 		return
 		
 	# Teleport the block to the output
