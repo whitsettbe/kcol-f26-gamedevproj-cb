@@ -4,7 +4,12 @@ extends Block
 
 enum PlayerSide {LeftPlayer, RightPlayer}
 @export var side : PlayerSide
-	
+
+
+# Ensure player is not "rolling" during the game
+func _ready() -> void:
+	rolling = false
+
 
 # Player should be pushable by any color agent
 func pushable_by_color(col : BlockColor):

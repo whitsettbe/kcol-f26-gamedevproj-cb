@@ -21,7 +21,8 @@ var dead = false
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
 @export var blockType : BlockType
-@export var blockColor: BlockColor
+@export var blockColor : BlockColor
+@export var rolling : bool
 
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
@@ -33,8 +34,8 @@ var dead = false
 #  as a boolean for player feedback
 func move_if_possible(dir_vect : Vector2) -> bool:
 	if dead:
-		# If the player has already fallen into a hole,
-		#  then they can't move...
+		# If this block has already fallen into a hole,
+		#  then it can't move...
 		return false
 	
 	# Compute successors
@@ -59,16 +60,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	check_for_paint()
 	for successor in successors:
 		successor.check_for_paint()
+		
 	return true
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 	
 # Find the complete set of objects which must move
@@ -118,6 +111,11 @@ func pushable_by_color(col : BlockColor):
 func move_single(dir_vect):
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
+	
+	# If a rolling block, try to move again
+	if rolling:
+		await get_tree().create_timer(ROLL_DELAY).timeout
+		move_if_possible(dir_vect)
 	
 
 # Replace the current tile with a floor

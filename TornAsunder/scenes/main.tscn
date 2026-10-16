@@ -38,6 +38,7 @@ tile_set = ExtResource("2_tbgi4")
 
 [node name="Block" parent="." unique_id=1094868734 instance=ExtResource("1_ig7tw")]
 position = Vector2(80, 80)
+rolling = true
 
 [node name="Block2" parent="." unique_id=2121153980 instance=ExtResource("1_ig7tw")]
 position = Vector2(112, 144)
