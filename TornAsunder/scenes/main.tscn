@@ -37,7 +37,7 @@ tile_set = ExtResource("2_tbgi4")
 tile_set = ExtResource("2_tbgi4")
 
 [node name="Block" parent="." unique_id=1094868734 instance=ExtResource("1_ig7tw")]
-position = Vector2(80, 80)
+position = Vector2(400, 336)
 rolling = true
 
 [node name="Block2" parent="." unique_id=2121153980 instance=ExtResource("1_ig7tw")]
@@ -49,7 +49,8 @@ position = Vector2(144, 208)
 blockColor = 2
 
 [node name="Block4" parent="." unique_id=1803402661 instance=ExtResource("1_ig7tw")]
-position = Vector2(656, 144)
+position = Vector2(944, 304)
+rolling = true
 
 [node name="Block5" parent="." unique_id=250797354 instance=ExtResource("1_ig7tw")]
 position = Vector2(688, 208)
@@ -92,12 +93,14 @@ position = Vector2(176, 112)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled6")
 blockType = 2
+rolling = true
 
 [node name="Entangled6" parent="." unique_id=1815994205 node_paths=PackedStringArray("partner") instance=ExtResource("1_ig7tw")]
 position = Vector2(752, 112)
 script = ExtResource("4_1bvp3")
 partner = NodePath("../Entangled5")
 blockType = 2
+rolling = true
 
 [node name="Leo" parent="." unique_id=157698511 instance=ExtResource("1_ig7tw")]
 position = Vector2(464, 80)

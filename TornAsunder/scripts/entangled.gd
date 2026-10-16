@@ -13,6 +13,10 @@ func _ready():
 		"{0} must be the partner of its partner".format([self]))
 	assert(partner.blockColor == blockColor,
 		"{0} and its partner should have the same color".format([self]))
+	assert(partner.rolling == rolling,
+		"{0} and its partner should have the same rolling status".format([self]))
+	assert(partner.rolling == rolling,
+		"{0} and its partner should have distinct names".format([self]))
 	super()
 
 
@@ -30,6 +34,19 @@ func get_all_successors(
 				# of the same color as this one :)
 		out.merge(partner.get_all_successors(dir_vect, pusher_color, false))
 	return out
+	
+
+# Since both this block and its partner will be
+#  asked to roll, only one needs to do so.
+#  Assumes distinct names.
+func roll(dir_vect : Vector2):
+	# Ensure both entangled blocks appear to be rolling,
+	#  though only one will be managing the roll
+	roll_direction = dir_vect
+	
+	# Compare nodes by reference
+	if self.name < partner.name:
+		super(dir_vect)
 
 
 # Fill a hole under this tile,

@@ -11,8 +11,10 @@ func _ready() -> void:
 	rolling = false
 
 
-# Player should be pushable by any color agent
-func pushable_by_color(col : BlockColor):
+# Player should be pushable by any color agent,
+#  and players don't "roll" so direction comparison
+#  isn't important
+func pushable_by_color_in_dir(col : BlockColor, dir_vect : Vector2):
 	return true
 
 

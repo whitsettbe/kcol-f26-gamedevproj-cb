@@ -21,8 +21,11 @@ var dead = false
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
 @export var blockType : BlockType
+
 @export var blockColor : BlockColor
 @export var rolling : bool
+
+var roll_direction = Vector2.ZERO
 
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
@@ -43,6 +46,9 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():
+		# Rolling also stops if we can't move
+		roll_direction = Vector2.ZERO
+		
 		return false
 		
 	# Otherwise, move this block and the successors
@@ -87,8 +93,9 @@ func get_all_successors(
 	# Add successors of later blocks
 	for successor in immediate:
 		total[successor] = (successor is Block and
-				successor.pushable_by_color(pusher_color))
-		if successor is Block:
+				successor.pushable_by_color_in_dir(pusher_color, dir_vect))
+		print(self, successor, pusher_color, dir_vect, total[successor])
+		if total[successor]:
 			total.merge(successor.get_all_successors(dir_vect, pusher_color))
 	
 	return total
@@ -96,7 +103,9 @@ func get_all_successors(
 
 # Determine whether this block is pushable
 #  by an agent of a particular color
-func pushable_by_color(col : BlockColor):
+func pushable_by_color_in_dir(col : BlockColor, dir_vect : Vector2):
+	if not roll_direction in [Vector2.ZERO, dir_vect]:
+		return false
 	if blockColor == BlockColor.NONE:
 		return true
 	return col == blockColor
@@ -108,14 +117,19 @@ func pushable_by_color(col : BlockColor):
 # To do so, move the entire block and lag the sprite,
 # which will automatically try to "catch up"
 # (see block_sprite.gd);
-func move_single(dir_vect):
+func move_single(dir_vect : Vector2):
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
 	
 	# If a rolling block, try to move again
 	if rolling:
-		await get_tree().create_timer(ROLL_DELAY).timeout
-		move_if_possible(dir_vect)
+		roll(dir_vect)
+		
+# Trigger another motion after a timeout
+func roll(dir_vect : Vector2):
+	roll_direction = dir_vect
+	await get_tree().create_timer(ROLL_DELAY).timeout
+	move_if_possible(dir_vect)
 	
 
 # Replace the current tile with a floor
