@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 func _unhandled_input(event):
 	
 	if not Engine.is_editor_hint():
-		for dir in Player.inputs.keys():
+		for dir in Block.inputs.keys():
 			if event.is_action_pressed(dir):
 				for node in get_children():
 					if node is Player:
@@ -40,7 +40,8 @@ func _unhandled_input(event):
 								== Player.PlayerSide.LeftPlayer)
 						var isLeftMotion = (dir[0] == "L")
 						if isLeftPlayer == isLeftMotion:
-							node.move_if_possible(dir)
+							node.move_if_possible(Block.inputs[dir]
+							* GridArea2D.TILE_SIZE)
 
 
 # Ensure child properties align with their block type
