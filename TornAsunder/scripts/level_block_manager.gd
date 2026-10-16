@@ -67,4 +67,5 @@ func align_block_design(node : Block):
 			# change row based on color
 		+ Vector2i(node.side if node is Player else 0, 0)
 			# change column for Roy (default player is Leo)
+		+ Vector2i(2 if node.rolling else 0, 0)
 	)
