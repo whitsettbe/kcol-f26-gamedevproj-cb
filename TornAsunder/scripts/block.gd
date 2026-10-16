@@ -34,7 +34,7 @@ var roll_direction = Vector2.ZERO
 # Query successor blocks to see if they can move,
 #  and push them if so;
 #  the success status of the move is returned
-#  as a boolean for player feedback
+#  as a boolean for player feedback.
 func move_if_possible(dir_vect : Vector2) -> bool:
 	if dead:
 		# If this block has already fallen into a hole,
@@ -43,6 +43,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	
 	# Compute successors
 	var successors = get_all_successors(dir_vect, blockColor)
+	successors[self] = true
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():
@@ -52,18 +53,15 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 		return false
 		
 	# Otherwise, move this block and the successors
-	move_single(dir_vect)
 	for successor in successors:
 		successor.move_single(dir_vect)
 		
 	# Check for holes in need of filling
-	fill_hole()
 	for successor in successors:
 		successor.fill_hole()
 		
 	# Check for paint in need of wiping
 	# (or player-recoloring)
-	check_for_paint()
 	for successor in successors:
 		successor.check_for_paint()
 		
@@ -94,7 +92,6 @@ func get_all_successors(
 	for successor in immediate:
 		total[successor] = (successor is Block and
 				successor.pushable_by_color_in_dir(pusher_color, dir_vect))
-		print(self, successor, pusher_color, dir_vect, total[successor])
 		if total[successor]:
 			total.merge(successor.get_all_successors(dir_vect, pusher_color))
 	
@@ -103,7 +100,11 @@ func get_all_successors(
 
 # Determine whether this block is pushable
 #  by an agent of a particular color
-func pushable_by_color_in_dir(col : BlockColor, dir_vect : Vector2):
+func pushable_by_color_in_dir(
+		col : BlockColor,
+		dir_vect : Vector2
+	) -> bool:
+	
 	if not roll_direction in [Vector2.ZERO, dir_vect]:
 		return false
 	if blockColor == BlockColor.NONE:
