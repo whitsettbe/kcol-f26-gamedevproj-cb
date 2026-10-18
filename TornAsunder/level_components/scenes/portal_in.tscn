@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuba4r5drblv1"]
 
-[ext_resource type="Script" uid="uid://cs3rbhx5olmct" path="res://scripts/portal_in.gd" id="1_7d73i"]
+[ext_resource type="Script" uid="uid://cs3rbhx5olmct" path="res://level_components/scripts/portal_in.gd" id="1_7d73i"]
 [ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="1_566q2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]

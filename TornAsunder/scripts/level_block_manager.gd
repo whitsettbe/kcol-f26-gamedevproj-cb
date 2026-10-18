@@ -3,9 +3,9 @@ extends Node2D
 
 
 const scripts = {
-	Block.BlockType.BLOCK : preload("res://scripts/block.gd"),
-	Block.BlockType.PLAYER : preload("res://scripts/player.gd"),
-	Block.BlockType.ENTANGLED : preload("res://scripts/entangled.gd")
+	Block.BlockType.BLOCK : preload("res://level_components/scripts/block.gd"),
+	Block.BlockType.PLAYER : preload("res://level_components/scripts/player.gd"),
+	Block.BlockType.ENTANGLED : preload("res://level_components/scripts/entangled.gd")
 }
 const tiles = {
 	Block.BlockType.BLOCK : Vector2i(0,0),

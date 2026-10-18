@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://scripts/level_block_manager.gd" id="1_v0xfo"]
 [ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_4reio"]
-[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://scenes/portal_in.tscn" id="3_trppv"]
-[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://scenes/portal_out.tscn" id="4_yq1dg"]
-[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://scenes/block.tscn" id="5_pwg2h"]
-[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://scripts/entangled.gd" id="6_ff3li"]
-[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://scripts/player.gd" id="7_vjdw2"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_trppv"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="4_yq1dg"]
+[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="5_pwg2h"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_ff3li"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="7_vjdw2"]
 
 [node name="Playground1" type="Node2D" unique_id=1700300613]
 script = ExtResource("1_v0xfo")
