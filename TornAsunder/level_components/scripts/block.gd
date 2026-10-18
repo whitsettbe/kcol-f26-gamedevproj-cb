@@ -27,6 +27,9 @@ var dead = false
 
 var roll_direction = Vector2.ZERO
 
+# Keep track of when the last motion step was made
+var last_move_time = 0 # sec
+
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
 
@@ -37,6 +40,8 @@ var roll_direction = Vector2.ZERO
 #  as a boolean for player feedback.
 func move_if_possible(dir_vect : Vector2) -> bool:
 	if dead:
+		# Rolling also stops if we can't move
+		roll_direction = Vector2.ZERO
 		# If this block has already fallen into a hole,
 		#  then it can't move...
 		return false
@@ -119,6 +124,16 @@ func pushable_by_color_in_dir(
 # which will automatically try to "catch up"
 # (see block_sprite.gd);
 func move_single(dir_vect : Vector2):
+	
+	# First, enure two rolls are not happening at once,
+	#  in case of being pushed while already rolling,
+	#  e.g. if there is a rolling block behind this one
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_move_time < MOVE_LOCKOUT_TIME:
+		return
+	last_move_time = now
+	
+	
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
 	
@@ -128,6 +143,9 @@ func move_single(dir_vect : Vector2):
 		
 # Trigger another motion after a timeout
 func roll(dir_vect : Vector2):
+	
+	# Lock motion except in the desired direction,
+	#  then wait to initiate another move attempt
 	roll_direction = dir_vect
 	await get_tree().create_timer(ROLL_DELAY).timeout
 	move_if_possible(dir_vect)

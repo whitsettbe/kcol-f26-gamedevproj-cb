@@ -18,6 +18,16 @@ func _ready():
 	assert(partner.rolling == rolling,
 		"{0} and its partner should have distinct names".format([self]))
 	super()
+	
+
+# Ensure that if rolling stopped for one block,
+#  the other one is also marked "free to move
+#  in any direction" again.
+func move_if_possible(dir_vect : Vector2) -> bool:
+	var out = super(dir_vect)
+	if not out:
+		partner.roll_direction = Vector2.ZERO
+	return out
 
 
 # Find all successors of this block (and partner),
