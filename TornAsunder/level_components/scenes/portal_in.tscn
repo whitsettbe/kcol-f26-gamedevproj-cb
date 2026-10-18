@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuba4r5drblv1"]
 
-[ext_resource type="Script" uid="uid://cs3rbhx5olmct" path="res://scripts/portal_in.gd" id="1_7d73i"]
+[ext_resource type="Script" uid="uid://cs3rbhx5olmct" path="res://level_components/scripts/portal_in.gd" id="1_7d73i"]
 [ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="1_566q2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]
@@ -20,4 +20,5 @@ tile_set = ExtResource("1_566q2")
 shape = SubResource("RectangleShape2D_xa11k")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

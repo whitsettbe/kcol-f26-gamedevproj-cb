@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bmgltflbc15gb"]
 
-[ext_resource type="Script" uid="uid://cg52wm5e18vm" path="res://scripts/block.gd" id="1_xfwl5"]
+[ext_resource type="Script" uid="uid://cg52wm5e18vm" path="res://level_components/scripts/block.gd" id="1_xfwl5"]
 [ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_cgrg5"]
-[ext_resource type="Script" uid="uid://ck5mdwhgu012k" path="res://scenes/block_sprite.gd" id="3_4kun4"]
+[ext_resource type="Script" uid="uid://ck5mdwhgu012k" path="res://level_components/scripts/block_sprite.gd" id="3_4kun4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]
 size = Vector2(32, 32)
@@ -20,7 +20,7 @@ collide_with_areas = true
 
 [node name="SpriteTile" type="TileMapLayer" parent="." unique_id=4190965]
 position = Vector2(-16, -16)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("2_cgrg5")
 collision_enabled = false
 script = ExtResource("3_4kun4")
