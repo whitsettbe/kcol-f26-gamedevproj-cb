@@ -11,9 +11,6 @@ const PUSH_DURATION = 0.05 # seconds
 const FADE_DURATION = 0.4 # seconds
 const ROLL_DELAY = 0.05 # seconds
 const MOVE_LOCKOUT_TIME = 0.01 # seconds
-	# Note: roll should be a bit longer than push
-	# (long enough for physics to keep up in between)
-	# for sequential rolling blocks
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
