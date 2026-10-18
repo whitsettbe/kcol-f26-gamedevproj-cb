@@ -20,7 +20,7 @@ collide_with_areas = true
 
 [node name="SpriteTile" type="TileMapLayer" parent="." unique_id=4190965]
 position = Vector2(-16, -16)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("2_cgrg5")
 collision_enabled = false
 script = ExtResource("3_4kun4")

@@ -12,6 +12,7 @@ const tiles = {
 	Block.BlockType.PLAYER: Vector2i(4,0),
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
+signal level_completed
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,3 +70,15 @@ func align_block_design(node : Block):
 			# change column for Roy (default player is Leo)
 		+ Vector2i(2 if node.rolling else 0, 0)
 	)
+
+
+# When a player stands on an exit,
+#  check if both exits have players on them.
+func _on_player_on_exit() -> void:
+	if $EXIT_L.players_exiting > 0 \
+			and $EXIT_R.players_exiting > 0:
+		emit_signal("level_completed")
+
+
+func _on_level_completed() -> void:
+	get_tree().quit()
