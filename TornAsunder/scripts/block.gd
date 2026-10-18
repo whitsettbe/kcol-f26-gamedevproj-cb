@@ -37,6 +37,9 @@ var roll_direction = Vector2.ZERO
 #  as a boolean for player feedback.
 func move_if_possible(dir_vect : Vector2) -> bool:
 	if dead:
+		# Rolling also stops if we can't move
+		roll_direction = Vector2.ZERO
+		
 		# If this block has already fallen into a hole,
 		#  then it can't move...
 		return false
