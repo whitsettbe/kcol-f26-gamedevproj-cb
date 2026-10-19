@@ -78,7 +78,3 @@ func _on_player_on_exit() -> void:
 	if $EXIT_L.players_exiting > 0 \
 			and $EXIT_R.players_exiting > 0:
 		emit_signal("level_completed")
-
-
-func _on_level_completed() -> void:
-	get_tree().quit()
