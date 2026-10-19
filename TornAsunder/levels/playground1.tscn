@@ -29,6 +29,20 @@ tile_set = ExtResource("2_4reio")
 [node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=434705776]
 tile_set = ExtResource("2_4reio")
 
+[node name="Leo" parent="." unique_id=157698511 instance=ExtResource("5_pwg2h")]
+position = Vector2(464, 80)
+script = ExtResource("7_vjdw2")
+side = 0
+blockType = 1
+blockColor = 1
+
+[node name="Roy" parent="." unique_id=52141140 instance=ExtResource("5_pwg2h")]
+position = Vector2(1040, 80)
+script = ExtResource("7_vjdw2")
+side = 1
+blockType = 1
+blockColor = 2
+
 [node name="Block" parent="." unique_id=1094868734 instance=ExtResource("5_pwg2h")]
 position = Vector2(80, 80)
 
@@ -90,20 +104,6 @@ position = Vector2(752, 112)
 script = ExtResource("6_ff3li")
 partner = NodePath("../Entangled5")
 blockType = 2
-
-[node name="Leo" parent="." unique_id=157698511 instance=ExtResource("5_pwg2h")]
-position = Vector2(464, 80)
-script = ExtResource("7_vjdw2")
-side = 0
-blockType = 1
-blockColor = 1
-
-[node name="Roy" parent="." unique_id=52141140 instance=ExtResource("5_pwg2h")]
-position = Vector2(1040, 80)
-script = ExtResource("7_vjdw2")
-side = 1
-blockType = 1
-blockColor = 2
 
 [connection signal="player_on_exit" from="EXIT_L" to="." method="_on_player_on_exit"]
 [connection signal="player_on_exit" from="EXIT_R" to="." method="_on_player_on_exit"]
