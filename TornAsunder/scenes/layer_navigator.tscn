@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cn3ph6jfq01xw"]
+
+[ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://scripts/layer_navigator.gd" id="1_hwvb6"]
+
+[node name="Layer Navigator" type="Node2D" unique_id=269441308]
+script = ExtResource("1_hwvb6")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1036577917]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Crypt" type="Button" parent="Button_manager" unique_id=1789523028]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 384.0
+offset_right = 1024.0
+offset_bottom = 448.0
+text = "Crypt"
+
+[node name="Ruins" type="Button" parent="Button_manager" unique_id=279887556]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 256.0
+offset_right = 1024.0
+offset_bottom = 320.0
+text = "Ruins"
+
+[node name="Bog" type="Button" parent="Button_manager" unique_id=891304519]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 1024.0
+offset_bottom = 192.0
+text = "Bog"
+
+[node name="Back" type="Button" parent="Button_manager" unique_id=1458775140]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 512.0
+offset_right = 1024.0
+offset_bottom = 576.0
+text = "Back"
+
+[connection signal="pressed" from="Button_manager/Crypt" to="." method="_on_crypt_pressed"]
+[connection signal="pressed" from="Button_manager/Ruins" to="." method="_on_ruins_pressed"]
+[connection signal="pressed" from="Button_manager/Bog" to="." method="_on_bog_pressed"]
+[connection signal="pressed" from="Button_manager/Back" to="." method="_on_back_pressed"]
