@@ -16,4 +16,4 @@ func _on_level_1_pressed() -> void:
 
 # Opens previous page.
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/layer_navigator.tscn")
+	get_tree().change_scene_to_file(Globals.menu_stack.pop_back())
