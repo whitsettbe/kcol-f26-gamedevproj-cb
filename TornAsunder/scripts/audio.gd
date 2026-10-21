@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 # Opens previous page.
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	get_tree().change_scene_to_file(Globals.menu_stack.pop_back())
