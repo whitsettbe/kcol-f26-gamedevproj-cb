@@ -10,9 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Opens next level. Currently hard coded to main.
+# Opens next level. Currently hard coded to first playground.
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/playground1.tscn")
 
 # Opens level navigator
 func _on_level_navigator_pressed() -> void:
