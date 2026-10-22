@@ -12,8 +12,9 @@ func _process(delta: float) -> void:
 
 # Takes you to the audio settings
 func _on_audio_pressed() -> void:
+	Globals.menu_stack.append("res://scenes/settings.tscn")
 	get_tree().change_scene_to_file("res://scenes/audio.tscn")
 
 # Takes you to the previous screen. Currently hard coded to main menu.
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file(Globals.menu_stack.pop_back())

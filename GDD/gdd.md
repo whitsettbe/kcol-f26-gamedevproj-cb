@@ -37,13 +37,19 @@ Each player can move their character up, down, left, or right one grid square at
 
 On desktop, the left character will be controlled with WASD, and the right character will be controlled with arrow keys. Holding a key will enable multiple steps to be attempted in sequence. There will also be keyboard shortcuts to undo a move or restart a level. In a later stage of development, these shortcuts could be identified with game controller buttons.
 
-A game menu will also be openable by mouse click from a button in the HUD. Level selection and setting selection will be done by mouse in this phase of development.
+A game menu will also be openable by keypress or mouse click (using a button in the HUD). Menu navigation will be possible both with mouse and by keyboard. Some menus will operate in a split-screen format in which each player will have keypress navigation functionalities (WASD / arrows) over their half of the menu. Either player making a selection will advance the entire menu for both players.
 
 **Rules (What constraints or systems define the gameplay?):**
 
-Neither character can walk through walls in the grid. Some blocks are "unentangled" and can be pushed by either player (but not into a wall). "Entangled" blocks occupy the same location in both the left and right worlds, and may only be moveable by one of the characters, as will be visually indicated. Blocks and players can be pushed into each other. If an entangled block falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
+Neither character can walk through walls in the grid. Basic blocks can be pushed by either player. Some blocks will be movable only by characters of a specific color - player colors must match the color of the block. Some blocks will also be "entangled," meaning a version of the block exists in both the left and right worlds. One player pushing one entangled block will also push the corresponding block in the other world, and pushing is not permitted if both blocks cannot move. If an entangled block falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
 
-An entangled block can be indirectly pushed by an unentangled block, but only if the player ultimately responsible for the push would be allowed to push that entangled block directly.
+Blocks can push other blocks. A colored block can be indirectly pushed by an uncolored block, but only if the player ultimately responsible for the push would be allowed to push that entangled block directly.
+
+Walking through a "paint" square will change a player's color, thereby changing which blocks they are permitted to push. There will be colorless paint which removes color from players, meaning they will be able to push neither of the two color-locked block types. Paint is destroyed if a block slides over it.
+
+Stepping on the input to a portal will immediately transport a player to the output of the portal, unless the output is covered by a block. Blocks cannot pass through portals.
+
+Rolling blocks will, once pushed, continue to move in their original direction until stopped. Rolling blocks can push other blocks as if they were a player of their own color. For example, a red rolling block can push red and colorless blocks, while a colorless rolling block can only push colorless blocks. Player motion inputs will still be processed while rolling blocks are moving.
 
 **Rewards (How does your game reward the players after completing tasks or in the gameplay? What kind of reward system do you envision?):**
 

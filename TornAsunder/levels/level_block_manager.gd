@@ -67,7 +67,7 @@ func align_block_design(node : Block):
 		+ Vector2i(0, blockColor)
 			# change row based on color
 		+ Vector2i(node.side if node is Player else 0, 0)
-			# change column for Roy (default player is Leo)
+			# change column for Roy (default player is Leonard)
 		+ Vector2i(2 if node.rolling else 0, 0)
 	)
 
@@ -78,7 +78,3 @@ func _on_player_on_exit() -> void:
 	if $EXIT_L.players_exiting > 0 \
 			and $EXIT_R.players_exiting > 0:
 		emit_signal("level_completed")
-
-
-func _on_level_completed() -> void:
-	get_tree().quit()

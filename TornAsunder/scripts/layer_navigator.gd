@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 # Opens crypt level navigator
 func _on_crypt_pressed() -> void:
+	Globals.menu_stack.append("res://scenes/layer_navigator.tscn")
 	get_tree().change_scene_to_file("res://scenes/crypt_navigator.tscn")
 
 # Opens ruins level navigator. Not implemented yet
@@ -24,4 +25,4 @@ func _on_bog_pressed() -> void:
 
 # Opens previous page. Currently hard coded to main menu
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file(Globals.menu_stack.pop_back())
