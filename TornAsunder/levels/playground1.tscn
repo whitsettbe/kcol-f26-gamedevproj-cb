@@ -29,7 +29,7 @@ tile_set = ExtResource("2_4reio")
 [node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=434705776]
 tile_set = ExtResource("2_4reio")
 
-[node name="Leo" parent="." unique_id=157698511 instance=ExtResource("5_pwg2h")]
+[node name="Leonard" parent="." unique_id=157698511 instance=ExtResource("5_pwg2h")]
 position = Vector2(464, 80)
 script = ExtResource("7_vjdw2")
 side = 0
