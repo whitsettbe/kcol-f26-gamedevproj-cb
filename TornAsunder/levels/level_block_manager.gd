@@ -43,6 +43,12 @@ func _unhandled_input(event):
 						if isLeftPlayer == isLeftMotion:
 							node.move_if_possible(Block.inputs[dir]
 							* GridArea2D.TILE_SIZE)
+							
+		# Handle undo
+		if event.is_action_pressed("push_progress_TEMP"):
+			get_parent()._on_push_progress_requested()
+		if event.is_action_pressed("undo"):
+			get_parent()._on_pop_progress_requested()
 
 
 # Ensure child properties align with their block type
