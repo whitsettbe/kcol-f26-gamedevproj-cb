@@ -30,9 +30,18 @@ func _process(delta: float) -> void:
 # Pass inputs to the player (during game)
 func _unhandled_input(event):
 	
+	var state_pushed = false
+	var move_succeeded = false
+	
 	if not Engine.is_editor_hint():
 		for dir in Block.inputs.keys():
 			if event.is_action_pressed(dir):
+				
+				# Push the current state to the undo stack
+				if not state_pushed:
+					state_pushed = true
+					get_parent()._on_push_progress_requested()
+				
 				for node in get_children():
 					if node is Player:
 						# Check if the event is for
@@ -41,8 +50,14 @@ func _unhandled_input(event):
 								== Player.PlayerSide.LeftPlayer)
 						var isLeftMotion = (dir[0] == "L")
 						if isLeftPlayer == isLeftMotion:
-							node.move_if_possible(Block.inputs[dir]
-							* GridArea2D.TILE_SIZE)
+							move_succeeded = move_succeeded or \
+								node.move_if_possible(Block.inputs[dir]
+								* GridArea2D.TILE_SIZE)
+								
+		# If moves were attempted but did not succeed,
+		#  delete the pushed state
+		if state_pushed and not move_succeeded:
+			get_parent()._on_remove_progress_requested()
 							
 		# Handle undo
 		if event.is_action_pressed("push_progress_TEMP"):
