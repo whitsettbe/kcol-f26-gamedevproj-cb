@@ -37,16 +37,16 @@ func _on_level_completed() -> void:
 		get_tree().quit()
 
 # Push the scene state to the undo stack
-func _on_push_progress_requested() -> void:
+func push_level_state() -> void:
 	level_scene_stack.push_back(PackedScene.new())
 	level_scene_stack.back().pack(level_scene)
 	
 # Delete the last entry on the undo stack
-func _on_remove_progress_requested() -> void:
+func remove_last_progress() -> void:
 	level_scene_stack.pop_back()
 	
 # Load the last entry on the undo stack
-func _on_pop_progress_requested() -> void:
+func load_undo() -> void:
 	if len(level_scene_stack) > 0:
 		level_scene.queue_free()
 		level_scene = level_scene_stack.pop_back().instantiate()

@@ -40,7 +40,7 @@ func _unhandled_input(event):
 				# Push the current state to the undo stack
 				if not state_pushed:
 					state_pushed = true
-					get_parent()._on_push_progress_requested()
+					get_parent().push_level_state()
 				
 				for node in get_children():
 					if node is Player:
@@ -57,13 +57,11 @@ func _unhandled_input(event):
 		# If moves were attempted but did not succeed,
 		#  delete the pushed state
 		if state_pushed and not move_succeeded:
-			get_parent()._on_remove_progress_requested()
+			get_parent().remove_last_progress()
 							
 		# Handle undo
-		if event.is_action_pressed("push_progress_TEMP"):
-			get_parent()._on_push_progress_requested()
 		if event.is_action_pressed("undo"):
-			get_parent()._on_pop_progress_requested()
+			get_parent().load_undo()
 
 
 # Ensure child properties align with their block type
