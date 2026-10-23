@@ -34,6 +34,13 @@ var last_move_time = 0 # sec
 @onready var ray = $RayCast2D
 
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	# If we re-enter after an undo, make sure we keep rolling
+	if roll_direction != Vector2.ZERO:
+		roll(roll_direction)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$CollisionShape2D.disabled = dead
@@ -51,6 +58,11 @@ func _get_property_list() -> Array:
 			name = "death_anim_done",
 			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
 			type = TYPE_BOOL,
+		},
+		{
+			name = "roll_direction",
+			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			type = TYPE_VECTOR2,
 		},
 	]
 	return serializable
