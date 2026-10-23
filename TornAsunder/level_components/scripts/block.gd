@@ -48,7 +48,6 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	
 	# Compute successors
 	var successors = get_all_successors(dir_vect, blockColor)
-	successors[self] = true
 	
 	# If some successor was marked unmovable, don't move
 	if false in successors.values():
@@ -57,10 +56,26 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 		
 		return false
 		
+	# Enure two rolls are not happening at once,
+	#  in case of being pushed while already rolling
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_move_time < MOVE_LOCKOUT_TIME:
+		return true
+	last_move_time = now
+	
+	# Move self, and override timing checks
+	#  (since `last_move_time` was just set
+	#  a few instructions ago)
+	self.move_single(dir_vect, true)
+
+		
 	# Otherwise, move this block and the successors
 	for successor in successors:
 		successor.move_single(dir_vect)
-		
+	
+	# Mark self for other moving
+	successors[self] = true
+
 	# Check for holes in need of filling
 	for successor in successors:
 		successor.fill_hole()
@@ -96,9 +111,15 @@ func get_all_successors(
 	# Add successors of later blocks
 	for successor in immediate:
 		total[successor] = (successor is Block and
-				successor.pushable_by_color_in_dir(pusher_color, dir_vect))
+				successor.pushable_by_color_in_dir(
+					pusher_color,
+					dir_vect)
+				)
 		if total[successor]:
-			total.merge(successor.get_all_successors(dir_vect, pusher_color))
+			total.merge(successor.get_all_successors(
+				dir_vect,
+				pusher_color)
+				)
 	
 	return total
 	
@@ -117,21 +138,27 @@ func pushable_by_color_in_dir(
 	return col == blockColor
 	
 	
-# Move *only* this block by the desired amount
+# Move this block by the desired amount
 # (assuming such a move has been deemed possible)
 #
 # To do so, move the entire block and lag the sprite,
 # which will automatically try to "catch up"
 # (see block_sprite.gd);
-func move_single(dir_vect : Vector2):
+#
+# A move will not be animated if another move has
+# been made recently, unless an override is passed
+func move_single(
+	dir_vect : Vector2,
+	timing_override = false
+	):
 	
-	# First, enure two rolls are not happening at once,
-	#  in case of being pushed while already rolling,
-	#  e.g. if there is a rolling block behind this one
-	var now = Time.get_ticks_msec() / 1000.0
-	if now - last_move_time < MOVE_LOCKOUT_TIME:
-		return
-	last_move_time = now
+	if not timing_override:
+		# Enure two rolls are not happening at once,
+		#  in case of being pushed while already rolling
+		var now = Time.get_ticks_msec() / 1000.0
+		if now - last_move_time < MOVE_LOCKOUT_TIME:
+			return true
+		last_move_time = now
 	
 	
 	$SpriteTile.position -= dir_vect

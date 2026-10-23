@@ -11,10 +11,10 @@ collision_layer = 0
 script = ExtResource("1_ieggm")
 metadata/_edit_group_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125153396]
+shape = SubResource("RectangleShape2D_ieggm")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=914210247]
 position = Vector2(-16, -16)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0)
 tile_set = ExtResource("1_bsiks")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125153396]
-shape = SubResource("RectangleShape2D_ieggm")
