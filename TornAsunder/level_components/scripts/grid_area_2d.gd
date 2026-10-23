@@ -10,7 +10,10 @@ const TILE_SIZE = 32 # pixels
 const PUSH_DURATION = 0.05 # seconds
 const FADE_DURATION = 0.4 # seconds
 const ROLL_DELAY = 0.05 # seconds
-const MOVE_LOCKOUT_TIME = 0.01 # seconds
+const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
+	# (matches the duration of a physics frame,
+	#  so a block cannot be pushed twice before the
+	#  physics engine notices the first change)
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
