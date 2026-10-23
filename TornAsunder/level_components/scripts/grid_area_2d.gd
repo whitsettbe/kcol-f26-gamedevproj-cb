@@ -36,12 +36,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+# Convert a sprite position to a grid square
+static func pos_to_tile_coords(pos : Vector2) -> Vector2i:
+	var grid_pos = (pos / TILE_SIZE) - Vector2.ONE / 2
+	grid_pos = Vector2i(grid_pos.round())
+	return grid_pos
 
 
 # Get the current floor map identifier
 func get_tile() -> Vector2i:
-	var grid_pos = (position / TILE_SIZE) - Vector2.ONE / 2
-	grid_pos = Vector2i(grid_pos.round())
+	var grid_pos = pos_to_tile_coords(position)
 	return get_parent().get_node(
 		"FloorOverlays").get_cell_atlas_coords(grid_pos)
 	
