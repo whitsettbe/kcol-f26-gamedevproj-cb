@@ -52,3 +52,8 @@ func load_undo() -> void:
 		level_scene = level_scene_stack.pop_back().instantiate()
 		call_deferred("add_child", level_scene)
 		level_scene.connect("level_completed", _on_level_completed)
+
+# Reset the current level
+func reset_level() -> void:
+	level_scene.queue_free()
+	load_level(level_idx)

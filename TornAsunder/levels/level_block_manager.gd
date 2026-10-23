@@ -70,6 +70,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		# Handle undo if requested by user
 		if event.is_action_pressed("undo"):
 			get_parent().load_undo()
+			
+		# Handle level restart if requested by user
+		if event.is_action_pressed("restart"):
+			get_parent().reset_level()
 
 
 # Ensure child properties align with their block type
