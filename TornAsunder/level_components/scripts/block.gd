@@ -132,6 +132,14 @@ func get_all_successors(
 	dir_vect: Vector2,
 	pusher_color: BlockColor
 	) -> Dictionary:
+		
+	# If this block has already moved but
+	#  physics have not picked up on it yet,
+	#  then it effectively has no successors,
+	#  because it doesn't need to push anything!
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_move_time < MOVE_LOCKOUT_TIME:
+		return Dictionary()
 	
 	var immediate = Dictionary()
 	var total = Dictionary()
