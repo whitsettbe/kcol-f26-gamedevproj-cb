@@ -80,35 +80,43 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 		#  then it can't move...
 		return false
 	
-	# Compute successors
+	# Compute successors list
+	# (note that there could be duplicates,
+	#  but since we have a timeout to prevent double-motion,
+	#  each block is automatically moved only once)
 	var successors = get_all_successors(dir_vect, blockColor)
 	
-	# If some successor was marked unmovable, don't move
-	if false in successors.values():
+	# If some unmovable successor was found, don't move
+	if null in successors:
 		# Rolling also stops if we can't move
 		roll_direction = Vector2.ZERO
 		
 		return false
 		
-	# Enure two rolls are not happening at once,
+	# Enure two rolls of this block are not happening at once,
 	#  in case of being pushed while already rolling
+	#  (we set the time immediately to decrease the chance
+	#  of a race condition)
 	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
 		return true
 	last_move_time = now
+		
+	# Move this block's successors
+	# (skipping double-motion through the move_single timeout)
+	for successor in successors:
+		successor.move_single(dir_vect)
 	
 	# Move self, and override timing checks
 	#  (since `last_move_time` was just set
 	#  a few instructions ago)
 	self.move_single(dir_vect, true)
-
-		
-	# Otherwise, move this block and the successors
-	for successor in successors:
-		successor.move_single(dir_vect)
 	
-	# Mark self for other moving
-	successors[self] = true
+	# Involve self in other moving-adjacent mechanics
+	# (note that we wait to do this step so the
+	#  timing override is possible, since we want
+	#  to reduce race condition risks in the timeout)
+	successors.push_back(self)
 
 	# Check for holes in need of filling
 	for successor in successors:
@@ -123,14 +131,16 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 
 	
 # Find the complete set of objects which must move
-#  with the player, given the player color
+#  with the pusing agent, given the pusher color
 #
-# Return: dictionary of [intervening object] ->
-#  [is movable given the pusher?]
+# Return: array of intervening object references (if pushable)
+#  and null references (for unpushable);
+#  each block will come AFTER those on which its ability to move
+#  depends;
 func get_all_successors(
 	dir_vect: Vector2,
 	pusher_color: BlockColor
-	) -> Dictionary:
+	) -> Array:
 		
 	# If this block has already moved but
 	#  physics have not picked up on it yet,
@@ -138,30 +148,35 @@ func get_all_successors(
 	#  because it doesn't need to push anything!
 	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
-		return Dictionary()
+		return []
 	
-	var immediate = Dictionary()
-	var total = Dictionary()
+	var immediate = []
+	var total = []
 	
 	# Get the directly intervening raycast
 	ray.target_position = dir_vect
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	if collider != null:
-		immediate[collider] = (collider is Block)
-		
+		immediate.push_back(collider 
+				if collider is Block else null)
+	
 	# Add successors of later blocks
 	for successor in immediate:
-		total[successor] = (successor is Block and
-				successor.pushable_by_color_in_dir(
-					pusher_color,
-					dir_vect)
-				)
-		if total[successor]:
-			total.merge(successor.get_all_successors(
+		var validated_successor = (
+			null if successor == null else
+			(successor if successor.pushable_by_color_in_dir(
+				pusher_color, dir_vect) else 
+			null)
+		)
+			
+		if validated_successor != null:
+			total.append_array(successor.get_all_successors(
 				dir_vect,
 				pusher_color)
 				)
+				
+		total.push_back(validated_successor)
 	
 	return total
 	
