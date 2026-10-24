@@ -21,9 +21,18 @@ func _process(delta: float) -> void:
 	var offset_dir = offset.normalized()
 	var offset_len = offset.length()
 	
+	# Check if the death animation should have completed already
+	if get_parent().death_anim_done:
+		modulate.a = 0
+	
 	if offset_len > 0:
 		# Move closer to the target location
 		position -= offset_dir * min(offset_len,
 				delta * motion_speed)
 	elif self.get_parent().dead:
 		modulate.a -= clamp(delta * alpha_speed, 0, modulate.a)
+		
+		# If the alpha has reached zero,
+		#  inform the parent that this animation is done
+		if modulate.a == 0:
+			get_parent().death_anim_done = true
