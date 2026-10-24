@@ -85,6 +85,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	#  but since we have a timeout to prevent double-motion,
 	#  each block is automatically moved only once)
 	var successors = get_all_successors(dir_vect, blockColor)
+	print(Time.get_ticks_usec(), self, successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -187,6 +188,13 @@ func pushable_by_color_in_dir(
 		col : BlockColor,
 		dir_vect : Vector2
 	) -> bool:
+	
+	# If this block has already moved but
+	#  physics have not picked up on it yet,
+	#  then it should not block anything!
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_move_time < MOVE_LOCKOUT_TIME:
+		return true
 	
 	if not roll_direction in [Vector2.ZERO, dir_vect]:
 		return false
