@@ -140,7 +140,8 @@ func get_solid_invariant() -> int:
 		-1, GridArea2D.TILE_IDS.hole
 	))
 	
-	# Convert arrays to dictionaries for unique size calculation
+	# Convert arrays to dictionaries for counting the
+	#  de-duplicated squares
 	var solid_squares_dict = {}
 	var hole_squares_dict = {}
 	for s_sq in solid_squares:
@@ -148,4 +149,5 @@ func get_solid_invariant() -> int:
 	for h_sq in hole_squares:
 		hole_squares_dict[h_sq] = true
 	
+	# The difference should be invariant
 	return len(solid_squares_dict) - len(hole_squares_dict)

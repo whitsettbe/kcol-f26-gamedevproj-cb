@@ -95,7 +95,6 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
 		return true
-		# NOTE: should this be true?
 	last_move_time = now
 	
 	# Move self, and override timing checks
