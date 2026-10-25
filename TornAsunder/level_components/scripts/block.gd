@@ -38,9 +38,6 @@ var last_move_time = 0 # sec
 func _ready() -> void:
 	# If we re-enter after an undo, make sure we keep rolling
 	if roll_direction != Vector2.ZERO:
-		#await get_tree().create_timer(
-		#	
-		#).timeout
 		roll(roll_direction)
 
 
@@ -67,11 +64,6 @@ func _get_property_list() -> Array:
 			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
 			type = TYPE_VECTOR2,
 		},
-		{
-			name = "last_move_time",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_FLOAT,
-		}
 	]
 	return serializable
 
@@ -93,6 +85,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	#  but since we have a timeout to prevent double-motion,
 	#  each block is automatically moved only once)
 	var successors = get_all_successors(dir_vect, blockColor)
+	print(Time.get_ticks_usec(), self, successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -105,7 +98,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	#  in case of being pushed while already rolling
 	#  (we set the time immediately to decrease the chance
 	#  of a race condition)
-	var now = Time.get_ticks_usec() / 1e6
+	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
 		return true
 	last_move_time = now
@@ -154,7 +147,7 @@ func get_all_successors(
 	#  physics have not picked up on it yet,
 	#  then it effectively has no successors,
 	#  because it doesn't need to push anything!
-	var now = Time.get_ticks_usec() / 1e6
+	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
 		return []
 	
@@ -199,7 +192,7 @@ func pushable_by_color_in_dir(
 	# If this block has already moved but
 	#  physics have not picked up on it yet,
 	#  then it should not block anything!
-	var now = Time.get_ticks_usec() / 1e6
+	var now = Time.get_ticks_msec() / 1000.0
 	if now - last_move_time < MOVE_LOCKOUT_TIME:
 		return true
 	
@@ -227,7 +220,7 @@ func move_single(
 	if not timing_override:
 		# Enure two rolls are not happening at once,
 		#  in case of being pushed while already rolling
-		var now = Time.get_ticks_usec() / 1e6
+		var now = Time.get_ticks_msec() / 1000.0
 		if now - last_move_time < MOVE_LOCKOUT_TIME:
 			return true
 		last_move_time = now

@@ -15,43 +15,12 @@ const tiles = {
 signal level_completed
 var solid_invariant_tracker : int
 
-# Track which properties should be saved as the game runs
-var roll_timeout : float
-var timeout_label : float
-func _get_property_list() -> Array:
-	var serializable = [
-		{
-			name = "roll_timeout",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_FLOAT,
-		},
-		{
-			name = "timeout_label",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_FLOAT
-		}
-	]
-	return serializable
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		align_block_designs()
 		solid_invariant_tracker = get_solid_invariant()
-		
-		
-		var timer = get_node_or_null("Timer")
-		if timer != null:
-			if roll_timeout > 0:
-				timer.start(roll_timeout)
-				timer.connect("timeout", Callable(self,
-						"_temp_on_timer_timeout").bind(timeout_label))
-			else:
-				timer.start(10)
-				timeout_label = Time.get_ticks_msec()
-				timer.connect("timeout", Callable(self,
-						"_temp_on_timer_timeout").bind(timeout_label))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,10 +33,6 @@ func _process(delta: float) -> void:
 		#  roll back the level state
 		if not state_is_safe():
 			get_parent().load_undo()
-		var timer = get_node_or_null("Timer")
-		if timer != null:
-			roll_timeout = timer.time_left
-			#print(timer.time_left)
 
 
 # Pass keyboard inputs to the player (during game)
@@ -186,7 +151,3 @@ func get_solid_invariant() -> int:
 	
 	# The difference should be invariant
 	return len(solid_squares_dict) - len(hole_squares_dict)
-
-
-func _temp_on_timer_timeout(old_val) -> void:
-	print(Time.get_ticks_msec(), " Hello, world! ", old_val)
