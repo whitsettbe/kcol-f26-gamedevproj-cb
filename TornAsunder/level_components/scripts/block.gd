@@ -18,13 +18,14 @@ const inputs = {
 var dead = false
 var death_anim_done = false
 
-# Make an enum dropdown for block type
+# Make enum dropdowns for block type and color,
+#  and a boolean indicator for rollability
 #  (level listens to this and attaches scripts automatically)
 @export var blockType : BlockType
-
 @export var blockColor : BlockColor
 @export var rolling : bool
 
+# Save the current direction of a roll
 var roll_direction = Vector2.ZERO
 
 # Keep track of when the last motion step was made
@@ -32,6 +33,10 @@ var last_move_time = 0 # sec
 
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
+
+# Set up timer for rolling
+@onready var roll_timer = $RollTimer
+var roll_timeout : float
 
 
 # Called when the node enters the scene tree for the first time.
@@ -41,12 +46,32 @@ func _ready() -> void:
 		#await get_tree().create_timer(
 		#	
 		#).timeout
-		roll(roll_direction)
+		#roll(roll_direction)
+		
+		if roll_timeout > 0:
+			roll_timer.start(roll_timeout * 2)
+			roll_timer.connect("timeout", Callable(self,
+					"move_if_possible").bind(roll_direction))
+		#else:
+		#	roll_timer.start(10)
+		#	roll_timer.connect("timeout", Callable(self,
+		#			"move_if_possible").bind(roll_direction))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Disable the collision shape if dead
 	$CollisionShape2D.disabled = dead
+	
+	# Keep track of the timeout on the rolling timer,
+	#  in case of undo
+	roll_timeout = roll_timer.time_left
+	
+	# If the roll direction has been reset,
+	#  clear the timer's connections
+	if roll_direction == Vector2.ZERO:
+		for connection in roll_timer.timeout.get_connections():
+			roll_timer.disconnect("timeout", connection.get("callable"))
 
 
 # Track which properties should be saved as the game runs
@@ -66,6 +91,11 @@ func _get_property_list() -> Array:
 			name = "roll_direction",
 			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
 			type = TYPE_VECTOR2,
+		},
+		{
+			name = "roll_timeout",
+			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			type = TYPE_FLOAT,
 		},
 		{
 			name = "last_move_time",
@@ -93,6 +123,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	#  but since we have a timeout to prevent double-motion,
 	#  each block is automatically moved only once)
 	var successors = get_all_successors(dir_vect, blockColor)
+	print(Time.get_ticks_usec(), self, successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -246,8 +277,11 @@ func roll(dir_vect : Vector2):
 	# Lock motion except in the desired direction,
 	#  then wait to initiate another move attempt
 	roll_direction = dir_vect
-	await get_tree().create_timer(ROLL_DELAY).timeout
-	move_if_possible(dir_vect)
+	#await get_tree().create_timer(ROLL_DELAY).timeout
+	#move_if_possible(dir_vect)
+	roll_timer.start(ROLL_DELAY)
+	roll_timer.connect("timeout", Callable(self,
+			"move_if_possible").bind(roll_direction))
 	
 
 # Replace the current tile with a floor
