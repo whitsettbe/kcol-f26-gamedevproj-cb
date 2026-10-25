@@ -96,7 +96,9 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	#  but since we have a timeout to prevent double-motion,
 	#  each block is automatically moved only once)
 	var successors = get_all_successors(dir_vect, blockColor)
-	print(Time.get_ticks_usec(), self, successors)
+
+	# DEBUG
+	# print(Time.get_ticks_usec(), self, successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
