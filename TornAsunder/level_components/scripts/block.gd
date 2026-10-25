@@ -18,13 +18,13 @@ const inputs = {
 var dead = false
 var death_anim_done = false
 
-# Make an enum dropdown for block type
+# Make enum dropdowns for block type and color
 #  (level listens to this and attaches scripts automatically)
 @export var blockType : BlockType
-
 @export var blockColor : BlockColor
-@export var rolling : bool
 
+# Track roll-ability
+@export var rolling : bool
 var roll_direction = Vector2.ZERO
 
 # Keep track of when the last motion step was made
@@ -37,8 +37,19 @@ var last_move_time = 0 # sec
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# If we re-enter after an undo, make sure we keep rolling
-	if roll_direction != Vector2.ZERO:
-		roll(roll_direction)
+	#  by re-trying to roll several times (gives a chance
+	#  for intervening blocks to move out of the way
+	#  in advance for us, since the loading of blocks into
+	#  the scene will not have a well-defined order)
+	var old_roll_direction = roll_direction
+	if old_roll_direction != Vector2.ZERO:
+		for i in range(NUM_REROLL_ATTEMPTS):
+			if last_move_time != 0:
+				break
+			roll(old_roll_direction)
+			await get_tree().create_timer(
+				MOVE_LOCKOUT_TIME / NUM_REROLL_ATTEMPTS
+			).timeout
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
