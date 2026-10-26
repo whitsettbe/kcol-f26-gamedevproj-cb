@@ -14,9 +14,9 @@ const inputs = {
 	"R_up": Vector2.UP
 }
 
-
+# Indicate whether a block should disappear
 var dead = false
-
+var death_anim_done = false
 
 # Make an enum dropdown for block type
 #  (level listens to this and attaches scripts automatically)
@@ -32,6 +32,40 @@ var last_move_time = 0 # sec
 
 # Set up raycaster to test proximal block
 @onready var ray = $RayCast2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	# If we re-enter after an undo, make sure we keep rolling
+	if roll_direction != Vector2.ZERO:
+		roll(roll_direction)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	$CollisionShape2D.disabled = dead
+
+
+# Track which properties should be saved as the game runs
+func _get_property_list() -> Array:
+	var serializable = [
+		{
+			name = "dead",
+			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			type = TYPE_BOOL,
+		},
+		{
+			name = "death_anim_done",
+			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			type = TYPE_BOOL,
+		},
+		{
+			name = "roll_direction",
+			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			type = TYPE_VECTOR2,
+		},
+	]
+	return serializable
 
 
 # Query successor blocks to see if they can move,
@@ -97,6 +131,14 @@ func get_all_successors(
 	dir_vect: Vector2,
 	pusher_color: BlockColor
 	) -> Dictionary:
+		
+	# If this block has already moved but
+	#  physics have not picked up on it yet,
+	#  then it effectively has no successors,
+	#  because it doesn't need to push anything!
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_move_time < MOVE_LOCKOUT_TIME:
+		return Dictionary()
 	
 	var immediate = Dictionary()
 	var total = Dictionary()
@@ -188,9 +230,9 @@ func fill_hole():
 		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
 		
-		# Disable block physics and mark the block as "dead"
-		# (triggers fade-out by the SpriteTile)
-		$CollisionShape2D.disabled = true
+		# Mark the block as "dead"
+		# (triggers fade-out by the SpriteTile and
+		# disabling of block physics)
 		dead = true
 
 
