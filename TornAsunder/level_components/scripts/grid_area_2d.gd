@@ -18,9 +18,10 @@ enum BlockColor {NONE, BLUE, RED}
 
 # Indicate how to identify different tile types
 const TILE_IDS = {
-	"hole" : Vector2i(3,3),
+	"hole": Vector2i(3,3),
 	"floor": Vector2i(-1,-1), # empty overlay
-	"wall": Vector2i(5,3)
+	"wall": Vector2i(5,3),
+	"filled": Vector2i(6,3)
 }
 func is_paint(t:Vector2i) -> bool:
 	return t.x == 6 and 0 <= t.y and t.y <= 2
