@@ -65,7 +65,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		# If moves were attempted but did not succeed
 		#  delete the pushed state
 		if state_pushed and not move_succeeded:
-			get_parent().remove_last_progress()
+			get_parent().drop_last_progress()
 							
 		# Handle undo if requested by user
 		if event.is_action_pressed("undo"):
@@ -81,10 +81,10 @@ func align_block_designs():
 			
 	for node in get_children():
 		if node is Block:
-			align_block_design(node)
+			align_single_block_design(node)
 			
 # Ensure Block properties align with its type
-func align_block_design(node : Block):
+func align_single_block_design(node : Block):
 	
 	var blockType = node.blockType
 	var blockColor = node.blockColor
