@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://cog8fixeioj4v"]
 
-[ext_resource type="Texture2D" uid="uid://bxav16k075ugn" path="res://sprites.png" id="1_mmmd6"]
+[ext_resource type="Texture2D" uid="uid://c1ru6qm0gtoir" path="res://cavesprites.png" id="1_mmmd6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 resource_name = "AllTiles"
@@ -34,6 +34,7 @@ texture_region_size = Vector2i(32, 32)
 4:3/0 = 0
 5:3/0 = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
