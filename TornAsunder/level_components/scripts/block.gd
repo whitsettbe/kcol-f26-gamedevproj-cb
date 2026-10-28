@@ -61,19 +61,19 @@ func _process(delta: float) -> void:
 func _get_property_list() -> Array:
 	var serializable = [
 		{
-			name = "dead",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_BOOL,
+			"name": "dead",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_BOOL,
 		},
 		{
-			name = "death_anim_done",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_BOOL,
+			"name": "death_anim_done",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_BOOL,
 		},
 		{
-			name = "roll_direction",
-			usage = PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
-			type = TYPE_VECTOR2,
+			"name": "roll_direction",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_VECTOR2,
 		},
 	]
 	return serializable
