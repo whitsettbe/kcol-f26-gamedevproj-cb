@@ -13,6 +13,10 @@ const tiles = {
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
 signal level_completed
+signal state_push_requested
+signal state_drop_requested
+signal state_undo_requested
+signal level_reset_requested
 var solid_invariant_tracker : int
 
 
@@ -48,7 +52,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				# Push the current state to the undo stack
 				if not state_pushed:
 					state_pushed = true
-					get_parent().push_level_state()
+					emit_signal("state_push_requested")
 				
 				for node in get_children():
 					if node is Player:
@@ -65,15 +69,15 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		# If moves were attempted but did not succeed
 		#  delete the pushed state
 		if state_pushed and not move_succeeded:
-			get_parent().drop_last_progress()
-							
+			emit_signal("state_drop_requested")
+			
 		# Handle undo if requested by user
 		if event.is_action_pressed("undo"):
-			get_parent().load_undo()
+			emit_signal("state_undo_requested")
 			
 		# Handle level restart if requested by user
 		if event.is_action_pressed("restart"):
-			get_parent().reset_level()
+			emit_signal("level_reset_requested")
 
 
 # Ensure child properties align with their block type
