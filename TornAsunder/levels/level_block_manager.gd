@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		#  (say, if multiple blocks are in the same place),
 		#  roll back the level state
 		if not state_is_safe():
-			get_parent().load_undo()
+			emit_signal("state_undo_requested")
 
 
 # Pass keyboard inputs to the player (during game)
