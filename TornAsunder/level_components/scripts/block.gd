@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 
 # Track which properties should be saved as the game runs
 func _get_property_list() -> Array[Dictionary]:
-	# Declare array of property data with strictly-specifie
+	# Declare array of property data with strictly-specified
 	#  type Array[Dictionary], so parse-time typing checks
 	#  will recognize the variable type
 	var serializable: Array[Dictionary] = [

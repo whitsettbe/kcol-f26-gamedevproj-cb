@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	
 
 # Load the indicated level, attaching its completion
-#  signal to this script
+#  signal to this script.
 func load_level(idx : int) -> void:
 	level_scene = load(level_paths[idx]).instantiate()
 	call_deferred("add_child", level_scene)
@@ -66,6 +66,11 @@ func _on_state_drop_requested() -> void:
 
 
 # Load the last entry on the undo stack
+#
+# Note that instantiation can cause error messages
+#  about duplicate signals. This is unintended behavior
+#  on the part of Godot. See discussion at
+#  github.com/godotengine/godot/issues/85372.
 func _on_state_undo_requested() -> void:
 	if len(level_scene_stack) > 0:
 		level_scene.queue_free()
