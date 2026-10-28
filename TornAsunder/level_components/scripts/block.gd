@@ -46,9 +46,9 @@ func _ready() -> void:
 		for i in range(NUM_REROLL_ATTEMPTS):
 			if last_move_time != 0:
 				break
-			roll(old_roll_direction)
+			roll(old_roll_direction, false)
 			await get_tree().create_timer(
-				MOVE_LOCKOUT_TIME / NUM_REROLL_ATTEMPTS
+				TOTAL_REROLL_TIME / NUM_REROLL_ATTEMPTS
 			).timeout
 
 
@@ -101,7 +101,7 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successors = get_all_successors(dir_vect, blockColor)
 
 	# DEBUG
-	# print(Time.get_ticks_usec(), self, successors)
+	print(Time.get_ticks_usec(), self, successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -250,14 +250,16 @@ func move_single(
 		roll(dir_vect)
 		
 # Trigger another motion after a timeout
-func roll(dir_vect : Vector2):
+func roll(dir_vect : Vector2,
+		do_timeout : bool = true):
 	
 	# Lock motion except in the desired direction,
 	#  then wait to initiate another move attempt
 	roll_direction = dir_vect
-	await get_tree().create_timer(ROLL_DELAY).timeout
+	if do_timeout:
+		await get_tree().create_timer(ROLL_DELAY).timeout
 	move_if_possible(dir_vect)
-	
+
 
 # Replace the current tile with a floor
 # if it is a hole, making this block

@@ -14,7 +14,9 @@ const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	# (matches the duration of a physics frame,
 	#  so a block cannot be pushed twice before the
 	#  physics engine notices the first change)
-const NUM_REROLL_ATTEMPTS = 10
+const TOTAL_REROLL_TIME = 0.01 # seconds
+	# (at most MOVE_LOCKOUT_TIME)
+const NUM_REROLL_ATTEMPTS = 3
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}

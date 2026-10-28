@@ -50,14 +50,15 @@ func get_all_successors(
 # Since both this block and its partner will be
 #  asked to roll, only one needs to do so.
 #  Assumes distinct names.
-func roll(dir_vect : Vector2):
+func roll(dir_vect : Vector2,
+		do_timeout : bool = true):
 	# Ensure both entangled blocks appear to be rolling,
 	#  though only one will be managing the roll
 	roll_direction = dir_vect
 	
 	# Compare nodes by reference
 	if self.name < partner.name:
-		super(dir_vect)
+		super(dir_vect, do_timeout)
 
 
 # Fill a hole under this tile,
