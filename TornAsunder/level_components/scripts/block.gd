@@ -89,7 +89,8 @@ func _get_property_list() -> Array[Dictionary]:
 func move_if_possible(dir_vect : Vector2) -> bool:
 	if dead:
 		# Rolling also stops if we can't move
-		roll_direction = Vector2.ZERO
+		if roll_direction != Vector2.ZERO:
+			trigger_reset_roll_direction()
 		# If this block has already fallen into a hole,
 		#  then it can't move...
 		return false
@@ -106,8 +107,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	# If some unmovable successor was found, don't move
 	if null in successors:
 		# Rolling also stops if we can't move
-		roll_direction = Vector2.ZERO
-		
+		if roll_direction != Vector2.ZERO:
+			trigger_reset_roll_direction()
 		return false
 		
 	# Enure two rolls of this block are not happening at once,
@@ -248,7 +249,8 @@ func move_single(
 	# If a rolling block, try to move again
 	if rolling:
 		roll(dir_vect)
-		
+
+
 # Trigger another motion after a timeout
 func roll(dir_vect : Vector2,
 		do_timeout : bool = true):
@@ -259,6 +261,12 @@ func roll(dir_vect : Vector2,
 	if do_timeout:
 		await get_tree().create_timer(ROLL_DELAY).timeout
 	move_if_possible(dir_vect)
+	
+
+# Reset the roll direction after a time delay
+func trigger_reset_roll_direction() -> void:
+	await get_tree().create_timer(ROLL_DELAY).timeout
+	roll_direction = Vector2.ZERO
 
 
 # Replace the current tile with a floor
