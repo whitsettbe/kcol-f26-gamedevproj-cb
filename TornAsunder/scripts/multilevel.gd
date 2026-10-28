@@ -40,11 +40,12 @@ func _on_level_completed() -> void:
 func push_level_state() -> void:
 	level_scene_stack.push_back(PackedScene.new())
 	level_scene_stack.back().pack(level_scene)
-	
+
 # Delete the last entry on the undo stack
-func remove_last_progress() -> void:
-	level_scene_stack.pop_back()
-	
+func drop_last_progress() -> void:
+	if len(level_scene_stack) > 0:
+		level_scene_stack.pop_back()
+
 # Load the last entry on the undo stack
 func load_undo() -> void:
 	if len(level_scene_stack) > 0:

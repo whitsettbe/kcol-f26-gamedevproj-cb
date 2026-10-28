@@ -264,7 +264,7 @@ func fill_hole():
 		
 		# Replace the floor tile, delaying a visual change
 		#  until the push is over
-		set_tile(TILE_IDS["floor"], PUSH_DURATION)
+		set_tile(TILE_IDS["filled"], PUSH_DURATION)
 		
 		# Mark the block as "dead"
 		# (triggers fade-out by the SpriteTile and

@@ -27,7 +27,7 @@ func pushable_by_color_in_dir(
 #  rather taking on the paint's color
 #
 # Assumption: parent scene has a script defining
-#  align_block_design(Block) which will
+#  align_single_block_design(Block) which will
 #  update our sprite to match the new color
 func check_for_paint():
 	if is_paint(get_tile()):
@@ -36,4 +36,4 @@ func check_for_paint():
 		self.blockColor = get_paint_color(get_tile())
 		
 		# Request a sprite update from the parent scene
-		get_parent().align_block_design(self)
+		get_parent().align_single_block_design(self)
