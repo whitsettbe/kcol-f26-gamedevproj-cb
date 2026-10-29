@@ -53,8 +53,13 @@ func _on_level_completed() -> void:
 		get_tree().quit()
 
 
-# Push the scene state to the undo stack
+# Push the scene state to the undo stack,
+#  but only if no blocks are actively rolling!
 func _on_state_push_requested() -> void:
+	
+	if level_scene.any_active_rolls():
+		return
+	
 	level_scene_stack.push_back(PackedScene.new())
 	level_scene_stack.back().pack(level_scene)
 

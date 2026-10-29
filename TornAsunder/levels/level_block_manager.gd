@@ -155,3 +155,15 @@ func get_solid_invariant() -> int:
 	
 	# The difference should be invariant
 	return len(solid_squares_dict) - len(hole_squares_dict)
+
+
+# Indicate whether any blocks in the level are currently
+#  in the middle of a roll
+func any_active_rolls() -> bool:
+	for node in get_children():
+		if node is Block and not node.dead \
+				and node.roll_direction != Vector2.ZERO:
+			# the check for dead should be unnecessary...
+			
+			return true
+	return false
