@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cttuaw2e0c78t"]
+
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Minecraft.ttf" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=898248560]
+
+[node name="LeftInstructions" type="Label" parent="." unique_id=497296475]
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 20
+text = "w: up
+s: down
+a: left
+d: right
+esc: pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RightInstructions" type="Label" parent="." unique_id=379560810]
+offset_left = 1024.0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 20
+text = "^: up
+v: down
+<: left
+>: right
+delete: pause"
+horizontal_alignment = 1
+vertical_alignment = 1

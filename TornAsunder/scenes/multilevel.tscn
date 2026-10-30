@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://do5l6q46ac4tm"]
 
 [ext_resource type="Script" uid="uid://03vclajrcm7w" path="res://scripts/multilevel.gd" id="1_wvn4e"]
+[ext_resource type="PackedScene" uid="uid://cttuaw2e0c78t" path="res://scenes/hud.tscn" id="2_v7a0e"]
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
+
+[node name="HUD" parent="." unique_id=898248560 instance=ExtResource("2_v7a0e")]
