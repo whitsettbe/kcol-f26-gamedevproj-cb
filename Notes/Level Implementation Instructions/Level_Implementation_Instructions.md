@@ -79,12 +79,12 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 2. Ensuring that "Connect Mode" is selected, paint your desired walls into the viewport. (Note that some of the tiles in the below image are incorrectly connected - see issue #46.)
 ![2c-2 add walls](2c-2_add_walls.png)
 
-3. Now, for visual reasons we would like the floor to have boundaries at walls. Select the `Floor` node, open its TileMap panel, select the Floor terrain (then the "Connect mode" tile, if not already selected), and erase the floor where it overlaps with walls.
+3. Now, for visual reasons we would like the floor to have boundaries at walls. Select the `Floor` node, open its TileMap panel to the Terrain tab, select the Floor terrain (then the "Connect mode" tile, if not already selected), and erase the floor where it overlaps with walls.
 ![2c-3 erase extra floors](2c-3_erase_extra_floors.png)
 
 ## 2d. Adding Holes
 
-1. Select the `FloorOverlays` node, switch to the Tiles tab, and select the hole tile (a black square).
+1. Select the `FloorOverlays` node, open its TileMap panel, switch to the Tiles tab, and select the hole tile (a black square).
 ![2d-1 select hole](2d-1_select_hole.png)
 
 2. Paint holes in the desired locations.
@@ -92,3 +92,25 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 
 3. For visual effect, erase the floor under the holes as in step 2c-3.
 ![2d-3 erase floor](2d-3_erase_floor.png)
+
+## 2e. Adding Paint
+
+1. Select the `FloorOverlays` node, open its TileMap panel to the Tiles tab, and select a paint tile of choice.
+![2e-1 select paint](2e-1_select_paint.png)
+
+2. Apply the paints to your desired squares of the level in the viewport.
+![2e-2 apply paint](2e-2_apply_paint.png)
+
+## 2f. Adding Portals
+
+1. Instance the `portal_in.tscn` and `portal_out.tscn` scenes and position them in the level. The `portal_in` is where a player will enter a portal, and the `portal_out` is where the portal will deposit them. Make sure the portals are centered on grid squares.
+![2f-1 place portals](2f-1_place_portals.png)
+
+2. Move the portals up in the node tree to appear between the `Floor` and the `FloorOverlays`.
+![2f-2 portal reorder](2f-2_portal_reorder.png)
+
+3. In the inspector, set the `portal_in` node to have `Target` set to its partnering `portal_out`. There is no code-enforced rule against having multiple portals link to the same output, but it is frowned upon.
+![2f-3 link portals](2f-3_link_portals.png)
+
+4. Repeat as desired. Note that if using copy and paste, you will still need to manually change the `Target` on each `portal_in` node.
+![2f-4 many portals](2f-4_many_portals.png)
