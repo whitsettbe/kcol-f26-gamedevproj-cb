@@ -1,5 +1,7 @@
 # 1. Creating a level scene
 
+The result of this section has been saved as `levels/basic_level_empty.tscn`. By copying this scene as a template, you can avoid following these steps yourself. That said, knowing how the scene is constructed is still valuable.
+
 1. Create a new scene with a Node2D base. Save the scene in the `TornAsunder/levels` folder.
 ![1-01 create scene](1-01_create_scene.png)
 
