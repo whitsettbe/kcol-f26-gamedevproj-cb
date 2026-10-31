@@ -70,3 +70,25 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 
 5. Repeat as desired. If you copy and paste the existing blocks, you will need to manually set the `Partner` pointers to reference the new blocks instead of the old ones.
 ![2b-5 many pairs](2b-5_many_pairs.png)
+
+## 2c. Adding More Walls
+
+1. Select the `FloorOverlays` node and open its TileMap panel (bottom of screen). Switch to the Terrain tab and select the Wall terrain.
+![2c-1 wall paint prep](2c-1_wall_paint_prep.png)
+
+2. Ensuring that "Connect Mode" is selected, paint your desired walls into the viewport. (Note that some of the tiles in the below image are incorrectly connected - see issue #46.)
+![2c-2 add walls](2c-2_add_walls.png)
+
+3. Now, for visual reasons we would like the floor to have boundaries at walls. Select the `Floor` node, open its TileMap panel, select the Floor terrain (then the "Connect mode" tile, if not already selected), and erase the floor where it overlaps with walls.
+![2c-3 erase extra floors](2c-3_erase_extra_floors.png)
+
+## 2d. Adding Holes
+
+1. Select the `FloorOverlays` node, switch to the Tiles tab, and select the hole tile (a black square).
+![2d-1 select hole](2d-1_select_hole.png)
+
+2. Paint holes in the desired locations.
+![2d-2 draw holes](2d-2_draw_holes.png)
+
+3. For visual effect, erase the floor under the holes as in step 2c-3.
+![2d-3 erase floor](2d-3_erase_floor.png)
