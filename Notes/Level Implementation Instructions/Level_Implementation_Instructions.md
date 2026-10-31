@@ -40,3 +40,33 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 
 13. Your level is now playable from the `res://scenes/multilevel.tscn` scene! (Viewport settings may be adjusted after the writing of this tutorial.)
 ![1-13 playable](1-13_playable.png)
+
+# 2. Modifying a Level Scene
+
+## 2a. Adding Unentangled Blocks
+
+1. Instance the `block.tscn` scene. **In the scene tree, ensure the block is a direct child of the root!** The block should also appear after all of the tile layers in the scene tree. In the editor, drag the block to the desired grid-aligned location.
+![2a-1 block add](2a-1_block_add.png)
+
+2. Using the inspector, set the color of the block, and whether it should be rolling or not. The sprite will automatically update to match your selections.
+![2a-2 color and shape set](2a-2_color_and_shape_set.png)
+
+3. Repeat as desired. You can also copy and paste your existing blocks. (Be sure to give your blocks somewhat descriptive sprite names in the scene tree!) **Again, ensure all blocks are direct children of the root!**
+![2a-3 many blocks](2a-3_many_blocks.png)
+
+## 2b. Adding Entangled Blocks
+
+1. Instance two blocks and put them in the same location on the left and right maps. Alignment of the locations is not enforced in code, but it is a convention of our game.
+![2b-1 pair add](2b-1_pair_add.png)
+
+2. In the inspector, switch both blocks to have `Block Type` of `Entangled`. An additional property called `Partner` should appear at the top of the inspector for each block.
+![2b-2 set entangled](2b-2_set_entangled.png)
+
+3. For each of the blocks, set the `Partner` property to the other block. The dropdown that appears should only list entangled blocks as possible partners. In this example, Block_Left should have partner Block_Right, and vice versa.
+![2b-3 set partners](2b-3_set_partners.png)
+
+4. Set the color and rolling properties as desired. These properties must match between entangled partners! When the scene is initialized, there are assertions in code to verify that these properties match, so you will be notified if you make a mistake here.
+![2b-4 style blocks](2b-4_style_blocks.png)
+
+5. Repeat as desired. If you copy and paste the existing blocks, you will need to manually set the `Partner` pointers to reference the new blocks instead of the old ones.
+![2b-5 many pairs](2b-5_many_pairs.png)

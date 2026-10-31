@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_b2rmo"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_xn5bn"]
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_mlf20"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_e6b0d"]
 
 [node name="Basic_Level_Filled" type="Node2D" unique_id=1479523790]
 script = ExtResource("1_j58y7")
@@ -41,3 +42,114 @@ script = ExtResource("5_mlf20")
 side = 1
 blockType = 1
 blockColor = 2
+
+[node name="Block_red" parent="." unique_id=483487233 instance=ExtResource("4_xn5bn")]
+position = Vector2(80, 304)
+blockColor = 2
+
+[node name="Block_blue" parent="." unique_id=259812099 instance=ExtResource("4_xn5bn")]
+position = Vector2(80, 240)
+blockColor = 1
+
+[node name="Block_grey" parent="." unique_id=686514337 instance=ExtResource("4_xn5bn")]
+position = Vector2(80, 176)
+
+[node name="Block_red_roll" parent="." unique_id=1595322661 instance=ExtResource("4_xn5bn")]
+position = Vector2(144, 304)
+blockColor = 2
+rolling = true
+
+[node name="Block_blue_roll" parent="." unique_id=858058278 instance=ExtResource("4_xn5bn")]
+position = Vector2(144, 240)
+blockColor = 1
+rolling = true
+
+[node name="Block_grey_roll" parent="." unique_id=165040038 instance=ExtResource("4_xn5bn")]
+position = Vector2(144, 176)
+rolling = true
+
+[node name="Block_red_roll_eLeft" parent="." unique_id=1667867087 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(304, 304)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_red_roll_eRight")
+blockType = 2
+blockColor = 2
+rolling = true
+
+[node name="Block_red_roll_eRight" parent="." unique_id=1121639378 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(720, 304)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_red_roll_eLeft")
+blockType = 2
+blockColor = 2
+rolling = true
+
+[node name="Block_blue_roll_eLeft" parent="." unique_id=811597052 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(304, 240)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_blue_roll_eRight")
+blockType = 2
+blockColor = 1
+rolling = true
+
+[node name="Block_blue_roll_eRight" parent="." unique_id=504744338 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(720, 240)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_blue_roll_eLeft")
+blockType = 2
+blockColor = 1
+rolling = true
+
+[node name="Block_grey_roll_eLeft" parent="." unique_id=1635943206 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(304, 176)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_grey_roll_eRight")
+blockType = 2
+rolling = true
+
+[node name="Block_grey_roll_eRight" parent="." unique_id=64905814 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(720, 176)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_grey_roll_eLeft")
+blockType = 2
+rolling = true
+
+[node name="Block_red_eLeft" parent="." unique_id=1064610524 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(240, 304)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_red_eRight")
+blockType = 2
+blockColor = 2
+
+[node name="Block_red_eRight" parent="." unique_id=1739130615 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(656, 304)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_red_eLeft")
+blockType = 2
+blockColor = 2
+
+[node name="Block_blue_eLeft" parent="." unique_id=1596473606 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(240, 240)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_blue_eRight")
+blockType = 2
+blockColor = 1
+
+[node name="Block_blue_eRight" parent="." unique_id=897997764 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(656, 240)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_blue_eLeft")
+blockType = 2
+blockColor = 1
+
+[node name="Block_grey_eLeft" parent="." unique_id=271103179 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(240, 176)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_grey_eRight")
+blockType = 2
+
+[node name="Block_grey_eRight" parent="." unique_id=528100904 node_paths=PackedStringArray("partner") instance=ExtResource("4_xn5bn")]
+position = Vector2(656, 176)
+script = ExtResource("6_e6b0d")
+partner = NodePath("../Block_grey_eLeft")
+blockType = 2
