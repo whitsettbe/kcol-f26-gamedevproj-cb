@@ -1,3 +1,7 @@
+# 0. Tips and Tricks
+
+- If your viewport ever looks too full of "gizmos" attached to your nodes, you can turn the gizmos off using the viewport toolbar: View > Gizmos > Position and View > Gizmos > Group.
+
 # 1. Creating a level scene
 
 The result of this section has been saved as `levels/basic_level_empty.tscn`. By copying this scene as a template, you can avoid following these steps yourself. That said, knowing how the scene is constructed is still valuable.
