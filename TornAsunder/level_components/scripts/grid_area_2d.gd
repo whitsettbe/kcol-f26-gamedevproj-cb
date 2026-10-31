@@ -14,6 +14,9 @@ const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	# (matches the duration of a physics frame,
 	#  so a block cannot be pushed twice before the
 	#  physics engine notices the first change)
+const TOTAL_REROLL_TIME = 0.01 # seconds
+	# (at most MOVE_LOCKOUT_TIME)
+const NUM_REROLL_ATTEMPTS = 3
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
@@ -21,9 +24,10 @@ enum BlockColor {NONE, BLUE, RED}
 
 # Indicate how to identify different tile types
 const TILE_IDS = {
-	"hole" : Vector2i(3,3),
+	"hole": Vector2i(3,3),
 	"floor": Vector2i(-1,-1), # empty overlay
-	"wall": Vector2i(5,3)
+	"wall": Vector2i(5,3),
+	"filled": Vector2i(6,3)
 }
 func is_paint(t:Vector2i) -> bool:
 	return t.x == 6 and 0 <= t.y and t.y <= 2

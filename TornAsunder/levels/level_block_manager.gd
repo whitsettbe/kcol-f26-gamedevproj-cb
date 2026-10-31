@@ -13,6 +13,10 @@ const tiles = {
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
 signal level_completed
+signal state_push_requested
+signal state_drop_requested
+signal state_undo_requested
+signal level_reset_requested
 var solid_invariant_tracker : int
 
 
@@ -32,7 +36,7 @@ func _process(delta: float) -> void:
 		#  (say, if multiple blocks are in the same place),
 		#  roll back the level state
 		if not state_is_safe():
-			get_parent().load_undo()
+			emit_signal("state_undo_requested")
 
 
 # Pass keyboard inputs to the player (during game)
@@ -48,7 +52,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				# Push the current state to the undo stack
 				if not state_pushed:
 					state_pushed = true
-					get_parent().push_level_state()
+					emit_signal("state_push_requested")
 				
 				for node in get_children():
 					if node is Player:
@@ -65,15 +69,15 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		# If moves were attempted but did not succeed
 		#  delete the pushed state
 		if state_pushed and not move_succeeded:
-			get_parent().drop_last_progress()
-							
+			emit_signal("state_drop_requested")
+			
 		# Handle undo if requested by user
 		if event.is_action_pressed("undo"):
-			get_parent().load_undo()
+			emit_signal("state_undo_requested")
 			
 		# Handle level restart if requested by user
 		if event.is_action_pressed("restart"):
-			get_parent().reset_level()
+			emit_signal("level_reset_requested")
 
 
 # Ensure child properties align with their block type
@@ -151,3 +155,15 @@ func get_solid_invariant() -> int:
 	
 	# The difference should be invariant
 	return len(solid_squares_dict) - len(hole_squares_dict)
+
+
+# Indicate whether any blocks in the level are currently
+#  in the middle of a roll
+func any_active_rolls() -> bool:
+	for node in get_children():
+		if node is Block and not node.dead \
+				and node.roll_direction != Vector2.ZERO:
+			# the check for dead should be unnecessary...
+			
+			return true
+	return false
