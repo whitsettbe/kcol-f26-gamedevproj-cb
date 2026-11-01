@@ -4,6 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://scenes/layer_navigator.tscn" id="2_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://scenes/settings.tscn" id="3_bqqt6"]
 
+[sub_resource type="GDScript" id="GDScript_bqqt6"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
 
@@ -14,6 +28,7 @@ offset_bottom = 640.0
 [node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1862597158]
 layout_mode = 2
 alignment = 1
+script = SubResource("GDScript_bqqt6")
 
 [node name="Continue" type="Button" parent="PanelContainer/Button_manager" unique_id=1111363939]
 layout_mode = 2

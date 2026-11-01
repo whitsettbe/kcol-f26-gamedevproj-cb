@@ -19,7 +19,8 @@ func _process(delta: float) -> void:
 
 # Goes to 
 func _on_button_pressed(level: Variant) -> void:
-	Globals.level_scene.queue_free()
+	if(Globals.level_scene != null):
+		Globals.level_scene.queue_free()
 	Globals.level_idx = Globals.level_paths.find("res://levels/Playgrounds/" + level)
 	get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
 	
