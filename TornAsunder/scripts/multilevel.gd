@@ -16,10 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(Input.is_action_pressed("L_pause")):
-		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
-	if(Input.is_action_pressed("R_pause")):
-		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
+	pass
 	
 
 # Load the indicated level, attaching its completion

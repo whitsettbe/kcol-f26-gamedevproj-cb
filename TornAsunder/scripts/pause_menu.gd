@@ -3,16 +3,30 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	pauseInput()
+
+func resume():
+	get_tree().paused = false
+	hide()
+	
+func pause():
+	get_tree().paused =true
+	show()
+
+func pauseInput():
+	if((Input.is_action_just_pressed("L_pause") or Input.is_action_just_pressed("R_pause")) and get_tree().paused):
+		resume()
+	elif((Input.is_action_just_pressed("L_pause") or Input.is_action_just_pressed("R_pause")) and not get_tree().paused):
+		pause()
 
 # Resumes the game. Not implemented yet.
 func _on_resume_pressed() -> void:
-	pass # Replace with function body.
+	resume()
 
 # Provides a hint for the current level. Not implemented yet.
 func _on_hint_pressed() -> void:
