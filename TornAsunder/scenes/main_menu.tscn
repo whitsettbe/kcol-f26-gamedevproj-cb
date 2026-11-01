@@ -1,49 +1,39 @@
 [gd_scene format=3 uid="uid://b340cpsu2kk05"]
 
 [ext_resource type="Script" uid="uid://b0gdogms6nhfh" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://scenes/layer_navigator.tscn" id="2_ekxnf"]
 
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
 
-[node name="Button_manager" type="Control" parent="." unique_id=1584324782]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1725492098]
+offset_right = 1152.0
+offset_bottom = 640.0
 
-[node name="Continue" type="Button" parent="Button_manager" unique_id=1111363939]
-layout_mode = 0
-offset_left = 704.0
-offset_top = 128.0
-offset_right = 1024.0
-offset_bottom = 190.0
+[node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1862597158]
+layout_mode = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="PanelContainer/Button_manager" unique_id=1111363939]
+layout_mode = 2
 text = "Continue"
 
-[node name="Level Navigator" type="Button" parent="Button_manager" unique_id=1700296141]
-layout_mode = 0
-offset_left = 704.0
-offset_top = 256.0
-offset_right = 1023.0
-offset_bottom = 320.0
+[node name="Level Navigator" type="Button" parent="PanelContainer/Button_manager" unique_id=1700296141]
+layout_mode = 2
 text = "Level Navigator"
 
-[node name="Settings" type="Button" parent="Button_manager" unique_id=253402286]
-layout_mode = 0
-offset_left = 704.0
-offset_top = 384.0
-offset_right = 1024.0
-offset_bottom = 448.0
+[node name="Settings" type="Button" parent="PanelContainer/Button_manager" unique_id=253402286]
+layout_mode = 2
 text = "Settings"
 
-[node name="Quit" type="Button" parent="Button_manager" unique_id=2016063207]
-layout_mode = 0
-offset_left = 704.0
-offset_top = 512.0
-offset_right = 1024.0
-offset_bottom = 576.0
+[node name="Quit" type="Button" parent="PanelContainer/Button_manager" unique_id=2016063207]
+layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Button_manager/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Button_manager/Level Navigator" to="." method="_on_level_navigator_pressed"]
-[connection signal="pressed" from="Button_manager/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
+[node name="Layer Navigator" parent="." unique_id=846608510 instance=ExtResource("2_ekxnf")]
+visible = false
+
+[connection signal="pressed" from="PanelContainer/Button_manager/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Level Navigator" to="Layer Navigator" method="open"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Quit" to="." method="_on_quit_pressed"]

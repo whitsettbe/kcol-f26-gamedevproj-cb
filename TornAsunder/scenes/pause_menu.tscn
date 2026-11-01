@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duwftmqtn2xj8"]
 
 [ext_resource type="Script" uid="uid://coe1ivrq30r0k" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://scenes/layer_navigator.tscn" id="2_myx47"]
 
 [node name="Pause Menu" type="Control" unique_id=263263770]
 process_mode = 3
@@ -45,8 +46,13 @@ text = "Settings"
 layout_mode = 2
 text = "Title Screen"
 
+[node name="Layer Navigator" parent="." unique_id=2131716285 instance=ExtResource("2_myx47")]
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Hint" to="." method="_on_hint_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Levels" to="Layer Navigator" method="open"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Title Screen" to="." method="_on_title_screen_pressed"]
+[connection signal="pressed" from="Layer Navigator/PanelContainer/Button_manager/Back" to="." method="pause"]
+
+[editable path="Layer Navigator"]
