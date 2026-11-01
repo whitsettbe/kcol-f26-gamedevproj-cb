@@ -1,6 +1,7 @@
 # 0. Tips and Tricks
 
 - If your viewport ever looks too full of "gizmos" attached to your nodes, you can turn the gizmos off using the viewport toolbar: View > Gizmos > Position and View > Gizmos > Group.
+- Arranging nodes in the viewport is easier if you turn on snap-to-grid (the magnet/grid icon in the viewport toolbar). You can configure the snap increment: three dots > configure snap. Stepping by 16px (1/2 block) tends to work well.
 
 # 1. Creating a level scene
 
