@@ -25,6 +25,10 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		align_block_designs()
 		solid_invariant_tracker = get_solid_invariant()
+		
+		# Listen for when players land on the exits
+		$EXIT_L.connect("player_on_exit", _on_player_on_exit)
+		$EXIT_R.connect("player_on_exit", _on_player_on_exit)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -113,6 +117,8 @@ func align_single_block_design(node : Block):
 
 # When a player stands on an exit,
 #  check if both exits have players on them.
+#  (this script is connected to the relevant signals
+#  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
 	if $EXIT_L.players_exiting > 0 \
 			and $EXIT_R.players_exiting > 0:
