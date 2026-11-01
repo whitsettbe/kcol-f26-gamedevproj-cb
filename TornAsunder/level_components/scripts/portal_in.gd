@@ -44,5 +44,10 @@ func _on_area_entered(area: Area2D) -> void:
 # Note when a player leaves the area, if
 #  this is an exit tile
 func _on_area_exited(area: Area2D) -> void:
+	
+	# Ignore non-players
+	if not area is Player:
+		return
+	
 	if is_exit:
 		players_exiting -= 1
