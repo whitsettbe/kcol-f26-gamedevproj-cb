@@ -1,10 +1,9 @@
-**Level Name:** (name)  
-**Authors:** (authors)  
-**Intended layer:** (layer)  
+**Level Name:** Just Walk  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
 
-1. do this
-2. do that
-3. go to the exit
+1. Leonard: walk onto the marked exit square
+2. Roy: walk onto the marked exit square
 
 ---
 
