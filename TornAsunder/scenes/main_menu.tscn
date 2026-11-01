@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0gdogms6nhfh" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://scenes/layer_navigator.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://scenes/settings.tscn" id="3_bqqt6"]
 
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
@@ -33,7 +34,9 @@ text = "Quit"
 [node name="Layer Navigator" parent="." unique_id=846608510 instance=ExtResource("2_ekxnf")]
 visible = false
 
+[node name="Settings" parent="." unique_id=1706435238 instance=ExtResource("3_bqqt6")]
+
 [connection signal="pressed" from="PanelContainer/Button_manager/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Level Navigator" to="Layer Navigator" method="open"]
-[connection signal="pressed" from="PanelContainer/Button_manager/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Settings" to="Settings" method="open"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Quit" to="." method="_on_quit_pressed"]
