@@ -66,8 +66,12 @@ func _unhandled_key_input(event: InputEvent) -> void:
 								node.move_if_possible(Block.inputs[dir]
 								* GridArea2D.TILE_SIZE)
 								
-		# If moves were attempted but did not succeed
-		#  delete the pushed state
+		# If moves were attempted but did not succeed,
+		#  delete the pushed state;
+		#  Note that the drop is time-limited not to drop
+		#  old states, which may still be at the top of the
+		#  stack if the state push triggered earlier in this
+		#  function was unsuccessful
 		if state_pushed and not move_succeeded:
 			emit_signal("state_drop_requested")
 			
