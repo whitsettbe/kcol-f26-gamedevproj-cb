@@ -12,6 +12,12 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 2. Add three TileMapLayer nodes named `Floor`, `FloorOverlays`, and `FalseOverlays` (in that order). In the inspector, set each of them to use the Tile Set `TornAsunder/all_tiles.tres`.
 ![1-02 create TileMapLayer nodes](1-02_tile_map_layers.png)
 
+    Some notes on the purposes of these nodes:
+
+    - The `Floor` node will contain the floor tiles.
+    - The `FloorOverlays` node will contain walls, holes, and paint. A block whose entangled partner has fallen into a hole will also leave a tile in this node (styled like a wall at time of writing) when it vanishes.
+    - The `FalseOverlays` node is only used in code. We update `FloorOverlays` contents instantaneously on player actions, but for animation reasons we choose to display the old contents for several frames after the change. For example, a hole should not disappear visually until it is covered by the sprite of the block that is filling it. To do this, we copy the old tile to `FalseOverlays` before replacing it. The temporary copy is deleted after the animation ends.
+
 3. Select the `Floor` node from the scene tree, select its `TileMap` tab from the dock at the bottom of the screen, and switch to the `Terrains` page of that tab. Select the purple `Floor` terrain and, making sure that the "Connect mode" tile is selected (the eight arrows), draw two floor regions in the scene. A good rule of thumb is for the regions to be about 10x10. Make sure to leave a 1-tile gap between the floors and the axes.
 ![1-03 floors](1-03_floors.png)
 
@@ -24,13 +30,15 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 6. In the scene tree, put the portals between `Floor` and `FloorOverlays`. Then, for each portal, use in Inspect menu to turn on the `Is Exit` property.
 ![1-06 exit setup](1-06_exit_setup.png)
 
+    Note: portals should appear in this position because Godot uses the scene tree to determine the default depth order. If a block's entangled partner falls into a hole, causing a wall-like tile to be added to `FloorOverlays`, we want such a tile to occlude any portal below that square. Thus, the depth of portals should be between that of `Floor` and `FloorOverlays`.
+
 7. Create two instances of `block.tscn` called `Leonard` and `Roy` and place them after the `TileMapLayer` nodes in the scene tree. Move the blocks to the desired starting locations in the viewport.
 ![1-07 player creation](1-07_player_creation.png)
 
 8. In the inspector, set Leonard and Roy to have `Block Type` of `Player`. This change will not yet be reflected in the sprites.
 ![1-08 player setup](1-08_player_setup.png)
 
-9. Select the root node from the inspector and use the "Add Script" button to attach the `TornAsunder/levels/level_block_manager.gd` script to the level. This will open the script editor. Switching back to the 2d editor, you will see that nothing has changed yet, but that a blue script icon is now visible on the root node.
+9. Select the root node from the scene tree and use the "Add Script" button to attach the `TornAsunder/levels/level_block_manager.gd` script to the level. This will open the script editor. Switching back to the 2d editor, you will see that nothing has changed yet, but that a blue script icon is now visible on the root node.
 ![1-09 script attachment](1-09_script_attachment.png)
 
 10. Reload Godot, either by closing and re-opening the project or using the `Project > Reload Current Project` toolbar item. The players will now have their new sprites assigned automatically.
@@ -39,10 +47,10 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 11. Using the Inspector tab, set Leonard to have `Block Color` of `Blue` and Roy to have `Block Color` of `Red`. Also switch Roy to have `Side` of `Right Player`. Now that the block-managing "tool" script is watching the level, it will automatically update the sprites.
 ![1-11 player setup 2](1-11_player_setup_2.png)
 
-12. Open `res://scripts/multilevel.gd` and add the path to your level scene to the `level_paths` array.
+12. Open `TornAsunder/scripts/multilevel.gd` and add the path to your level scene to the `level_paths` array.
 ![1-12 mulilevel connection](1-12_multilevel_connection.png)
 
-13. Your level is now playable from the `res://scenes/multilevel.tscn` scene! (Viewport settings may be adjusted after the writing of this tutorial.)
+13. Your level is now playable from the `TornAsunder/scenes/multilevel.tscn` scene! (Viewport settings may be adjusted after the writing of this tutorial.)
 ![1-13 playable](1-13_playable.png)
 
 # 2. Modifying a Level Scene
@@ -83,7 +91,7 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 2. Ensuring that "Connect Mode" is selected, paint your desired walls into the viewport. (Note that some of the tiles in the below image are incorrectly connected - see issue #46.)
 ![2c-2 add walls](2c-2_add_walls.png)
 
-3. Now, for visual reasons we would like the floor to have boundaries at walls. Select the `Floor` node, open its TileMap panel to the Terrain tab, select the Floor terrain (then the "Connect mode" tile, if not already selected), and erase the floor where it overlaps with walls.
+3. You may now notice that the floor does not have visible border-shading at wall boundaries. This is because the `Floor` node doesn't know where the walls are in `FloorOverlays`. To get the floor to realize there is a boundary there, we need to erase the floor tiles under the walls, so that the other floor tiles stop trying to connect to them. Select the `Floor` node, open its TileMap panel to the Terrain tab, and select the Floor terrain (then the "Connect mode" tile, if not already selected). Now, erase the floor from any squares where you placed walls.
 ![2c-3 erase extra floors](2c-3_erase_extra_floors.png)
 
 ## 2d. Adding Holes
