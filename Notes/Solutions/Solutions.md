@@ -7,13 +7,12 @@
 
 ---
 
-**Level Name:** (name)  
-**Authors:** (authors)  
-**Intended layer:** (layer)  
+**Level Name:** Push Through  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
 
-1. do this
-2. do that
-3. go to the exit
+1. Leonard: push the block to the end of the hall, walk to the exit.
+2. Roy: push the block to the end of the hall, walk to the exit.
 
 ---
 
