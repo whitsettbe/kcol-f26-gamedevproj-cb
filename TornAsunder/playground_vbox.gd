@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 # Goes to 
 func _on_button_pressed(level: Variant) -> void:
+	get_tree().paused = false
 	if(Globals.level_scene != null):
 		Globals.level_scene.queue_free()
 	Globals.level_idx = Globals.level_paths.find("res://levels/Playgrounds/" + level)
