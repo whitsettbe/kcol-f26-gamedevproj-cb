@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdox7jqnw8suf"]
 
-[ext_resource type="Script" uid="uid://b3almqxrgx2b0" path="res://scripts/settings.gd" id="1_5p8wc"]
-[ext_resource type="PackedScene" uid="uid://byvj0dtiq0e3v" path="res://scenes/audio.tscn" id="2_r6d6q"]
+[ext_resource type="Script" uid="uid://b3almqxrgx2b0" path="res://UI/scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="PackedScene" uid="uid://byvj0dtiq0e3v" path="res://UI/scenes/audio.tscn" id="2_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="3_6wm04"]
 
 [node name="Settings" type="Node2D" unique_id=1706435238]

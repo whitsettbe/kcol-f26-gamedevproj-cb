@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://do5l6q46ac4tm"]
 
 [ext_resource type="Script" uid="uid://03vclajrcm7w" path="res://scripts/multilevel.gd" id="1_wvn4e"]
-[ext_resource type="PackedScene" uid="uid://duwftmqtn2xj8" path="res://scenes/pause_menu.tscn" id="2_v7a0e"]
+[ext_resource type="PackedScene" uid="uid://duwftmqtn2xj8" path="res://UI/scenes/pause_menu.tscn" id="2_v7a0e"]
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")

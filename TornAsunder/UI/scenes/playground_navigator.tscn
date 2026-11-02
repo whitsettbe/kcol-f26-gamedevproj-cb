@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://l2gypp4kmgse"]
 
-[ext_resource type="Script" uid="uid://cetruuv5p2wh8" path="res://playground_navigator.gd" id="1_ag88b"]
+[ext_resource type="Script" uid="uid://cetruuv5p2wh8" path="res://UI/scripts/playground_navigator.gd" id="1_ag88b"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="1_ivfs6"]
-[ext_resource type="Script" uid="uid://c1v0m0bybt13k" path="res://playground_vbox.gd" id="2_ivfs6"]
+[ext_resource type="Script" uid="uid://c1v0m0bybt13k" path="res://UI/scripts/playground_vbox.gd" id="2_ivfs6"]
 
 [node name="playground_navigator" type="Node2D" unique_id=534790582]
 script = ExtResource("1_ag88b")

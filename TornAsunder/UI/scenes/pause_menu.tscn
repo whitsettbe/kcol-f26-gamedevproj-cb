@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://duwftmqtn2xj8"]
 
-[ext_resource type="Script" uid="uid://coe1ivrq30r0k" path="res://scripts/pause_menu.gd" id="1_n87rw"]
-[ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://scenes/layer_navigator.tscn" id="2_myx47"]
-[ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://scenes/settings.tscn" id="3_kukqi"]
+[ext_resource type="Script" uid="uid://coe1ivrq30r0k" path="res://UI/scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://UI/scenes/layer_navigator.tscn" id="2_myx47"]
+[ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_kukqi"]
 
 [node name="Pause Menu" type="Control" unique_id=263263770]
 process_mode = 3

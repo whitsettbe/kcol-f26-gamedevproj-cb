@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cn3ph6jfq01xw"]
 
-[ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://scripts/layer_navigator.gd" id="1_hwvb6"]
+[ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://UI/scripts/layer_navigator.gd" id="1_hwvb6"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_8dti4"]
-[ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://scenes/caves_navigator.tscn" id="3_nmdk5"]
-[ext_resource type="PackedScene" uid="uid://l2gypp4kmgse" path="res://playground_navigator.tscn" id="4_tg101"]
+[ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://UI/scenes/caves_navigator.tscn" id="3_nmdk5"]
+[ext_resource type="PackedScene" uid="uid://l2gypp4kmgse" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
 
 [node name="Layer Navigator" type="Node2D" unique_id=846608510]
 script = ExtResource("1_hwvb6")
