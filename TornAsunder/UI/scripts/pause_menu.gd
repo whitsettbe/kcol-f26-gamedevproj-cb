@@ -21,7 +21,7 @@ func pause():
 	get_tree().paused = true
 	show()
 
-# This will go in the _process function so the player can unpause with these buttons in the pause menu
+# This will go in the _process function so the player can unpause with these buttons in the pause menu since player input is disabled
 func pauseInput():
 	if((Input.is_action_just_pressed("L_pause") or Input.is_action_just_pressed("R_pause")) and get_tree().paused):
 		resume()
