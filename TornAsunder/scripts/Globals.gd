@@ -3,9 +3,9 @@ extends Node
 var level_paths = [
 	"res://levels/Playgrounds/playground1.tscn",
 	"res://levels/Playgrounds/playground2.tscn",
-	"res://levels/Caves/just_walk.tscn",
-	"res://levels/Caves/push_through.tscn",
-	"res://levels/Caves/co-op_101.tscn",
+	"res://levels/Caves/1 - Just Walk.tscn",
+	"res://levels/Caves/2 - Push Through.tscn",
+	"res://levels/Caves/4 - Co-op 101.tscn",
 	]
 	
 var level_idx = 0
