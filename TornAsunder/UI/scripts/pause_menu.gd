@@ -24,13 +24,9 @@ func pauseInput():
 	elif((Input.is_action_just_pressed("L_pause") or Input.is_action_just_pressed("R_pause")) and not get_tree().paused):
 		pause()
 
-# Resumes the game. Not implemented yet.
+# Resumes the game
 func _on_resume_pressed() -> void:
 	resume()
-
-# Provides a hint for the current level. Not implemented yet.
-func _on_hint_pressed() -> void:
-	pass # Replace with function body.
 	
 	
 # Opens the title screen

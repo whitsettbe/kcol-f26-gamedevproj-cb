@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://l2gypp4kmgse"]
+
+[ext_resource type="Script" uid="uid://ca0o7f82vjujb" path="res://UI/scripts/level_navigator.gd" id="1_5pp44"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_o13xo"]
+[ext_resource type="Script" uid="uid://c1v0m0bybt13k" path="res://UI/scripts/level_manager.gd" id="3_5pp44"]
+
+[node name="level_navigator" type="Node2D" unique_id=534790582]
+script = ExtResource("1_5pp44")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1515529069]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("2_o13xo")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=299608579]
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=545949006]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_5pp44")
+
+[node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=1199583467]
+layout_mode = 2
+text = "Back"

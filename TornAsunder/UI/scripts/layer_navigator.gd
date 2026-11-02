@@ -9,10 +9,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
+# Opens the layer menu	
 func open():
 	show()
 
-# Opens previous page. Currently hard coded to main menu
+# Closes the layer menu
 func _on_back_pressed() -> void:
 	hide()

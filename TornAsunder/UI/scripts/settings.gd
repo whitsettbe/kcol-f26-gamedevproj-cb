@@ -10,9 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+# opens settings menu
 func open():
 	show()
 
-# Takes you to the previous screen. Currently hard coded to main menu.
+# Closes settings menu
 func _on_back_pressed() -> void:
 	hide()

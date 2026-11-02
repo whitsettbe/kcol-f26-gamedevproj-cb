@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Opens next level. Currently hard coded to first playground.
+# Opens default first level
 func _on_continue_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
 

@@ -10,8 +10,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n87rw")
@@ -31,10 +29,6 @@ alignment = 1
 layout_mode = 2
 text = "Resume"
 
-[node name="Hint" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1302898652]
-layout_mode = 2
-text = "Hint"
-
 [node name="Levels" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1272091518]
 layout_mode = 2
 text = "Levels"
@@ -52,7 +46,6 @@ text = "Title Screen"
 [node name="Settings" parent="." unique_id=1706435238 instance=ExtResource("3_kukqi")]
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Hint" to="." method="_on_hint_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Levels" to="Layer Navigator" method="open"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Title Screen" to="." method="_on_title_screen_pressed"]
