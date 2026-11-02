@@ -2,6 +2,8 @@
 
 - If your viewport ever looks too full of "gizmos" attached to your nodes, you can turn the gizmos off using the viewport toolbar: View > Gizmos > Position and View > Gizmos > Group.
 - Arranging nodes in the viewport is easier if you turn on snap-to-grid (the magnet/grid icon in the viewport toolbar). You can configure the snap increment: three dots > configure snap. Stepping by 16px (1/2 block) tends to work well.
+- Tile editing is made _much_ easier with "Highlight Selected TileMap Layer" turned on, which makes your selected Tilemap visible even if others are occluding it in the scene. This setting can be turned on from the TileMap panel. The "Toggle grid visibility" button next to it is also useful sometimes.
+![0 Highlight Selected TileMap Layer](0-highlight-selected.png)
 
 # 1. Creating a level scene
 
