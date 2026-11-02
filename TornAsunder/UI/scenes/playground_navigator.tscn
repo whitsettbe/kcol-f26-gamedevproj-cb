@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cmtde1klxwn3u"]
+
+[ext_resource type="Script" uid="uid://cetruuv5p2wh8" path="res://UI/scripts/playground_navigator.gd" id="1_ag88b"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="1_ivfs6"]
+[ext_resource type="Script" uid="uid://c1v0m0bybt13k" path="res://UI/scripts/playground_vbox.gd" id="2_ivfs6"]
+
+[node name="playground_navigator" type="Node2D" unique_id=534790582]
+script = ExtResource("1_ag88b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1515529069]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("1_ivfs6")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=299608579]
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="PlaygroundVbox" type="VBoxContainer" parent="PanelContainer" unique_id=545949006]
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_ivfs6")
+
+[node name="Back" type="Button" parent="PanelContainer/PlaygroundVbox" unique_id=1199583467]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="PanelContainer/PlaygroundVbox/Back" to="." method="_on_back_pressed"]
