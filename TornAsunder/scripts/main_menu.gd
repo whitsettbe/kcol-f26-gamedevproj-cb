@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 # Opens next level. Currently hard coded to first playground.
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/playground1.tscn")
+	get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
 
 # Quits the game.
 func _on_quit_pressed() -> void:
