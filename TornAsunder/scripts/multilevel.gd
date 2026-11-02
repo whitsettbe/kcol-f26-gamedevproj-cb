@@ -1,9 +1,10 @@
 extends Node2D
 
 var level_paths = [
+	"res://levels/pj_back_to_the_start.tscn",
 	"res://levels/playground1.tscn",
 	"res://levels/playground2.tscn",
-	"res://levels/pj_back_to_the_start.tscn"
+	
 ]
 var level_idx = 0
 var level_scene
