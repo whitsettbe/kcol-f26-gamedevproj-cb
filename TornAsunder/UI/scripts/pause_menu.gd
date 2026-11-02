@@ -36,4 +36,4 @@ func _on_hint_pressed() -> void:
 # Opens the title screen
 func _on_title_screen_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
