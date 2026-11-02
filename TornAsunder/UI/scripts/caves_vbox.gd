@@ -19,7 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Goes to 
+# Goes to level corresponding to button pressed
 func _on_button_pressed(level: Variant) -> void:
 	tempIdx = Globals.level_paths.find("res://levels/Caves/" + level)
 	if(tempIdx != -1):
