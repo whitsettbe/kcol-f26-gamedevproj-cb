@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+var tempIdx
+
 # Called when the node enters the scene tree for the first time.
 # Create buttons based on levels in folder
 func _ready() -> void:
@@ -17,11 +19,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Goes to 
+# Goes to corresponding level of button pressed
 func _on_button_pressed(level: Variant) -> void:
-	get_tree().paused = false
-	if(Globals.level_scene != null):
-		Globals.level_scene.queue_free()
-	Globals.level_idx = Globals.level_paths.find("res://levels/Playgrounds/" + level)
-	get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
+	tempIdx = Globals.level_paths.find("res://levels/Playgrounds/" + level)
+	if(tempIdx != -1):
+		get_tree().paused = false
+		if(Globals.level_scene != null):
+			Globals.level_scene.queue_free()
+		Globals.level_idx = Globals.level_paths.find("res://levels/Playgrounds/" + level)
+		get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
+	else:
+		print(level + " is not in the level_paths array.")
 	
