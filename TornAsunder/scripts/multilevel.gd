@@ -62,7 +62,7 @@ func _on_state_push_requested() -> void:
 	
 	# Push the state and the current time
 	level_scene_stack.push_back(PackedScene.new())
-	level_scene_stack.back().pack(level_scene)
+	level_scene_stack.back().pack(Globals.level_scene)
 	level_scene_stack_times.push_back(
 			Time.get_ticks_msec() / 1e3)
 
@@ -85,10 +85,10 @@ func _on_state_drop_requested() -> void:
 #  github.com/godotengine/godot/issues/85372.
 func _on_state_undo_requested() -> void:
 	if len(level_scene_stack) > 0:
-		level_scene.queue_free()
-		level_scene = level_scene_stack.pop_back().instantiate()
+		Globals.level_scene.queue_free()
+		Globals.level_scene = level_scene_stack.pop_back().instantiate()
 		level_scene_stack_times.pop_back()
-		call_deferred("add_child", level_scene)
+		call_deferred("add_child", Globals.level_scene)
 		connect_level_signals()
 
 
