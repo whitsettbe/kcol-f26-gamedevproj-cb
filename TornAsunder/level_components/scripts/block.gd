@@ -102,7 +102,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successors = get_all_successors(dir_vect, blockColor)
 
 	# DEBUG
-	print(Time.get_ticks_usec(), self, successors)
+	print(Time.get_ticks_usec(), ' us: ', self,
+			' moving into ', successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:

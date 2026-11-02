@@ -163,6 +163,3 @@ blockColor = 2
 [node name="Block8" parent="." unique_id=1430778222 instance=ExtResource("5_rtjyd")]
 position = Vector2(784, 560)
 blockColor = 1
-
-[connection signal="player_on_exit" from="EXIT_L" to="." method="_on_player_on_exit"]
-[connection signal="player_on_exit" from="EXIT_R" to="." method="_on_player_on_exit"]
