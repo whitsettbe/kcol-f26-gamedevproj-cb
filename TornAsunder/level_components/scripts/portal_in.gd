@@ -20,7 +20,9 @@ func _ready() -> void:
 
 
 # Called when an Area2D enters the collision region.
-# 'area' is the entering Area2D node
+# 'area' is the entering Area2D node.
+# Note that this also runs when instancing a scene and
+#  an Area2D node is instanced on top of the portal.
 func _on_area_entered(area: Area2D) -> void:
 	
 	# Ignore non-players
@@ -44,5 +46,10 @@ func _on_area_entered(area: Area2D) -> void:
 # Note when a player leaves the area, if
 #  this is an exit tile
 func _on_area_exited(area: Area2D) -> void:
+	
+	# Ignore non-players
+	if not area is Player:
+		return
+	
 	if is_exit:
 		players_exiting -= 1
