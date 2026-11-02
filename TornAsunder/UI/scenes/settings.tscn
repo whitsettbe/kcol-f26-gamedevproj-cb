@@ -33,5 +33,5 @@ text = "Back"
 
 [node name="Audio" parent="." unique_id=2082160121 instance=ExtResource("2_r6d6q")]
 
-[connection signal="pressed" from="PanelContainer/Button_manager/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Audio" to="Audio" method="open"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Back" to="." method="_on_back_pressed"]
