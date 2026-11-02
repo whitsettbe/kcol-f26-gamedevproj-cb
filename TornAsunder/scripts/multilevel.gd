@@ -3,8 +3,8 @@ extends Node2D
 var level_paths = [
 	"res://levels/playground1.tscn",
 	"res://levels/playground2.tscn",
-	#"res://levels/just_walk.tscn",
-	#"res://levels/push_through.tscn",
+	"res://levels/just_walk.tscn",
+	"res://levels/push_through.tscn",
 	"res://levels/co-op_101.tscn",
 ]
 var level_idx = 0
