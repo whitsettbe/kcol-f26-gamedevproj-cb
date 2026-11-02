@@ -42,8 +42,10 @@ layout_mode = 2
 text = "Title Screen"
 
 [node name="Layer Navigator" parent="." unique_id=2131716285 instance=ExtResource("2_myx47")]
+visible = false
 
 [node name="Settings" parent="." unique_id=1706435238 instance=ExtResource("3_kukqi")]
+visible = false
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Levels" to="Layer Navigator" method="open"]
