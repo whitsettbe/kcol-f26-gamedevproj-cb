@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0gdogms6nhfh" path="res://UI/scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://UI/scenes/layer_navigator.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d2j4wru802yse" path="res://Main Menu Concept Buttonless.png" id="2_eslsf"]
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_bqqt6"]
 
 [sub_resource type="GDScript" id="GDScript_bqqt6"]
@@ -20,6 +21,12 @@ func _process(delta: float) -> void:
 
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=687194478]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = ExtResource("2_eslsf")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1725492098]
 offset_right = 1152.0
