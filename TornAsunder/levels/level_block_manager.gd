@@ -22,7 +22,11 @@ var solid_invariant_tracker : int
 # Set up timeouts for input duplication
 var input_timeouts = Dictionary()
 	# direction action -> seconds until usable
-const INPUT_ECHO_DELAY = 0.5 # seconds
+const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
+		# must be held to trigger echo motion
+const INPUT_RUN_INTERVAL = 0.15 # seconds between
+		# running motions (repeated motion during
+		# key-holding)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -86,7 +90,7 @@ func handle_key_input() -> void:
 				if input_timeouts[dir] <= -INPUT_ECHO_DELAY:
 					input_timeouts[dir] = INPUT_ECHO_DELAY
 				else:
-					input_timeouts[dir] = GridArea2D.PUSH_DURATION
+					input_timeouts[dir] = INPUT_RUN_INTERVAL
 				
 				# Push the current state to the undo stack
 				if not state_pushed:
