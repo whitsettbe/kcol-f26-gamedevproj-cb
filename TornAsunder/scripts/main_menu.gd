@@ -14,11 +14,6 @@ func _process(delta: float) -> void:
 func _on_continue_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/playground1.tscn")
 
-# Opens settings.
-func _on_settings_pressed() -> void:
-	Globals.menu_stack.append("res://scenes/main_menu.tscn")
-	get_tree().change_scene_to_file("res://scenes/settings.tscn")
-
 # Quits the game.
 func _on_quit_pressed() -> void:
 	get_tree().quit()
