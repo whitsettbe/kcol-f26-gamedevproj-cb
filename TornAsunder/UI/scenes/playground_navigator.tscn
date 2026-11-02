@@ -27,3 +27,5 @@ script = ExtResource("2_ivfs6")
 [node name="Back" type="Button" parent="PanelContainer/PlaygroundVbox" unique_id=1199583467]
 layout_mode = 2
 text = "Back"
+
+[connection signal="pressed" from="PanelContainer/PlaygroundVbox/Back" to="." method="_on_back_pressed"]
