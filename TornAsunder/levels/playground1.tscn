@@ -104,6 +104,3 @@ position = Vector2(752, 112)
 script = ExtResource("6_ff3li")
 partner = NodePath("../Entangled5")
 blockType = 2
-
-[connection signal="player_on_exit" from="EXIT_L" to="." method="_on_player_on_exit"]
-[connection signal="player_on_exit" from="EXIT_R" to="." method="_on_player_on_exit"]
