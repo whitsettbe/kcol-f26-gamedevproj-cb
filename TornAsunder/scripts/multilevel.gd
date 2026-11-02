@@ -1,5 +1,6 @@
 extends Node2D
 
+var level_scene_stack = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,7 @@ func load_level(idx : int) -> void:
 	Globals.level_scene = load(Globals.level_paths[idx]).instantiate()
 	call_deferred("add_child", Globals.level_scene)
 	connect_level_signals()
-	Globals.level_scene_stack = []
+	level_scene_stack = []
 
 
 # Connect the level scene's signals to scripts in this file
@@ -52,14 +53,14 @@ func _on_state_push_requested() -> void:
 	if Globals.level_scene.any_active_rolls():
 		return
 	
-	Globals.level_scene_stack.push_back(PackedScene.new())
-	Globals.level_scene_stack.back().pack(Globals.level_scene)
+	level_scene_stack.push_back(PackedScene.new())
+	level_scene_stack.back().pack(Globals.level_scene)
 
 
 # Delete the last entry on the undo stack
 func _on_state_drop_requested() -> void:
-	if len(Globals.level_scene_stack) > 0:
-		Globals.level_scene_stack.pop_back()
+	if len(level_scene_stack) > 0:
+		level_scene_stack.pop_back()
 
 
 # Load the last entry on the undo stack
@@ -69,9 +70,9 @@ func _on_state_drop_requested() -> void:
 #  on the part of Godot. See discussion at
 #  github.com/godotengine/godot/issues/85372.
 func _on_state_undo_requested() -> void:
-	if len(Globals.level_scene_stack) > 0:
+	if len(level_scene_stack) > 0:
 		Globals.level_scene.queue_free()
-		Globals.level_scene = Globals.level_scene_stack.pop_back().instantiate()
+		Globals.level_scene = level_scene_stack.pop_back().instantiate()
 		call_deferred("add_child", Globals.level_scene)
 		connect_level_signals()
 
