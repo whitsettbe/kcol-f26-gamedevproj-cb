@@ -14,7 +14,11 @@ var level_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	# Debug: confirm that the level paths are
+	#  all valid.
+	for path in level_paths:
+		assert(ResourceLoader.exists(path),
+			"Path \"{0}\" not found.".format([path]))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
