@@ -11,8 +11,12 @@
 **Authors:** Benjamin  
 **Intended layer:** Caves  
 
-1. Leonard: push the block to the end of the hall, walk to the exit.
-2. Roy: push the block to the end of the hall, walk to the exit.
+1. Leonard: push the first block to the end of the hall.
+2. Roy: push the first block to the end of the hall.
+3. Leonard: push the next two blocks to the end of the next hall.
+4. Roy: push the next two blocks to the end of the next hall.
+5. Leonard: walk to the exit.
+6. Roy: walk to the exit.
 
 ---
 
