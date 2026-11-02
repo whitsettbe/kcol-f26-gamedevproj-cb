@@ -31,32 +31,34 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 
 
 # Find all successors of this block (and partner),
-#  as dictionary keys (values are "is this movable?")
+#  as array entries (or null if something was unpushable),
+#  where each block appears after the objects which must move
+#  before it
 func get_all_successors(
 	dir_vect : Vector2,
 	pusher_color : Block.BlockColor,
-	as_parent : bool = true) -> Dictionary:
+	as_parent : bool = true) -> Array:
 	
-	var out = Dictionary()
-	out.merge(super(dir_vect, pusher_color))
+	var out = []
+	out.append_array(super(dir_vect, pusher_color))
 	if as_parent:
-		out[partner] = true # partner had better be a block
-				# of the same color as this one :)
-		out.merge(partner.get_all_successors(dir_vect, pusher_color, false))
+		out.append_array(partner.get_all_successors(dir_vect, pusher_color, false))
+		out.append(partner)
 	return out
 	
 
 # Since both this block and its partner will be
 #  asked to roll, only one needs to do so.
 #  Assumes distinct names.
-func roll(dir_vect : Vector2):
+func roll(dir_vect : Vector2,
+		do_timeout : bool = true):
 	# Ensure both entangled blocks appear to be rolling,
 	#  though only one will be managing the roll
 	roll_direction = dir_vect
 	
 	# Compare nodes by reference
 	if self.name < partner.name:
-		super(dir_vect)
+		super(dir_vect, do_timeout)
 
 
 # Fill a hole under this tile,

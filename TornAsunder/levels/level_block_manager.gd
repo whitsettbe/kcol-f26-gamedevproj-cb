@@ -13,26 +13,51 @@ const tiles = {
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
 signal level_completed
+signal state_push_requested
+signal state_drop_requested
+signal state_undo_requested
+signal level_reset_requested
+var solid_invariant_tracker : int
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		align_block_designs()
+		solid_invariant_tracker = get_solid_invariant()
+		
+		# Listen for when players land on the exits
+		$EXIT_L.connect("player_on_exit", _on_player_on_exit)
+		$EXIT_R.connect("player_on_exit", _on_player_on_exit)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		align_block_designs()
+	else:
+		# While the level is in an unsafe state
+		#  (say, if multiple blocks are in the same place),
+		#  roll back the level state
+		if not state_is_safe():
+			emit_signal("state_undo_requested")
 
 
-# Pass inputs to the player (during game)
-func _unhandled_input(event):
+# Pass keyboard inputs to the player (during game)
+func _unhandled_key_input(event: InputEvent) -> void:
+	
+	var state_pushed = false
+	var move_succeeded = false
 	
 	if not Engine.is_editor_hint():
 		for dir in Block.inputs.keys():
 			if event.is_action_pressed(dir):
+				
+				# Push the current state to the undo stack
+				if not state_pushed:
+					state_pushed = true
+					emit_signal("state_push_requested")
+				
 				for node in get_children():
 					if node is Player:
 						# Check if the event is for
@@ -41,8 +66,26 @@ func _unhandled_input(event):
 								== Player.PlayerSide.LeftPlayer)
 						var isLeftMotion = (dir[0] == "L")
 						if isLeftPlayer == isLeftMotion:
-							node.move_if_possible(Block.inputs[dir]
-							* GridArea2D.TILE_SIZE)
+							move_succeeded = move_succeeded or \
+								node.move_if_possible(Block.inputs[dir]
+								* GridArea2D.TILE_SIZE)
+								
+		# If moves were attempted but did not succeed,
+		#  delete the pushed state;
+		#  Note that the drop is time-limited not to drop
+		#  old states, which may still be at the top of the
+		#  stack if the state push triggered earlier in this
+		#  function was unsuccessful
+		if state_pushed and not move_succeeded:
+			emit_signal("state_drop_requested")
+			
+		# Handle undo if requested by user
+		if event.is_action_pressed("undo"):
+			emit_signal("state_undo_requested")
+			
+		# Handle level restart if requested by user
+		if event.is_action_pressed("restart"):
+			emit_signal("level_reset_requested")
 
 
 # Ensure child properties align with their block type
@@ -50,10 +93,10 @@ func align_block_designs():
 			
 	for node in get_children():
 		if node is Block:
-			align_block_design(node)
+			align_single_block_design(node)
 			
 # Ensure Block properties align with its type
-func align_block_design(node : Block):
+func align_single_block_design(node : Block):
 	
 	var blockType = node.blockType
 	var blockColor = node.blockColor
@@ -74,7 +117,63 @@ func align_block_design(node : Block):
 
 # When a player stands on an exit,
 #  check if both exits have players on them.
+#  (this script is connected to the relevant signals
+#  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
 	if $EXIT_L.players_exiting > 0 \
 			and $EXIT_R.players_exiting > 0:
 		emit_signal("level_completed")
+		
+
+# Indicate whether the level is in a safe state,
+#  by checking whether the solid invariant has changed
+func state_is_safe() -> bool:
+	return get_solid_invariant() == solid_invariant_tracker
+	
+
+# Calculate the difference between the number of "solid"
+#  grid squares (i.e. containing walls or visible blocks)
+#  and the number of holes, which should be invariant
+#  over the level
+func get_solid_invariant() -> int:
+	var solid_squares = []
+	var hole_squares = []
+	
+	# Recognize squares where there are active blocks
+	for node in get_children():
+		if node is Block and not node.dead:
+			solid_squares.append(
+				GridArea2D.pos_to_tile_coords(node.position)
+			)
+	
+	# Add walls and holes to the tracked arrays
+	solid_squares.append_array($FloorOverlays.get_used_cells_by_id(
+		-1, GridArea2D.TILE_IDS.wall
+	))
+	hole_squares.append_array($FloorOverlays.get_used_cells_by_id(
+		-1, GridArea2D.TILE_IDS.hole
+	))
+	
+	# Convert arrays to dictionaries for counting the
+	#  de-duplicated squares
+	var solid_squares_dict = {}
+	var hole_squares_dict = {}
+	for s_sq in solid_squares:
+		solid_squares_dict[s_sq] = true
+	for h_sq in hole_squares:
+		hole_squares_dict[h_sq] = true
+	
+	# The difference should be invariant
+	return len(solid_squares_dict) - len(hole_squares_dict)
+
+
+# Indicate whether any blocks in the level are currently
+#  in the middle of a roll
+func any_active_rolls() -> bool:
+	for node in get_children():
+		if node is Block and not node.dead \
+				and node.roll_direction != Vector2.ZERO:
+			# the check for dead should be unnecessary...
+			
+			return true
+	return false
