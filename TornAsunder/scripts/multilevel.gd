@@ -105,8 +105,8 @@ func compute_level_transform() -> void:
 	
 	# Compute the pixel rectangle containing the map,
 	#  excluding its extra bounding walls.
-	var tilemap : TileMapLayer \
-			= Globals.level_scene.get_node("FloorOverlays")
+	var tilemap : TileMapLayer = \
+			Globals.level_scene.get_node("FloorOverlays")
 	var grid_rect = tilemap.get_used_rect()
 	var grid_rect_contracted = Rect2i(
 		grid_rect.position + Vector2i.ONE,
@@ -136,3 +136,27 @@ func compute_level_transform() -> void:
 	
 	# Apply the translation
 	Globals.level_scene.position = offset_needed
+	var rect_recentered = Rect2(
+		rect_rescaled.position + offset_needed,
+		rect_rescaled.size
+	)
+	
+	# Compute the amount of the screen that needs to be covered
+	#  on each side
+	var open_top = rect_recentered.position.y
+	var open_left = rect_recentered.position.x
+	var open_right = viewport_size.x - rect_recentered.end.x
+	var open_bottom = viewport_size.y - rect_recentered.end.y
+	
+	# Position the frame boxes to cover up the region
+	#  outside of the level
+	#  (assumes the frame boxes all have the same size
+	#  as the viewport!)
+	$LevelFrame/Top.position = \
+			Vector2(0, -viewport_size.y + open_top)
+	$LevelFrame/Left.position = \
+			Vector2(-viewport_size.x + open_left, 0)
+	$LevelFrame/Right.position = \
+			Vector2(viewport_size.x - open_right, 0)
+	$LevelFrame/Bottom.position = \
+			Vector2(0, viewport_size.y - open_bottom)
