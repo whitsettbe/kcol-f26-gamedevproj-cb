@@ -100,7 +100,8 @@ func _on_level_reset_requested() -> void:
 
 
 # Translate and scale the level to center it on the screen
-#  and maximize its size.
+#  and maximize its size. Canvas elements are also arranged
+#  to cover the region outside of the level.
 func compute_level_transform() -> void:
 	
 	# Compute the pixel rectangle containing the map,

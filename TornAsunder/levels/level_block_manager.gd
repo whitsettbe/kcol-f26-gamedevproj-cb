@@ -29,7 +29,7 @@ const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
 		#  ended.
 const INPUT_RUN_INTERVAL = 0.15 # seconds between
 		# running motions (repeated motion during
-		# key-holding);
+		# key-holding)
 
 
 # Called when the node enters the scene tree for the first time.
