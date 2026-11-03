@@ -23,10 +23,13 @@ var solid_invariant_tracker : int
 var input_timeouts = Dictionary()
 	# direction action -> seconds until usable
 const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
-		# must be held to trigger echo motion
+		# must be held to trigger echo motion (i.e. running)
+		# Note that if a key has been *available* for
+		#  this long, then we consider a run to have
+		#  ended.
 const INPUT_RUN_INTERVAL = 0.15 # seconds between
 		# running motions (repeated motion during
-		# key-holding)
+		# key-holding);
 
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +44,13 @@ func _ready() -> void:
 		
 		# Set up input timeouts
 		for dir in Block.inputs.keys():
-			input_timeouts[dir] = 0
+			# Enforce a short delay before key
+			#  input is accepted at level load
+			#  (this will only affect keys which
+			#   are pressed at level load, as other
+			#   keys are marked immediately usable
+			#   in _process() )
+			input_timeouts[dir] = INPUT_ECHO_DELAY
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
