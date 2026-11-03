@@ -57,6 +57,7 @@ text = "Quit"
 visible = false
 
 [node name="Settings" parent="." unique_id=1706435238 instance=ExtResource("3_bqqt6")]
+visible = false
 
 [connection signal="pressed" from="PanelContainer/Button_manager/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Level Navigator" to="Layer Navigator" method="open"]
