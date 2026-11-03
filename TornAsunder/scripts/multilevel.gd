@@ -26,6 +26,7 @@ func load_level(idx : int) -> void:
 	connect_level_signals()
 	level_scene_stack = []
 	level_scene_stack_times = []
+	compute_level_transform()
 
 
 # Connect the level scene's signals to scripts in this file
@@ -96,3 +97,42 @@ func _on_state_undo_requested() -> void:
 func _on_level_reset_requested() -> void:
 	Globals.level_scene.queue_free()
 	load_level(Globals.level_idx)
+
+
+# Translate and scale the level to center it on the screen
+#  and maximize its size.
+func compute_level_transform() -> void:
+	
+	# Compute the pixel rectangle containing the map,
+	#  excluding its extra bounding walls.
+	var tilemap : TileMapLayer \
+			= Globals.level_scene.get_node("FloorOverlays")
+	var grid_rect = tilemap.get_used_rect()
+	var grid_rect_contracted = Rect2i(
+		grid_rect.position + Vector2i.ONE,
+		grid_rect.size - 2 * Vector2i.ONE
+	)
+	var rect_contracted = Rect2(
+		grid_rect_contracted.position * GridArea2D.TILE_SIZE,
+		grid_rect_contracted.size * GridArea2D.TILE_SIZE
+	) # pixels
+	
+	# Determine how to scale the level
+	var viewport_size = get_viewport().get_visible_rect().size
+	var scale_ratios = viewport_size / rect_contracted.size
+	var scale_ratio = min(scale_ratios.x, scale_ratios.y)
+	
+	# Set the level scale
+	Globals.level_scene.scale = Vector2.ONE * scale_ratio
+	var rect_rescaled = Rect2(
+		rect_contracted.position * scale_ratio,
+		rect_contracted.size * scale_ratio
+	)
+	
+	# Determine the translation to the screen center
+	var viewport_center = viewport_size / 2
+	var level_center = rect_rescaled.position + rect_rescaled.size / 2
+	var offset_needed = viewport_center - level_center
+	
+	# Apply the translation
+	Globals.level_scene.position = offset_needed
