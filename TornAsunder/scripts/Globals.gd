@@ -1,6 +1,7 @@
 extends Node
 
 var level_paths = [
+	"res://levels/Playgrounds/playground0.tscn",
 	"res://levels/Playgrounds/playground1.tscn",
 	"res://levels/Playgrounds/playground2.tscn",
 	"res://levels/Caves/1 - Just Walk.tscn",
