@@ -91,7 +91,7 @@ The game will have a linear structure, with an embedded narrative. There will on
 
 **Tutorial/Onboarding (How will players learn mechanics?):**
 
-Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include portals and spheres (rolling blocks that don't stop after being pushed). The third will introduce paint, which changes player colors. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
+Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include colored blocks and portals. The third will introduce spheres (rolling blocks that don't stop after being pushed) and paint, which changes player colors. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
 
 **Progression (How does your game increase in difficulty or complexity?):**
 

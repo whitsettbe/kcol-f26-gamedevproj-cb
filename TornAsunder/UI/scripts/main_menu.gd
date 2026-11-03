@@ -10,6 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Opens previous page.
-func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file(Globals.menu_stack.pop_back())
+# Opens default first level
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/multilevel.tscn")
+
+# Quits the game.
+func _on_quit_pressed() -> void:
+	get_tree().quit()

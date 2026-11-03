@@ -1,12 +1,15 @@
 # 0. Tips and Tricks
 
 - If your viewport ever looks too full of "gizmos" attached to your nodes, you can turn the gizmos off using the viewport toolbar: View > Gizmos > Position and View > Gizmos > Group.
+- Arranging nodes in the viewport is easier if you turn on snap-to-grid (the magnet/grid icon in the viewport toolbar). You can configure the snap increment: three dots > configure snap. Stepping by 16px (1/2 block) tends to work well.
+- Tile editing is made _much_ easier with "Highlight Selected TileMap Layer" turned on, which makes your selected Tilemap visible even if others are occluding it in the scene. This setting can be turned on from the TileMap panel. The "Toggle grid visibility" button next to it is also useful sometimes.
+![0 Highlight Selected TileMap Layer](0-highlight-selected.png)
 
 # 1. Creating a level scene
 
 The result of this section has been saved as `levels/basic_level_empty.tscn`. By copying this scene as a template, you can avoid following these steps yourself. That said, knowing how the scene is constructed is still valuable.
 
-1. Create a new scene with a Node2D base. Save the scene in the `TornAsunder/levels` folder.
+1. Create a new scene with a Node2D base. Save the scene in the `TornAsunder/levels` folder, or a layer-specific subfolder thereof.
 ![1-01 create scene](1-01_create_scene.png)
 
 2. Add three TileMapLayer nodes named `Floor`, `FloorOverlays`, and `FalseOverlays` (in that order). In the inspector, set each of them to use the Tile Set `TornAsunder/all_tiles.tres`.
@@ -47,8 +50,9 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 11. Using the Inspector tab, set Leonard to have `Block Color` of `Blue` and Roy to have `Block Color` of `Red`. Also switch Roy to have `Side` of `Right Player`. Now that the block-managing "tool" script is watching the level, it will automatically update the sprites.
 ![1-11 player setup 2](1-11_player_setup_2.png)
 
-12. Open `TornAsunder/scripts/multilevel.gd` and add the path to your level scene to the `level_paths` array.
+12. Open `TornAsunder/scripts/Globals.gd` and add the path to your level scene to the `level_paths` array.
 ![1-12 mulilevel connection](1-12_multilevel_connection.png)
+(This picture depicts `multilevel.gd`, which is no longer where this information is stored, but in `Globals.gd` it looks much the same.)
 
 13. Your level is now playable from the `TornAsunder/scenes/multilevel.tscn` scene! (Viewport settings may be adjusted after the writing of this tutorial.)
 ![1-13 playable](1-13_playable.png)
