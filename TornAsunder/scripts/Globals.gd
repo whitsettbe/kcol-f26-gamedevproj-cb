@@ -25,12 +25,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-# Function to get all node descendents recursively
-static func get_descendents(obj : Node) -> Array[Node]:
-	var out : Array[Node] = []
-	for child in obj.get_children():
-		out.push_back(child)
-		out.append_array(get_descendents(child))
-	return out

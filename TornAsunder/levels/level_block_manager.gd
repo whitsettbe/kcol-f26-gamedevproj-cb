@@ -35,6 +35,10 @@ const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
 const INPUT_RUN_INTERVAL = 0.15 # seconds between
 		# running motions (repeated motion during
 		# key-holding)
+		
+
+# Export a layer selector
+@export var layer : GridArea2D.Layer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -150,10 +154,10 @@ func align_tile_designs():
 		if node is Block:
 			align_single_block_design(node)
 	
-	# Set spritesheets
-	#for node in Globals.get_descendents(self):
-	#	if node is TileMapLayer:
-	#		node.tile_set = tilesets[GridArea2D.Layer.RUINS]
+	# Set spritesheets based on the exported "layer" variable
+	for node in get_descendents(self):
+		if node is TileMapLayer:
+			node.tile_set = tilesets[layer]
 			
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
@@ -237,3 +241,11 @@ func any_active_rolls() -> bool:
 			
 			return true
 	return false
+
+# Function to get all node descendents recursively
+func get_descendents(obj : Node) -> Array[Node]:
+	var out : Array[Node] = []
+	for child in obj.get_children():
+		out.push_back(child)
+		out.append_array(get_descendents(child))
+	return out
