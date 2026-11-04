@@ -12,6 +12,11 @@ const tiles = {
 	Block.BlockType.PLAYER: Vector2i(4,0),
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
+const tilesets = {
+	GridArea2D.Layer.CAVES : preload("res://sprites/cave_tiles.tres"),
+	GridArea2D.Layer.RUINS : preload("res://sprites/ruin_tiles.tres"),
+	GridArea2D.Layer.BOG : preload("res://sprites/bog_tiles.tres")
+}
 signal level_completed
 signal state_push_requested
 signal state_drop_requested
@@ -35,7 +40,7 @@ const INPUT_RUN_INTERVAL = 0.15 # seconds between
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
 		solid_invariant_tracker = get_solid_invariant()
 		
 		# Listen for when players land on the exits
@@ -56,7 +61,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
 	else:
 		# While the level is in an unsafe state
 		#  (say, if multiple blocks are in the same place),
@@ -136,12 +141,19 @@ func handle_key_input() -> void:
 			emit_signal("level_reset_requested")
 
 
-# Ensure child properties align with their block type
-func align_block_designs():
+# Ensure child properties align with their block type,
+#  and swap spritesheets as needed based on the layer.
+func align_tile_designs():
 			
+	# Set block designs
 	for node in get_children():
 		if node is Block:
 			align_single_block_design(node)
+	
+	# Set spritesheets
+	#for node in Globals.get_descendents(self):
+	#	if node is TileMapLayer:
+	#		node.tile_set = tilesets[GridArea2D.Layer.RUINS]
 			
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
