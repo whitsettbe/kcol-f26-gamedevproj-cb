@@ -7,6 +7,12 @@ var level_scene_stack_times = [] # seconds
 const STACK_DELETION_TIME_WINDOW = 0.03 # seconds
 	# indicates how long a stack state is allowed to be removed
 	# before it takes an explicit undo to be dropped
+const MAX_LEVEL_SIZE_FACTOR = 1.0
+	# Maximum fraction of viewport width/height which a level
+	#  can take up. This contains the first set of walls
+	#  around the level, but not the outermost set of walls.
+	#  Those can be outside of the "level" space, and they will
+	#  be covered up by the frame.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -122,6 +128,7 @@ func compute_level_transform() -> void:
 	var viewport_size = get_viewport().get_visible_rect().size
 	var scale_ratios = viewport_size / rect_contracted.size
 	var scale_ratio = min(scale_ratios.x, scale_ratios.y)
+	scale_ratio *= MAX_LEVEL_SIZE_FACTOR
 	
 	# Set the level scale
 	Globals.level_scene.scale = Vector2.ONE * scale_ratio
