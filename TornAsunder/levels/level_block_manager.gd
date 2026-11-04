@@ -160,7 +160,7 @@ func align_tile_designs():
 			align_single_block_design(node)
 		elif node is PortalIn:
 			align_portal_design(node)
-      
+	
 	# Set spritesheets based on the exported "layer" variable
 	for node in get_descendents(self):
 		if node is TileMapLayer:
