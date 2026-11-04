@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bysw7tg4x2kpx"]
 
 [ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_qk5lf"]
-[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_04jta"]
+[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://sprites/cave_tiles.tres" id="2_04jta"]
 [ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_ctyvf"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_dtkas"]
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_ncca4"]

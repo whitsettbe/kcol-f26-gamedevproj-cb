@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://docdtip3clf4"]
 
-[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="1_bsiks"]
+[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://sprites/cave_tiles.tres" id="1_bsiks"]
 [ext_resource type="Script" uid="uid://7fg4735g2e14" path="res://level_components/scripts/portal_out.gd" id="1_ieggm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ieggm"]

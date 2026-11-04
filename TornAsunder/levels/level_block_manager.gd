@@ -12,6 +12,11 @@ const tiles = {
 	Block.BlockType.PLAYER: Vector2i(4,0),
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
+const tilesets = {
+	GridArea2D.Layer.CAVES : preload("res://sprites/cave_tiles.tres"),
+	GridArea2D.Layer.RUINS : preload("res://sprites/ruin_tiles.tres"),
+	GridArea2D.Layer.BOG : preload("res://sprites/bog_tiles.tres")
+}
 signal level_completed
 signal state_push_requested
 signal state_drop_requested
@@ -30,6 +35,10 @@ const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
 const INPUT_RUN_INTERVAL = 0.15 # seconds between
 		# running motions (repeated motion during
 		# key-holding)
+		
+
+# Export a layer selector
+@export var layer : GridArea2D.Layer
 
 # Distinguish the portal-in sprite location
 #  and the level exit sprite location
@@ -40,7 +49,7 @@ const EXIT_TEXTURE_LOC = Vector2i(2,3)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
 		solid_invariant_tracker = get_solid_invariant()
 		
 		# Listen for when players land on the exits
@@ -61,7 +70,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
 	else:
 		# While the level is in an unsafe state
 		#  (say, if multiple blocks are in the same place),
@@ -141,14 +150,21 @@ func handle_key_input() -> void:
 			emit_signal("level_reset_requested")
 
 
-# Ensure child properties align with their block type
-func align_block_designs():
+# Ensure child properties align with their block type,
+#  and swap spritesheets as needed based on the layer.
+func align_tile_designs():
 			
+	# Set block designs
 	for node in get_children():
 		if node is Block:
 			align_single_block_design(node)
 		elif node is PortalIn:
 			align_portal_design(node)
+      
+	# Set spritesheets based on the exported "layer" variable
+	for node in get_descendents(self):
+		if node is TileMapLayer:
+			node.tile_set = tilesets[layer]
 
 # Ensure Exit Portals are given exit texture
 func align_portal_design(node: PortalIn):
@@ -158,7 +174,7 @@ func align_portal_design(node: PortalIn):
 		(EXIT_TEXTURE_LOC if node.is_exit
 				else PORTAL_IN_TEXTURE_LOC)
 	)
-
+			
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
 	
@@ -241,3 +257,11 @@ func any_active_rolls() -> bool:
 			
 			return true
 	return false
+
+# Function to get all node descendents recursively
+func get_descendents(obj : Node) -> Array[Node]:
+	var out : Array[Node] = []
+	for child in obj.get_children():
+		out.push_back(child)
+		out.append_array(get_descendents(child))
+	return out
