@@ -40,6 +40,11 @@ const INPUT_RUN_INTERVAL = 0.15 # seconds between
 # Export a layer selector
 @export var layer : GridArea2D.Layer
 
+# Distinguish the portal-in sprite location
+#  and the level exit sprite location
+const PORTAL_IN_TEXTURE_LOC = Vector2i(0,3)
+const EXIT_TEXTURE_LOC = Vector2i(2,3)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -153,11 +158,22 @@ func align_tile_designs():
 	for node in get_children():
 		if node is Block:
 			align_single_block_design(node)
-	
+		elif node is PortalIn:
+			align_portal_design(node)
+      
 	# Set spritesheets based on the exported "layer" variable
 	for node in get_descendents(self):
 		if node is TileMapLayer:
 			node.tile_set = tilesets[layer]
+
+# Ensure Exit Portals are given exit texture
+func align_portal_design(node: PortalIn):
+	node.get_node("TileMapLayer").set_cell(
+		Vector2i(0,0),
+		0,
+		(EXIT_TEXTURE_LOC if node.is_exit
+				else PORTAL_IN_TEXTURE_LOC)
+	)
 			
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
