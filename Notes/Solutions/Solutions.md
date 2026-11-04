@@ -24,11 +24,12 @@
 **Authors:** Benjamin  
 **Intended layer:** Caves  
 
-1. Leonard: push the block left until you can enter the first room.
+1. Leonard: push the two blocks in your row left until you can enter the first room.
 2. Leonard: push the next block all the way to the right.
-3. Roy: enter the hallway Leonard just made accessible. Push the block in it to the top wall.
-4. Leonard: walk to the exit.
+3. Roy: enter the hallway Leonard just made accessible. Push the block in it upward as far as possible.
+4. Leonard: go to the block Roy just pushed up and push it to the right.
 5. Roy: walk to the exit.
+6. Leonard: walk to the exit.
 
 ---
 
