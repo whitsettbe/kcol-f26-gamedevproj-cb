@@ -32,6 +32,21 @@
 
 ---
 
+**Level Name:** Out of the Corner  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Roy: in the right half of the first room, push the left unentangled block up, then the middle one to the right, then move up.
+2. Leonard: push the unentangled block left two squares and up two squares.
+3. Roy: push the adjacent unentangled and entangled blocks left once.
+4. Leonard: push the unentangled block up into the hole in the hallway and enter the hallway.
+5. Roy: push left three times (the entangled block will fall into the hole) and enter the hallway.
+6. Leonard: push the entangled block in the hallway down to fill the hole in Roy's hallway.
+7. Roy: walk to the exit.
+8. Leonard: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  
