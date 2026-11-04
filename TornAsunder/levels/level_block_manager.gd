@@ -30,9 +30,11 @@ const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
 const INPUT_RUN_INTERVAL = 0.15 # seconds between
 		# running motions (repeated motion during
 		# key-holding)
-const EXIT_TEXTURE = Vector2i(2,3) # the location of the
-		# exit sprite on the spritesheet (used to set 
-		# the sprite and differentiate portals from exits)
+
+# Distinguish the portal-in sprite location
+#  and the level exit sprite location
+const PORTAL_IN_TEXTURE_LOC = Vector2i(0,3)
+const EXIT_TEXTURE_LOC = Vector2i(2,3)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -150,12 +152,12 @@ func align_block_designs():
 
 # Ensure Exit Portals are given exit texture
 func align_portal_design(node: PortalIn):
-	if node.is_exit:
-		node.get_node("TileMapLayer").set_cell(
-			Vector2i(0,0),
-			0,
-			EXIT_TEXTURE
-		)
+	node.get_node("TileMapLayer").set_cell(
+		Vector2i(0,0),
+		0,
+		(EXIT_TEXTURE_LOC if node.is_exit
+				else PORTAL_IN_TEXTURE_LOC)
+	)
 
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
