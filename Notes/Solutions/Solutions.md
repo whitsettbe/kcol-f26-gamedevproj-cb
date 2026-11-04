@@ -46,6 +46,24 @@
 7. Roy: walk to the exit.
 8. Leonard: walk to the exit.
 
+
+---
+
+**Level Name:** Rod Construction  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: push the rightmost unentangled block up, up, right.
+2. Roy: push the middle unentangled block right, up, up, up.
+3. Roy: push the leftmost unentangled block right, up, up.
+4. Leonard: push the blue entangled block right.
+5. Roy: push the unentangled block in the vertical hallway up to the wall.
+6. Leonard: push the unentangled blocks right thrice, then each down.
+7. Leonard: stand to the right of the unentangled blocks.
+8. Roy: push the red entangled block right.
+9. Leonard: walk to the exit.
+10. Roy: walk to the exit.
+
 ---
 
 **Level Name:** (name)  
