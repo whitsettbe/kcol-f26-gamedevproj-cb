@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://do5l6q46ac4tm"]
 
 [ext_resource type="Script" uid="uid://03vclajrcm7w" path="res://scripts/multilevel.gd" id="1_wvn4e"]
+
 [ext_resource type="PackedScene" uid="uid://cttuaw2e0c78t" path="res://scenes/hud.tscn" id="2_v7a0e"]
+
+[ext_resource type="PackedScene" uid="uid://duwftmqtn2xj8" path="res://UI/scenes/pause_menu.tscn" id="2_v7a0e"]
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
 
+
 [node name="HUD" parent="." unique_id=898248560 instance=ExtResource("2_v7a0e")]
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=1456528907]
+layer = 2
+
+[node name="Pause Menu" parent="PauseCanvas" unique_id=263263770 instance=ExtResource("2_v7a0e")]
+
+[node name="LevelFrame" type="CanvasLayer" parent="." unique_id=642644489]
+
+[node name="Top" type="ColorRect" parent="LevelFrame" unique_id=272102377]
+offset_top = -640.0
+offset_right = 1152.0
+color = Color(0, 0, 0, 1)
+
+[node name="Left" type="ColorRect" parent="LevelFrame" unique_id=1600750955]
+offset_left = -1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Right" type="ColorRect" parent="LevelFrame" unique_id=931468918]
+offset_left = 1152.0
+offset_right = 2304.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Bottom" type="ColorRect" parent="LevelFrame" unique_id=208490085]
+offset_top = 640.0
+offset_right = 1152.0
+offset_bottom = 1280.0
+color = Color(0, 0, 0, 1)

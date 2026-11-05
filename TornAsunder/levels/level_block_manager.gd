@@ -19,12 +19,38 @@ signal state_undo_requested
 signal level_reset_requested
 var solid_invariant_tracker : int
 
+# Set up timeouts for input duplication
+var input_timeouts = Dictionary()
+	# direction action -> seconds until usable
+const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
+		# must be held to trigger echo motion (i.e. running)
+		# Note that if a key has been *available* for
+		#  this long, then we consider a run to have
+		#  ended.
+const INPUT_RUN_INTERVAL = 0.15 # seconds between
+		# running motions (repeated motion during
+		# key-holding)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		align_block_designs()
 		solid_invariant_tracker = get_solid_invariant()
+		
+		# Listen for when players land on the exits
+		$EXIT_L.connect("player_on_exit", _on_player_on_exit)
+		$EXIT_R.connect("player_on_exit", _on_player_on_exit)
+		
+		# Set up input timeouts
+		for dir in Block.inputs.keys():
+			# Enforce a short delay before key
+			#  input is accepted at level load
+			#  (this will only affect keys which
+			#   are pressed at level load, as other
+			#   keys are marked immediately usable
+			#   in _process() )
+			input_timeouts[dir] = INPUT_ECHO_DELAY
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,17 +63,43 @@ func _process(delta: float) -> void:
 		#  roll back the level state
 		if not state_is_safe():
 			emit_signal("state_undo_requested")
+			
+		# Update time until each input is usable
+		for dir in Block.inputs.keys():
+			if Input.is_action_pressed(dir):
+				input_timeouts[dir] -= delta
+			else:
+				# Mark this input as usable,
+				#  but not part of a run (looks to not have
+				#  been pressed in a while, with
+				#  -INPUT_ECHO_DELAY as the sentinel value)
+				input_timeouts[dir] = -INPUT_ECHO_DELAY
+			
+		# Check for player inputs, if the tree is not paused
+		if Input.is_anything_pressed() and not get_tree().paused:
+			handle_key_input()
 
 
 # Pass keyboard inputs to the player (during game)
-func _unhandled_key_input(event: InputEvent) -> void:
+func handle_key_input() -> void:
 	
 	var state_pushed = false
 	var move_succeeded = false
 	
 	if not Engine.is_editor_hint():
 		for dir in Block.inputs.keys():
-			if event.is_action_pressed(dir):
+			if Input.is_action_pressed(dir):
+				# If not allowed to process this action yet,
+				#  skip it.
+				if input_timeouts[dir] > 0:
+					continue
+				
+				# Reset the input timer, with quicker timing
+				#  if the key seems to have been held down.
+				if input_timeouts[dir] <= -INPUT_ECHO_DELAY:
+					input_timeouts[dir] = INPUT_ECHO_DELAY
+				else:
+					input_timeouts[dir] = INPUT_RUN_INTERVAL
 				
 				# Push the current state to the undo stack
 				if not state_pushed:
@@ -66,17 +118,21 @@ func _unhandled_key_input(event: InputEvent) -> void:
 								node.move_if_possible(Block.inputs[dir]
 								* GridArea2D.TILE_SIZE)
 								
-		# If moves were attempted but did not succeed
-		#  delete the pushed state
+		# If moves were attempted but did not succeed,
+		#  delete the pushed state;
+		#  Note that the drop is time-limited not to drop
+		#  old states, which may still be at the top of the
+		#  stack if the state push triggered earlier in this
+		#  function was unsuccessful
 		if state_pushed and not move_succeeded:
 			emit_signal("state_drop_requested")
 			
 		# Handle undo if requested by user
-		if event.is_action_pressed("undo"):
+		if Input.is_action_just_pressed("undo"):
 			emit_signal("state_undo_requested")
 			
 		# Handle level restart if requested by user
-		if event.is_action_pressed("restart"):
+		if Input.is_action_just_pressed("restart"):
 			emit_signal("level_reset_requested")
 
 
@@ -109,6 +165,8 @@ func align_single_block_design(node : Block):
 
 # When a player stands on an exit,
 #  check if both exits have players on them.
+#  (this script is connected to the relevant signals
+#  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
 	if $EXIT_L.players_exiting > 0 \
 			and $EXIT_R.players_exiting > 0:
