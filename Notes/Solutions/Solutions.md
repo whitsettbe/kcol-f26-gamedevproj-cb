@@ -46,6 +46,19 @@
 7. Roy: walk to the exit.
 8. Leonard: walk to the exit.
 
+---
+
+**Level Name:** Not My Block  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Leonard: push the entangled block right.
+2. Roy: walk into the next room and push the next entangled block right.
+3. Leonard: walk into the third room and push that entangled block right.
+4. Roy: walk into the fourth room and push that entangled block up, left, up, down, left.
+5. Leonard: walk into the fifth room and push that entangled block left twice.
+6. Roy: push the uncolored block up and walk to the exit.
+7. Leonard: walk to the exit.
 
 ---
 
