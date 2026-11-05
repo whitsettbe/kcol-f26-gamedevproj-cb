@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 
 func open():
 	Globals.current_layer_menu = "Playgrounds"
-	print(Globals.current_layer_menu)
 	show()
 
 # Opens previous page.
