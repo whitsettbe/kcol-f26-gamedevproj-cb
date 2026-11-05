@@ -79,6 +79,27 @@
 
 ---
 
+**Level Name:** Jump Around  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Leonard: walk up onto the portal.
+2. Roy: walk left onto the portal.
+3. Leonard: walk onto the portal at bottom-left of the central room.
+4. Roy: walk onto the portal at bottom-left of the central room.
+5. Leonard: push the entangled block leftward to the wall.
+6. Roy: push the pair of blocks rightward once.
+7. Leonard: push the unentangled block up, rightward to the wall, up, up. This will teleport you back to the central room.
+8. Roy: use the top-left portal in this room to return to the central room.
+9. Leonard: walk onto the portal at top-right of the central room.
+10. Roy: use the bottom-right portal in the central room.
+11. Leonard: push the block in the hallway rightward into the hole.
+12. Roy: push the blocks leftward once and use the top-right portal to go back to the central room.
+13. Leonard: walk to the exit.
+14. Roy: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  

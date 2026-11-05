@@ -10,6 +10,7 @@ var level_paths = [
 	"res://levels/Caves/7 - Out of the Corner.tscn",
 	"res://levels/Caves/r1 - Not My Block.tscn",
 	"res://levels/Caves/r3 - Rod Construction.tscn",
+	"res://levels/Caves/r4 - Jump Around.tscn",
 	]
 	
 var level_idx = 0

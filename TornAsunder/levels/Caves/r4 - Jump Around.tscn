@@ -1,0 +1,148 @@
+[gd_scene format=4 uid="uid://l54h5nd6oqrn"]
+
+[ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_3fs6s"]
+[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_kwy0o"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_yeqkc"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="4_3fs6s"]
+[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_rsga7"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_n5k3n"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_rlb1u"]
+
+[node name="Jump Around" type="Node2D" unique_id=1479523790]
+script = ExtResource("1_3fs6s")
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=79841228]
+tile_map_data = PackedByteArray("AAABAAgAAAAAAAYAAAABAAcAAAAAAAUAAAABAAYAAAAAAAUAAAABAAUAAAAAAAUAAAABAAQAAAAAAAUAAAABAAMAAAAAAAUAAAAOAAgAAAAAAAkAAAAPAAgAAAABAAkAAAAQAAgAAAABAAkAAAARAAgAAAABAAkAAAASAAgAAAABAAkAAAATAAgAAAABAAkAAAAUAAgAAAABAAkAAAAVAAgAAAABAAkAAAAWAAgAAAABAAkAAAAXAAgAAAACAAkAAAADAAIAAAAGAAUAAAAEAAIAAAAFAAgAAAAEAAEAAAAFAAYAAAADAAEAAAAEAAcAAAAFAAEAAAAFAAYAAAAFAAIAAAAEAAQAAAAEAAMAAAAFAAgAAAADAAMAAAAGAAUAAAADAAQAAAAEAAkAAAAEAAQAAAAFAAQAAAAGAAEAAAAGAAcAAAAFAAMAAAAEAAUAAAAFAAQAAAAAAAgAAAADAAYAAAAEAAcAAAADAAcAAAAGAAUAAAADAAgAAAAEAAkAAAAEAAgAAAAFAAQAAAAFAAgAAAAFAAQAAAAGAAgAAAAGAAkAAAAEAAYAAAAFAAYAAAAFAAYAAAAFAAYAAAAGAAYAAAAFAAYAAAAGAAcAAAAEAAQAAAAFAAcAAAAFAAgAAAAEAAcAAAAFAAgAAAAIAAQAAAABAAYAAAAKAAMAAAAAAAYAAAAKAAIAAAAAAAUAAAAKAAEAAAAAAAQAAAAIAAMAAAAAAAUAAAABAAIAAAAAAAUAAAAHAAYAAAAFAAYAAAAHAAcAAAAFAAQAAAAIAAcAAAAFAAQAAAAJAAcAAAAGAAkAAAAJAAYAAAADAAgAAAAIAAYAAAAFAAYAAAAJAAUAAAAAAAUAAAAIAAIAAAAAAAUAAAAIAAEAAAAAAAQAAAAGAAIAAAAGAAkAAAAGAAQAAAACAAkAAAABAAEAAAAAAAQAAAAJAAQAAAADAAQAAAATAAYAAAAFAAQAAAATAAUAAAAFAAcAAAATAAEAAAACAAkAAAASAAYAAAAFAAQAAAARAAYAAAAFAAQAAAAQAAYAAAAFAAQAAAATAAQAAAAAAAQAAAAPAAYAAAAFAAQAAAAOAAYAAAAEAAkAAAAOAAUAAAAEAAcAAAAPAAUAAAAFAAYAAAAUAAYAAAAFAAQAAAAVAAYAAAAFAAQAAAAWAAYAAAAFAAQAAAAXAAYAAAAGAAkAAAAXAAUAAAAGAAcAAAAWAAUAAAAFAAYAAAAPAAMAAAAFAAQAAAAPAAIAAAAFAAYAAAAQAAIAAAAGAAcAAAAWAAMAAAAEAAkAAAAXAAMAAAAGAAkAAAAXAAIAAAAGAAcAAAAWAAIAAAABAAcAAAAVAAIAAAABAAkAAAAOAAMAAAAEAAkAAAAOAAIAAAAEAAcAAAASAAEAAAAAAAkAAAAQAAMAAAAAAAgAAAARAAMAAAABAAkAAAASAAMAAAACAAkAAAAUAAIAAAAAAAkAAAASAAUAAAAFAAYAAAAUAAUAAAAFAAYAAAAQAAUAAAAFAAYAAAARAAUAAAAFAAYAAAAVAAUAAAAFAAYAAAA=")
+tile_set = ExtResource("2_kwy0o")
+
+[node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_yeqkc")]
+position = Vector2(336, 48)
+is_exit = true
+
+[node name="EXIT_R" parent="." unique_id=779499140 instance=ExtResource("3_yeqkc")]
+position = Vector2(592, 48)
+is_exit = true
+
+[node name="portal_in_L_1" parent="." unique_id=1171898606 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(48, 48)
+target = NodePath("../portal_out_L_1")
+
+[node name="portal_out_L_1" parent="." unique_id=20745320 instance=ExtResource("4_3fs6s")]
+position = Vector2(112, 48)
+
+[node name="portal_in_L_2" parent="." unique_id=1109345052 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(208, 48)
+target = NodePath("../portal_out_L_2")
+
+[node name="portal_out_L_2" parent="." unique_id=679085055 instance=ExtResource("4_3fs6s")]
+position = Vector2(272, 48)
+
+[node name="portal_in_L_3" parent="." unique_id=1932598426 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(112, 144)
+target = NodePath("../portal_out_L_3")
+
+[node name="portal_out_L_3" parent="." unique_id=1430222853 instance=ExtResource("4_3fs6s")]
+position = Vector2(112, 272)
+
+[node name="portal_in_L_4" parent="." unique_id=1415166308 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(304, 176)
+target = NodePath("../portal_out_L_4")
+
+[node name="portal_out_L_4" parent="." unique_id=1448583884 instance=ExtResource("4_3fs6s")]
+position = Vector2(208, 144)
+
+[node name="portal_in_R_1" parent="." unique_id=494441915 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(464, 272)
+target = NodePath("../portal_out_R_1")
+
+[node name="portal_out_R_1" parent="." unique_id=1109805651 instance=ExtResource("4_3fs6s")]
+position = Vector2(624, 208)
+
+[node name="portal_in_R_2" parent="." unique_id=1009887574 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(464, 208)
+target = NodePath("../portal_out_R_2")
+
+[node name="portal_out_R_2" parent="." unique_id=303214198 instance=ExtResource("4_3fs6s")]
+position = Vector2(464, 112)
+
+[node name="portal_in_R_3" parent="." unique_id=212645115 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(464, 80)
+target = NodePath("../portal_out_R_3")
+
+[node name="portal_out_R_3" parent="." unique_id=505923344 instance=ExtResource("4_3fs6s")]
+position = Vector2(464, 176)
+
+[node name="portal_in_R_4" parent="." unique_id=2132449952 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(752, 208)
+target = NodePath("../portal_out_R_4")
+
+[node name="portal_out_R_4" parent="." unique_id=728906096 instance=ExtResource("4_3fs6s")]
+position = Vector2(752, 112)
+
+[node name="portal_in_R_5" parent="." unique_id=580770291 node_paths=PackedStringArray("target") instance=ExtResource("3_yeqkc")]
+position = Vector2(752, 80)
+target = NodePath("../portal_out_R_5")
+
+[node name="portal_out_R_5" parent="." unique_id=47609642 instance=ExtResource("4_3fs6s")]
+position = Vector2(752, 176)
+
+[node name="FloorOverlays" type="TileMapLayer" parent="." unique_id=1075741924]
+tile_map_data = PackedByteArray("AAAAAAoAAAAFAAoAAAAAAAkAAAAEAAwAAAAAAAgAAAAEAAsAAAAAAAcAAAAEAAsAAAAAAAYAAAAEAAsAAAAAAAUAAAAEAAsAAAAAAAQAAAAEAAsAAAAAAAMAAAAEAAsAAAAAAAIAAAAEAAsAAAAAAAEAAAAEAAsAAAAAAAAAAAAEAAoAAAAAAP//AAAFAAwAAAD//woAAAAEAA8AAAD//wkAAAAGAAsAAAD//wgAAAAGAAsAAAD//wcAAAAGAAsAAAD//wYAAAAGAAsAAAD//wUAAAAGAAsAAAD//wQAAAAGAAsAAAD//wMAAAAGAAsAAAD//wIAAAAGAAsAAAD//wEAAAAGAAsAAAD//wAAAAAGAAsAAAD/////AAAEAA0AAAAZAAAAAAAEAAsAAAAZAP//AAAGAA0AAAAYAAAAAAAFAA4AAAAYAP//AAAFAAwAAAAXAAAAAAAFAA4AAAAXAP//AAAFAAwAAAAWAAAAAAAFAA4AAAAWAP//AAAFAAwAAAAVAAAAAAAFAA4AAAAVAP//AAAFAAwAAAAUAAAAAAAGAAoAAAAUAP//AAAFAAwAAAATAAAAAAAFAAoAAAATAP//AAAFAAwAAAASAAAAAAAFAAoAAAASAP//AAAFAAwAAAARAAAAAAAEAAoAAAARAP//AAAFAAwAAAAQAAAAAAAFAA4AAAAQAP//AAAFAAwAAAAPAAAAAAAFAA4AAAAPAP//AAAFAAwAAAAOAAAAAAAFAA4AAAAOAP//AAAFAAwAAAANAAAAAAAFAA4AAAANAP//AAAFAAwAAAAMAAAAAAAFAA4AAAAMAP//AAAFAAwAAAALAAAAAAAGAAoAAAALAP//AAAFAAwAAAAKAAAAAAAFAAoAAAAKAP//AAAFAAwAAAAJAAAAAAAFAA8AAAAJAP//AAAFAAwAAAAIAAAAAAAFAAoAAAAIAP//AAAFAAwAAAAHAAAAAAAFAA8AAAAHAP//AAAFAAwAAAAGAAAAAAAFAAoAAAAGAP//AAAFAAwAAAAFAAAAAAAFAAoAAAAFAP//AAAFAAwAAAAEAAAAAAAFAAoAAAAEAP//AAAFAAwAAAADAP//AAAFAAwAAAACAP//AAAFAAwAAAABAAAAAAAFAAoAAAABAP//AAAFAAwAAAANAAoAAAAFAAoAAAANAAkAAAAEAAwAAAANAAgAAAAEAAsAAAANAAcAAAAGAA4AAAANAAYAAAAEAAsAAAANAAUAAAAEAAsAAAANAAQAAAAGAA4AAAANAAMAAAAEAAsAAAANAAIAAAAEAAsAAAANAAEAAAAEAAoAAAAMAAoAAAAFAAoAAAAMAAkAAAAFAA4AAAAMAAgAAAAFAA4AAAAMAAcAAAAFAA4AAAAMAAYAAAAFAA4AAAAMAAUAAAAFAA4AAAAMAAQAAAAFAA4AAAAMAAMAAAAFAA4AAAAMAAIAAAAFAA4AAAAMAAEAAAAFAA4AAAALAAoAAAAFAAoAAAALAAkAAAAFAA4AAAALAAgAAAAFAA4AAAALAAcAAAAFAA4AAAALAAYAAAAFAA4AAAALAAUAAAAGAAwAAAALAAQAAAAGAAsAAAALAAMAAAAGAAsAAAALAAIAAAAGAAsAAAALAAEAAAAGAAsAAAAZAAoAAAAGAA8AAAAZAAkAAAAEAAsAAAAZAAgAAAAEAAsAAAAZAAcAAAAEAAsAAAAZAAYAAAAEAAsAAAAZAAUAAAAEAAsAAAAZAAQAAAAEAAsAAAAZAAMAAAAEAAsAAAAZAAIAAAAEAAsAAAAZAAEAAAAEAAsAAAAYAAoAAAAFAAoAAAAYAAkAAAAGAAwAAAAYAAgAAAAGAAsAAAAYAAcAAAAEAA4AAAAYAAYAAAAGAAsAAAAYAAUAAAAGAAsAAAAYAAQAAAAEAA4AAAAYAAMAAAAGAAsAAAAYAAIAAAAGAAsAAAAYAAEAAAAGAAoAAAADAAAAAAAFAAoAAAACAAAAAAAFAA8AAAAXAAoAAAAFAAoAAAAXAAkAAAAFAAwAAAAWAAoAAAAFAAoAAAAWAAkAAAAFAAwAAAAVAAoAAAAFAAoAAAAVAAkAAAAFAAwAAAAUAAoAAAAFAAoAAAAUAAkAAAAFAAwAAAATAAoAAAAFAAoAAAATAAkAAAAFAAwAAAASAAoAAAAFAAoAAAASAAkAAAAFAAwAAAARAAoAAAAFAAoAAAARAAkAAAAFAAwAAAAQAAoAAAAFAAoAAAAQAAkAAAAFAAwAAAAPAAoAAAAFAAoAAAAPAAkAAAAFAAwAAAAOAAoAAAAFAAoAAAAOAAkAAAAFAAwAAAAKAAoAAAAFAAoAAAAKAAkAAAAFAA4AAAAJAAoAAAAFAAoAAAAJAAkAAAAFAA4AAAAIAAoAAAAFAAoAAAAIAAkAAAAFAA4AAAAHAAoAAAAFAAoAAAAHAAkAAAAGAAwAAAAGAAoAAAAFAAoAAAAGAAkAAAAFAAwAAAAFAAoAAAAFAAoAAAAFAAkAAAAFAAwAAAAEAAoAAAAFAAoAAAAEAAkAAAAFAAwAAAADAAoAAAAFAAoAAAADAAkAAAAFAAwAAAACAAoAAAAFAAoAAAACAAkAAAAFAA0AAAABAAoAAAAFAAoAAAABAAkAAAAFAAwAAAAKAAQAAAADAAMAAAACAAgAAAAAAAsAAAACAAcAAAAAAAsAAAACAAYAAAAAAAsAAAACAAUAAAABAAsAAAACAAQAAAAAAAsAAAACAAMAAAAAAAsAAAACAAIAAAAAAAsAAAADAAUAAAABAA8AAAAEAAUAAAABAA8AAAAFAAUAAAABAA8AAAAGAAUAAAABAA8AAAAHAAUAAAACAAwAAAAIAAUAAAACAA8AAAAHAAQAAAAAAAsAAAAHAAMAAAADAAsAAAAHAAIAAAAAAAsAAAAHAAEAAAAAAAsAAAAJAAEAAAAAAAsAAAAJAAIAAAAAAAsAAAAJAAMAAAAAAAwAAAAKAAUAAAAEAA0AAAAKAAYAAAAGAAsAAAAKAAcAAAAGAAsAAAAKAAgAAAAGAAwAAAAJAAgAAAAFAAwAAAAIAAgAAAAFAAwAAAAHAAgAAAAEAA0AAAACAAEAAAAAAAsAAAATAAIAAAADAAMAAAATAAMAAAADAAMAAAAOAAcAAAABAA8AAAAPAAcAAAABAA8AAAAQAAcAAAABAA8AAAARAAcAAAABAA8AAAASAAcAAAABAA8AAAATAAcAAAABAA8AAAAUAAcAAAABAA8AAAAVAAcAAAABAA8AAAAWAAcAAAABAA8AAAAXAAcAAAABAA8AAAAXAAQAAAABAA8AAAAWAAQAAAABAA8AAAAVAAQAAAAAAA4AAAAUAAQAAAAEAA8AAAAUAAMAAAAEAA0AAAAVAAMAAAAGAA0AAAAUAAEAAAAEAA8AAAAVAAEAAAAFAAoAAAAWAAEAAAAFAAoAAAAXAAEAAAAFAAoAAAAOAAEAAAAFAAoAAAAPAAEAAAAFAAoAAAAQAAEAAAAFAAoAAAARAAEAAAADAA0AAAARAAIAAAABAAwAAAASAAIAAAACAA8AAAASAAQAAAACAA8AAAARAAQAAAABAA8AAAAQAAQAAAABAA8AAAAPAAQAAAABAA8AAAAOAAQAAAABAA8AAAAGAAMAAAAAAA8AAAA=")
+tile_set = ExtResource("2_kwy0o")
+
+[node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=210106780]
+tile_set = ExtResource("2_kwy0o")
+
+[node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("4_rsga7")]
+position = Vector2(48, 272)
+script = ExtResource("5_n5k3n")
+side = 0
+blockType = 1
+blockColor = 1
+
+[node name="Roy" parent="." unique_id=950257649 instance=ExtResource("4_rsga7")]
+position = Vector2(752, 272)
+script = ExtResource("5_n5k3n")
+side = 1
+blockType = 1
+blockColor = 2
+
+[node name="ent_L_1" parent="." unique_id=133836950 node_paths=PackedStringArray("partner") instance=ExtResource("4_rsga7")]
+position = Vector2(144, 112)
+script = ExtResource("6_rlb1u")
+partner = NodePath("../ent_R_1")
+blockType = 2
+blockColor = 2
+
+[node name="ent_R_1" parent="." unique_id=359482500 node_paths=PackedStringArray("partner") instance=ExtResource("4_rsga7")]
+position = Vector2(560, 112)
+script = ExtResource("6_rlb1u")
+partner = NodePath("../ent_L_1")
+blockType = 2
+blockColor = 2
+
+[node name="ent_L_2" parent="." unique_id=201642782 node_paths=PackedStringArray("partner") instance=ExtResource("4_rsga7")]
+position = Vector2(240, 208)
+script = ExtResource("6_rlb1u")
+partner = NodePath("../ent_R_2")
+blockType = 2
+blockColor = 1
+
+[node name="ent_R_2" parent="." unique_id=510029686 node_paths=PackedStringArray("partner") instance=ExtResource("4_rsga7")]
+position = Vector2(656, 208)
+script = ExtResource("6_rlb1u")
+partner = NodePath("../ent_L_2")
+blockType = 2
+blockColor = 1
+
+[node name="L1" parent="." unique_id=2114667663 instance=ExtResource("4_rsga7")]
+position = Vector2(176, 240)
+
+[node name="R1" parent="." unique_id=1698110434 instance=ExtResource("4_rsga7")]
+position = Vector2(592, 112)
+
+[node name="R2" parent="." unique_id=1047587245 instance=ExtResource("4_rsga7")]
+position = Vector2(656, 80)
+
+[node name="R3" parent="." unique_id=227017696 instance=ExtResource("4_rsga7")]
+position = Vector2(688, 80)
