@@ -10,8 +10,11 @@ func _process(delta: float) -> void:
 	pass
 
 func open():
+	Globals.current_layer_menu = "Playgrounds"
+	print(Globals.current_layer_menu)
 	show()
 
 # Opens previous page.
 func _on_back_pressed() -> void:
 	hide()
+	Globals.current_layer_menu = ""
