@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 			
 			# If the alpha has reached zero,
 			#  inform the parent that this animation is done
-			if self_modulate.a == 0:
+			if self_modulate.a < CLOSE_VALUE:
 				get_parent().death_anim_done = true
 			
 	else:
@@ -123,3 +123,4 @@ func bump(dir_vect : Vector2) -> void:
 func show_teleport(offset_vect : Vector2) -> void:
 	$ShadowTile.position = -offset_vect
 	self_modulate.a = 0
+	$ShadowTile.self_modulate.a = 1
