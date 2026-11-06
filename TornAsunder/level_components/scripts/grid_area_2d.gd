@@ -22,6 +22,9 @@ const NUM_REROLL_ATTEMPTS = 3
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
 enum BlockColor {NONE, BLUE, RED}
 
+# Declare enum for layers
+enum Layer {CAVES, RUINS, BOG}
+
 # Indicate how to identify different tile types
 const TILE_IDS = {
 	"hole": Vector2i(3,3),

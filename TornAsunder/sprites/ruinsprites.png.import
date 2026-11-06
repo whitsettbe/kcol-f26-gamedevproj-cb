@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxav16k075ugn"
-path="res://.godot/imported/sprites.png-4ccbd8259ebc1e8488fec7711c8727a8.ctex"
+uid="uid://b1sg8hlfkkgoi"
+path="res://.godot/imported/ruinsprites.png-920c4f293d9e24f8c5e213aadac8ccf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites.png"
-dest_files=["res://.godot/imported/sprites.png-4ccbd8259ebc1e8488fec7711c8727a8.ctex"]
+source_file="res://sprites/ruinsprites.png"
+dest_files=["res://.godot/imported/ruinsprites.png-920c4f293d9e24f8c5e213aadac8ccf2.ctex"]
 
 [params]
 
