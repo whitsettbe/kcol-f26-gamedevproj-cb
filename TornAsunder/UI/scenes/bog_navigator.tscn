@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtj5qxl735uyx"]
 
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="1_dyvns"]
-[ext_resource type="Script" uid="uid://bnomo64k1wkiu" path="res://bog_navigator.gd" id="1_wdre1"]
+[ext_resource type="Script" uid="uid://bnomo64k1wkiu" path="res://UI/scripts/bog_navigator.gd" id="1_wdre1"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="2_wdre1"]
 
 [node name="Bog Navigator" type="Node2D" unique_id=1562576995]
