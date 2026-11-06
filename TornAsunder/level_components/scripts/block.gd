@@ -1,6 +1,7 @@
 class_name Block
 extends GridArea2D
 
+@onready var sfx_block_push: AudioStreamPlayer = $sfx_block_push
 
 const inputs = {
 	# mapping pressable actions to translation directions
@@ -247,6 +248,8 @@ func move_single(
 	$SpriteTile.position -= dir_vect
 	position += dir_vect
 	
+	play_block_sfx()
+	
 	# If a rolling block, try to move again
 	if rolling:
 		roll(dir_vect)
@@ -293,3 +296,11 @@ func check_for_paint():
 		# Replace the floor tile, delaying a visual change
 		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
+		
+		
+#determine which sound effect to play when moving. 
+func play_block_sfx():
+	pass
+		
+		
+	
