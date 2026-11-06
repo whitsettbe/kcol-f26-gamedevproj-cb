@@ -9,6 +9,15 @@ enum PlayerSide {LeftPlayer, RightPlayer}
 # Ensure player is not "rolling" during the game
 func _ready() -> void:
 	rolling = false
+	
+
+# If a player fails to move, they should
+#  "bump" in the desired direction.
+func move_if_possible(dir_vect : Vector2) -> bool:
+	var successful = super(dir_vect)
+	if not successful:
+		$SpriteTile.bump(dir_vect)
+	return successful
 
 
 # Player should be pushable by any color agent,

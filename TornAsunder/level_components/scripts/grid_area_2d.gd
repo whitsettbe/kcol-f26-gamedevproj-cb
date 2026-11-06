@@ -16,7 +16,10 @@ const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	#  physics engine notices the first change)
 const TOTAL_REROLL_TIME = 0.01 # seconds
 	# (at most MOVE_LOCKOUT_TIME)
-const NUM_REROLL_ATTEMPTS = 3
+const NUM_REROLL_ATTEMPTS = 3 # on reload,
+	# if blocks were rolling in saved state,
+	# how many times to try to continue rolling
+const BUMP_DISTANCE = 0.1 # blocks
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}

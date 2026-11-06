@@ -32,9 +32,10 @@ tile_set = ExtResource("2_ghhwx")
 [node name="Leonard" parent="." unique_id=157698511 instance=ExtResource("4_clnus")]
 position = Vector2(144, 176)
 script = ExtResource("5_s3hfj")
-side = 0
+side = null
 blockType = 1
 blockColor = 1
+rolling = null
 
 [node name="Roy" parent="." unique_id=52141140 instance=ExtResource("4_clnus")]
 position = Vector2(368, 176)
@@ -42,6 +43,7 @@ script = ExtResource("5_s3hfj")
 side = 1
 blockType = 1
 blockColor = 2
+rolling = null
 
 [node name="Block4" parent="." unique_id=1803402661 instance=ExtResource("4_clnus")]
 position = Vector2(112, 176)
