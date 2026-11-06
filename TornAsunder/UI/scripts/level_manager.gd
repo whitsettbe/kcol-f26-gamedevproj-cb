@@ -4,8 +4,6 @@ var layer_path = ""
 
 var buttons = []
 
-var levels = []
-
 # Called when the node enters the scene tree for the first time.
 # Create buttons based on levels in folder
 func _ready() -> void:
@@ -24,6 +22,7 @@ func _process(delta: float) -> void:
 
 # Used to create buttons for each level in a specific layer
 func create_buttons():
+	var levels = []
 	if(Globals.current_layer_menu != ""):
 		levels = DirAccess.get_files_at(layer_path)
 		for i in range(len(levels)):
