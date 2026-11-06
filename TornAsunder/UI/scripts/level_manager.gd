@@ -1,7 +1,5 @@
 extends VBoxContainer
 
-var tempIdx
-
 var layer_path = ""
 
 var buttons = []
@@ -37,7 +35,7 @@ func create_buttons():
 
 # Goes to level corresponding to button pressed
 func _on_button_pressed(level: Variant) -> void:
-	tempIdx = Globals.level_paths.find(layer_path + level)
+	var tempIdx = Globals.level_paths.find(layer_path + level)
 	if(tempIdx != -1):
 		get_tree().paused = false
 		if(Globals.level_scene != null):
