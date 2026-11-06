@@ -7,7 +7,8 @@ var base_motion_speed : float # pixels / sec
 var motion_speed : float # pixels / sec
 var alpha_speed : float # 1 / sec
 var scale_speed : float # 1 / sec
-const CLOSE_DIST : float = 1e-3 # pixel
+const CLOSE_VALUE : float = 1e-3 # unitless
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,22 +20,29 @@ func _ready() -> void:
 	alpha_speed = 1 / self.get_parent().FADE_DURATION
 	scale_speed = 1 / self.get_parent().FALL_DURATION
 	
+	# Reset the shadow tile (used in teleportation)
 	$ShadowTile.self_modulate.a = 0
 	$ShadowTile.show()
 	
+	# Check if the death animation should
+	#  have completed already
+	if get_parent().death_anim_done:
+		hide()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+		
 	# Compute the vector separating us from target location
 	var offset = position - targ_loc
 	var offset_dir = offset.normalized()
 	var offset_len = offset.length()
 	
-	# Check if the death animation should have completed already
+	# Check if the death animation should
+	#  have completed already
 	if get_parent().death_anim_done:
-		self_modulate.a = 0
+		hide()
 	
-	if offset_len > CLOSE_DIST:
+	if offset_len > CLOSE_VALUE:
 		# Move closer to the target location
 		position -= offset_dir * min(offset_len,
 				delta * motion_speed)
@@ -48,11 +56,11 @@ func _process(delta: float) -> void:
 			# Shrink the sprite to show death
 			#  (at the same speed as the alpha)
 			scale -= Vector2.ONE * clamp(delta * scale_speed, 0, scale.x)
-			targ_loc  = base_targ_loc * scale.x
+			targ_loc = base_targ_loc * scale.x
 
-			# If the alpha has reached zero,
+			# If the scale has reached ~zero,
 			#  inform the parent that this animation is done
-			if scale.x == 0:
+			if abs(scale.x) < CLOSE_VALUE:
 				get_parent().death_anim_done = true
 				
 		else:
@@ -86,7 +94,7 @@ func shift_back(dir_vect : Vector2) -> void:
 # "Bump" in the desired direction,
 #  if the current animation is complete
 func bump(dir_vect : Vector2) -> void:
-	if (position - targ_loc).length() > CLOSE_DIST:
+	if (position - targ_loc).length() > CLOSE_VALUE:
 		# Currently moving, so don't mess with speed
 		return
 	
