@@ -1,6 +1,7 @@
 extends TileMapLayer
 
 # Set the position towards which the sprite is drawn
+var base_targ_loc : Vector2
 var targ_loc : Vector2
 var base_motion_speed : float # pixels / sec
 var motion_speed : float # pixels / sec
@@ -9,13 +10,15 @@ const CLOSE_DIST : float = 1e-3 # pixel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	targ_loc = Vector2.ONE * -self.get_parent().TILE_SIZE / 2
+	base_targ_loc = Vector2.ONE * -self.get_parent().TILE_SIZE / 2
+	targ_loc = base_targ_loc
 	base_motion_speed = self.get_parent().TILE_SIZE \
 			/ self.get_parent().PUSH_DURATION
 	motion_speed = base_motion_speed
 	alpha_speed = 1 / self.get_parent().FADE_DURATION
 	
 	$ShadowTile.self_modulate.a = 0
+	$ShadowTile.show()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,14 +39,28 @@ func _process(delta: float) -> void:
 	
 	
 	if self.get_parent().dead:
-		# Decrease the alpha to show death
+		# Hide the shadow tile
 		$ShadowTile.self_modulate.a = 0
-		self_modulate.a -= clamp(delta * alpha_speed, 0, self_modulate.a)
-		
-		# If the alpha has reached zero,
-		#  inform the parent that this animation is done
-		if self_modulate.a == 0:
-			get_parent().death_anim_done = true
+
+		if get_parent() is Player:
+			# Shrink the sprite to show death
+			#  (at the same speed as the alpha)
+			scale -= Vector2.ONE * clamp(delta * alpha_speed, 0, scale.x)
+			targ_loc  = base_targ_loc * scale.x
+
+			# If the alpha has reached zero,
+			#  inform the parent that this animation is done
+			if scale.x == 0:
+				get_parent().death_anim_done = true
+				
+		else:
+			# Decrease the alpha to show death
+			self_modulate.a -= clamp(delta * alpha_speed, 0, self_modulate.a)
+			
+			# If the alpha has reached zero,
+			#  inform the parent that this animation is done
+			if self_modulate.a == 0:
+				get_parent().death_anim_done = true
 			
 	else:
 		# Increase the alpha, in case it was decreased

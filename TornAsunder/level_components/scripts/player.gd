@@ -46,3 +46,13 @@ func check_for_paint():
 		
 		# Request a sprite update from the parent scene
 		get_parent().align_single_block_design(self)
+		
+# If *player* falls into a hole,
+#  don't fill the hole,
+#  instead just dying.
+func fill_hole():
+	if get_tile() == TILE_IDS["hole"]:
+		# Mark the block as "dead"
+		# (triggers shrinking of the SpriteTile and
+		# disabling of block physics)
+		dead = true
