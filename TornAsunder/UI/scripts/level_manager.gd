@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 			button.queue_free()
 		buttons = []
 
+# Used to create buttons for each level in a specific layer
 func create_buttons():
 	if(Globals.current_layer_menu != ""):
 		levels = DirAccess.get_files_at(layer_path)
