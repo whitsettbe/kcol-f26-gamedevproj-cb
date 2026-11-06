@@ -6,6 +6,7 @@ var targ_loc : Vector2
 var base_motion_speed : float # pixels / sec
 var motion_speed : float # pixels / sec
 var alpha_speed : float # 1 / sec
+var scale_speed : float # 1 / sec
 const CLOSE_DIST : float = 1e-3 # pixel
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,7 @@ func _ready() -> void:
 			/ self.get_parent().PUSH_DURATION
 	motion_speed = base_motion_speed
 	alpha_speed = 1 / self.get_parent().FADE_DURATION
+	scale_speed = 1 / self.get_parent().FALL_DURATION
 	
 	$ShadowTile.self_modulate.a = 0
 	$ShadowTile.show()
@@ -45,7 +47,7 @@ func _process(delta: float) -> void:
 		if get_parent() is Player:
 			# Shrink the sprite to show death
 			#  (at the same speed as the alpha)
-			scale -= Vector2.ONE * clamp(delta * alpha_speed, 0, scale.x)
+			scale -= Vector2.ONE * clamp(delta * scale_speed, 0, scale.x)
 			targ_loc  = base_targ_loc * scale.x
 
 			# If the alpha has reached zero,
