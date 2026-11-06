@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bgeijep8r8iy8"]
 
 [ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_v0xfo"]
-[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="2_4reio"]
+[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://sprites/cave_tiles.tres" id="2_4reio"]
 [ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_trppv"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="5_pwg2h"]
 [ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_ff3li"]
