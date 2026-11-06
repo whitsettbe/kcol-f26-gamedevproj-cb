@@ -9,6 +9,8 @@ class_name GridArea2D
 const TILE_SIZE = 32 # pixels
 const PUSH_DURATION = 0.05 # seconds
 const FADE_DURATION = 0.4 # seconds
+	# (controls blocks falling into holes and
+	#  player teleportation)
 const ROLL_DELAY = 0.05 # seconds
 const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	# (matches the duration of a physics frame,

@@ -24,3 +24,8 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("2_cgrg5")
 collision_enabled = false
 script = ExtResource("3_4kun4")
+
+[node name="ShadowTile" type="TileMapLayer" parent="SpriteTile" unique_id=921122272]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_cgrg5")
+collision_enabled = false

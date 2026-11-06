@@ -14,8 +14,9 @@ func _ready() -> void:
 			/ self.get_parent().PUSH_DURATION
 	motion_speed = base_motion_speed
 	alpha_speed = 1 / self.get_parent().FADE_DURATION
-
-
+	
+	$ShadowTile.self_modulate.a = 0
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -26,24 +27,42 @@ func _process(delta: float) -> void:
 	
 	# Check if the death animation should have completed already
 	if get_parent().death_anim_done:
-		modulate.a = 0
+		self_modulate.a = 0
 	
 	if offset_len > CLOSE_DIST:
 		# Move closer to the target location
 		position -= offset_dir * min(offset_len,
 				delta * motion_speed)
-	elif self.get_parent().dead:
-		modulate.a -= clamp(delta * alpha_speed, 0, modulate.a)
+	
+	
+	if self.get_parent().dead:
+		# Decrease the alpha to show death
+		$ShadowTile.self_modulate.a = 0
+		self_modulate.a -= clamp(delta * alpha_speed, 0, self_modulate.a)
 		
 		# If the alpha has reached zero,
 		#  inform the parent that this animation is done
-		if modulate.a == 0:
+		if self_modulate.a == 0:
 			get_parent().death_anim_done = true
 			
+	else:
+		# Increase the alpha, in case it was decreased
+		self_modulate.a += clamp(delta * alpha_speed, 0, 1 - self_modulate.a)
+		
+		# Update the shadow tile while alive
+		$ShadowTile.self_modulate.a = 1 - self_modulate.a
+		$ShadowTile.set_cell(
+			Vector2i(0,0), 0,
+			self.get_cell_atlas_coords(Vector2i(0,0))
+			)
+		
+		
 # Move the tile opposite the direction of motion
 func shift_back(dir_vect : Vector2) -> void:
 	motion_speed = base_motion_speed
+	self_modulate.a = 1
 	position -= dir_vect
+
 
 # "Bump" in the desired direction,
 #  if the current animation is complete
@@ -71,3 +90,9 @@ func bump(dir_vect : Vector2) -> void:
 	
 	# Reset the speed magnitude
 	motion_speed = base_motion_speed
+
+
+# Show teleportation by activating the shadow tile
+func show_teleport(offset_vect : Vector2) -> void:
+	$ShadowTile.position = -offset_vect
+	self_modulate.a = 0
