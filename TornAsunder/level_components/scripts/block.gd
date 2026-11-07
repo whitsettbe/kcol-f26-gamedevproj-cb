@@ -300,7 +300,9 @@ func check_for_paint():
 		
 #determine which sound effect to play when moving. 
 func play_block_sfx():
-	pass
+	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
+		sfx_block_push.play()
+		
 		
 		
 	
