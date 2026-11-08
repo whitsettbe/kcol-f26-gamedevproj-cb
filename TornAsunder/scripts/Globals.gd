@@ -13,6 +13,8 @@ var level_idx = 0
 
 var level_scene
 
+var current_layer_menu = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Debug: confirm that the level paths are

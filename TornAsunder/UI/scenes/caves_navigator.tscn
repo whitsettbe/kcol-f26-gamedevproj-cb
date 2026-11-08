@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ca0o7f82vjujb" path="res://UI/scripts/caves_navigator.gd" id="1_qrj24"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_uobnm"]
-[ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/caves_vbox.gd" id="2_va5dg"]
+[ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="2_va5dg"]
 
 [node name="Caves Navigator" type="Node2D" unique_id=794097652]
 script = ExtResource("1_qrj24")
