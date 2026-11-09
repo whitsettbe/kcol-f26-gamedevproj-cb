@@ -9,4 +9,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	get_child(3).text = str(Globals.level_idx + 1) + "/" + str(len(Globals.level_paths))
-	get_child(4).text = Globals.level_paths[Globals.level_idx].replace("res://levels/", "").replace(".tscn", "")
+	if(Globals.level_idx >= 0 and Globals.level_idx < len(Globals.level_paths)):
+		get_child(4).text = Globals.level_paths[Globals.level_idx].replace("res://levels/", "").replace(".tscn", "")

@@ -16,7 +16,7 @@ offset_right = 348.0
 offset_bottom = 624.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 20
-text = "w: up     s: down     a: left     d: right     esc: pause"
+text = "up: w     down: s     left: a     right: d     pause: esc"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -28,7 +28,7 @@ offset_right = 1152.0
 offset_bottom = 656.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 20
-text = "^: up     v: down     <: left     >: right     del: pause"
+text = "up: ^     down: v     left: <     right: >     pause: del"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -39,7 +39,7 @@ offset_right = 896.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 20
-text = "space: restart level     shift: undo"
+text = "restart level: space     undo: shift"
 horizontal_alignment = 1
 vertical_alignment = 1
 
