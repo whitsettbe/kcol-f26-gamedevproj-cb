@@ -2,6 +2,8 @@ class_name Block
 extends GridArea2D
 
 @onready var sfx_block_push: AudioStreamPlayer = $sfx_block_push
+@onready var sfx_eblock_push: AudioStreamPlayer = $sfx_eblock_push
+
 
 const inputs = {
 	# mapping pressable actions to translation directions
@@ -302,7 +304,8 @@ func check_for_paint():
 func play_block_sfx():
 	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
 		sfx_block_push.play()
-		
-		
+	else:
+		if (self.blockType == BlockType.ENTANGLED) && (self.rolling == false):
+			sfx_eblock_push.play()
 		
 	
