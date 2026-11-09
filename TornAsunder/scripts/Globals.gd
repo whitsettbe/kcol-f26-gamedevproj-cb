@@ -4,9 +4,13 @@ var level_paths = [
 	"res://levels/Playgrounds/playground0.tscn",
 	"res://levels/Playgrounds/playground1.tscn",
 	"res://levels/Playgrounds/playground2.tscn",
-	"res://levels/Caves/1 - Just Walk.tscn",
-	"res://levels/Caves/2 - Push Through.tscn",
-	"res://levels/Caves/4 - Co-op 101.tscn",
+	"res://levels/Caves/01 - Just Walk.tscn",
+	"res://levels/Caves/02 - Push Through.tscn",
+	"res://levels/Caves/04 - Co-op 101.tscn",
+	"res://levels/Caves/07 - Out of the Corner.tscn",
+	"res://levels/Ruins/11 - Not My Block.tscn",
+	"res://levels/Ruins/13 - Rod Construction.tscn",
+	"res://levels/Ruins/14 - Jump Around.tscn",
 	]
 	
 var level_idx = 0
