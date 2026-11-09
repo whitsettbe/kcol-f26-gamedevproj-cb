@@ -42,7 +42,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	# Teleport the block to the output
 	var offset_vect = target.position - self.position
-	area.position += offset_vect
+	area.position = target.position
 	area.get_node("SpriteTile").show_teleport(offset_vect)
 
 # Note when a player leaves the area, if
