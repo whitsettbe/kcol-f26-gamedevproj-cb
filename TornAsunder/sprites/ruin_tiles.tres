@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://l7066q5nbih8"]
 
-[ext_resource type="Texture2D" uid="uid://b1sg8hlfkkgoi" path="res://sprites/ruinsprites.png" id="1_78vdy"]
+[ext_resource type="Texture2D" path="res://ruinsprites.png" id="1_78vdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 resource_name = "RuinTiles"
