@@ -200,8 +200,9 @@ func align_single_block_design(node : Block):
 #  (this script is connected to the relevant signals
 #  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
-	if $EXIT_L.players_exiting > 0 \
-			and $EXIT_R.players_exiting > 0:
+	var players_exiting_threshold = 1 if name != "FINAL" else 2
+	if $EXIT_L.players_exiting >= players_exiting_threshold \
+			and $EXIT_R.players_exiting >= players_exiting_threshold:
 		emit_signal("level_completed")
 		
 
@@ -242,9 +243,19 @@ func get_solid_invariant() -> int:
 		solid_squares_dict[s_sq] = true
 	for h_sq in hole_squares:
 		hole_squares_dict[h_sq] = true
+		
+	# Compute the invariant
+	var out = len(solid_squares_dict) - len(hole_squares_dict)
+	
+	# If the two players are in one square
+	#  during the final level,
+	#  add one to the invariant (since that's
+	#  allowed in the final level)
+	if name == "FINAL" and $Leonard.position == $Roy.position:
+		out += 1
 	
 	# The difference should be invariant
-	return len(solid_squares_dict) - len(hole_squares_dict)
+	return out
 
 
 # Indicate whether any blocks in the level are currently
