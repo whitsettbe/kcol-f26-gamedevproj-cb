@@ -98,6 +98,19 @@
 
 ---
 
+**Level Name:** Leroy  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push each of the two block columns above you down, then push the two blocks now in the middle row rightward to fill holes.
+2. Leonard: push the remaining block from the top half of the level down, then rightward into a hole.
+3. Leonard: repeat steps 1-2 with the bottom three blocks, pushing them up to the middle and then rightward into holes.
+4. Roy: follow Leonard's actions from steps 1-3, only pushing blocks leftward into the holes.
+5. Leonard and Roy: walk to the middle and enjoy being Leroy again.
+6. Leonard and Roy: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  
