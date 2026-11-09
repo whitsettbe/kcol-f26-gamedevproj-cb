@@ -220,8 +220,10 @@ func get_solid_invariant() -> int:
 	var hole_squares = []
 	
 	# Recognize squares where there are active blocks
+	# (note that dead players are still counted because
+	#  they don't fill holes)
 	for node in get_children():
-		if node is Block and not node.dead:
+		if node is Block and (node is Player or not node.dead):
 			solid_squares.append(
 				GridArea2D.pos_to_tile_coords(node.position)
 			)
