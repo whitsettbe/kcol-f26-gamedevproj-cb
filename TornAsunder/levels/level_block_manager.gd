@@ -45,6 +45,23 @@ const INPUT_RUN_INTERVAL = 0.15 # seconds between
 const PORTAL_IN_TEXTURE_LOC = Vector2i(0,3)
 const EXIT_TEXTURE_LOC = Vector2i(2,3)
 
+# Track whether this is the last level
+var is_final = false
+
+# Track which properties should be saved as the game runs
+func _get_property_list() -> Array[Dictionary]:
+	# Declare array of property data with strictly-specified
+	#  type Array[Dictionary], so parse-time typing checks
+	#  will recognize the variable type
+	var serializable: Array[Dictionary] = [
+		{
+			"name": "is_final",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_BOOL,
+		},
+	]
+	return serializable
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,6 +88,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		align_tile_designs()
+		is_final = (name == "FINAL")
 	else:
 		# While the level is in an unsafe state
 		#  (say, if multiple blocks are in the same place),
@@ -200,7 +218,7 @@ func align_single_block_design(node : Block):
 #  (this script is connected to the relevant signals
 #  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
-	var players_exiting_threshold = 1 if name != "FINAL" else 2
+	var players_exiting_threshold = 1 if not is_final else 2
 	if $EXIT_L.players_exiting >= players_exiting_threshold \
 			and $EXIT_R.players_exiting >= players_exiting_threshold:
 		emit_signal("level_completed")
@@ -251,7 +269,7 @@ func get_solid_invariant() -> int:
 	#  during the final level,
 	#  add one to the invariant (since that's
 	#  allowed in the final level)
-	if name == "FINAL" and $Leonard.position == $Roy.position:
+	if is_final and $Leonard.position == $Roy.position:
 		out += 1
 	
 	# The difference should be invariant
