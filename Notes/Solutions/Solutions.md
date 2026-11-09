@@ -98,6 +98,17 @@
 
 ---
 
+**Level Name:** Cover-up  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: in the room next to you, push the 5 entangled blocks so that their partners cover all 5 portal outputs in Leonard's world.
+2. Leonard: in the upper room, push the entangled blocks so that their partners cover all 5 portal outputs in Roy's world.
+3. Roy: walk to the exit.
+4. Leonard: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  
