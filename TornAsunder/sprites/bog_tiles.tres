@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://hugiu72j6udd"]
 
-[ext_resource type="Texture2D" path="res://bogsprites.png" id="1_rttij"]
+[ext_resource type="Texture2D" uid="uid://dchv51tl1r6qo" path="res://sprites/bogsprites.png" id="1_rttij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 resource_name = "BogTiles"

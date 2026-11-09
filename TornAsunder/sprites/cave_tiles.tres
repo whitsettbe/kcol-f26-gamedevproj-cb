@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://cog8fixeioj4v"]
 
-[ext_resource type="Texture2D" path="res://cavesprites.png" id="1_mmmd6"]
+[ext_resource type="Texture2D" uid="uid://c1ru6qm0gtoir" path="res://sprites/cavesprites.png" id="1_mmmd6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 resource_name = "CaveTiles"
