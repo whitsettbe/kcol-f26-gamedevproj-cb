@@ -4,9 +4,13 @@ var level_paths = [
 	"res://levels/Playgrounds/playground0.tscn",
 	"res://levels/Playgrounds/playground1.tscn",
 	"res://levels/Playgrounds/playground2.tscn",
-	"res://levels/Caves/1 - Just Walk.tscn",
-	"res://levels/Caves/2 - Push Through.tscn",
-	"res://levels/Caves/4 - Co-op 101.tscn",
+	"res://levels/Caves/01 - Just Walk.tscn",
+	"res://levels/Caves/02 - Push Through.tscn",
+	"res://levels/Caves/04 - Co-op 101.tscn",
+	"res://levels/Caves/07 - Out of the Corner.tscn",
+	"res://levels/Ruins/11 - Not My Block.tscn",
+	"res://levels/Ruins/13 - Rod Construction.tscn",
+	"res://levels/Ruins/14 - Jump Around.tscn",
 	"res://levels/Caves/holetutorial.tscn",
 	"res://levels/Caves/paintTutorial.tscn",
 	"res://levels/Caves/paintMedium.tscn"
@@ -15,6 +19,8 @@ var level_paths = [
 var level_idx = 0
 
 var level_scene
+
+var current_layer_menu = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

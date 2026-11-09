@@ -9,7 +9,7 @@
 
 The result of this section has been saved as `levels/basic_level_empty.tscn`. By copying this scene as a template, you can avoid following these steps yourself. That said, knowing how the scene is constructed is still valuable.
 
-1. Create a new scene with a Node2D base. Save the scene in the `TornAsunder/levels` folder, or a layer-specific subfolder thereof.
+1. Create a new scene with a Node2D base. Save the scene in the `TornAsunder/levels` folder, or a layer-specific subfolder thereof. 
 ![1-01 create scene](1-01_create_scene.png)
 
 2. Add three TileMapLayer nodes named `Floor`, `FloorOverlays`, and `FalseOverlays` (in that order). In the inspector, set each of them to use the Tile Set `TornAsunder/all_tiles.tres`.
@@ -56,6 +56,9 @@ The result of this section has been saved as `levels/basic_level_empty.tscn`. By
 
 13. Your level is now playable from the `TornAsunder/scenes/multilevel.tscn` scene! (Viewport settings may be adjusted after the writing of this tutorial.)
 ![1-13 playable](1-13_playable.png)
+
+14. Set the "layer" property on the root node in the inspector to change the color palette. This can be changed later.
+![1-14 set layer](1-14_set_layer.png)
 
 # 2. Modifying a Level Scene
 
