@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ru6qm0gtoir"
-path="res://.godot/imported/cavesprites.png-742ec6b581517a75ac2fb5832792edca.ctex"
+uid="uid://dchv51tl1r6qo"
+path="res://.godot/imported/bogsprites.png-fa4fe43825a48217105740dca429a082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cavesprites.png"
-dest_files=["res://.godot/imported/cavesprites.png-742ec6b581517a75ac2fb5832792edca.ctex"]
+source_file="res://bogsprites.png"
+dest_files=["res://.godot/imported/bogsprites.png-fa4fe43825a48217105740dca429a082.ctex"]
 
 [params]
 
