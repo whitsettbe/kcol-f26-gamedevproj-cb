@@ -46,36 +46,48 @@ blockColor = 2
 
 [node name="L1" parent="." unique_id=836560764 instance=ExtResource("4_06458")]
 position = Vector2(80, 112)
+blockColor = 1
 
 [node name="L2" parent="." unique_id=1190182698 instance=ExtResource("4_06458")]
 position = Vector2(80, 144)
+blockColor = 1
 
 [node name="L3" parent="." unique_id=399307698 instance=ExtResource("4_06458")]
 position = Vector2(112, 144)
+blockColor = 1
 
 [node name="L4" parent="." unique_id=514230672 instance=ExtResource("4_06458")]
 position = Vector2(80, 240)
+blockColor = 1
 
 [node name="L5" parent="." unique_id=681143106 instance=ExtResource("4_06458")]
 position = Vector2(80, 208)
+blockColor = 1
 
 [node name="L6" parent="." unique_id=535843978 instance=ExtResource("4_06458")]
 position = Vector2(112, 208)
+blockColor = 1
 
 [node name="R1" parent="." unique_id=1446702333 instance=ExtResource("4_06458")]
 position = Vector2(720, 112)
+blockColor = 2
 
 [node name="R2" parent="." unique_id=1894335160 instance=ExtResource("4_06458")]
 position = Vector2(720, 144)
+blockColor = 2
 
 [node name="R3" parent="." unique_id=180317860 instance=ExtResource("4_06458")]
 position = Vector2(688, 144)
+blockColor = 2
 
 [node name="R4" parent="." unique_id=1876104893 instance=ExtResource("4_06458")]
 position = Vector2(720, 240)
+blockColor = 2
 
 [node name="R5" parent="." unique_id=1377909507 instance=ExtResource("4_06458")]
 position = Vector2(720, 208)
+blockColor = 2
 
 [node name="R6" parent="." unique_id=709860013 instance=ExtResource("4_06458")]
 position = Vector2(688, 207)
+blockColor = 2
