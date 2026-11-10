@@ -5,6 +5,8 @@ extends GridArea2D
 @onready var sfx_eblock_push: AudioStreamPlayer = $sfx_eblock_push
 @onready var sfx_roll: AudioStreamPlayer = $sfx_roll
 @onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
+@onready var sfx_footstep: AudioStreamPlayer = $sfx_footstep
+
 
 
 const inputs = {
@@ -302,8 +304,11 @@ func check_for_paint():
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
 		
 		
-#determine which sound effect to play when moving. 
+#Plays appropriate sound effect when a block moves. 
 func play_block_sfx():
+	#player
+	if (self.blockType == BlockType.PLAYER):
+		sfx_footstep.play()
 	#square block
 	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
 		sfx_block_push.play()
