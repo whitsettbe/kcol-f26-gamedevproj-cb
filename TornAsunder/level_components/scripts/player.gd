@@ -5,6 +5,7 @@ extends Block
 enum PlayerSide {LeftPlayer, RightPlayer}
 @export var side : PlayerSide
 @onready var sfx_bump: AudioStreamPlayer = $sfx_bump
+@onready var sfx_squish_paint: AudioStreamPlayer = $sfx_squish_paint
 
 
 # Ensure player is not "rolling" during the game
@@ -46,10 +47,12 @@ func check_for_paint():
 		
 		# Inherit the paint color
 		self.blockColor = get_paint_color(get_tile())
-		
+
 		# Request a sprite update from the parent scene
 		get_parent().align_single_block_design(self)
 		
+		#play paint squishh SFX
+		sfx_squish_paint.play()
 # If *player* falls into a hole,
 #  don't fill the hole,
 #  instead just dying.
