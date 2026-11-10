@@ -9,6 +9,15 @@ enum PlayerSide {LeftPlayer, RightPlayer}
 # Ensure player is not "rolling" during the game
 func _ready() -> void:
 	rolling = false
+	
+
+# If a player fails to move, they should
+#  "bump" in the desired direction.
+func move_if_possible(dir_vect : Vector2) -> bool:
+	var successful = super(dir_vect)
+	if not successful:
+		$SpriteTile.bump(dir_vect)
+	return successful
 
 
 # Player should be pushable by any color agent,
@@ -37,3 +46,13 @@ func check_for_paint():
 		
 		# Request a sprite update from the parent scene
 		get_parent().align_single_block_design(self)
+		
+# If *player* falls into a hole,
+#  don't fill the hole,
+#  instead just dying.
+func fill_hole():
+	if get_tile() == TILE_IDS["hole"]:
+		# Mark the block as "dead"
+		# (triggers shrinking of the SpriteTile and
+		# disabling of block physics)
+		dead = true

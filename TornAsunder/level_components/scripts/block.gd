@@ -102,8 +102,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successors = get_all_successors(dir_vect, blockColor)
 
 	# DEBUG
-	print(Time.get_ticks_usec(), ' us: ', self,
-			' moving into ', successors)
+	#print(Time.get_ticks_usec(), ' us: ', self,
+	#		' moving into ', successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -177,8 +177,10 @@ func get_all_successors(
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	if collider != null:
-		immediate.push_back(collider 
-				if collider is Block else null)
+		# Skip players pushing players
+		if not (self is Player and collider is Player):
+			immediate.push_back(collider 
+					if collider is Block else null)
 	
 	# Add successors of later blocks
 	for successor in immediate:
@@ -244,7 +246,7 @@ func move_single(
 		last_move_time = now
 	
 	
-	$SpriteTile.position -= dir_vect
+	$SpriteTile.shift_back(dir_vect)
 	position += dir_vect
 	
 	# If a rolling block, try to move again
