@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bvukyr1an0uoo"
-path="res://.godot/imported/Eroll_3.wav-83b8b8829f7a610748cd74c633499fdc.sample"
+uid="uid://cy1p0kmtnqc11"
+path="res://.godot/imported/block_3.wav-f903622132e08979f7deee0a2d2bd7ec.sample"
 
 [deps]
 
-source_file="res://block_push_sfx/Eroll_3.wav"
-dest_files=["res://.godot/imported/Eroll_3.wav-83b8b8829f7a610748cd74c633499fdc.sample"]
+source_file="res://sfx/block_push_sfx/block_3.wav"
+dest_files=["res://.godot/imported/block_3.wav-f903622132e08979f7deee0a2d2bd7ec.sample"]
 
 [params]
 

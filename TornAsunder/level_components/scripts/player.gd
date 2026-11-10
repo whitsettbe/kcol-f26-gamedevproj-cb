@@ -4,6 +4,7 @@ extends Block
 
 enum PlayerSide {LeftPlayer, RightPlayer}
 @export var side : PlayerSide
+@onready var sfx_bump: AudioStreamPlayer = $sfx_bump
 
 
 # Ensure player is not "rolling" during the game
@@ -17,6 +18,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successful = super(dir_vect)
 	if not successful:
 		$SpriteTile.bump(dir_vect)
+		sfx_bump.play()
+		
 	return successful
 
 
