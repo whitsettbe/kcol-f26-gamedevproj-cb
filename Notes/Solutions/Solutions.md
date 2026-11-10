@@ -109,6 +109,23 @@
 
 ---
 
+**Level Name:** Speedy Delivery  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push the rolling block rightward.
+2. Roy: push the entangled block upward to a hole. Walk onto the hole, left to the wall, down (pushing a block), left (pushing a block into a hole, if possible), right, and push the block below you down to the wall. Then push the rolling block leftward to deliver the entangled block to Leonard.
+3. Leonard: do as Roy did in step 2 - fill a hole you need to walk across, push an entangled block down, push an unentangled block into a hole, push the entangled block to the bottom, and deliver it via the rolling block.
+4. Roy: repeat step 2.
+5. Leonard: repeat step 3.
+6. Roy: repeat step 2.
+7. Leonard: repeat step 3.
+6. Roy: repeat step 2.
+7. Leonard: push the last block up to the final hole and walk to the exit.
+8. Roy: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  
