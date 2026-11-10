@@ -11,7 +11,8 @@ var level_paths = [
 	"res://levels/Ruins/11 - Not My Block.tscn",
 	"res://levels/Ruins/13 - Rod Construction.tscn",
 	"res://levels/Ruins/14 - Jump Around.tscn",
-	"res://levels/Bog/21 - Rolling.tscn"
+	"res://levels/Bog/21 - Rolling.tscn",
+	"res://levels/Bog/30 - Leroy.tscn",
 	]
 	
 var level_idx = 0
