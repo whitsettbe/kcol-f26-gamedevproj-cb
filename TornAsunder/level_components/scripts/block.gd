@@ -4,6 +4,7 @@ extends GridArea2D
 @onready var sfx_block_push: AudioStreamPlayer = $sfx_block_push
 @onready var sfx_eblock_push: AudioStreamPlayer = $sfx_eblock_push
 @onready var sfx_roll: AudioStreamPlayer = $sfx_roll
+@onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
 
 
 const inputs = {
@@ -303,9 +304,16 @@ func check_for_paint():
 		
 #determine which sound effect to play when moving. 
 func play_block_sfx():
+	#square block
 	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
 		sfx_block_push.play()
+	#entangled square block
 	elif (self.blockType == BlockType.ENTANGLED) && (self.rolling == false):
 		sfx_eblock_push.play()
-	elif(self.rolling == true):
+	#rolling block
+	elif(self.rolling == true && !self.blockType == BlockType.ENTANGLED):
 		sfx_roll.play()
+	#entangled rolling block
+	elif (self.rolling == true):
+		sfx_eroll.play()
+	

@@ -17,6 +17,10 @@
 [ext_resource type="AudioStream" uid="uid://bnv6s4sfem3qa" path="res://block_push_sfx/roll_2.wav" id="15_jecre"]
 [ext_resource type="AudioStream" uid="uid://cb4a72keg3nkf" path="res://block_push_sfx/roll_3.wav" id="16_jfb7f"]
 [ext_resource type="AudioStream" uid="uid://dp8hi75gkb51a" path="res://block_push_sfx/roll_4.wav" id="17_j4yso"]
+[ext_resource type="AudioStream" uid="uid://lg7dsnd2g7ci" path="res://block_push_sfx/Eroll_1.wav" id="18_2gr8q"]
+[ext_resource type="AudioStream" uid="uid://bjemeigm157xj" path="res://block_push_sfx/Eroll_2.wav" id="19_bl47y"]
+[ext_resource type="AudioStream" uid="uid://bvukyr1an0uoo" path="res://block_push_sfx/Eroll_3.wav" id="20_t4j6y"]
+[ext_resource type="AudioStream" uid="uid://eyoat0yo6si8" path="res://block_push_sfx/Eroll_4.wav" id="21_vbu60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]
 size = Vector2(32, 32)
@@ -50,6 +54,16 @@ stream_1/stream = ExtResource("15_jecre")
 stream_2/stream = ExtResource("16_jfb7f")
 stream_3/stream = ExtResource("17_j4yso")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6yt5s"]
+playback_mode = 2
+random_pitch = 1.0594631
+random_volume_offset_db = 1.0
+streams_count = 4
+stream_0/stream = ExtResource("18_2gr8q")
+stream_1/stream = ExtResource("19_bl47y")
+stream_2/stream = ExtResource("20_t4j6y")
+stream_3/stream = ExtResource("21_vbu60")
+
 [node name="Block" type="Area2D" unique_id=1094868734]
 script = ExtResource("1_xfwl5")
 metadata/_edit_group_ = true
@@ -80,3 +94,7 @@ max_polyphony = 2
 [node name="sfx_roll" type="AudioStreamPlayer" parent="." unique_id=1577871173]
 stream = SubResource("AudioStreamRandomizer_ec57p")
 max_polyphony = 3
+
+[node name="sfx_eroll" type="AudioStreamPlayer" parent="." unique_id=1708896506]
+stream = SubResource("AudioStreamRandomizer_6yt5s")
+max_polyphony = 2
