@@ -66,7 +66,8 @@ func _on_level_completed() -> void:
 		load_level(Globals.level_idx)
 		await fadein()
 	else:
-		get_tree().quit()
+		# Go back to main menu (credits: tbd)
+		get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
 		
 
 # Fade out the level
