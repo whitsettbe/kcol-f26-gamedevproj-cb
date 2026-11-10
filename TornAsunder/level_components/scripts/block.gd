@@ -102,8 +102,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successors = get_all_successors(dir_vect, blockColor)
 
 	# DEBUG
-	print(Time.get_ticks_usec(), ' us: ', self,
-			' moving into ', successors)
+	#print(Time.get_ticks_usec(), ' us: ', self,
+	#		' moving into ', successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -244,7 +244,7 @@ func move_single(
 		last_move_time = now
 	
 	
-	$SpriteTile.position -= dir_vect
+	$SpriteTile.shift_back(dir_vect)
 	position += dir_vect
 	
 	# If a rolling block, try to move again
