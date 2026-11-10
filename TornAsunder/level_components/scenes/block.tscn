@@ -144,6 +144,7 @@ max_polyphony = 2
 
 [node name="sfx_footstep" type="AudioStreamPlayer" parent="." unique_id=164321373]
 stream = SubResource("AudioStreamRandomizer_sc3p2")
+volume_db = 3.0
 max_polyphony = 5
 
 [node name="sfx_bump" type="AudioStreamPlayer" parent="." unique_id=1109554374]
