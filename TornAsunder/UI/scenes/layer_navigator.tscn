@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://UI/scripts/layer_navigator.gd" id="1_hwvb6"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_8dti4"]
 [ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://UI/scenes/caves_navigator.tscn" id="3_nmdk5"]
-[ext_resource type="PackedScene" uid="uid://l2gypp4kmgse" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
+[ext_resource type="PackedScene" uid="uid://cmtde1klxwn3u" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
+[ext_resource type="PackedScene" uid="uid://dkfychypjd3f" path="res://UI/scenes/ruins_navigator.tscn" id="5_nqh8f"]
+[ext_resource type="PackedScene" uid="uid://dtj5qxl735uyx" path="res://UI/scenes/bog_navigator.tscn" id="6_55ivg"]
 
 [node name="Layer Navigator" type="Node2D" unique_id=846608510]
 script = ExtResource("1_hwvb6")
@@ -47,11 +49,17 @@ layout_mode = 2
 text = "Back"
 
 [node name="Caves Navigator" parent="." unique_id=794097652 instance=ExtResource("3_nmdk5")]
+visible = false
 
 [node name="playground_navigator" parent="." unique_id=534790582 instance=ExtResource("4_tg101")]
+visible = false
+
+[node name="Ruins Navigator" parent="." unique_id=1750589878 instance=ExtResource("5_nqh8f")]
+
+[node name="Bog Navigator" parent="." unique_id=1562576995 instance=ExtResource("6_55ivg")]
 
 [connection signal="pressed" from="PanelContainer/Button_manager/Playgrounds" to="playground_navigator" method="open"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Caves" to="Caves Navigator" method="open"]
-[connection signal="pressed" from="PanelContainer/Button_manager/Ruins" to="." method="_on_ruins_pressed"]
-[connection signal="pressed" from="PanelContainer/Button_manager/Bog" to="." method="_on_bog_pressed"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Ruins" to="Ruins Navigator" method="open"]
+[connection signal="pressed" from="PanelContainer/Button_manager/Bog" to="Bog Navigator" method="open"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Back" to="." method="_on_back_pressed"]

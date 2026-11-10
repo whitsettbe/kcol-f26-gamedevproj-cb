@@ -1,17 +1,31 @@
 extends Node
 
 var level_paths = [
+	"res://levels/Playgrounds/playground0.tscn",
 	"res://levels/Playgrounds/playground1.tscn",
-	"res://levels/Playgrounds/playground2.tscn"
+	"res://levels/Playgrounds/playground2.tscn",
+	"res://levels/Caves/01 - Just Walk.tscn",
+	"res://levels/Caves/02 - Push Through.tscn",
+	"res://levels/Caves/04 - Co-op 101.tscn",
+	"res://levels/Caves/07 - Out of the Corner.tscn",
+	"res://levels/Ruins/11 - Not My Block.tscn",
+	"res://levels/Ruins/13 - Rod Construction.tscn",
+	"res://levels/Ruins/14 - Jump Around.tscn",
 	]
 	
 var level_idx = 0
 
 var level_scene
 
+var current_layer_menu = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	# Debug: confirm that the level paths are
+	#  all valid.
+	for path in level_paths:
+		assert(ResourceLoader.exists(path),
+			"Path \"{0}\" not found.".format([path]))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
