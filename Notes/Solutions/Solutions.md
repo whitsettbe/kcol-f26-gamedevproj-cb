@@ -98,6 +98,18 @@
 
 ---
 
+**Level Name:** Rolling  
+**Authors:** Clara Siefke  
+**Intended layer:** Bog  
+
+1. Roy moves up two and one left, pushing the first red entangled block and filling the first hole for Leonard.
+2. Leonard moves up two, right two, down two right six, and up two to fill the holes for Roy.
+3. Roy moves right two, up five, left two, down two, and left one to fill the second hole for Leonard.
+4. Leonard moves up two, left nine, and up five, landing on the exit portal.
+5. Roy moves right one, up two, right two, up two, and left nine, landing on the exit portal.
+
+---
+
 **Level Name:** Leroy  
 **Authors:** Benjamin  
 **Intended layer:** Bog  
