@@ -52,9 +52,9 @@
 **Authors:** Vivian 
 **Intended layer:** Caves
 
-1. Leonard: Push the block to your left down, inline with the one below you.
+1. Leonard: Push the block to your left down, in line with the one below you.
 2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left.
-3. Leonard: Push the two blocks to the left until bothe have filled holes.
+3. Leonard: Push the two blocks to the left until both have filled holes.
 4. Roy: Push the entangled block into the path that you came through.
 5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
 6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one through your filled holes to below the entangled block.
