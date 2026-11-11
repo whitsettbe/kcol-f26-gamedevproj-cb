@@ -15,6 +15,7 @@ const MAX_LEVEL_SIZE_FACTOR = 1.0
 	#  be covered up by the frame.
 
 @onready var sfx_restart: AudioStreamPlayer = $sfx_restart
+@onready var sfx_undo: AudioStreamPlayer = $sfx_undo
 
 
 # Called when the node enters the scene tree for the first time.
@@ -101,7 +102,7 @@ func _on_state_undo_requested() -> void:
 		call_deferred("add_child", Globals.level_scene)
 		connect_level_signals()
 		#undo sfx
-
+		sfx_undo.play()
 # Reset the current level
 func _on_level_reset_requested() -> void:
 	Globals.level_scene.queue_free()
