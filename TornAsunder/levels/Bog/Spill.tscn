@@ -32,14 +32,14 @@ tile_set = ExtResource("2_bv37v")
 tile_set = ExtResource("2_bv37v")
 
 [node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("4_xw7th")]
-position = Vector2(336, 48)
+position = Vector2(208, 176)
 script = ExtResource("5_nhha7")
 side = 0
 blockType = 1
 blockColor = 1
 
 [node name="Roy" parent="." unique_id=950257649 instance=ExtResource("4_xw7th")]
-position = Vector2(464, 80)
+position = Vector2(592, 208)
 script = ExtResource("5_nhha7")
 side = 1
 blockType = 1
