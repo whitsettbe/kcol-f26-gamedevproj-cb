@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		players_exiting = len(overlapping_players)
 		if players_exiting > 0:
 			emit_signal("player_on_exit")
-		  sfx_exit_buzz.play()
+		sfx_exit_buzz.play()
 		return
 	
 	# If the portal output is covered,
@@ -51,10 +51,10 @@ func _physics_process(delta: float) -> void:
 		var offset_vect = target.position - self.position
 		area.position = target.position
 		area.get_node("SpriteTile").show_teleport(offset_vect)
-    
+	
 	# Play teleportation sound effect
-  if len(overlapping_players) > 0:
-    sfx_teleport.play()
+	if len(overlapping_players) > 0:
+		sfx_teleport.play()
 
 # Note when a player leaves the area, if
 #  this is an exit tile
