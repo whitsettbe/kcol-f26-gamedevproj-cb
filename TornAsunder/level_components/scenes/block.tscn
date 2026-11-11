@@ -180,6 +180,7 @@ max_polyphony = 5
 
 [node name="sfx_fill_hole" type="AudioStreamPlayer" parent="." unique_id=2102893740]
 stream = SubResource("AudioStreamRandomizer_x1vbr")
+max_polyphony = 5
 
 [node name="sfx_bump" type="AudioStreamPlayer" parent="." unique_id=1109554374]
 stream = SubResource("AudioStreamRandomizer_jv1ff")
