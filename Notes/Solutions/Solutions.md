@@ -33,6 +33,21 @@
 
 ---
 
+**Level Name:** Mind the Gap  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: push the block leftward into the hole, filling it.
+2. Roy: push the block leftward into the hole, filling it.
+3. Roy: walk into the next room and push the entangled block left.
+4. Leonard: walk into the third room and push the entangled block up.
+5. Roy: walk into the fourth room and push the entangled block right.
+6. Leonard: walk into the fifth room and push the entangled block right.
+7. Roy: walk to the exit.
+8. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Out of the Corner  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
