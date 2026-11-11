@@ -3,12 +3,26 @@
 [ext_resource type="Script" uid="uid://03vclajrcm7w" path="res://scripts/multilevel.gd" id="1_wvn4e"]
 [ext_resource type="PackedScene" uid="uid://duwftmqtn2xj8" path="res://UI/scenes/pause_menu.tscn" id="2_v7a0e"]
 [ext_resource type="PackedScene" uid="uid://cttuaw2e0c78t" path="res://UI/scenes/hud.tscn" id="3_wvn4e"]
+[ext_resource type="AudioStream" uid="uid://cnikys58q43ca" path="res://sfx/restart/restart.wav" id="4_krrom"]
+[ext_resource type="AudioStream" uid="uid://hhhrq6ye3uq4" path="res://sfx/undo/undo.wav" id="5_kbpic"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
+random_pitch = 1.0594631
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("4_krrom")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8bs6t"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("5_kbpic")
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
 
 [node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=1456528907]
-layer = 2
+layer = 3
 
 [node name="Pause Menu" parent="PauseCanvas" unique_id=263263770 instance=ExtResource("2_v7a0e")]
 
@@ -37,3 +51,21 @@ offset_bottom = 1280.0
 color = Color(0, 0, 0, 1)
 
 [node name="HUD" parent="." unique_id=898248560 instance=ExtResource("3_wvn4e")]
+
+[node name="sfx_restart" type="AudioStreamPlayer" parent="." unique_id=1220991628]
+stream = SubResource("AudioStreamRandomizer_hlb1k")
+max_polyphony = 3
+
+[node name="sfx_undo" type="AudioStreamPlayer" parent="." unique_id=2061236835]
+stream = SubResource("AudioStreamRandomizer_8bs6t")
+volume_db = -9.0
+max_polyphony = 3
+
+[node name="TransitionCanvas" type="CanvasLayer" parent="." unique_id=171466578]
+layer = 2
+
+[node name="Cover" type="ColorRect" parent="TransitionCanvas" unique_id=1512334921]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)

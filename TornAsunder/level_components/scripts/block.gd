@@ -1,6 +1,15 @@
 class_name Block
 extends GridArea2D
 
+@onready var sfx_block_push: AudioStreamPlayer = $sfx_block_push
+@onready var sfx_eblock_push: AudioStreamPlayer = $sfx_eblock_push
+@onready var sfx_roll: AudioStreamPlayer = $sfx_roll
+@onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
+@onready var sfx_footstep: AudioStreamPlayer = $sfx_footstep
+@onready var sfx_wipe_paint: AudioStreamPlayer = $sfx_wipe_paint
+@onready var sfx_fill_hole: AudioStreamPlayer = $sfx_fill_hole
+
+
 
 const inputs = {
 	# mapping pressable actions to translation directions
@@ -249,6 +258,8 @@ func move_single(
 	$SpriteTile.shift_back(dir_vect)
 	position += dir_vect
 	
+	play_block_sfx()
+	
 	# If a rolling block, try to move again
 	if rolling:
 		roll(dir_vect)
@@ -286,7 +297,8 @@ func fill_hole():
 		# (triggers fade-out by the SpriteTile and
 		# disabling of block physics)
 		dead = true
-
+		#play fill hole sfx
+		sfx_fill_hole.play()
 
 # Replace the current tile with just floor
 # if it is paint, leaving this block unaffected.
@@ -295,3 +307,23 @@ func check_for_paint():
 		# Replace the floor tile, delaying a visual change
 		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
+		sfx_wipe_paint.play()
+		
+#Plays appropriate sound effect when a block moves. 
+func play_block_sfx():
+	#player
+	if (self.blockType == BlockType.PLAYER):
+		sfx_footstep.play()
+	#square block
+	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
+		sfx_block_push.play()
+	#entangled square block
+	elif (self.blockType == BlockType.ENTANGLED) && (self.rolling == false):
+		sfx_eblock_push.play()
+	#rolling block
+	elif(self.rolling == true && !self.blockType == BlockType.ENTANGLED):
+		sfx_roll.play()
+	#entangled rolling block
+	elif (self.rolling == true):
+		sfx_eroll.play()
+	
