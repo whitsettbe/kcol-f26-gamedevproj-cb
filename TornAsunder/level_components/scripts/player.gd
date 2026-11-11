@@ -6,6 +6,7 @@ enum PlayerSide {LeftPlayer, RightPlayer}
 @export var side : PlayerSide
 @onready var sfx_bump: AudioStreamPlayer = $sfx_bump
 @onready var sfx_squish_paint: AudioStreamPlayer = $sfx_squish_paint
+@onready var sfx_fall_player: AudioStreamPlayer = $sfx_fall_player
 
 
 # Ensure player is not "rolling" during the game
@@ -19,7 +20,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successful = super(dir_vect)
 	if not successful:
 		$SpriteTile.bump(dir_vect)
-		sfx_bump.play()
+		if(dead == false):
+			sfx_bump.play()
 		
 	return successful
 
@@ -62,3 +64,5 @@ func fill_hole():
 		# (triggers shrinking of the SpriteTile and
 		# disabling of block physics)
 		dead = true
+		sfx_fall_player.play()
+		
