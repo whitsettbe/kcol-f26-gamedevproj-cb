@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://bxodq5snojqc3" path="res://sfx/paint_sfx/squish_2.wav" id="30_2qh0n"]
 [ext_resource type="AudioStream" uid="uid://8pfv8aoeyc7x" path="res://sfx/paint_sfx/squish_3.wav" id="31_j50tq"]
 [ext_resource type="AudioStream" uid="uid://bkkrh56wsl3li" path="res://sfx/paint_sfx/squish_4.wav" id="32_5yn5k"]
+[ext_resource type="AudioStream" uid="uid://dotq8mdtcoq13" path="res://sfx/paint_sfx/wipe_paint.wav" id="33_2qh0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa11k"]
 size = Vector2(32, 32)
@@ -101,6 +102,12 @@ stream_1/stream = ExtResource("30_2qh0n")
 stream_2/stream = ExtResource("31_j50tq")
 stream_3/stream = ExtResource("32_5yn5k")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n4wmb"]
+random_pitch = 1.2599211
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("33_2qh0n")
+
 [node name="Block" type="Area2D" unique_id=1094868734]
 script = ExtResource("1_xfwl5")
 metadata/_edit_group_ = true
@@ -156,3 +163,7 @@ max_polyphony = 4
 stream = SubResource("AudioStreamRandomizer_a61iq")
 volume_db = -3.0
 max_polyphony = 2
+
+[node name="sfx_wipe_paint" type="AudioStreamPlayer" parent="." unique_id=866994960]
+stream = SubResource("AudioStreamRandomizer_n4wmb")
+max_polyphony = 3

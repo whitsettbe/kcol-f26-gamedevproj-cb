@@ -6,6 +6,7 @@ extends GridArea2D
 @onready var sfx_roll: AudioStreamPlayer = $sfx_roll
 @onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
 @onready var sfx_footstep: AudioStreamPlayer = $sfx_footstep
+@onready var sfx_wipe_paint: AudioStreamPlayer = $sfx_wipe_paint
 
 
 
@@ -302,7 +303,7 @@ func check_for_paint():
 		# Replace the floor tile, delaying a visual change
 		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
-		
+		sfx_wipe_paint.play()
 		
 #Plays appropriate sound effect when a block moves. 
 func play_block_sfx():
