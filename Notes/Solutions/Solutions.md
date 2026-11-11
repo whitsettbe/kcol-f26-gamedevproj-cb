@@ -73,7 +73,7 @@
 5. Roy: push the unentangled block in the vertical hallway up to the wall.
 6. Leonard: push the unentangled blocks right thrice, then each down.
 7. Leonard: stand to the right of the unentangled blocks.
-8. Roy: push the red entangled block right.
+8. Roy: push the orange entangled block right.
 9. Leonard: walk to the exit.
 10. Roy: walk to the exit.
 
@@ -102,7 +102,7 @@
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
 
-1. Roy moves up two and one left, pushing the first red entangled block and filling the first hole for Leonard.
+1. Roy moves up two and one left, pushing the first orange entangled block and filling the first hole for Leonard.
 2. Leonard moves up two, right two, down two right six, and up two to fill the holes for Roy.
 3. Roy moves right two, up five, left two, down two, and left one to fill the second hole for Leonard.
 4. Leonard moves up two, left nine, and up five, landing on the exit portal.
@@ -120,6 +120,62 @@
 4. Roy: follow Leonard's actions from steps 1-3, only pushing blocks leftward into the holes.
 5. Leonard and Roy: walk to the middle and enjoy being Leroy again.
 6. Leonard and Roy: walk to the exit.
+
+---
+
+**Level Name:** Acupuncture
+**Authors:** Vivian 
+**Intended layer:** Caves
+
+1. Leonard: Push the block to your left down, inline with the one below you.
+2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left.
+3. Leonard: Push the two blocks to the left until bothe have filled holes.
+4. Roy: Push the entangled block into the path that you came through.
+5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
+6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one through your filled holes to below the entangled block.
+7. Roy: Push the entangled block down until it fills the hole.
+8. Leonard: Navigate to the exit.
+9. Roy: Push the two blocks into their respective holes and navigate to the exit.
+
+---
+
+**Level Name:** Magic Eraser
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. Leonard: Push the lower blue block into the hole and push the upper one up and to the right until it is stuck in the corner.
+2. Leonard: Paint yourself orange and push the entangled block downwards and left ontop of the higher blue paint.
+3. Roy: Push the unentangled block into the hole and push the entanged block downwards until it is to the right of the blue paint.
+4. Roy: Paint yourself blue.
+5. Leonard: Push the entangled block to the left as far as it will go and then up as far as it will go.
+6. Roy: Push the blue block one space to the right.
+7. Roy: Paint yourself orange and push the entangled block one space to the left.
+8. Leonard: Push the entangled block to cover the white paint and then one space to the right.
+9. Roy: paint yourself blue and push the blue block to fill the hole.
+10. Both: Navigate to the exit.
+
+---
+
+**Level Name:** Paint
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. Leonard: Paint yourself orange and push the orange block up as far as it will go.
+2. Roy: Push the entangled block to the right as far as it will go.
+3. Leonard: Paint yourself blue and push the blue block into the rightmost hole.
+4. Roy: Paint yourself blue and push the blue block down 3 spaces, left 5, and the up and into the hole.
+5. Roy: Paint yourself blue and push the entangled block in the first room left 1 space, up 2, left 1, and down 1.
+6. Both: Navigate to the exit.
+
+---
+
+**Level Name:** Spill  
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. do this
+2. do that
+3. go to the exit
 
 ---
 
