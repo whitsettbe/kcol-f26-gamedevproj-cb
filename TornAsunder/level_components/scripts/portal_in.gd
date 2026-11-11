@@ -1,6 +1,7 @@
 class_name PortalIn
 extends GridArea2D
 
+@onready var sfx_teleport: AudioStreamPlayer = $sfx_teleport
 @export var target : PortalOut
 @export var is_exit : bool
 var players_exiting = 0
@@ -44,7 +45,8 @@ func _on_area_entered(area: Area2D) -> void:
 	var offset_vect = target.position - self.position
 	area.position = target.position
 	area.get_node("SpriteTile").show_teleport(offset_vect)
-
+	#play teleportation sound effect
+	sfx_teleport.play()
 # Note when a player leaves the area, if
 #  this is an exit tile
 func _on_area_exited(area: Area2D) -> void:
