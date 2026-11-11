@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_ohxbh"]
 [ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_bg6os"]
 
-[node name="Basic_Level_Empty" type="Node2D" unique_id=1479523790]
+[node name="Magic Eraser" type="Node2D" unique_id=1479523790]
 script = ExtResource("1_sbyu7")
 layer = 2
 is_final = false
