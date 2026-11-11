@@ -7,6 +7,7 @@ extends GridArea2D
 @onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
 @onready var sfx_footstep: AudioStreamPlayer = $sfx_footstep
 @onready var sfx_wipe_paint: AudioStreamPlayer = $sfx_wipe_paint
+@onready var sfx_fill_hole: AudioStreamPlayer = $sfx_fill_hole
 
 
 
@@ -294,7 +295,8 @@ func fill_hole():
 		# (triggers fade-out by the SpriteTile and
 		# disabling of block physics)
 		dead = true
-
+		#play fill hole sfx
+		sfx_fill_hole.play()
 
 # Replace the current tile with just floor
 # if it is paint, leaving this block unaffected.
