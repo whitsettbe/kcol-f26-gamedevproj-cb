@@ -8,14 +8,15 @@ var level_paths = [
 	"res://levels/Caves/02 - Push Through.tscn",
 	"res://levels/Caves/04 - Co-op 101.tscn",
 	"res://levels/Caves/07 - Out of the Corner.tscn",
+	"res://levels/Caves/10-Acupuncture.tscn",
 	"res://levels/Ruins/11 - Not My Block.tscn",
 	"res://levels/Ruins/13 - Rod Construction.tscn",
 	"res://levels/Ruins/14 - Jump Around.tscn",
-	"res://levels/Caves/holetutorial.tscn",
-	"res://levels/Bog/paintTutorial.tscn",
-	"res://levels/Bog/paintMedium.tscn"
 	"res://levels/Bog/21 - Rolling.tscn",
-	"res://levels/Bog/30 - Leroy.tscn",
+	"res://levels/Bog/Paint.tscn",
+	"res://levels/Bog/Spill.tscn",
+	"res://levels/Bog/28-Magic_Eraser.tscn",
+	"res://levels/Bog/30 - Leroy.tscn"
 	]
 	
 var level_idx = 0
