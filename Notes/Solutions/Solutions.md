@@ -98,6 +98,59 @@
 
 ---
 
+**Level Name:** Cover-up  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: in the room next to you, push the 5 entangled blocks so that their partners cover all 5 portal outputs in Leonard's world.
+2. Leonard: in the upper room, push the entangled blocks so that their partners cover all 5 portal outputs in Roy's world.
+3. Roy: walk to the exit.
+4. Leonard: walk to the exit.
+
+---
+
+**Level Name:** Rolling  
+**Authors:** Clara Siefke  
+**Intended layer:** Bog  
+
+1. Roy moves up two and one left, pushing the first red entangled block and filling the first hole for Leonard.
+2. Leonard moves up two, right two, down two right six, and up two to fill the holes for Roy.
+3. Roy moves right two, up five, left two, down two, and left one to fill the second hole for Leonard.
+4. Leonard moves up two, left nine, and up five, landing on the exit portal.
+5. Roy moves right one, up two, right two, up two, and left nine, landing on the exit portal.
+
+---
+
+**Level Name:** Speedy Delivery  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push the rolling block rightward.
+2. Roy: push the entangled block upward to a hole. Walk onto the hole, left to the wall, down (pushing a block), left (pushing a block into a hole, if possible), right, and push the block below you down to the wall. Then push the rolling block leftward to deliver the entangled block to Leonard.
+3. Leonard: do as Roy did in step 2 - fill a hole you need to walk across, push an entangled block down, push an unentangled block into a hole, push the entangled block to the bottom, and deliver it via the rolling block.
+4. Roy: repeat step 2.
+5. Leonard: repeat step 3.
+6. Roy: repeat step 2.
+7. Leonard: repeat step 3.
+6. Roy: repeat step 2.
+7. Leonard: push the last block up to the final hole and walk to the exit.
+8. Roy: walk to the exit.
+
+---
+
+**Level Name:** Leroy  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push each of the two block columns above you down, then push the two blocks now in the middle row rightward to fill holes.
+2. Leonard: push the remaining block from the top half of the level down, then rightward into a hole.
+3. Leonard: repeat steps 1-2 with the bottom three blocks, pushing them up to the middle and then rightward into holes.
+4. Roy: follow Leonard's actions from steps 1-3, only pushing blocks leftward into the holes.
+5. Leonard and Roy: walk to the middle and enjoy being Leroy again.
+6. Leonard and Roy: walk to the exit.
+
+---
+
 **Level Name:** (name)  
 **Authors:** (authors)  
 **Intended layer:** (layer)  

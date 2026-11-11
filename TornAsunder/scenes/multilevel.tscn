@@ -22,7 +22,7 @@ stream_0/stream = ExtResource("5_kbpic")
 script = ExtResource("1_wvn4e")
 
 [node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=1456528907]
-layer = 2
+layer = 3
 
 [node name="Pause Menu" parent="PauseCanvas" unique_id=263263770 instance=ExtResource("2_v7a0e")]
 
@@ -60,3 +60,12 @@ max_polyphony = 3
 stream = SubResource("AudioStreamRandomizer_8bs6t")
 volume_db = -9.0
 max_polyphony = 3
+
+[node name="TransitionCanvas" type="CanvasLayer" parent="." unique_id=171466578]
+layer = 2
+
+[node name="Cover" type="ColorRect" parent="TransitionCanvas" unique_id=1512334921]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)

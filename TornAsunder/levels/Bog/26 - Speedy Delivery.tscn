@@ -1,0 +1,218 @@
+[gd_scene format=4 uid="uid://b2nn4djiluv13"]
+
+[ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_r46yi"]
+[ext_resource type="TileSet" uid="uid://hugiu72j6udd" path="res://sprites/bog_tiles.tres" id="2_u4bw0"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_yaimv"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="4_swdc1"]
+[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="5_117kw"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="6_yy01n"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="7_14hj2"]
+
+[node name="Speedy Delivery" type="Node2D" unique_id=1479523790]
+script = ExtResource("1_r46yi")
+layer = 2
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=79841228]
+tile_map_data = PackedByteArray("AAAPAAkAAAABAAYAAAAQAAkAAAABAAkAAAARAAkAAAABAAkAAAASAAkAAAABAAgAAAATAAkAAAAFAAQAAAAUAAkAAAAAAAgAAAAVAAkAAAABAAkAAAAWAAkAAAAHAAQAAAABAAkAAAAEAAcAAAACAAkAAAAHAAcAAAADAAkAAAAFAAQAAAAEAAkAAAAAAAgAAAAFAAkAAAABAAkAAAAGAAkAAAABAAkAAAAHAAkAAAACAAYAAAAIAAkAAAABAAkAAAAJAAkAAAADAAYAAAAJAAgAAAAAAAQAAAAWAAgAAAAAAAQAAAAHAAgAAAAAAAQAAAAUAAgAAAADAAgAAAAXAAkAAAAGAAcAAAAHAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAHAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAWAAYAAAAFAAUAAAAWAAQAAAAFAAUAAAAJAAIAAAAFAAUAAAAWAAIAAAAFAAUAAAAUAAcAAAABAAUAAAAUAAYAAAADAAUAAAAUAAUAAAABAAUAAAAUAAQAAAADAAUAAAAUAAMAAAABAAUAAAAWAAoAAAAEAAkAAAAXAAoAAAAGAAkAAAAVAAcAAAACAAkAAAAVAAUAAAACAAkAAAAVAAMAAAACAAkAAAAXAAEAAAAFAAUAAAABAAEAAAAFAAUAAAABAAoAAAAEAAkAAAACAAoAAAAGAAkAAAAVAAEAAAACAAkAAAAUAAEAAAABAAQAAAAUAAIAAAAAAAUAAAAHAAIAAAAFAAUAAAACAAgAAAAEAAcAAAARAAMAAAAFAAUAAAARAAUAAAAFAAUAAAARAAcAAAAFAAUAAAAPAAgAAAAAAAQAAAAEAAgAAAADAAgAAAAPAAIAAAAFAAUAAAAPAAQAAAAFAAUAAAAPAAYAAAAFAAUAAAAEAAMAAAABAAUAAAAEAAQAAAADAAUAAAAEAAUAAAABAAUAAAAEAAYAAAADAAUAAAAEAAcAAAABAAUAAAACAAIAAAAAAAkAAAACAAQAAAAAAAkAAAACAAYAAAAAAAkAAAADAAIAAAABAAkAAAADAAQAAAABAAkAAAADAAYAAAABAAkAAAAEAAIAAAADAAQAAAAFAAcAAAABAAkAAAAGAAcAAAACAAkAAAAFAAUAAAABAAkAAAAGAAUAAAACAAkAAAAFAAMAAAABAAkAAAAGAAMAAAACAAkAAAASAAQAAAAAAAkAAAATAAQAAAABAAkAAAASAAYAAAAAAAkAAAATAAYAAAABAAkAAAATAAgAAAAFAAYAAAASAAgAAAAEAAcAAAADAAgAAAAFAAYAAAAKAAoAAAAFAAUAAAAOAAoAAAAFAAUAAAA=")
+tile_set = ExtResource("2_u4bw0")
+
+[node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_yaimv")]
+position = Vector2(48, 48)
+is_exit = true
+
+[node name="EXIT_R" parent="." unique_id=779499140 instance=ExtResource("3_yaimv")]
+position = Vector2(752, 48)
+is_exit = true
+
+[node name="p_in_L" parent="." unique_id=1922425769 node_paths=PackedStringArray("target") instance=ExtResource("3_yaimv")]
+position = Vector2(208, 304)
+target = NodePath("../p_out_L")
+
+[node name="p_out_L" parent="." unique_id=20745320 instance=ExtResource("4_swdc1")]
+position = Vector2(336, 336)
+
+[node name="p_in_R" parent="." unique_id=1483670043 node_paths=PackedStringArray("target") instance=ExtResource("3_yaimv")]
+position = Vector2(592, 304)
+target = NodePath("../p_out_R")
+
+[node name="p_out_R" parent="." unique_id=1148969849 instance=ExtResource("4_swdc1")]
+position = Vector2(464, 336)
+
+[node name="FloorOverlays" type="TileMapLayer" parent="." unique_id=1075741924]
+tile_map_data = PackedByteArray("AAAAAAkAAAAEAAsAAAAAAAgAAAAEAAoAAAAAAAcAAAAFAA4AAAAAAAYAAAAFAA4AAAAAAAUAAAAFAA4AAAAAAAQAAAAFAA4AAAAAAAMAAAAFAA4AAAAAAAIAAAAEAAwAAAAAAAEAAAAEAAsAAAAAAAAAAAAEAAoAAAAAAP//AAAFAAwAAAD//wkAAAAGAAsAAAD//wgAAAAGAAsAAAD//wcAAAAGAAsAAAD//wYAAAAGAAsAAAD//wUAAAAGAAsAAAD//wQAAAAGAAsAAAD//wMAAAAGAAsAAAD//wIAAAAGAAsAAAD//wEAAAAGAAsAAAD//wAAAAAGAAsAAAD/////AAAEAA0AAAAZAAAAAAAEAAsAAAAZAP//AAAGAA0AAAAYAAAAAAAGAAoAAAAYAP//AAAFAAwAAAAXAAAAAAAFAAoAAAAXAP//AAAFAAwAAAAWAAAAAAAFAAoAAAAWAP//AAAFAAwAAAAVAAAAAAAFAAoAAAAVAP//AAAFAAwAAAAUAAAAAAAFAAoAAAAUAP//AAAFAAwAAAATAAAAAAAEAAoAAAATAP//AAAFAAwAAAASAAAAAAAFAA4AAAASAP//AAAFAAwAAAARAAAAAAAFAA4AAAARAP//AAAFAAwAAAAQAAAAAAAGAAoAAAAQAP//AAAFAAwAAAAPAAAAAAAFAAoAAAAPAP//AAAFAAwAAAAOAAAAAAAEAAoAAAAOAP//AAAFAAwAAAANAAAAAAAFAA4AAAANAP//AAAFAAwAAAAMAAAAAAAFAA4AAAAMAP//AAAFAAwAAAALAAAAAAAFAA4AAAALAP//AAAFAAwAAAAKAAAAAAAGAAoAAAAKAP//AAAFAAwAAAAJAAAAAAAFAAoAAAAJAP//AAAFAAwAAAAIAAAAAAAEAAoAAAAIAP//AAAFAAwAAAAHAAAAAAAFAA4AAAAHAP//AAAFAAwAAAAGAAAAAAAFAA4AAAAGAP//AAAFAAwAAAAFAAAAAAAFAA4AAAAFAP//AAAFAAwAAAAEAAAAAAAFAA4AAAAEAP//AAAFAAwAAAADAP//AAAFAAwAAAACAP//AAAFAAwAAAABAAAAAAAFAAoAAAABAP//AAAFAAwAAAANAAkAAAAEAAoAAAANAAgAAAAFAA4AAAANAAcAAAAFAA4AAAANAAYAAAAFAA4AAAANAAUAAAAFAA4AAAANAAQAAAAFAA4AAAANAAMAAAAFAA4AAAANAAIAAAAFAA4AAAANAAEAAAAFAA4AAAAMAAkAAAAFAA4AAAAMAAgAAAAFAA4AAAAMAAcAAAAFAA4AAAAMAAYAAAAFAA4AAAAMAAUAAAAFAA4AAAAMAAQAAAAFAA4AAAAMAAMAAAAFAA4AAAAMAAIAAAAFAA4AAAAMAAEAAAAFAA4AAAALAAkAAAAGAAoAAAALAAgAAAAFAA4AAAALAAcAAAAFAA4AAAALAAYAAAAFAA4AAAALAAUAAAAFAA4AAAALAAQAAAAFAA4AAAALAAMAAAAFAA4AAAALAAIAAAAFAA4AAAALAAEAAAAFAA4AAAAZAAkAAAAEAAsAAAAZAAgAAAAEAAsAAAAZAAcAAAAEAAsAAAAZAAYAAAAEAAsAAAAZAAUAAAAEAAsAAAAZAAQAAAAEAAsAAAAZAAMAAAAEAAsAAAAZAAIAAAAEAAsAAAAZAAEAAAAEAAsAAAAYAAkAAAAGAAsAAAAYAAgAAAAGAAoAAAAYAAcAAAAFAA4AAAAYAAYAAAAFAA4AAAAYAAUAAAAFAA4AAAAYAAQAAAAFAA4AAAAYAAMAAAAFAA4AAAAYAAIAAAAGAAwAAAAYAAEAAAAGAAsAAAADAAAAAAAGAAoAAAACAAAAAAAFAAoAAAD//wsAAAAGAAsAAAAAAAsAAAAEAAwAAAABAAsAAAAFAAwAAAADAAsAAAAGAAwAAAAEAAsAAAAFAA4AAAAGAAsAAAAFAA4AAAAHAAsAAAAFAA4AAAAIAAsAAAAFAA4AAAAJAAsAAAAEAAwAAAAKAAsAAAAFAAwAAAALAAsAAAAGAAwAAAAMAAsAAAAFAA4AAAANAAsAAAAEAAwAAAAOAAsAAAAFAAwAAAAPAAsAAAAGAAwAAAAQAAsAAAAFAA4AAAARAAsAAAAFAA4AAAASAAsAAAAFAA4AAAATAAsAAAAFAA4AAAAUAAsAAAAFAA4AAAAVAAsAAAAEAAwAAAAWAAsAAAAFAAwAAAAXAAsAAAAFAAwAAAAYAAsAAAAGAAwAAAAZAAsAAAAEAAsAAAD//wwAAAAEAA8AAAAAAAwAAAAFAAoAAAABAAwAAAAFAAoAAAACAAwAAAAFAAoAAAADAAwAAAAFAAoAAAAEAAwAAAAFAAoAAAAGAAwAAAAFAAoAAAAHAAwAAAAFAAoAAAAIAAwAAAAFAAoAAAAJAAwAAAAFAAoAAAAKAAwAAAAFAAoAAAALAAwAAAAFAAoAAAAMAAwAAAAFAAoAAAANAAwAAAAFAAoAAAAOAAwAAAAFAAoAAAAPAAwAAAAFAAoAAAAQAAwAAAAFAAoAAAARAAwAAAAFAAoAAAASAAwAAAAFAAoAAAATAAwAAAAFAAoAAAAUAAwAAAAFAAoAAAAVAAwAAAAFAAoAAAAWAAwAAAAFAAoAAAAXAAwAAAAFAAoAAAAYAAwAAAAFAAoAAAAZAAwAAAAGAA8AAAD//woAAAAGAAsAAAAAAAoAAAAEAAsAAAALAAoAAAAGAAsAAAAMAAoAAAAFAA4AAAANAAoAAAAEAAsAAAAYAAoAAAAGAAsAAAAZAAoAAAAEAAsAAAACAAsAAAAFAAwAAAAFAAsAAAAFAA4AAAAFAAwAAAAFAAoAAAAJAAcAAAADAAMAAAAJAAUAAAADAAMAAAAJAAMAAAADAAMAAAAWAAcAAAADAAMAAAAWAAUAAAADAAMAAAAWAAMAAAADAAMAAAAWAAEAAAADAAMAAAAJAAEAAAADAAMAAAACAAEAAAADAAMAAAABAAgAAAAGAA8AAAABAAcAAAAEAAsAAAABAAYAAAAEAAsAAAABAAUAAAAEAAsAAAABAAQAAAAEAAsAAAABAAMAAAAEAAsAAAABAAIAAAAGAA0AAAADAAEAAAAEAA8AAAAEAAEAAAAFAAoAAAAFAAEAAAAGAAoAAAAGAAEAAAAEAAoAAAAHAAEAAAAFAAoAAAAIAAEAAAADAA0AAAAIAAIAAAAAAAsAAAAIAAMAAAAAAAsAAAAIAAQAAAAAAAsAAAAIAAUAAAAAAAsAAAAIAAYAAAAAAAsAAAAIAAcAAAAAAAsAAAAIAAgAAAAAAAwAAAAKAAEAAAAGAAsAAAAKAAIAAAAGAAsAAAAKAAMAAAAGAAsAAAAKAAQAAAAGAAsAAAAKAAUAAAAGAAsAAAAKAAYAAAAGAAsAAAAKAAcAAAAGAAsAAAAKAAgAAAAGAAsAAAAKAAkAAAAEAA8AAAAJAAoAAAAGAA0AAAAIAAoAAAAFAAwAAAAHAAoAAAAFAAwAAAAGAAoAAAAFAAwAAAAFAAoAAAAFAAwAAAAEAAoAAAAFAAwAAAADAAoAAAAEAA0AAAAPAAEAAAADAAMAAAAOAAEAAAAEAAsAAAAOAAIAAAAEAAsAAAAOAAMAAAAEAAsAAAAOAAQAAAAEAAsAAAAOAAUAAAAEAAsAAAAOAAYAAAAEAAsAAAAOAAcAAAAEAAsAAAAOAAgAAAAEAAsAAAAOAAkAAAAGAA8AAAAPAAoAAAAEAA0AAAAQAAoAAAAFAAwAAAARAAoAAAAFAAwAAAASAAoAAAAFAAwAAAATAAoAAAAFAAwAAAAUAAoAAAAFAAwAAAAVAAoAAAAGAA0AAAAQAAgAAAAAAAwAAAAQAAcAAAAAAAsAAAAQAAYAAAAAAAsAAAAQAAUAAAAAAAsAAAAQAAQAAAAAAAsAAAAQAAMAAAAAAAsAAAAQAAIAAAACAA0AAAAQAAEAAAAGAAsAAAARAAEAAAAFAA4AAAASAAEAAAAFAA4AAAATAAEAAAAEAAsAAAATAAIAAAAEAAsAAAATAAMAAAAGAA8AAAASAAIAAAAGAAoAAAASAAMAAAAEAA8AAAASAAUAAAAAAA8AAAATAAUAAAACAA8AAAATAAcAAAACAA8AAAASAAcAAAAAAA8AAAAXAAgAAAAEAA8AAAAXAAcAAAAGAAsAAAAXAAYAAAAGAAsAAAAXAAUAAAAGAAsAAAAXAAQAAAAGAAsAAAAXAAMAAAAGAAsAAAAXAAIAAAAEAA0AAAAVAAIAAAAFAAsAAAAVAAQAAAAFAAsAAAAVAAYAAAAFAAsAAAAVAAgAAAAFAAsAAAAFAAgAAAAAAA8AAAAGAAgAAAACAA8AAAAFAAYAAAAAAA8AAAAGAAYAAAACAA8AAAAFAAQAAAAAAA8AAAAGAAQAAAACAA8AAAAFAAIAAAAEAA8AAAAGAAIAAAAGAA8AAAARAAIAAAAFAAoAAAAPAAcAAAADAAMAAAAPAAUAAAADAAMAAAAPAAMAAAADAAMAAAACAAMAAAADAAMAAAACAAUAAAADAAMAAAACAAcAAAADAAMAAAADAAMAAAAFAAsAAAADAAUAAAAFAAsAAAADAAcAAAAFAAsAAAAHAAcAAAADAAMAAAAHAAUAAAADAAMAAAAHAAMAAAADAAMAAAARAAgAAAADAAMAAAARAAYAAAADAAMAAAARAAQAAAADAAMAAAA=")
+tile_set = ExtResource("2_u4bw0")
+
+[node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=210106780]
+tile_set = ExtResource("2_u4bw0")
+
+[node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("5_117kw")]
+position = Vector2(48, 336)
+script = ExtResource("6_yy01n")
+side = 0
+blockType = 1
+blockColor = 1
+
+[node name="Roy" parent="." unique_id=950257649 instance=ExtResource("5_117kw")]
+position = Vector2(752, 336)
+script = ExtResource("6_yy01n")
+side = 1
+blockType = 1
+blockColor = 2
+
+[node name="roll_e_L" parent="." unique_id=1549155194 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(80, 304)
+script = ExtResource("7_14hj2")
+partner = NodePath("../roll_e_R")
+blockType = 2
+rolling = true
+
+[node name="roll_e_R" parent="." unique_id=2025355138 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(496, 304)
+script = ExtResource("7_14hj2")
+partner = NodePath("../roll_e_L")
+blockType = 2
+rolling = true
+
+[node name="e_L_1" parent="." unique_id=1379570061 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(144, 304)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_1")
+blockType = 2
+
+[node name="e_R_1" parent="." unique_id=1211255269 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(560, 304)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_1")
+blockType = 2
+
+[node name="e_L_2" parent="." unique_id=1729827052 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(240, 272)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_2")
+blockType = 2
+
+[node name="e_R_2" parent="." unique_id=848823359 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(656, 272)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_2")
+blockType = 2
+
+[node name="e_L_3" parent="." unique_id=1234961215 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(144, 240)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_3")
+blockType = 2
+
+[node name="e_R_3" parent="." unique_id=1587902328 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(560, 240)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_3")
+blockType = 2
+
+[node name="e_L_4" parent="." unique_id=382000586 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(240, 208)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_4")
+blockType = 2
+
+[node name="e_R_4" parent="." unique_id=624780698 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(656, 208)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_4")
+blockType = 2
+
+[node name="e_L_5" parent="." unique_id=516397727 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(144, 176)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_5")
+blockType = 2
+
+[node name="e_R_5" parent="." unique_id=450659411 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(560, 176)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_5")
+blockType = 2
+
+[node name="e_L_6" parent="." unique_id=1904174230 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(240, 144)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_6")
+blockType = 2
+
+[node name="e_R_6" parent="." unique_id=1006045732 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(656, 144)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_6")
+blockType = 2
+
+[node name="e_L_7" parent="." unique_id=1717085215 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(144, 112)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_7")
+blockType = 2
+
+[node name="e_R_7" parent="." unique_id=1903919244 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(560, 112)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_7")
+blockType = 2
+
+[node name="e_L_8" parent="." unique_id=1816771500 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(240, 80)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_R_8")
+blockType = 2
+
+[node name="e_R_8" parent="." unique_id=141141837 node_paths=PackedStringArray("partner") instance=ExtResource("5_117kw")]
+position = Vector2(656, 80)
+script = ExtResource("7_14hj2")
+partner = NodePath("../e_L_8")
+blockType = 2
+
+[node name="L_1" parent="." unique_id=1371166505 instance=ExtResource("5_117kw")]
+position = Vector2(176, 240)
+blockColor = 1
+
+[node name="L_2" parent="." unique_id=1929958546 instance=ExtResource("5_117kw")]
+position = Vector2(208, 240)
+blockColor = 1
+
+[node name="L_3" parent="." unique_id=1283890431 instance=ExtResource("5_117kw")]
+position = Vector2(176, 176)
+blockColor = 1
+
+[node name="L_4" parent="." unique_id=125243238 instance=ExtResource("5_117kw")]
+position = Vector2(208, 176)
+blockColor = 1
+
+[node name="L_5" parent="." unique_id=1478546906 instance=ExtResource("5_117kw")]
+position = Vector2(176, 112)
+blockColor = 1
+
+[node name="L_6" parent="." unique_id=102842790 instance=ExtResource("5_117kw")]
+position = Vector2(208, 112)
+blockColor = 1
+
+[node name="R_1" parent="." unique_id=1579237804 instance=ExtResource("5_117kw")]
+position = Vector2(592, 272)
+blockColor = 2
+
+[node name="R_2" parent="." unique_id=691942794 instance=ExtResource("5_117kw")]
+position = Vector2(624, 272)
+blockColor = 2
+
+[node name="R_3" parent="." unique_id=923147561 instance=ExtResource("5_117kw")]
+position = Vector2(592, 208)
+blockColor = 2
+
+[node name="R_4" parent="." unique_id=684175524 instance=ExtResource("5_117kw")]
+position = Vector2(624, 208)
+blockColor = 2
+
+[node name="R_5" parent="." unique_id=1624490374 instance=ExtResource("5_117kw")]
+position = Vector2(592, 144)
+blockColor = 2
+
+[node name="R_6" parent="." unique_id=1357801023 instance=ExtResource("5_117kw")]
+position = Vector2(624, 144)
+blockColor = 2
