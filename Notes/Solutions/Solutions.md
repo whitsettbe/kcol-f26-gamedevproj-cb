@@ -109,6 +109,18 @@
 
 ---
 
+**Level Name:** Rolling  
+**Authors:** Clara Siefke  
+**Intended layer:** Bog  
+
+1. Roy moves up two and one left, pushing the first red entangled block and filling the first hole for Leonard.
+2. Leonard moves up two, right two, down two right six, and up two to fill the holes for Roy.
+3. Roy moves right two, up five, left two, down two, and left one to fill the second hole for Leonard.
+4. Leonard moves up two, left nine, and up five, landing on the exit portal.
+5. Roy moves right one, up two, right two, up two, and left nine, landing on the exit portal.
+
+---
+
 **Level Name:** Speedy Delivery  
 **Authors:** Benjamin  
 **Intended layer:** Bog  
@@ -123,6 +135,19 @@
 6. Roy: repeat step 2.
 7. Leonard: push the last block up to the final hole and walk to the exit.
 8. Roy: walk to the exit.
+
+---
+
+**Level Name:** Leroy  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push each of the two block columns above you down, then push the two blocks now in the middle row rightward to fill holes.
+2. Leonard: push the remaining block from the top half of the level down, then rightward into a hole.
+3. Leonard: repeat steps 1-2 with the bottom three blocks, pushing them up to the middle and then rightward into holes.
+4. Roy: follow Leonard's actions from steps 1-3, only pushing blocks leftward into the holes.
+5. Leonard and Roy: walk to the middle and enjoy being Leroy again.
+6. Leonard and Roy: walk to the exit.
 
 ---
 

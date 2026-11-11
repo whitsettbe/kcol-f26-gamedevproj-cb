@@ -177,8 +177,10 @@ func get_all_successors(
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	if collider != null:
-		immediate.push_back(collider 
-				if collider is Block else null)
+		# Skip players pushing players
+		if not (self is Player and collider is Player):
+			immediate.push_back(collider 
+					if collider is Block else null)
 	
 	# Add successors of later blocks
 	for successor in immediate:
