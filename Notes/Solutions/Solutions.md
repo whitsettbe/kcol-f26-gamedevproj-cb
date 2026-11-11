@@ -163,8 +163,8 @@
 1. Leonard: Paint yourself orange and push the orange block up as far as it will go.
 2. Roy: Push the entangled block to the right as far as it will go.
 3. Leonard: Paint yourself blue and push the blue block into the rightmost hole.
-4. Roy: Paint yourself blue and push the blue block down 3 spaces, left 5, and the up and into the hole.
-5. Roy: Paint yourself blue and push the entangled block in the first room left 1 space, up 2, left 1, and down 1.
+4. Roy: Paint yourself blue and push the blue block down 2 spaces, left 1, down 1, left 4, and up and into the hole.
+5. Roy: Paint yourself blue, push the colorless block all the way up, and push the entangled block in the first room left 1 space, up 2, left 1, and down 1.
 6. Both: Navigate to the exit.
 
 ---
