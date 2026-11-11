@@ -2,6 +2,7 @@ class_name PortalIn
 extends GridArea2D
 
 @onready var sfx_teleport: AudioStreamPlayer = $sfx_teleport
+@onready var sfx_exit_buzz: AudioStreamPlayer = $sfx_exit_buzz
 @export var target : PortalOut
 @export var is_exit : bool
 var players_exiting = 0
@@ -34,6 +35,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if is_exit:
 		players_exiting += 1
 		emit_signal("player_on_exit")
+		sfx_exit_buzz.play()
+		
 		return
 		
 		
