@@ -14,6 +14,9 @@ const MAX_LEVEL_SIZE_FACTOR = 1.0
 	#  Those can be outside of the "level" space, and they will
 	#  be covered up by the frame.
 
+@onready var sfx_restart: AudioStreamPlayer = $sfx_restart
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_level(Globals.level_idx)
@@ -97,13 +100,14 @@ func _on_state_undo_requested() -> void:
 		level_scene_stack_times.pop_back()
 		call_deferred("add_child", Globals.level_scene)
 		connect_level_signals()
-
+		#undo sfx
 
 # Reset the current level
 func _on_level_reset_requested() -> void:
 	Globals.level_scene.queue_free()
 	load_level(Globals.level_idx)
-
+	#restart sfx
+	sfx_restart.play()
 
 # Translate and scale the level to center it on the screen
 #  and maximize its size. Canvas elements are also arranged

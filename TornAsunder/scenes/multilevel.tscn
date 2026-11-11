@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://03vclajrcm7w" path="res://scripts/multilevel.gd" id="1_wvn4e"]
 [ext_resource type="PackedScene" uid="uid://duwftmqtn2xj8" path="res://UI/scenes/pause_menu.tscn" id="2_v7a0e"]
 [ext_resource type="PackedScene" uid="uid://cttuaw2e0c78t" path="res://UI/scenes/hud.tscn" id="3_wvn4e"]
+[ext_resource type="AudioStream" uid="uid://cnikys58q43ca" path="res://sfx/restart/restart.wav" id="4_krrom"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
+random_pitch = 1.0594631
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("4_krrom")
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
@@ -37,3 +44,7 @@ offset_bottom = 1280.0
 color = Color(0, 0, 0, 1)
 
 [node name="HUD" parent="." unique_id=898248560 instance=ExtResource("3_wvn4e")]
+
+[node name="sfx_restart" type="AudioStreamPlayer" parent="." unique_id=1220991628]
+stream = SubResource("AudioStreamRandomizer_hlb1k")
+max_polyphony = 3
