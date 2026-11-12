@@ -169,6 +169,23 @@
 
 ---
 
+**Level Name:** Not-So-Speedy Delivery  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push the top-left entangled block down once.
+2. Roy: push the bottom-left entangled block left once.
+3. Leonard: push the top-right entangled block left twice.
+4. Roy: push the bottom-right entangled block down once.
+5. Leonard: push the rolling block downward, then rightward, then upward.
+6. Roy: push the bottom-right entangled block up twice.
+7. Leonard: push the rolling block leftward, then upward, then rightward.
+8. Roy: push your rolling block leftward, downard, leftward, upward, rightward, upward.
+9. Leonard: walk to the exit.
+10. Roy: walk to the exit.
+
+---
+
 **Level Name:** Leroy  
 **Authors:** Benjamin  
 **Intended layer:** Bog  
