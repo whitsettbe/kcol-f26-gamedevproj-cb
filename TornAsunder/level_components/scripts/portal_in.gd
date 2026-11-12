@@ -7,6 +7,9 @@ extends GridArea2D
 @export var is_exit : bool
 var players_exiting = 0
 signal player_on_exit
+# boolean to keep track of the exit sfx, 
+# so it dosnt keep playing
+var has_exit_buzz_sfx_played : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,7 +41,9 @@ func _physics_process(delta: float) -> void:
 		players_exiting = len(overlapping_players)
 		if players_exiting > 0:
 			emit_signal("player_on_exit")
-		sfx_exit_buzz.play()
+			if  (has_exit_buzz_sfx_played == false):
+				sfx_exit_buzz.play()
+				has_exit_buzz_sfx_played = true
 		return
 	
 	# If the portal output is covered,
@@ -66,3 +71,6 @@ func _on_area_exited(area: Area2D) -> void:
 	
 	if is_exit:
 		players_exiting -= 1
+		#reset the bool so if the player steps on the exit again, 
+		#the sound effect can play again.
+		has_exit_buzz_sfx_played = false
