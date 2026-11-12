@@ -33,6 +33,19 @@
 
 ---
 
+**Level Name:** Working Blind  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: walk up, up, left, left, thereby clearing a path in Roy's map.
+2. Roy: walk left, left, up, up, right, up, and then push the unentangled block on your left as far as possible.
+3. Leonard: walk into the lower-left room and push the entangled block right twice.
+4. Roy: walk to the entangled block at upper-left, and push it: up, right x3, up, right x2, down, right x2, left.
+5. Leonard: walk to the exit.
+6. Roy: walk to the exit.
+
+---
+
 **Level Name:** Mind the Gap  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
