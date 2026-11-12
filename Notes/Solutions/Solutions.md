@@ -48,6 +48,21 @@
 
 ---
 
+**Level Name:** Know Expectations  
+**Authors:** Clara Siefke
+**Intended layer:** Caves 
+
+1. Roy moves left eight, up two, right two, and down one, moving the first red entangled block down.
+2. Roy moves up one, right two, and down one, moving the second red entangled block down.
+3. Roy moves up one, right two, and down one, moving the third red entangled block down.
+4. Leonard moves left eight, up two, right eight, up two, left seven, and up one, moving the third blue entangled block up.
+5. Roy moves up one, left five, up two, left two, up four, right five, down one, and left two, moving the fourth red entangled block out of the way.
+6. Leonard moves down one, right seven, up two, left six, up two, right two, up one, right four, down one, and left two, moving the fourth blue entangled block into the hole.
+7. Roy moves right six and up one, landing on the exit.
+8. Leonard moves right two and up one, landing on the exit.
+
+---
+
 **Level Name:** Not My Block  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
