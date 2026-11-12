@@ -48,6 +48,29 @@
 
 ---
 
+**Level Name:** Lost  
+**Authors:** Clara Siefke  
+**Intended layer:** Caves  
+
+1. Leonard moves left two and up two, pushing the first entangled block up.
+2. Roy moves left one, up three, and left one, pushing the first entangled block left.
+3. Leonard moves up five, pushing the second entangled block up.
+4. Roy moves right two, up four, left three, up two, right one, and down one, pushing the second entangled block and Leonard down.
+5. Roy moves left one, down one, and right two, pushing the second entangled block right.
+6. Leonard moves up three, right two, and down two, pushing the second and third entangled blocks down.
+7. Leonard moves left two, down two, and left one, pushing the fourth and fifth entangled blocks left.
+8. Roy moves left three, down one, left one, and down one, pushing the fifth entangled block down.
+9. Roy moves up one.
+10. Leonard moves left one, pushing the fourth entangled block left.
+11. Leonard moves up one, left one, and down one, pushing the fourth and fifth entangled blocks down.
+12. Leonard moves right one, down one, and left four, pushing the fourth entangled block into a hole.
+13. Leonard moves right three, up three, and left one, filling a hole on Roy's side.
+14. Roy moves down two, left two, up four, left two, and down two, filling a hole on Leonard's side.
+15. Leonard moves right one, down three, left four, and up five, landing on the exit.
+16. Roy moves up two, right two, down four, right two, up two, right one, up one, right 4, and up two, landing on the exit.
+
+---
+
 **Level Name:** Not My Block  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
