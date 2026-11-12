@@ -29,6 +29,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Playgrounds" type="Button" parent="PanelContainer/Button_manager" unique_id=222210046]
+visible = false
 layout_mode = 2
 text = "Playgrounds"
 
@@ -55,8 +56,10 @@ visible = false
 visible = false
 
 [node name="Ruins Navigator" parent="." unique_id=1750589878 instance=ExtResource("5_nqh8f")]
+visible = false
 
 [node name="Bog Navigator" parent="." unique_id=1562576995 instance=ExtResource("6_55ivg")]
+visible = false
 
 [connection signal="pressed" from="PanelContainer/Button_manager/Playgrounds" to="playground_navigator" method="open"]
 [connection signal="pressed" from="PanelContainer/Button_manager/Caves" to="Caves Navigator" method="open"]
