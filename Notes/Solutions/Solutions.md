@@ -163,9 +163,9 @@
 5. Leonard: repeat step 3.
 6. Roy: repeat step 2.
 7. Leonard: repeat step 3.
-6. Roy: repeat step 2.
-7. Leonard: push the last block up to the final hole and walk to the exit.
-8. Roy: walk to the exit.
+8. Roy: repeat step 2.
+9. Leonard: push the last block up to the final hole and walk to the exit.
+10. Roy: walk to the exit.
 
 ---
 
