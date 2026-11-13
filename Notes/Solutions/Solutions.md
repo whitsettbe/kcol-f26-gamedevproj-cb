@@ -71,22 +71,6 @@
 
 ---
 
-**Level Name:** Acupuncture
-**Authors:** Vivian 
-**Intended layer:** Caves
-
-1. Leonard: Push the block to your left down, in line with the one below you.
-2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
-3. Leonard: Push the two blocks to the left until both have filled holes.
-4. Roy: Push the entangled block into the path that you came through where it fills a hole for Leonard and becomes a wall.
-5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
-6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one up 1, right 2, up 2, and right 3.
-7. Roy: Push the entangled block down until it fills the hole.
-8. Leonard: Navigate to the exit.
-9. Roy: Push the first block left into a hole and the second down into a hole and navigate to the exit.
-
----
-
 **Level Name:** Not My Block  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
@@ -175,6 +159,36 @@
 
 ---
 
+**Level Name:** Acupuncture
+**Authors:** Vivian 
+**Intended layer:** Caves
+
+1. Leonard: Push the block to your left down, in line with the one below you.
+2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
+3. Leonard: Push the two blocks to the left until both have filled holes.
+4. Roy: Push the entangled block into the path that you came through where it fills a hole for Leonard and becomes a wall.
+5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
+6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one up 1, right 2, up 2, and right 3.
+7. Roy: Push the entangled block down until it fills the hole.
+8. Leonard: Navigate to the exit.
+9. Roy: Push the first block left into a hole and the second down into a hole and navigate to the exit.
+
+---
+
+**Level Name:** A Fresh Coat
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. Leonard: Paint yourself red and push the red block up as far as it will go.
+2. Roy: Push the entangled block to the right as far as it will go.
+3. Leonard: Paint yourself blue and push the blue block into the rightmost hole.
+4. Roy: Paint yourself blue and push the blue block down 2 spaces, left 1, down 1, left 4, up 1, and left into the hole.
+5. Roy: Paint yourself red, push the colorless block all the way up, and push the entangled block in the first room left 1 space, up 2, left 1, and down 1.
+6. Leonard: Navigate to the exit.
+7. Roy: Return to the lower room, push the red block into the hole, and exit.
+
+---
+
 **Level Name:** Speedy Delivery  
 **Authors:** Benjamin  
 **Intended layer:** Bog  
@@ -189,19 +203,6 @@
 6. Roy: repeat step 2.
 7. Leonard: push the last block up to the final hole and walk to the exit.
 8. Roy: walk to the exit.
-
----
-
-**Level Name:** A Fresh Coat
-**Authors:** Vivian 
-**Intended layer:** Bog
-
-1. Leonard: Paint yourself red and push the red block up as far as it will go.
-2. Roy: Push the entangled block to the right as far as it will go.
-3. Leonard: Paint yourself blue and push the blue block into the rightmost hole.
-4. Roy: Paint yourself blue and push the blue block down 2 spaces, left 1, down 1, left 4, and up and into the hole.
-5. Roy: Paint yourself red, push the colorless block all the way up, and push the entangled block in the first room left 1 space, up 2, left 1, and down 1.
-6. Both: Navigate to the exit.
 
 ---
 
