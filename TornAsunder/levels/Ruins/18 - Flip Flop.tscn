@@ -1,0 +1,299 @@
+[gd_scene format=4 uid="uid://w1otf03m4arg"]
+
+[ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_gd2cs"]
+[ext_resource type="TileSet" uid="uid://l7066q5nbih8" path="res://sprites/ruin_tiles.tres" id="2_y50er"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_xd37y"]
+[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_duv7q"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_jsdlg"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="6_jpq77"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="7_y50er"]
+
+[node name="Flip Flop" type="Node2D" unique_id=1479523790]
+script = ExtResource("1_gd2cs")
+layer = 1
+is_final = false
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=79841228]
+tile_map_data = PackedByteArray("AAACAAYAAAAFAAYAAAACAAcAAAAFAAQAAAADAAEAAAABAAkAAAADAAQAAAABAAkAAAADAAYAAAAGAAcAAAADAAcAAAAHAAgAAAAEAAEAAAADAAQAAAAEAAQAAAADAAUAAAAEAAcAAAAFAAYAAAAEAAgAAAAFAAQAAAAFAAIAAAABAAkAAAAFAAUAAAABAAkAAAAFAAcAAAAGAAcAAAAFAAgAAAAHAAgAAAAGAAIAAAADAAQAAAAGAAUAAAADAAUAAAAGAAgAAAAFAAYAAAAGAAkAAAAFAAQAAAAHAAMAAAABAAkAAAAHAAYAAAABAAkAAAAHAAgAAAAGAAcAAAAHAAkAAAAHAAgAAAAIAAMAAAADAAQAAAAIAAYAAAAEAAgAAAAIAAkAAAAFAAYAAAAIAAoAAAAFAAQAAAAJAAQAAAAFAAYAAAAJAAUAAAAFAAgAAAAJAAYAAAAFAAgAAAAJAAkAAAAFAAYAAAAJAAoAAAAGAAQAAAAPAAEAAAAFAAYAAAAPAAIAAAAFAAQAAAAQAAEAAAAGAAcAAAAQAAIAAAAHAAgAAAAQAAYAAAABAAkAAAAQAAkAAAABAAkAAAARAAIAAAAFAAYAAAARAAMAAAAFAAQAAAARAAYAAAADAAQAAAARAAkAAAADAAUAAAASAAIAAAAGAAcAAAASAAMAAAAHAAgAAAASAAcAAAABAAkAAAASAAoAAAABAAkAAAATAAMAAAAFAAYAAAATAAQAAAAFAAQAAAATAAcAAAADAAQAAAATAAoAAAADAAUAAAAUAAMAAAAGAAcAAAAUAAQAAAAHAAgAAAAUAAgAAAABAAkAAAAUAAsAAAABAAkAAAAVAAQAAAAFAAYAAAAVAAUAAAAFAAQAAAAVAAgAAAADAAQAAAAVAAsAAAABAAgAAAAWAAQAAAAFAAYAAAAWAAUAAAAGAAQAAAAWAAkAAAAFAAYAAAAWAAoAAAAFAAgAAAAWAAsAAAAFAAQAAAABAAYAAAAEAAcAAAABAAcAAAAEAAkAAAACAAEAAAABAAQAAAACAAIAAAAAAAUAAAACAAMAAAAAAAUAAAACAAQAAAABAAYAAAADAAgAAAAEAAkAAAAEAAIAAAABAAUAAAAEAAMAAAAAAAUAAAAEAAUAAAABAAYAAAAFAAkAAAAEAAkAAAAGAAMAAAABAAUAAAAGAAQAAAAAAAUAAAAGAAYAAAABAAYAAAAHAAoAAAAEAAkAAAAIAAQAAAACAAgAAAAIAAUAAAAGAAUAAAAOAAEAAAAEAAcAAAAOAAIAAAAEAAkAAAAPAAYAAAABAAQAAAAPAAcAAAAAAAUAAAAPAAgAAAAAAAUAAAAPAAkAAAABAAYAAAAQAAMAAAAEAAkAAAARAAcAAAABAAUAAAARAAgAAAAAAAUAAAARAAoAAAABAAYAAAASAAQAAAAEAAkAAAATAAgAAAABAAUAAAATAAkAAAAAAAUAAAATAAsAAAABAAYAAAAUAAUAAAAEAAkAAAAVAAkAAAACAAgAAAAVAAoAAAAGAAUAAAAXAAQAAAADAAgAAAAXAAUAAAAEAAUAAAAXAAYAAAADAAcAAAAXAAcAAAAAAAUAAAAXAAgAAAAAAAUAAAAXAAkAAAADAAgAAAAXAAoAAAAEAAUAAAAXAAsAAAAGAAkAAAAKAAkAAAADAAgAAAAKAAoAAAAEAAUAAAAKAAQAAAADAAgAAAAKAAUAAAAEAAUAAAAKAAYAAAAEAAUAAAAKAAcAAAADAAcAAAAKAAgAAAAAAAUAAAAJAAsAAAAEAAkAAAAKAAsAAAAGAAkAAAAWAAYAAAAEAAkAAAAIAAcAAAAEAAkAAAAJAAcAAAAFAAQAAAAJAAEAAAABAAkAAAAKAAEAAAADAAQAAAAKAAIAAAAAAAUAAAAKAAMAAAAAAAUAAAAIAAEAAAABAAkAAAAHAAEAAAAAAAkAAAAUAAEAAAAAAAkAAAAVAAEAAAABAAkAAAAWAAEAAAABAAkAAAAXAAEAAAADAAQAAAAXAAIAAAAAAAUAAAAXAAMAAAAAAAUAAAA=")
+tile_set = ExtResource("2_y50er")
+
+[node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_xd37y")]
+position = Vector2(48, 208)
+is_exit = true
+
+[node name="EXIT_R" parent="." unique_id=779499140 instance=ExtResource("3_xd37y")]
+position = Vector2(464, 48)
+is_exit = true
+
+[node name="in_2_bit1" parent="." unique_id=1201717542 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(656, 368)
+target = NodePath("../out_2_bit1")
+
+[node name="out_2_bit1" parent="." unique_id=20745320 instance=ExtResource("6_jpq77")]
+position = Vector2(688, 304)
+
+[node name="in_3_bit1" parent="." unique_id=195187604 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(272, 304)
+target = NodePath("../out_3_bit1")
+
+[node name="out_3_bit1" parent="." unique_id=1136408703 instance=ExtResource("6_jpq77")]
+position = Vector2(336, 48)
+
+[node name="in_1_bit2" parent="." unique_id=810087571 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(624, 304)
+target = NodePath("../out_1_bit2")
+
+[node name="out_1_bit2" parent="." unique_id=1721329817 instance=ExtResource("6_jpq77")]
+position = Vector2(688, 272)
+
+[node name="in_2_bit2" parent="." unique_id=1471791942 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(592, 336)
+target = NodePath("../out_2_bit2")
+
+[node name="out_2_bit2" parent="." unique_id=574967829 instance=ExtResource("6_jpq77")]
+position = Vector2(624, 272)
+
+[node name="in_3_bit2" parent="." unique_id=2105581152 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(208, 304)
+target = NodePath("../out_3_bit2")
+
+[node name="out_3_bit2" parent="." unique_id=115689656 instance=ExtResource("6_jpq77")]
+position = Vector2(304, 48)
+
+[node name="in_1_bit3" parent="." unique_id=1066962694 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(560, 272)
+target = NodePath("../out_1_bit3")
+
+[node name="out_1_bit3" parent="." unique_id=140750929 instance=ExtResource("6_jpq77")]
+position = Vector2(624, 240)
+
+[node name="in_2_bit3" parent="." unique_id=1967383929 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(528, 304)
+target = NodePath("../out_2_bit3")
+
+[node name="out_2_bit3" parent="." unique_id=752734300 instance=ExtResource("6_jpq77")]
+position = Vector2(560, 240)
+
+[node name="in_3_bit3" parent="." unique_id=792210674 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(144, 240)
+target = NodePath("../out_3_bit3")
+
+[node name="out_3_bit3" parent="." unique_id=1643831981 instance=ExtResource("6_jpq77")]
+position = Vector2(272, 48)
+
+[node name="in_1_bit4" parent="." unique_id=1963903880 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(496, 240)
+target = NodePath("../out_1_bit4")
+
+[node name="out_1_bit4" parent="." unique_id=28073087 instance=ExtResource("6_jpq77")]
+position = Vector2(560, 208)
+
+[node name="in_3_bit4" parent="." unique_id=265718996 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(80, 208)
+target = NodePath("../out_3_bit4")
+
+[node name="out_3_bit4" parent="." unique_id=1556093881 instance=ExtResource("6_jpq77")]
+position = Vector2(240, 48)
+
+[node name="in_2_bit5" parent="." unique_id=194937678 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(240, 208)
+target = NodePath("../out_2_bit5")
+
+[node name="out_2_bit5" parent="." unique_id=1220901756 instance=ExtResource("6_jpq77")]
+position = Vector2(272, 144)
+
+[node name="in_3_bit5" parent="." unique_id=1559412211 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(688, 176)
+target = NodePath("../out_3_bit5")
+
+[node name="out_3_bit5" parent="." unique_id=747981945 instance=ExtResource("6_jpq77")]
+position = Vector2(752, 48)
+
+[node name="in_1_bit6" parent="." unique_id=2116711319 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(208, 144)
+target = NodePath("../out_1_bit6")
+
+[node name="out_1_bit6" parent="." unique_id=298241609 instance=ExtResource("6_jpq77")]
+position = Vector2(272, 112)
+
+[node name="in_2_bit6" parent="." unique_id=482277124 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(176, 176)
+target = NodePath("../out_2_bit6")
+
+[node name="out_2_bit6" parent="." unique_id=1868340278 instance=ExtResource("6_jpq77")]
+position = Vector2(208, 112)
+
+[node name="in_3_bit6" parent="." unique_id=78426708 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(624, 112)
+target = NodePath("../out_3_bit6")
+
+[node name="out_3_bit6" parent="." unique_id=641326746 instance=ExtResource("6_jpq77")]
+position = Vector2(720, 48)
+
+[node name="in_1_bit7" parent="." unique_id=1743447906 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(144, 112)
+target = NodePath("../out_1_bit7")
+
+[node name="out_1_bit7" parent="." unique_id=1353547972 instance=ExtResource("6_jpq77")]
+position = Vector2(208, 80)
+
+[node name="in_2_bit7" parent="." unique_id=1366034249 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(112, 144)
+target = NodePath("../out_2_bit7")
+
+[node name="out_2_bit7" parent="." unique_id=209261701 instance=ExtResource("6_jpq77")]
+position = Vector2(144, 80)
+
+[node name="in_3_bit7" parent="." unique_id=401944868 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(560, 80)
+target = NodePath("../out_3_bit7")
+
+[node name="out_3_bit7" parent="." unique_id=1855638504 instance=ExtResource("6_jpq77")]
+position = Vector2(688, 48)
+
+[node name="in_1_bit8" parent="." unique_id=1590978487 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(80, 80)
+target = NodePath("../out_1_bit8")
+
+[node name="out_1_bit8" parent="." unique_id=1994131508 instance=ExtResource("6_jpq77")]
+position = Vector2(144, 48)
+
+[node name="in_3_bit8" parent="." unique_id=1625815326 node_paths=PackedStringArray("target") instance=ExtResource("3_xd37y")]
+position = Vector2(496, 48)
+target = NodePath("../out_3_bit8")
+
+[node name="out_3_bit8" parent="." unique_id=111681212 instance=ExtResource("6_jpq77")]
+position = Vector2(656, 48)
+
+[node name="FloorOverlays" type="TileMapLayer" parent="." unique_id=1075741924]
+tile_map_data = PackedByteArray("AAAAAAkAAAAFAA4AAAAAAAgAAAAEAAwAAAAAAAcAAAAEAAsAAAAAAAYAAAAEAAsAAAAAAAUAAAAEAAoAAAAAAAQAAAAFAA4AAAAAAAMAAAAFAA4AAAAAAAIAAAAFAA4AAAAAAAEAAAAFAA4AAAAAAAAAAAAFAA4AAAAAAP//AAAFAAwAAAD//wkAAAAGAAsAAAD//wgAAAAGAAsAAAD//wcAAAAGAAsAAAD//wYAAAAGAAsAAAD//wUAAAAGAAsAAAD//wQAAAAGAAsAAAD//wMAAAAGAAsAAAD//wIAAAAGAAsAAAD//wEAAAAGAAsAAAD//wAAAAAGAAsAAAD/////AAAEAA0AAAAZAAAAAAAEAAsAAAAZAP//AAAGAA0AAAAYAAAAAAAGAAoAAAAYAP//AAAFAAwAAAAXAAAAAAAFAAoAAAAXAP//AAAFAAwAAAAWAAAAAAAFAAoAAAAWAP//AAAFAAwAAAAVAAAAAAAFAAoAAAAVAP//AAAFAAwAAAAUAAAAAAAFAAoAAAAUAP//AAAFAAwAAAATAAAAAAAEAAoAAAATAP//AAAFAAwAAAASAAAAAAAFAA4AAAASAP//AAAFAAwAAAARAAAAAAAGAAoAAAARAP//AAAFAAwAAAAQAAAAAAAFAAoAAAAQAP//AAAFAAwAAAAPAAAAAAAFAAoAAAAPAP//AAAFAAwAAAAOAAAAAAAFAAoAAAAOAP//AAAFAAwAAAANAAAAAAAEAAoAAAANAP//AAAFAAwAAAAMAAAAAAAFAA4AAAAMAP//AAAFAAwAAAALAAAAAAAGAAoAAAALAP//AAAFAAwAAAAKAAAAAAAFAAoAAAAKAP//AAAFAAwAAAAJAAAAAAAFAAoAAAAJAP//AAAFAAwAAAAIAAAAAAAFAAoAAAAIAP//AAAFAAwAAAAHAAAAAAAFAAoAAAAHAP//AAAFAAwAAAAGAAAAAAAEAAoAAAAGAP//AAAFAAwAAAAFAAAAAAAGAAoAAAAFAP//AAAFAAwAAAAEAAAAAAAFAAoAAAAEAP//AAAFAAwAAAADAP//AAAFAAwAAAACAP//AAAFAAwAAAABAAAAAAAEAAoAAAABAP//AAAFAAwAAAANAAkAAAAFAA4AAAANAAgAAAAFAA4AAAANAAcAAAAFAA4AAAANAAYAAAAFAA4AAAANAAUAAAAFAA4AAAANAAQAAAAFAA4AAAANAAMAAAAEAAwAAAANAAIAAAAEAAsAAAANAAEAAAAEAAsAAAAMAAkAAAAFAA4AAAAMAAgAAAAFAA4AAAAMAAcAAAAFAA4AAAAMAAYAAAAFAA4AAAAMAAUAAAAFAA4AAAAMAAQAAAAFAA4AAAAMAAMAAAAFAA4AAAAMAAIAAAAFAA4AAAAMAAEAAAAFAA4AAAALAAkAAAAGAAsAAAALAAgAAAAGAAsAAAALAAcAAAAGAAsAAAALAAYAAAAGAAsAAAALAAUAAAAGAAsAAAALAAQAAAAGAAsAAAALAAMAAAAGAAsAAAALAAIAAAAGAAsAAAALAAEAAAAGAAsAAAAZAAkAAAAEAAsAAAAZAAgAAAAEAAsAAAAZAAcAAAAEAAsAAAAZAAYAAAAEAAsAAAAZAAUAAAAEAAsAAAAZAAQAAAAEAAsAAAAZAAMAAAAEAAsAAAAZAAIAAAAEAAsAAAAZAAEAAAAEAAsAAAAYAAkAAAAGAAsAAAAYAAgAAAAGAAsAAAAYAAcAAAAGAAsAAAAYAAYAAAAGAAsAAAAYAAUAAAAGAAsAAAAYAAQAAAAGAAsAAAAYAAMAAAAGAAsAAAAYAAIAAAAGAAsAAAAYAAEAAAAGAAsAAAADAAAAAAAFAAoAAAACAAAAAAAFAAoAAAD//wsAAAAGAAsAAAAAAAsAAAAFAA4AAAALAAsAAAAGAAsAAAAMAAsAAAAFAA4AAAANAAsAAAAFAA4AAAAYAAsAAAAGAAsAAAAZAAsAAAAEAAsAAAD//wwAAAAGAAsAAAAAAAwAAAAFAA4AAAABAAwAAAAFAA4AAAACAAwAAAAFAA4AAAADAAwAAAAFAA4AAAAEAAwAAAAFAA4AAAAFAAwAAAAFAA4AAAAGAAwAAAAFAA4AAAAHAAwAAAAFAA4AAAAIAAwAAAAEAAwAAAAJAAwAAAAFAAwAAAAKAAwAAAAFAAwAAAALAAwAAAAGAAwAAAAMAAwAAAAFAA4AAAANAAwAAAAFAA4AAAAOAAwAAAAFAA4AAAAPAAwAAAAFAA4AAAAQAAwAAAAFAA4AAAARAAwAAAAFAA4AAAASAAwAAAAEAAwAAAATAAwAAAAFAAwAAAAUAAwAAAAFAAwAAAAVAAwAAAAFAAwAAAAWAAwAAAAFAAwAAAAXAAwAAAAFAAwAAAAYAAwAAAAGAAwAAAAZAAwAAAAEAAsAAAD//woAAAAGAAsAAAAAAAoAAAAFAA4AAAALAAoAAAAGAAsAAAAMAAoAAAAFAA4AAAANAAoAAAAFAA4AAAAYAAoAAAAGAAsAAAAZAAoAAAAEAAsAAAD//w0AAAAEAA8AAAAAAA0AAAAFAAoAAAABAA0AAAAFAAoAAAACAA0AAAAFAAoAAAADAA0AAAAFAAoAAAAEAA0AAAAFAAoAAAAFAA0AAAAFAAoAAAAGAA0AAAAFAAoAAAAHAA0AAAAFAAoAAAAIAA0AAAAFAAoAAAAJAA0AAAAFAAoAAAAKAA0AAAAFAAoAAAALAA0AAAAFAAoAAAAMAA0AAAAFAAoAAAANAA0AAAAFAAoAAAAOAA0AAAAFAAoAAAAPAA0AAAAFAAoAAAAQAA0AAAAFAAoAAAARAA0AAAAFAAoAAAASAA0AAAAFAAoAAAATAA0AAAAFAAoAAAAUAA0AAAAFAAoAAAAVAA0AAAAFAAoAAAAWAA0AAAAFAAoAAAAXAA0AAAAFAAoAAAAYAA0AAAAFAAoAAAAZAA0AAAAGAA8AAAABAAgAAAAFAAwAAAACAAgAAAAGAA0AAAACAAkAAAAEAAwAAAABAAkAAAAFAA4AAAABAAoAAAAFAA4AAAACAAoAAAAFAA4AAAADAAoAAAAFAA4AAAADAAkAAAAFAAwAAAAEAAkAAAAGAA0AAAAEAAoAAAAEAAwAAAAFAAoAAAAFAAwAAAAGAAoAAAAGAA0AAAAIAAsAAAAGAA0AAAAHAAsAAAAFAAwAAAAGAAsAAAAEAAwAAAAFAAsAAAAFAA4AAAAEAAsAAAAFAA4AAAADAAsAAAAFAA4AAAACAAsAAAAFAA4AAAABAAsAAAAFAA4AAAAJAAgAAAACAA8AAAAIAAgAAAAAAA8AAAAHAAcAAAACAA8AAAAGAAcAAAAAAA8AAAAFAAYAAAACAA8AAAAEAAYAAAAAAA8AAAADAAUAAAACAA8AAAACAAUAAAABAA8AAAABAAUAAAAAAA4AAAABAAQAAAAEAAsAAAABAAMAAAAEAAsAAAABAAIAAAAEAAsAAAABAAEAAAAEAAsAAAADAAIAAAAAAAoAAAADAAMAAAAAAAwAAAAFAAEAAAAEAA8AAAAGAAEAAAAGAA8AAAAFAAMAAAAAAAoAAAAFAAQAAAAAAAwAAAAHAAQAAAAAAAoAAAAHAAUAAAAAAAwAAAAHAAIAAAAAAA8AAAAIAAIAAAABAA8AAAAJAAIAAAADAAoAAAAJAAMAAAAAAAwAAAAOAAMAAAAFAAwAAAAOAAQAAAAFAA4AAAAOAAUAAAAEAAoAAAAOAAYAAAAEAAsAAAAOAAcAAAAEAAsAAAAOAAgAAAAEAAsAAAAOAAkAAAAEAAsAAAAOAAoAAAAEAAwAAAAOAAsAAAAFAA4AAAAPAAoAAAAFAAwAAAAPAAsAAAAFAA4AAAAQAAsAAAAEAAwAAAAQAAoAAAAGAA0AAAASAAsAAAAGAA0AAAARAAsAAAAFAAwAAAAUAAkAAAAAAAoAAAAUAAoAAAAAAAwAAAASAAgAAAAAAAoAAAASAAkAAAAAAAwAAAAQAAcAAAAAAAoAAAAQAAgAAAAAAAwAAAAPAAMAAAAGAA0AAAAPAAQAAAAEAAwAAAAPAAUAAAAFAAoAAAAQAAUAAAAFAAoAAAAQAAQAAAAFAAwAAAARAAQAAAAGAA0AAAARAAUAAAAAAA4AAAASAAUAAAABAA0AAAATAAUAAAAGAA0AAAATAAYAAAAAAA4AAAASAAYAAAAEAA8AAAAUAAYAAAABAA0AAAAVAAYAAAAGAA0AAAAVAAcAAAAAAA4AAAAUAAcAAAAEAA8AAAAWAAcAAAADAAoAAAAWAAgAAAAAAAwAAAAWAAMAAAAGAA8AAAAVAAMAAAAEAA8AAAAVAAIAAAABAA0AAAAWAAIAAAAGAA0AAAAUAAIAAAABAA8AAAATAAIAAAABAAwAAAATAAEAAAADAA0AAAASAAEAAAAFAAoAAAARAAEAAAAEAA8AAAA=")
+tile_set = ExtResource("2_y50er")
+
+[node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=210106780]
+tile_set = ExtResource("2_y50er")
+
+[node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("4_duv7q")]
+position = Vector2(336, 368)
+script = ExtResource("5_jsdlg")
+side = 0
+blockType = 1
+blockColor = 1
+
+[node name="Roy" parent="." unique_id=950257649 instance=ExtResource("4_duv7q")]
+position = Vector2(752, 368)
+script = ExtResource("5_jsdlg")
+side = 1
+blockType = 1
+blockColor = 2
+
+[node name="e_L_bit1" parent="." unique_id=1770747560 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(272, 336)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit1")
+blockType = 2
+blockColor = 2
+
+[node name="e_R_bit1" parent="." unique_id=367418706 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(688, 336)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit1")
+blockType = 2
+blockColor = 2
+
+[node name="e_L_bit2" parent="." unique_id=1599329650 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(208, 304)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit2")
+blockType = 2
+blockColor = 2
+
+[node name="e_R_bit2" parent="." unique_id=2116829899 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(624, 304)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit2")
+blockType = 2
+blockColor = 2
+
+[node name="e_L_bit3" parent="." unique_id=1054197176 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(144, 272)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit3")
+blockType = 2
+blockColor = 2
+
+[node name="e_R_bit3" parent="." unique_id=299191911 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(560, 272)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit3")
+blockType = 2
+blockColor = 2
+
+[node name="e_L_bit4" parent="." unique_id=1761730419 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(80, 240)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit4")
+blockType = 2
+blockColor = 2
+
+[node name="e_R_bit4" parent="." unique_id=771114595 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(496, 240)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit4")
+blockType = 2
+blockColor = 2
+
+[node name="e_L_bit5" parent="." unique_id=486193373 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(272, 176)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit5")
+blockType = 2
+blockColor = 1
+
+[node name="e_R_bit5" parent="." unique_id=1208677828 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(688, 176)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit5")
+blockType = 2
+blockColor = 1
+
+[node name="e_L_bit6" parent="." unique_id=793985604 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(208, 144)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit6")
+blockType = 2
+blockColor = 1
+
+[node name="e_R_bit6" parent="." unique_id=1710029589 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(624, 144)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit6")
+blockType = 2
+blockColor = 1
+
+[node name="e_L_bit7" parent="." unique_id=1499348902 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(144, 112)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit7")
+blockType = 2
+blockColor = 1
+
+[node name="e_R_bit7" parent="." unique_id=1599900389 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(560, 112)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit7")
+blockType = 2
+blockColor = 1
+
+[node name="e_L_bit8" parent="." unique_id=1759506429 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(80, 80)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_R_bit8")
+blockType = 2
+blockColor = 1
+
+[node name="e_R_bit8" parent="." unique_id=1700425265 node_paths=PackedStringArray("partner") instance=ExtResource("4_duv7q")]
+position = Vector2(496, 80)
+script = ExtResource("7_y50er")
+partner = NodePath("../e_L_bit8")
+blockType = 2
+blockColor = 1

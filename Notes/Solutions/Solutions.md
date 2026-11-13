@@ -140,6 +140,27 @@
 
 ---
 
+**Level Name:** Flip Flop  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Leonard: move up x5, left x2.
+2. Leonard: move up, down.
+3. Leonard: move left x2, up x2, down, right, down x2, left.
+4. Leonard: repeat step 2.
+5. Leonard: move left x2, up, left x2, up x2, down, right x2, down, right, down x2, left.
+6. Leonard: repeat steps 2-4.
+7. Leonard: move left x2, up, left x2, up, left x2, up x2, down, right x2, down, right x2, down, right, down x2, left.
+8. Leonard: repeat steps 2-5.
+9. Leonard: repeat steps 2-3.
+10. Roy: move left x2.
+11. Roy: do Leonard's steps 2-7.
+12. Roy: do Leonard's steps 2-5.
+13. Roy: do Leonard's step 2.
+14. Both: walk to the exit.
+
+---
+
 **Level Name:** Rolling  
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
