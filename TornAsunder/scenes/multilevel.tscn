@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cttuaw2e0c78t" path="res://UI/scenes/hud.tscn" id="3_wvn4e"]
 [ext_resource type="AudioStream" uid="uid://cnikys58q43ca" path="res://sfx/restart/restart.wav" id="4_krrom"]
 [ext_resource type="AudioStream" uid="uid://hhhrq6ye3uq4" path="res://sfx/undo/undo.wav" id="5_kbpic"]
+[ext_resource type="AudioStream" uid="uid://dmwox45aa2wnq" path="res://music/8_bit_aincent_ruins.ogg" id="6_uyyhw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
 random_pitch = 1.0594631
@@ -55,11 +56,13 @@ color = Color(0, 0, 0, 1)
 [node name="sfx_restart" type="AudioStreamPlayer" parent="." unique_id=1220991628]
 stream = SubResource("AudioStreamRandomizer_hlb1k")
 max_polyphony = 3
+bus = &"SFX"
 
 [node name="sfx_undo" type="AudioStreamPlayer" parent="." unique_id=2061236835]
 stream = SubResource("AudioStreamRandomizer_8bs6t")
 volume_db = -9.0
 max_polyphony = 3
+bus = &"SFX"
 
 [node name="TransitionCanvas" type="CanvasLayer" parent="." unique_id=171466578]
 layer = 2
@@ -69,3 +72,9 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
+
+[node name="music_8_bit_ruins" type="AudioStreamPlayer" parent="." unique_id=1913306556]
+stream = ExtResource("6_uyyhw")
+volume_db = -4.204
+autoplay = true
+bus = &"Music"
