@@ -48,18 +48,26 @@
 
 ---
 
-**Level Name:** Know Expectations  
-**Authors:** Clara Siefke
-**Intended layer:** Caves 
+**Level Name:** Lost  
+**Authors:** Clara Siefke  
+**Intended layer:** Caves  
 
-1. Roy moves left eight, up two, right two, and down one, moving the first red entangled block down.
-2. Roy moves up one, right two, and down one, moving the second red entangled block down.
-3. Roy moves up one, right two, and down one, moving the third red entangled block down.
-4. Leonard moves left eight, up two, right eight, up two, left seven, and up one, moving the third blue entangled block up.
-5. Roy moves up one, left five, up two, left two, up four, right five, down one, and left two, moving the fourth red entangled block out of the way.
-6. Leonard moves down one, right seven, up two, left six, up two, right two, up one, right four, down one, and left two, moving the fourth blue entangled block into the hole.
-7. Roy moves right six and up one, landing on the exit.
-8. Leonard moves right two and up one, landing on the exit.
+1. Leonard moves left two and up two, pushing the first entangled block up.
+2. Roy moves left one, up three, and left one, pushing the first entangled block left.
+3. Leonard moves up five, pushing the second entangled block up.
+4. Roy moves right two, up four, left three, up two, right one, and down one, pushing the second entangled block and Leonard down.
+5. Roy moves left one, down one, and right two, pushing the second entangled block right.
+6. Leonard moves up three, right two, and down two, pushing the second and third entangled blocks down.
+7. Leonard moves left two, down two, and left one, pushing the fourth and fifth entangled blocks left.
+8. Roy moves left three, down one, left one, and down one, pushing the fifth entangled block down.
+9. Roy moves up one.
+10. Leonard moves left one, pushing the fourth entangled block left.
+11. Leonard moves up one, left one, and down one, pushing the fourth and fifth entangled blocks down.
+12. Leonard moves right one, down one, and left four, pushing the fourth entangled block into a hole.
+13. Leonard moves right three, up three, and left one, filling a hole on Roy's side.
+14. Roy moves down two, left two, up four, left two, and down two, filling a hole on Leonard's side.
+15. Leonard moves right one, down three, left four, and up five, landing on the exit.
+16. Roy moves up two, right two, down four, right two, up two, right one, up one, right 4, and up two, landing on the exit.
 
 ---
 
@@ -74,6 +82,21 @@
 5. Leonard: walk into the fifth room and push that entangled block left twice.
 6. Roy: push the uncolored block up and walk to the exit.
 7. Leonard: walk to the exit.
+
+---
+
+**Level Name:** Know Expectations  
+**Authors:** Clara Siefke
+**Intended layer:** Caves 
+
+1. Roy moves left eight, up two, right two, and down one, moving the first red entangled block down.
+2. Roy moves up one, right two, and down one, moving the second red entangled block down.
+3. Roy moves up one, right two, and down one, moving the third red entangled block down.
+4. Leonard moves left eight, up two, right eight, up two, left seven, and up one, moving the third blue entangled block up.
+5. Roy moves up one, left five, up two, left two, up four, right five, down one, and left two, moving the fourth red entangled block out of the way.
+6. Leonard moves down one, right seven, up two, left six, up two, right two, up one, right four, down one, and left two, moving the fourth blue entangled block into the hole.
+7. Roy moves right six and up one, landing on the exit.
+8. Leonard moves right two and up one, landing on the exit.
 
 ---
 
