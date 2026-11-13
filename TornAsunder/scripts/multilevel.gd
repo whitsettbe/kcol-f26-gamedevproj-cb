@@ -13,10 +13,16 @@ const MAX_LEVEL_SIZE_FACTOR = 1.0
 	#  around the level, but not the outermost set of walls.
 	#  Those can be outside of the "level" space, and they will
 	#  be covered up by the frame.
+const LEVEL_CHANGE_DUR = 1.0 # seconds
+
+
+var level_fading = false # indicate whether a fade is in progress
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_level(Globals.level_idx)
+	fadein()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,12 +58,46 @@ func connect_level_signals() -> void:
 # When a level ends, delete it and load the next one,
 #  or quit if there is none (temporary behavior)
 func _on_level_completed() -> void:
+	# If there is already a fade happening,
+	#  don't advance a second time
+	if not fade_is_complete():
+		return
+	
+	await fadeout()
 	Globals.level_scene.queue_free()
 	Globals.level_idx += 1
 	if Globals.level_idx < len(Globals.level_paths):
 		load_level(Globals.level_idx)
+		await fadein()
 	else:
-		get_tree().quit()
+		# Go back to main menu and reset progress
+		Globals.level_idx = 0
+		get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
+		
+
+# Fade out the level
+func fadeout() -> void:
+	level_fading = true
+	$TransitionCanvas/Cover.modulate.a = 0
+	var tween = get_tree().create_tween()
+	tween.tween_property($TransitionCanvas/Cover, "modulate:a",
+			1, LEVEL_CHANGE_DUR / 2)
+	await tween.finished
+	
+
+# Fade into the level
+func fadein() -> void:
+	$TransitionCanvas/Cover.modulate.a = 1
+	var tween = get_tree().create_tween()
+	tween.tween_property($TransitionCanvas/Cover, "modulate:a",
+			0, LEVEL_CHANGE_DUR / 2)
+	await tween.finished
+	level_fading = false
+	
+
+# Indicate whether the fade animation is complete
+func fade_is_complete() -> bool:
+	return level_fading == false
 
 
 # Push the scene state to the undo stack,
