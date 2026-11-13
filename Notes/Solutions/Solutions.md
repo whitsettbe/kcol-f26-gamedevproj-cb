@@ -147,6 +147,22 @@
 
 ---
 
+**Level Name:** Halberd
+**Authors:** Clara Siefke  
+**Intended layer:** Ruins  
+
+1. Leonard moves up one and left four, pushing the first blue entangled block into a hole.
+2. Roy moves up one, left nine, and up two, pushing the first red entangled block into a hole.
+3. Leonard moves down one, left five, up nine, right nine, down three, and left one, pushing a generic block.
+4. Leonard moves right one, up three, left nine, down six, and right two, going through the first portal.
+5. Roy moves down two, right four, up five, left two, and up two, pushing the second red entangled block into a hole.
+6. Leonard moves right one, pushing the second blue entangled block into a hole.
+7. Roy moves up one, right seven, down six, left one, and down one, pushing the third red entangled block onto a portal destination.
+8. Leonard moves down one, right one, down three, and left two, landing on the portal.
+9. Roy moves up one and left one, landing on the portal.
+
+---
+
 **Level Name:** Rolling  
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
