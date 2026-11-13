@@ -49,6 +49,7 @@ position = Vector2(304, 112)
 
 [node name="pushee" parent="." unique_id=489980282 instance=ExtResource("4_frm4r")]
 position = Vector2(272, 80)
+rolling = true
 
 [node name="filler" parent="." unique_id=942473341 instance=ExtResource("4_frm4r")]
 position = Vector2(176, 80)
@@ -76,15 +77,18 @@ position = Vector2(720, 176)
 script = ExtResource("6_m4ugq")
 partner = NodePath("../key")
 blockType = 2
+rolling = true
 
 [node name="key" parent="." unique_id=355175419 node_paths=PackedStringArray("partner") instance=ExtResource("4_frm4r")]
 position = Vector2(304, 176)
 script = ExtResource("6_m4ugq")
 partner = NodePath("../lock")
 blockType = 2
+rolling = true
 
 [node name="molar" parent="." unique_id=1307780889 instance=ExtResource("4_frm4r")]
 position = Vector2(176, 304)
+rolling = true
 
 [node name="canine" parent="." unique_id=877307819 instance=ExtResource("4_frm4r")]
 position = Vector2(112, 304)

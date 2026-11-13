@@ -9,15 +9,16 @@ var level_paths = [
 	"res://levels/Caves/04 - Co-op 101.tscn",
 	"res://levels/Caves/07 - Out of the Corner.tscn",
 	"res://levels/Caves/08 - Lost.tscn",
-	"res://levels/Caves/10 - Acupuncture.tscn",
 	"res://levels/Ruins/11 - Not My Block.tscn",
 	"res://levels/Ruins/12 - Know Expectations.tscn",
 	"res://levels/Ruins/13 - Rod Construction.tscn",
 	"res://levels/Ruins/14 - Jump Around.tscn",
 	"res://levels/Ruins/16 - Cover-up.tscn",
 	"res://levels/Bog/21 - Rolling.tscn",
+	"res://levels/Caves/23 - Acupuncture.tscn",
+	"res://levels/Bog/24 - A Fresh Coat.tscn",
+	"res://levels/Bog/25 - Spill.tscn",
 	"res://levels/Bog/26 - Speedy Delivery.tscn",
-	"res://levels/Bog/26 - A Fresh Coat.tscn",
 	"res://levels/Bog/28 - Magic Eraser.tscn",
 	"res://levels/Bog/30 - Leroy.tscn"
 	]
