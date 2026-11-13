@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cnikys58q43ca" path="res://sfx/restart/restart.wav" id="4_krrom"]
 [ext_resource type="AudioStream" uid="uid://hhhrq6ye3uq4" path="res://sfx/undo/undo.wav" id="5_kbpic"]
 [ext_resource type="AudioStream" uid="uid://dmwox45aa2wnq" path="res://music/8_bit_aincent_ruins.ogg" id="6_uyyhw"]
+[ext_resource type="AudioStream" uid="uid://df6hdnsb6cihx" path="res://music/introductory_world.ogg" id="7_uydqu"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
 random_pitch = 1.0594631
@@ -18,6 +19,13 @@ random_pitch = 1.122462
 random_volume_offset_db = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("5_kbpic")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_hlb1k"]
+shuffle = true
+fade_time = 0.11
+stream_count = 2
+stream_0 = ExtResource("6_uyyhw")
+stream_1 = ExtResource("7_uydqu")
 
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
@@ -73,8 +81,10 @@ offset_right = 1152.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
 
-[node name="music_8_bit_ruins" type="AudioStreamPlayer" parent="." unique_id=1913306556]
-stream = ExtResource("6_uyyhw")
+[node name="caves_playlist" type="AudioStreamPlayer" parent="." unique_id=1913306556]
+stream = SubResource("AudioStreamPlaylist_hlb1k")
 volume_db = -4.204
 autoplay = true
 bus = &"Music"
+
+[node name="ruins_playlist" type="AudioStreamPlayer" parent="." unique_id=1315990646]
