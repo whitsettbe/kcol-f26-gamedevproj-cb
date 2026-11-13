@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://hhhrq6ye3uq4" path="res://sfx/undo/undo.wav" id="5_kbpic"]
 [ext_resource type="AudioStream" uid="uid://dmwox45aa2wnq" path="res://music/8_bit_aincent_ruins.ogg" id="6_uyyhw"]
 [ext_resource type="AudioStream" uid="uid://df6hdnsb6cihx" path="res://music/introductory_world.ogg" id="7_uydqu"]
+[ext_resource type="Script" uid="uid://4lgelms6kr2k" path="res://scenes/caves_playlist.gd" id="8_jxyuu"]
+[ext_resource type="AudioStream" uid="uid://dylmckwasaal4" path="res://music/decision.ogg" id="9_uig46"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
 random_pitch = 1.0594631
@@ -86,5 +88,7 @@ stream = SubResource("AudioStreamPlaylist_hlb1k")
 volume_db = -4.204
 autoplay = true
 bus = &"Music"
+script = ExtResource("8_jxyuu")
 
 [node name="ruins_playlist" type="AudioStreamPlayer" parent="." unique_id=1315990646]
+stream = ExtResource("9_uig46")
