@@ -55,6 +55,8 @@ func check_for_paint():
 		
 		#play paint squishh SFX
 		sfx_squish_paint.play()
+		
+
 # If *player* falls into a hole,
 #  don't fill the hole,
 #  instead just dying.
@@ -64,5 +66,6 @@ func fill_hole():
 		# (triggers shrinking of the SpriteTile and
 		# disabling of block physics)
 		dead = true
-		sfx_fall_player.play()
+		get_tree().create_tween().tween_callback(
+			sfx_fall_player.play).set_delay(PUSH_DURATION)
 		

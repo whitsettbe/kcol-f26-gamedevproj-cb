@@ -38,6 +38,11 @@ func _physics_process(delta: float) -> void:
 			
 	# If this is an exit, mark status and emit signal
 	if is_exit:
+		if len(overlapping_players) != players_exiting:
+			# Reset the sound flag if the number of players
+			#  standing on the exit has changed
+			has_exit_buzz_sfx_played = false
+			
 		players_exiting = len(overlapping_players)
 		if players_exiting > 0:
 			emit_signal("player_on_exit")

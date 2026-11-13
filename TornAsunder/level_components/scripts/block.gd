@@ -298,7 +298,8 @@ func fill_hole():
 		# disabling of block physics)
 		dead = true
 		#play fill hole sfx
-		sfx_fill_hole.play()
+		get_tree().create_tween().tween_callback(
+			sfx_fill_hole.play).set_delay(PUSH_DURATION)
 
 # Replace the current tile with just floor
 # if it is paint, leaving this block unaffected.
