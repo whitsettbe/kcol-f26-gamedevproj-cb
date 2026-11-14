@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="6_8h6tc"]
 
 [node name="22 - Ooze Maker" type="Node2D" unique_id=443176109]
+position = Vector2(1, 0)
 script = ExtResource("1_qat6o")
 is_final = false
 

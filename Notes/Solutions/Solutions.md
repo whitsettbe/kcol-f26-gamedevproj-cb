@@ -190,6 +190,28 @@
 
 ---
 
+**Level Name:** Ooze Maker
+**Authors:** Clara Siefke
+**Intended layer:** Bog  
+
+1. Leonard moves right nine and down one.
+2. Roy moves down one and right two, pushing the rolling block to Leonard.
+3. Leonard moves down eight and left one.
+4. Roy moves up one, right six, and down one, pushing the rolling block to Leonard.
+5. Leonard moves left eight and up one.
+6. Roy moves right one, down seven, and left one, pushing the rolling block to Leonard.
+7. Leonard moves up five and right four, pushing the entangled block.
+8. Roy moves up seven, left three, and down three, pushing the entangled block into a hole.
+9. Leonard moves right two.
+10. Roy moves up one, left five, down six, right one, and up one, pushing the rolling entangled block.
+11. Roy moves left one, up five, and right one, pushing the rolling entangled block to Leonard.
+12. Roy moves down five, right seven, up seven, left three, and down two, psuhing the rolling entangled block.
+13. Leonard moves down three and left one, pushing the rolling entangled block into a hole.
+14. Roy moves down three and left two, landing on the exit.
+15. Leonard moves left two, landing on the exit.
+
+---
+
 **Level Name:** Speedy Delivery  
 **Authors:** Benjamin  
 **Intended layer:** Bog  
