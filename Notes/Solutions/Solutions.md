@@ -189,6 +189,27 @@
 
 ---
 
+**Level Name:** Listening to Paint Dry
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. Leonard: Push the red block down, push the blue block down, and then walk below it and push it back up.
+2. Roy: Push the red block right 2.
+3. Leonard: Push the red block down.
+4. Roy: Go down the hall, then left, and push the upper red block to the right.
+5. Leonard: Go down the hall, then left, through the blue paint, and push the blue rolling block down.
+6. Roy: Move the lower entangled block right 4, up 1.
+7. Leonard: Push the same rolling block right, then up, and go into the alcove below the entangled rolling block.
+8. Roy: Push the same entangled block right 2, up 1. Then paint yourself blue and push the entangled rolling block down. Paint yourself red.
+9. Leonard: Push the rolling block left, paint yourself red, and return to the alcove.
+10. Roy: Push the rightmost entangled red block up 1. Paint yourself blue, then go down, left, then up, and into the space with the unentangled blue block.
+11. Leonard: Push the entangled block left 1 and navigate to the exit. Push the other entangled block left 1. (This should trap Roy)
+12. Roy: Push the blue block right into the hole and exit.
+13. Leonard: Push the same block right into its previous position and exit.
+
+
+---
+
 **Level Name:** Speedy Delivery  
 **Authors:** Benjamin  
 **Intended layer:** Bog  

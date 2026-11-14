@@ -15,9 +15,9 @@ var level_paths = [
 	"res://levels/Ruins/14 - Jump Around.tscn",
 	"res://levels/Ruins/16 - Cover-up.tscn",
 	"res://levels/Bog/21 - Rolling.tscn",
-	"res://levels/Caves/23 - Acupuncture.tscn",
+	"res://levels/Bog/23 - Acupuncture.tscn",
 	"res://levels/Bog/24 - A Fresh Coat.tscn",
-	"res://levels/Bog/25 - Spill.tscn",
+	"res://levels/Bog/25 - Listening to Paint Dry.tscn",
 	"res://levels/Bog/26 - Speedy Delivery.tscn",
 	"res://levels/Bog/28 - Magic Eraser.tscn",
 	"res://levels/Bog/30 - Leroy.tscn"
