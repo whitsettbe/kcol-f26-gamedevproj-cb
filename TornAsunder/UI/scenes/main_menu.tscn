@@ -34,6 +34,7 @@ offset_bottom = 640.0
 
 [node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1862597158]
 layout_mode = 2
+focus_mode = 1
 alignment = 1
 script = SubResource("GDScript_bqqt6")
 
