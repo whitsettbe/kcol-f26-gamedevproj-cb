@@ -27,9 +27,11 @@ func create_buttons():
 		levels = DirAccess.get_files_at(layer_path)
 		for i in range(len(levels)):
 			buttons.append(Button.new())
-			buttons[i].text = levels[i].replace(".tscn", "")
+			buttons[i].text = levels[i].replace(".tscn", "") \
+					.replace(".remap", "")
 			print(buttons[i].text)
-			buttons[i].pressed.connect(Callable(self, "_on_button_pressed").bind(levels[i]))
+			buttons[i].pressed.connect(Callable(self, "_on_button_pressed") \
+					.bind(levels[i].replace(".remap", "")))
 			add_child(buttons[i])
 
 # Goes to level corresponding to button pressed
