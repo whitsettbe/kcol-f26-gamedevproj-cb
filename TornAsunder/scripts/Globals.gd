@@ -1,12 +1,14 @@
 extends Node
 
 var level_paths = [
-	"res://levels/Playgrounds/playground0.tscn",
-	"res://levels/Playgrounds/playground1.tscn",
-	"res://levels/Playgrounds/playground2.tscn",
+	#"res://levels/Playgrounds/playground0.tscn",
+	#"res://levels/Playgrounds/playground1.tscn",
+	#"res://levels/Playgrounds/playground2.tscn",
 	"res://levels/Caves/01 - Just Walk.tscn",
 	"res://levels/Caves/02 - Push Through.tscn",
 	"res://levels/Caves/04 - Co-op 101.tscn",
+	"res://levels/Caves/05 - Working Blind.tscn",
+	"res://levels/Caves/06 - Mind the Gap.tscn",
 	"res://levels/Caves/07 - Out of the Corner.tscn",
 	"res://levels/Caves/08 - Lost.tscn",
 	"res://levels/Ruins/11 - Not My Block.tscn",
@@ -20,6 +22,7 @@ var level_paths = [
 	"res://levels/Bog/25 - Listening to Paint Dry.tscn",
 	"res://levels/Bog/26 - Speedy Delivery.tscn",
 	"res://levels/Bog/28 - Magic Eraser.tscn",
+	"res://levels/Bog/27 - Not-So-Speedy Delivery.tscn",
 	"res://levels/Bog/30 - Leroy.tscn"
 	]
 	

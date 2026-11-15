@@ -33,6 +33,37 @@
 
 ---
 
+**Level Name:** Working Blind  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: walk up, up, left, left, thereby clearing a path in Roy's map.
+2. Roy: walk left, left, up, up, right, up, and then push the unentangled block on your left as far as possible.
+3. Leonard: walk into the lower-left room and push the entangled block right twice.
+4. Roy: walk to the entangled block at upper-left, and push it: up, right x3, up, right x2, down, right x2.
+5. Roy: walk up, right, right (into the upper-right recessed square).
+6. Leonard: walk to the entangled block now at upper-right and push it up once.
+7. Roy: push the entangled block left.
+8. Leonard: walk to the exit.
+9. Roy: walk to the exit.
+
+---
+
+**Level Name:** Mind the Gap  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: push the block leftward into the hole, filling it.
+2. Roy: push the block leftward into the hole, filling it.
+3. Roy: walk into the next room and push the entangled block left.
+4. Leonard: walk into the third room and push the entangled block up.
+5. Roy: walk into the fourth room and push the entangled block right.
+6. Leonard: walk into the fifth room and push the entangled block right.
+7. Roy: walk to the exit.
+8. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Out of the Corner  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
@@ -221,9 +252,26 @@
 5. Leonard: repeat step 3.
 6. Roy: repeat step 2.
 7. Leonard: repeat step 3.
-6. Roy: repeat step 2.
-7. Leonard: push the last block up to the final hole and walk to the exit.
-8. Roy: walk to the exit.
+8. Roy: repeat step 2.
+9. Leonard: push the last block up to the final hole and walk to the exit.
+10. Roy: walk to the exit.
+
+---
+
+**Level Name:** Not-So-Speedy Delivery  
+**Authors:** Benjamin  
+**Intended layer:** Bog  
+
+1. Leonard: push the top-left entangled block down once.
+2. Roy: push the bottom-left entangled block left once.
+3. Leonard: push the top-right entangled block left twice.
+4. Roy: push the bottom-right entangled block down once.
+5. Leonard: push the rolling block downward, then rightward, then upward.
+6. Roy: push the bottom-right entangled block up twice.
+7. Leonard: push the rolling block leftward, then upward, then rightward.
+8. Roy: push your rolling block leftward, downard, leftward, upward, rightward, upward.
+9. Leonard: walk to the exit.
+10. Roy: walk to the exit.
 
 ---
 
