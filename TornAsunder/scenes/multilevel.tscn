@@ -8,12 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://dmwox45aa2wnq" path="res://music/caves/8_bit_aincent_ruins.ogg" id="6_uyyhw"]
 [ext_resource type="AudioStream" uid="uid://df6hdnsb6cihx" path="res://music/caves/introductory_world.ogg" id="7_uydqu"]
 [ext_resource type="AudioStream" uid="uid://b7x62qp8htqmn" path="res://music/caves/8_bit_adventure.ogg" id="8_5i2b0"]
-[ext_resource type="Script" uid="uid://4lgelms6kr2k" path="res://scenes/caves_playlist.gd" id="8_jxyuu"]
 [ext_resource type="AudioStream" uid="uid://dylmckwasaal4" path="res://music/ruins/decision.ogg" id="9_uig46"]
 [ext_resource type="AudioStream" uid="uid://dmuvv1dly7ntn" path="res://music/ruins/video_game_snowy_night.ogg" id="10_uig46"]
 [ext_resource type="AudioStream" uid="uid://dffcvhoaolbcs" path="res://music/bog/not_in_vain.ogg" id="11_6xw2y"]
 [ext_resource type="AudioStream" uid="uid://casrf6j170mpj" path="res://music/ruins/beyond_time.ogg" id="12_cexc5"]
 [ext_resource type="AudioStream" uid="uid://cl4w6f2i5g44e" path="res://music/bog/inner_conflict.ogg" id="12_kvi71"]
+[ext_resource type="AudioStream" uid="uid://bxblnp8h0q2px" path="res://music/final_scene/false_reverie.ogg" id="15_cexc5"]
 [ext_resource type="AudioStream" uid="uid://doc225x2a3gm1" path="res://music/bog/jungle_video_game_level.ogg" id="15_fly0v"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
@@ -108,10 +108,12 @@ color = Color(0, 0, 0, 1)
 stream = SubResource("AudioStreamPlaylist_hlb1k")
 volume_db = -4.204
 bus = &"Music"
-script = ExtResource("8_jxyuu")
 
 [node name="ruins_playlist" type="AudioStreamPlayer" parent="." unique_id=1315990646]
 stream = SubResource("AudioStreamPlaylist_epwrj")
 
 [node name="bog_playlist" type="AudioStreamPlayer" parent="." unique_id=1973466169]
 stream = SubResource("AudioStreamPlaylist_8bs6t")
+
+[node name="false_reverie" type="AudioStreamPlayer" parent="." unique_id=2000017796]
+stream = ExtResource("15_cexc5")

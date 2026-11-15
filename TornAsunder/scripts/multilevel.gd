@@ -23,6 +23,7 @@ var level_fading = false # indicate whether a fade is in progress
 @onready var caves_playlist: AudioStreamPlayer = $caves_playlist
 @onready var ruins_playlist: AudioStreamPlayer = $ruins_playlist
 @onready var bog_playlist: AudioStreamPlayer = $bog_playlist
+@onready var false_reverie: AudioStreamPlayer = $false_reverie
 @onready var sfx_restart: AudioStreamPlayer = $sfx_restart
 @onready var sfx_undo: AudioStreamPlayer = $sfx_undo
 
@@ -47,9 +48,11 @@ func load_level(idx : int) -> void:
 	level_scene_stack = []
 	level_scene_stack_times = []
 	compute_level_transform()
-	#DEBUG: print(current_layer)
+	#check to see if the playlist should be changed,
+	#or if the final level audio should play. 
 	check_for_layer_change(Globals.level_scene.layer)
-	#DEBUG: print(current_layer)
+	check_for_final_level()
+
 # Connect the level scene's signals to scripts in this file
 func connect_level_signals() -> void:
 	Globals.level_scene.connect("level_completed",
@@ -245,6 +248,17 @@ func check_for_layer_change(newLayer) -> void:
 		
 		#update layer
 		current_layer = newLayer
-		
-		#DEBUG: print("Layer Change")
+
+#checks to see if the level is the final level,
+#if so, play the finalie music.
+func check_for_final_level()-> void:
+		if(Globals.level_scene.is_final == true):
+			
+			#stop music currenlty playing
+			caves_playlist.stop()
+			ruins_playlist.stop()
+			bog_playlist.stop()
+			
+			#play false reverie
+			false_reverie.play()
 		
