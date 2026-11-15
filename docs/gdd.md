@@ -189,6 +189,6 @@ At bottom of screen:
 
 **Programming Language: GDScript**
 
-**Tools for Assets (art, sound, etc.): (TBD)**
+**Tools for Assets (art, sound, etc.): Google Draw**
 
 **Deployment Platform: Web for Desktop (tested in Chrome and Firefox)**
