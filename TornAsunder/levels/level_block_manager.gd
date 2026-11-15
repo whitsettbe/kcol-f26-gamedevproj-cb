@@ -12,6 +12,11 @@ const tiles = {
 	Block.BlockType.PLAYER: Vector2i(4,0),
 	Block.BlockType.ENTANGLED: Vector2i(1,0)
 }
+const tilesets = {
+	GridArea2D.Layer.CAVES : preload("res://sprites/cave_tiles.tres"),
+	GridArea2D.Layer.RUINS : preload("res://sprites/ruin_tiles.tres"),
+	GridArea2D.Layer.BOG : preload("res://sprites/bog_tiles.tres")
+}
 signal level_completed
 signal state_push_requested
 signal state_drop_requested
@@ -19,35 +24,114 @@ signal state_undo_requested
 signal level_reset_requested
 var solid_invariant_tracker : int
 
+# Set up timeouts for input duplication
+var input_timeouts = Dictionary()
+	# direction action -> seconds until usable
+const INPUT_ECHO_DELAY = 0.5 # seconds for which a key
+		# must be held to trigger echo motion (i.e. running)
+		# Note that if a key has been *available* for
+		#  this long, then we consider a run to have
+		#  ended.
+const INPUT_RUN_INTERVAL = 0.15 # seconds between
+		# running motions (repeated motion during
+		# key-holding)
+		
+
+# Export a layer selector
+@export var layer : GridArea2D.Layer
+
+# Distinguish the portal-in sprite location
+#  and the level exit sprite location
+const PORTAL_IN_TEXTURE_LOC = Vector2i(0,3)
+const EXIT_TEXTURE_LOC = Vector2i(2,3)
+
+# Track whether this is the last level
+var is_final = false
+
+# Track which properties should be saved as the game runs
+func _get_property_list() -> Array[Dictionary]:
+	# Declare array of property data with strictly-specified
+	#  type Array[Dictionary], so parse-time typing checks
+	#  will recognize the variable type
+	var serializable: Array[Dictionary] = [
+		{
+			"name": "is_final",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_BOOL,
+		},
+	]
+	return serializable
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
 		solid_invariant_tracker = get_solid_invariant()
+		
+		# Listen for when players land on the exits
+		$EXIT_L.connect("player_on_exit", _on_player_on_exit)
+		$EXIT_R.connect("player_on_exit", _on_player_on_exit)
+		
+		# Set up input timeouts
+		for dir in Block.inputs.keys():
+			# Enforce a short delay before key
+			#  input is accepted at level load
+			#  (this will only affect keys which
+			#   are pressed at level load, as other
+			#   keys are marked immediately usable
+			#   in _process() )
+			input_timeouts[dir] = INPUT_ECHO_DELAY
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
-		align_block_designs()
+		align_tile_designs()
+		is_final = (name == "FINAL")
 	else:
 		# While the level is in an unsafe state
 		#  (say, if multiple blocks are in the same place),
 		#  roll back the level state
 		if not state_is_safe():
 			emit_signal("state_undo_requested")
+			
+		# Update time until each input is usable
+		for dir in Block.inputs.keys():
+			if Input.is_action_pressed(dir):
+				input_timeouts[dir] -= delta
+			else:
+				# Mark this input as usable,
+				#  but not part of a run (looks to not have
+				#  been pressed in a while, with
+				#  -INPUT_ECHO_DELAY as the sentinel value)
+				input_timeouts[dir] = -INPUT_ECHO_DELAY
+			
+		# Check for player inputs, if the tree is not paused
+		if Input.is_anything_pressed() and not get_tree().paused:
+			handle_key_input()
 
 
 # Pass keyboard inputs to the player (during game)
-func _unhandled_key_input(event: InputEvent) -> void:
+func handle_key_input() -> void:
 	
 	var state_pushed = false
 	var move_succeeded = false
 	
 	if not Engine.is_editor_hint():
 		for dir in Block.inputs.keys():
-			if event.is_action_pressed(dir):
+			if Input.is_action_pressed(dir):
+				# If not allowed to process this action yet,
+				#  skip it.
+				if input_timeouts[dir] > 0:
+					continue
+				
+				# Reset the input timer, with quicker timing
+				#  if the key seems to have been held down.
+				if input_timeouts[dir] <= -INPUT_ECHO_DELAY:
+					input_timeouts[dir] = INPUT_ECHO_DELAY
+				else:
+					input_timeouts[dir] = INPUT_RUN_INTERVAL
 				
 				# Push the current state to the undo stack
 				if not state_pushed:
@@ -66,26 +150,48 @@ func _unhandled_key_input(event: InputEvent) -> void:
 								node.move_if_possible(Block.inputs[dir]
 								* GridArea2D.TILE_SIZE)
 								
-		# If moves were attempted but did not succeed
-		#  delete the pushed state
+		# If moves were attempted but did not succeed,
+		#  delete the pushed state;
+		#  Note that the drop is time-limited not to drop
+		#  old states, which may still be at the top of the
+		#  stack if the state push triggered earlier in this
+		#  function was unsuccessful
 		if state_pushed and not move_succeeded:
 			emit_signal("state_drop_requested")
 			
 		# Handle undo if requested by user
-		if event.is_action_pressed("undo"):
+		if Input.is_action_just_pressed("undo"):
 			emit_signal("state_undo_requested")
 			
 		# Handle level restart if requested by user
-		if event.is_action_pressed("restart"):
+		if Input.is_action_just_pressed("restart"):
 			emit_signal("level_reset_requested")
 
 
-# Ensure child properties align with their block type
-func align_block_designs():
+# Ensure child properties align with their block type,
+#  and swap spritesheets as needed based on the layer.
+func align_tile_designs():
 			
+	# Set block designs
 	for node in get_children():
 		if node is Block:
 			align_single_block_design(node)
+		elif node is PortalIn:
+			align_portal_design(node)
+	
+	# Set spritesheets based on the exported "layer" variable
+	for node in get_descendents(self):
+		if node is TileMapLayer:
+			node.tile_set = tilesets[layer]
+
+# Ensure Exit Portals are given exit texture
+func align_portal_design(node: PortalIn):
+	node.get_node("TileMapLayer").set_cell(
+		Vector2i(0,0),
+		0,
+		(EXIT_TEXTURE_LOC if node.is_exit
+				else PORTAL_IN_TEXTURE_LOC)
+	)
 			
 # Ensure Block properties align with its type
 func align_single_block_design(node : Block):
@@ -109,9 +215,12 @@ func align_single_block_design(node : Block):
 
 # When a player stands on an exit,
 #  check if both exits have players on them.
+#  (this script is connected to the relevant signals
+#  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
-	if $EXIT_L.players_exiting > 0 \
-			and $EXIT_R.players_exiting > 0:
+	var players_exiting_threshold = 1 if not is_final else 2
+	if $EXIT_L.players_exiting >= players_exiting_threshold \
+			and $EXIT_R.players_exiting >= players_exiting_threshold:
 		emit_signal("level_completed")
 		
 
@@ -130,8 +239,10 @@ func get_solid_invariant() -> int:
 	var hole_squares = []
 	
 	# Recognize squares where there are active blocks
+	# (note that dead players are still counted because
+	#  they don't fill holes)
 	for node in get_children():
-		if node is Block and not node.dead:
+		if node is Block and (node is Player or not node.dead):
 			solid_squares.append(
 				GridArea2D.pos_to_tile_coords(node.position)
 			)
@@ -152,9 +263,19 @@ func get_solid_invariant() -> int:
 		solid_squares_dict[s_sq] = true
 	for h_sq in hole_squares:
 		hole_squares_dict[h_sq] = true
+		
+	# Compute the invariant
+	var out = len(solid_squares_dict) - len(hole_squares_dict)
+	
+	# If the two players are in one square
+	#  during the final level,
+	#  add one to the invariant (since that's
+	#  allowed in the final level)
+	if is_final and $Leonard.position == $Roy.position:
+		out += 1
 	
 	# The difference should be invariant
-	return len(solid_squares_dict) - len(hole_squares_dict)
+	return out
 
 
 # Indicate whether any blocks in the level are currently
@@ -167,3 +288,11 @@ func any_active_rolls() -> bool:
 			
 			return true
 	return false
+
+# Function to get all node descendents recursively
+func get_descendents(obj : Node) -> Array[Node]:
+	var out : Array[Node] = []
+	for child in obj.get_children():
+		out.push_back(child)
+		out.append_array(get_descendents(child))
+	return out

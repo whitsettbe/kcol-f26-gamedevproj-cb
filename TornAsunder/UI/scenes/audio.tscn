@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://byvj0dtiq0e3v"]
+
+[ext_resource type="Script" uid="uid://jr3ebejgwesq" path="res://UI/scripts/audio.gd" id="1_6n3bj"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+
+[node name="Audio" type="Node2D" unique_id=2082160121]
+script = ExtResource("1_6n3bj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1018301718]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("2_bwtr5")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=824639251]
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1853731434]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=475274310]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="PanelContainer/Button_manager/Back" to="." method="_on_back_pressed"]

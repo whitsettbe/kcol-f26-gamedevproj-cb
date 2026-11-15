@@ -9,6 +9,10 @@ class_name GridArea2D
 const TILE_SIZE = 32 # pixels
 const PUSH_DURATION = 0.05 # seconds
 const FADE_DURATION = 0.4 # seconds
+	# (controls non-player blocks falling into holes
+	#  and player teleportation)
+const FALL_DURATION = 1.0 # seconds
+	# (controls players falling into holes)
 const ROLL_DELAY = 0.05 # seconds
 const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	# (matches the duration of a physics frame,
@@ -16,11 +20,17 @@ const MOVE_LOCKOUT_TIME = 1.0 / 60.0 # seconds
 	#  physics engine notices the first change)
 const TOTAL_REROLL_TIME = 0.01 # seconds
 	# (at most MOVE_LOCKOUT_TIME)
-const NUM_REROLL_ATTEMPTS = 3
+const NUM_REROLL_ATTEMPTS = 3 # on reload,
+	# if blocks were rolling in saved state,
+	# how many times to try to continue rolling
+const BUMP_DISTANCE = 0.1 # blocks
 
 # Declare enums for block data
 enum BlockType {BLOCK, PLAYER, ENTANGLED}
 enum BlockColor {NONE, BLUE, RED}
+
+# Declare enum for layers
+enum Layer {CAVES, RUINS, BOG}
 
 # Indicate how to identify different tile types
 const TILE_IDS = {
