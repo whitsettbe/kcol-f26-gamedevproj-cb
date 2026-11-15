@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cttuaw2e0c78t"]
 
-[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Minecraft.ttf" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://cpt3mjkpgxjd0" path="res://UI/scripts/hud.gd" id="1_i3ppi"]
 
 [node name="HUD" type="CanvasLayer" unique_id=898248560]

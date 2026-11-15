@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://UI/scripts/layer_navigator.gd" id="1_hwvb6"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_8dti4"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_55ivg"]
 [ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://UI/scenes/caves_navigator.tscn" id="3_nmdk5"]
 [ext_resource type="PackedScene" uid="uid://cmtde1klxwn3u" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
 [ext_resource type="PackedScene" uid="uid://dkfychypjd3f" path="res://UI/scenes/ruins_navigator.tscn" id="5_nqh8f"]
@@ -26,27 +27,39 @@ offset_bottom = 648.0
 
 [node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1393864001]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 
 [node name="Playgrounds" type="Button" parent="PanelContainer/Button_manager" unique_id=222210046]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_55ivg")
+theme_override_font_sizes/font_size = 32
 text = "Playgrounds"
 
 [node name="Caves" type="Button" parent="PanelContainer/Button_manager" unique_id=1789523028]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_55ivg")
+theme_override_font_sizes/font_size = 32
 text = "Caves"
 
 [node name="Ruins" type="Button" parent="PanelContainer/Button_manager" unique_id=279887556]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_55ivg")
+theme_override_font_sizes/font_size = 32
 text = "Ruins"
 
 [node name="Bog" type="Button" parent="PanelContainer/Button_manager" unique_id=891304519]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_55ivg")
+theme_override_font_sizes/font_size = 32
 text = "Bog"
 
 [node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=1458775140]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_55ivg")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
 [node name="Caves Navigator" parent="." unique_id=794097652 instance=ExtResource("3_nmdk5")]

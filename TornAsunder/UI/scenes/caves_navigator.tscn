@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ca0o7f82vjujb" path="res://UI/scripts/caves_navigator.gd" id="1_qrj24"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_uobnm"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="2_va5dg"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="4_ai74d"]
 
 [node name="Caves Navigator" type="Node2D" unique_id=794097652]
 script = ExtResource("1_qrj24")
@@ -21,11 +22,15 @@ offset_bottom = 640.0
 
 [node name="CavesVbox" type="VBoxContainer" parent="PanelContainer" unique_id=1266873305]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 script = ExtResource("2_va5dg")
 
 [node name="Back" type="Button" parent="PanelContainer/CavesVbox" unique_id=731831224]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ai74d")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
 [connection signal="pressed" from="PanelContainer/CavesVbox/Back" to="." method="_on_back_pressed"]
