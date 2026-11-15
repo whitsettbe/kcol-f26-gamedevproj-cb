@@ -1,6 +1,6 @@
-# [Game Title]
+# Torn Asunder
 
-[One or two sentences describing the game. What is it? What makes it interesting?]
+In this couch-co-op block-pushing puzzle game, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.
 
 ## Play the Game
 
@@ -11,7 +11,11 @@ To run the game locally:
 
 ## About the Game
 
-[2-3 paragraphs expanding on the concept. What genre is it? What is the core loop? What is the story or theme? Who is the target audience?]
+A freak plane crash has buried the two halves of Leroy's body alive in separate dimensions. Much as the two halves, Leonard and Roy, are linked, so too are the twisted mazes they find themselves trapped in. Leroy's halves must use the links between their worlds to help each other escape. Though torn asunder, they may yet reunite as one.
+
+In each level, Leonard and Roy will walk around and push blocks in the two halves of a maze, each advancing from designated entrance to a designated exit. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
+
+This game is recommended to people who enjoy collaborative puzzle solving.
 
 ## Screenshots
 
@@ -19,18 +23,19 @@ To run the game locally:
 
 ## How to Play
 
-[Controls and basic instructions. For example:]
-- **Left player:** WASD
-- **Right player:** Arrow keys
-- **Undo:** Z
-- **Restart level:** R
+- **Left player (Leonard):** WASD
+- **Right player (Roy):** Arrow keys
+- **Undo:** Shift (either side)
+- **Restart level:** Space
+- **Pause menu:** Escape/Delete
+- **Menu navigation:** Mouse
 
 ## Team
 
-- [Name 1] - [Role, e.g., Programming, Level Design]
-- [Name 2] - [Role]
-- [Name 3] - [Role]
-- [Name 4] - [Role]
+- Vivian Nyeholt - Visual Art
+- Clara Siefke - UI
+- Phoebe Tozer - Audio
+- Benjamin Whitsett - Mechanics
 
 ## Development
 
@@ -46,8 +51,4 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 ## License
 
-[See LICENSE file, or state: "This project is for educational purposes. All rights reserved by the authors."]
-
-## Disclaimer
-
-*This template was generated using DeepSeek GPT engine.*
+- [LICENSE file - TBD]
