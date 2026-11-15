@@ -134,7 +134,12 @@ https://yurisizov.itch.io/boscaceoil-blue
 
 At top of screen:
  - Current Layer
+ - Universal controls
  - Current Level/Levels in Layer
+
+At bottom of screen:
+ - Left player controls
+ - Right player controls
 
 **Menus (main, pause, inventory, etc.):**
 
