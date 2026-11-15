@@ -16,7 +16,7 @@ offset_right = 348.0
 offset_bottom = 624.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 20
-text = "Motion: WASD     Pause: Esc"
+text = "Motion: WASD     Pause Menu: Esc"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -28,7 +28,7 @@ offset_right = 1152.0
 offset_bottom = 656.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 20
-text = "Motion: Arrow Keys     Pause: Del"
+text = "Motion: Arrow Keys     Pause Menu: Del"
 horizontal_alignment = 1
 vertical_alignment = 1
 

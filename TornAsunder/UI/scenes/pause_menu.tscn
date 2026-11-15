@@ -39,7 +39,7 @@ text = "Settings"
 
 [node name="Title Screen" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1482347671]
 layout_mode = 2
-text = "Title Screen"
+text = "Exit to Title Screen"
 
 [node name="Layer Navigator" parent="." unique_id=2131716285 instance=ExtResource("2_myx47")]
 visible = false
