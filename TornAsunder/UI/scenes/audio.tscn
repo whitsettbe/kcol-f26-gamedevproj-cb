@@ -24,6 +24,7 @@ offset_bottom = 640.0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Master Volume" type="Label" parent="PanelContainer/Button_manager" unique_id=771175153]
