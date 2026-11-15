@@ -145,27 +145,29 @@ At bottom of screen:
 
 - Pause Menu
     - Resume
-    - Hint
     - Level Navigator
-        - Layer 3
+        - Caves
             - Level n
             - ...
             - Level 2
             - Level 1
-        - Layer 2
+        - Ruins
             - Level m
             - ...
             - Level 2
             - Level 1
-        - Layer 1
+        - Bog
             - Level p
             - ...
             - Level 2
             - Level 1
+        - Back
     - Settings
         - Audio
+            - Master Volume
             - Music Volume
             - Sound Effect Volume
+        - Back
     - Title Screen
 
 - Title Screen
