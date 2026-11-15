@@ -1,3 +1,7 @@
+Note: In the below instructions, block colors are always listed as "blue" and "red," regardless of layer-dependent coloration schemes. "Blue" refers to Leonard's default color, and "red" refers to Roy's default color.
+
+---
+
 **Level Name:** Just Walk  
 **Authors:** Benjamin  
 **Intended layer:** Caves  

@@ -10,9 +10,9 @@
 
 **Genre: Sokoban**  
 
-**Platform(s): Windows, Linux, (Web)**  
+**Platform: Web (Desktop)**  
 
-**Elevator Pitch (1-2 sentences): In a couch-co-op Sokoban, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.** 
+**Elevator Pitch: In a couch-co-op Sokoban, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.** 
 
 **Target Audience: People who enjoy collaborative puzzle solving.** 
 
@@ -21,27 +21,25 @@
 
 ## 2. Core Loop
 
-*Describe the main repeating cycle of your game (what the player does over and over)*:
-
 The two players will respectively move around the maze and push blocks. The effect of these actions will be advancement of players from a designated entrance to a designated exit, or them falling into holes and needing to restart the level or undo their most recent actions. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
 
 ---
 
 ## 3. Game Mechanics
 
-**Player Actions (What can the player do?):**
+**Player Actions:**
 
-Each player can move their character up, down, left, or right one grid square at a time. In doing so, a player may push a block impeding their path, depending on color-indicated permissions specific to the block, or else be rebuffed from motion. Player can also pass through one-directional portals and change their colors using paint. Blocks can be pushed into other blocks or fill holes in the player map. If either character falls into a hole, the current level will restart for both of them or they will need to undo their most recent actions.
+Each player can move their character up, down, left, or right one grid square at a time. In doing so, a player may push a block impeding their path, depending on color-indicated permissions specific to the block, or else be rebuffed from motion. Player can also pass through one-directional portals and change their colors using paint. Blocks can be pushed into other blocks or fill holes in the player map. If either character falls into a hole, that character will be unable to move and the players will need to either undo their most recent actions or restart the level.
 
-**Interactions (How do players interact with the game or characters? Controls setup?):**
+**Interactions:**
 
-On desktop, the left character will be controlled with WASD, and the right character will be controlled with arrow keys. Holding a key will enable multiple steps to be attempted in sequence. There will also be keyboard shortcuts to undo a move or restart a level. In a later stage of development, these shortcuts could be identified with game controller buttons.
+On desktop, the left character will be controlled with WASD, and the right character will be controlled with arrow keys. Holding a key will enable multiple steps to be attempted in sequence. There will also be keyboard shortcuts to undo a move or restart a level.
 
-A game menu will also be openable by keypress or mouse click (using a button in the HUD). Menu navigation will be possible both with mouse and by keyboard. Some menus will operate in a split-screen format in which each player will have keypress navigation functionalities (WASD / arrows) over their half of the menu. Either player making a selection will advance the entire menu for both players.
+A pause menu will also be openable by keypress. Menu navigation will be done with the mouse.
 
-**Rules (What constraints or systems define the gameplay?):**
+**Rules:**
 
-Neither character can walk through walls in the grid. Basic blocks can be pushed by either player. Some blocks will be movable only by characters of a specific color - player colors must match the color of the block. Some blocks will also be "entangled," meaning a version of the block exists in both the left and right worlds. One player pushing one entangled block will also push the corresponding block in the other world, and pushing is not permitted if both blocks cannot move. If an entangled block falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
+Neither character can walk through walls in the grid. Basic blocks can be pushed by either player. Some blocks will be movable only by characters of a specific color - player colors must match the color of the block they are pushing. Some blocks will also be "entangled," meaning a version of the block exists in both the left and right worlds. One player pushing one entangled block will also push the corresponding block in the other world, and pushing is not permitted unless both blocks are able to move. If an entangled block falls into a hole in either map, it will turn into a floor tile in the map with the hole and a wall in the other.
 
 Blocks can push other blocks. A colored block can be indirectly pushed by an uncolored block, but only if the player ultimately responsible for the push would be allowed to push that entangled block directly.
 
@@ -51,19 +49,19 @@ Stepping on the input to a portal will immediately transport a player to the out
 
 Rolling blocks will, once pushed, continue to move in their original direction until stopped. Rolling blocks can push other blocks as if they were a player of their own color. For example, a red rolling block can push red and colorless blocks, while a colorless rolling block can only push colorless blocks. Player motion inputs will still be processed while rolling blocks are moving.
 
-**Rewards (How does your game reward the players after completing tasks or in the gameplay? What kind of reward system do you envision?):**
+**Rewards:**
 
-The primary reward system will be intrinsic in nature: the progress from level to level, as indicated by a HUD element and/or message between levels indicating how many levels have been completed and how many are yet to be completed. Players will also be rewarded by the uniqueness of successive levels, changing visual styles, and the drive to discover new mechanics.
+The primary reward system will be intrinsic in nature: the progress from level to level, as indicated by a HUD element indicating how many levels have been completed and how many are yet to be completed. Players will also be rewarded by the uniqueness of successive levels, changing visual styles, and the drive to discover new mechanics.
 
-**Feedback (How does your game notifies the player? Audio-visual cues? Progress tracking via HUD? Positive/negative feedback?):**
+**Feedback:**
 
-Audio-visual cues during the level will be neutral in nature, as the same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A positive "progress" noise may be played between levels. HUD or inter-level indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
+Audio-visual cues during the level will be neutral in nature, as the same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
 
 ---
 
 ## 4. Story & Narrative
 
-**Premise (What is the story/world about?):**
+**Premise:**
 
 A freak plane crash has buried the two halves of Leroy's body alive in separate dimensions. Much as the two halves are linked, so too are the twisted mazes they find themselves trapped in. Leroy's halves must use the links between their worlds to help each other escape. Though torn asunder, they may yet reunite as one.
 
@@ -71,7 +69,7 @@ A freak plane crash has buried the two halves of Leroy's body alive in separate 
 
 The main characters are the left and right halves of Leroy's body, Leonard and Roy. Leonard exists in the left maze and Roy exists in the right maze. Because they are two halves of the same mind, they can communicate with each other and work together.
 
-**Conflict/Goal:**
+**Goal:**
 
 Naturally, Leonard and Roy do not want to be buried alive and in separate dimensions. Escaping these puzzling maze dimensions will bring them together. If they find each other, they can be Leroy again.
 
@@ -79,35 +77,31 @@ Naturally, Leonard and Roy do not want to be buried alive and in separate dimens
 
 ## 5. Level & World Design
 
-**Setting/Theme:** 
+**Setting:** 
 
 This is a cooperative escape game where both halves of our hero have been trapped against their will in a series of elaborate mazes. Teamwork, communication, and collaboration between the two players will be necessary to complete levels and progress towards freedom. Only if they are able to think as one will the two halves of our hero be able to escape the tunnels and re-unite.
 
-The setting is an interdimensional series of tunnels, with certain entangled blocks existing in two dimensions at once. The world is full of interdimensional magic, and quantum weirdness which causes different objects to behave in strange ways. 
+The setting is an interdimensional series of tunnels, with certain entangled blocks existing in two dimensions at once. The world is full of interdimensional magic, which causes different objects to behave in strange ways. 
 
-**Level Structure (linear, open world, hub-based?):**
+**Level Structure:**
 
 The game will have a linear structure, with an embedded narrative. There will only be one possible ending. Each level will have a short level name which will provide the players with hints in order to solve it. Players will go sequentially through the levels, always working on the same level simultaneously. 
 
-**Tutorial/Onboarding (How will players learn mechanics?):**
+**Tutorial/Onboarding:**
 
-Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include colored blocks and portals. The third will introduce spheres (rolling blocks that don't stop after being pushed) and paint, which changes player colors. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
+Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include colored blocks and portals. The third will introduce rolling blocks (blocks that keep moving after being pushed) and paint, which changes player colors. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
 
-**Progression (How does your game increase in difficulty or complexity?):**
+**Progression:**
 
-We are going to shoot for a gradual difficulty curve with an interesting balance of challenging levels, as well as levels where the players are able to get into a flow state and progress quickly. Some levels will be very short and simple, whereas others will be designed to take more experimentation and time. If players ever get totally stuck, a solution manual will be available if the player chooses to use it.
-
-**Exploration/Challenges/Puzzles (if applicable):**
-
-There may be a few hidden "secret" parts of levels which can surprise the player into more aspects of exploration. 
+We intend to provide a gradual difficulty curve, with an interesting balance of challenging levels and levels where the players are able to get into a flow state and progress quickly. Some levels will be very short and simple, whereas others will be designed to take more experimentation and time. If players ever get totally stuck, a solution manual is included in this repository at `docs/Solutions.md`. The level selector will also be unlocked, so players can skip levels and return to them at a later date if they so desire.
 
 ---
 
 ## 6. Visual & Audio Style
 
-**Art Style Reference (pixel art, 3D, realistic, low poly, etc.): small size pixel art**
+**Art Style Reference: small size pixel art**
 
-**Color Palette: limited color palette (tbd)**
+**Color Palette:**
 
 The color palette for the environment will be a two tone palette, with one main hue with value variations. The second hue will serve as a highlight. The players and level objects will have their own palette (fixed throughout the game) to contrast with their environment and make levels more readable.
 
@@ -127,16 +121,16 @@ https://lospec.com/palette-list/darkworld
 253	205	134	fdcd86
 ```
 
-**Music/Audio Resources (to complement the theme of your game): tbd**
+**Music/Audio Resources:**
 
 https://www.bfxr.net
 https://sfbgames.itch.io/chiptone
 https://yurisizov.itch.io/boscaceoil-blue
 ---
 
-## 7. User Interface (UI/UX)
+## 7. User Interface
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): progress tracking**
+**HUD Elements: progress tracking**
 
 At top of screen:
  - Current Layer
@@ -186,22 +180,8 @@ At top of screen:
 
 **Engine: Godot**
 
-**Programming Language(s): GDScript**
+**Programming Language: GDScript**
 
 **Tools for Assets (art, sound, etc.): (TBD)**
 
-**Deployment Platform (PC build, web, mobile, etc.): Desktop (Windows/Linux/web)**
-
----
-
-## 9. Development Plan 
-
-*Proposed Work Schedule: Describe here what your team will work on each week for the remainder of the term. This should function as a schedule or work plan to be followed and successfully develop your game prototype*:
-
-- Week 3: (steady 3 added mechanics per week begin here)
-- Week 4: focus on presentation for next week (not game related, but true), organize
-- Week 5: art/sound, menu design
-- Week 6: level loader/exporter, menu implementation
-- Week 7: testing and level design
-- Week 8: testing and level design
-- Week 9: Finishing touches
+**Deployment Platform: Web for Desktop (tested in Chrome and Firefox)**

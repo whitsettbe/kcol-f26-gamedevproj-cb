@@ -4,10 +4,6 @@
 
 ## Play the Game
 
-[If hosting on GitHub Pages or a server:]
-Play the web version here: [link]
-
-[If not hosting online:]
 To run the game locally:
 1. Download the files from the `web-export/` folder.
 2. Open a terminal in that folder and run `python3 -m http.server`.
