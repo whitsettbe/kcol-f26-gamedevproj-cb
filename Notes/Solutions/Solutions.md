@@ -151,8 +151,8 @@
 **Authors:** Clara Siefke  
 **Intended layer:** Ruins  
 
-1. Leonard moves up one and left four, pushing the first blue entangled block into a hole.
-2. Roy moves up one, left nine, and up two, pushing the first red entangled block into a hole.
+1. Leonard moves up one and left two, pushing the first blue entangled block into a hole.
+2. Roy moves up one, left seven, and up two, pushing the first red entangled block into a hole.
 3. Leonard moves down one, left five, up nine, right nine, down three, and left one, pushing a generic block.
 4. Leonard moves right one, up three, left nine, down six, and right two, going through the first portal.
 5. Roy moves down two, right four, up five, left two, and up two, pushing the second red entangled block into a hole.
