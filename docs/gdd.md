@@ -184,4 +184,9 @@ At top of screen:
 
 **Tools for Assets (art, sound, etc.): (TBD)**
 
+Audio
+- All sound effects and music were edited using Reaper: https://www.reaper.fm/
+- All Music was sourced from Free Music Archive: https://freemusicarchive.org/home
+- All Sound effects were either sourced from Freesound: https://freesound.org/ , or recorded by our team.
+
 **Deployment Platform: Web for Desktop (tested in Chrome and Firefox)**
