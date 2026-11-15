@@ -178,8 +178,10 @@ At bottom of screen:
 
 **Accessibility Features:**
 
-- Block colors and shapes will be designed in a color-blind-friendly manner.
-- Hints will be available.
+- Block are designed to be distinguished by shape, texture, and color (using a color-blind-friendly color palette).
+- Players may press shift to undo their most recent actions or press space to restart the level.
+- Players may adjust the music volume and sound effect volume separately in the settings.
+- A solutions guide is available if players get stuck.
 
 ---
 
