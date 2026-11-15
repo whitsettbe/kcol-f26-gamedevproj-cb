@@ -92,7 +92,23 @@ body {
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
-
+<script>
+    (() => {
+        const _addEventListener = EventTarget.prototype.addEventListener;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+            let newListener = listener;
+            if (type === 'keydown') {
+                newListener = function(event) {
+                    if (event.key.match(/^F\d+$/) !== null) {
+                        return false;
+                    }
+                    return listener(event);
+                }
+            }
+            return _addEventListener.call(this, type, newListener, options);
+        };
+    })();
+</script>
 	</head>
 	<body>
 		<canvas id="canvas">
