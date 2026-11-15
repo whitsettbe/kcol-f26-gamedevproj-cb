@@ -23,7 +23,6 @@ Globals="*uid://bm7ytviahvi7u"
 
 window/size/viewport_height=640
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor]
 
