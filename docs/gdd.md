@@ -130,7 +130,7 @@ https://yurisizov.itch.io/boscaceoil-blue
 
 ## 7. User Interface
 
-**HUD Elements: progress tracking**
+**HUD Elements:**
 
 At top of screen:
  - Current Layer
@@ -141,26 +141,23 @@ At bottom of screen:
  - Left player controls
  - Right player controls
 
-**Menus (main, pause, inventory, etc.):**
+**Menus:**
 
 - Pause Menu
     - Resume
     - Level Navigator
         - Caves
-            - Level n
-            - ...
-            - Level 2
             - Level 1
+            - ...
+            - Level 10
         - Ruins
-            - Level m
+            - Level 11
             - ...
-            - Level 2
-            - Level 1
+            - Level 20
         - Bog
-            - Level p
+            - Level 21
             - ...
-            - Level 2
-            - Level 1
+            - Level 30
         - Back
     - Settings
         - Audio
@@ -168,7 +165,7 @@ At bottom of screen:
             - Music Volume
             - Sound Effect Volume
         - Back
-    - Title Screen
+    - Exit to Title Screen
 
 - Title Screen
     - Continue
@@ -182,6 +179,7 @@ At bottom of screen:
 - Players may press shift to undo their most recent actions or press space to restart the level.
 - Players may adjust the music volume and sound effect volume separately in the settings.
 - A solutions guide is available if players get stuck.
+- Levels progress is unlocked, so players can also skip levels if they get stuck.
 
 ---
 
