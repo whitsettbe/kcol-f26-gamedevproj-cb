@@ -285,8 +285,8 @@
 4. Roy: Paint yourself blue.
 5. Leonard: Push the entangled block to the left as far as it will go and then up as far as it will go.
 6. Roy: Push the blue block one space to the right.
-7. Roy: Paint yourself red and push the entangled block one space to the left.
-8. Leonard: Push the entangled block to cover the white paint and then one space to the right.
+7. Roy: Paint yourself red and push the entangled block left 2.
+8. Leonard: Push the entangled block up to cover the white paint and then one space to the right.
 9. Roy: Paint yourself blue and push the blue block to fill the hole and proceed to the exit.
 10. Leonard: Paint yourself blue and push the blue block into the exit room, then proceed to the exit.
 
