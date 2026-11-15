@@ -279,16 +279,16 @@
 **Authors:** Vivian 
 **Intended layer:** Bog
 
-1. Leonard: Push the lower blue block to the left, into the hole, and push the upper one up and to the right until it is stuck in the corner.
+1. Leonard: Push the lower blue block to the left, into the hole, and push the upper one up 2 and to the right.
 2. Leonard: Paint yourself red and push the entangled block downwards and left ontop of the higher blue paint.
-3. Roy: Push the unentangled block into the hole and push the entanged block downwards until it is to the right of the blue paint.
+3. Roy: Push the unentangled block into the hole and push the entanged block down 2.
 4. Roy: Paint yourself blue.
 5. Leonard: Push the entangled block to the left as far as it will go and then up as far as it will go.
 6. Roy: Push the blue block one space to the right.
 7. Roy: Paint yourself red and push the entangled block one space to the left.
 8. Leonard: Push the entangled block to cover the white paint and then one space to the right.
-9. Roy: paint yourself blue and push the blue block to fill the hole.
-10. Both: Navigate to the exit.
+9. Roy: Paint yourself blue and push the blue block to fill the hole and proceed to the exit.
+10. Leonard: Paint yourself blue and push the blue block into the exit room, then proceed to the exit.
 
 ---
 
