@@ -148,6 +148,23 @@
 
 ---
 
+**Level Name:** Ladders  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: push the first entangled block down.
+2. Leonard: push the next entangled block down.
+3. Roy: push the next entangled block down.
+4. Leonard: push the last entangled block in the column down.
+5. Roy: push the bottommost row of entangled blocks right once.
+6. Leonard: push the second row of entangled blocks right once.
+7. Roy: push the third row of entangled blocks left once.
+8. Leonard: push the top row of entangled blocks left once.
+9. Roy: walk to the exit.
+10. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Jump Around  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
@@ -175,6 +192,27 @@
 2. Leonard: in the upper room, push the entangled blocks so that their partners cover all 5 portal outputs in Roy's world.
 3. Roy: walk to the exit.
 4. Leonard: walk to the exit.
+
+---
+
+**Level Name:** Flip Flop  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Leonard: move up x5, left x2.
+2. Leonard: move up, down.
+3. Leonard: move left x2, up x2, down, right, down x2, left.
+4. Leonard: repeat step 2.
+5. Leonard: move left x2, up, left x2, up x2, down, right x2, down, right, down x2, left.
+6. Leonard: repeat steps 2-4.
+7. Leonard: move left x2, up, left x2, up, left x2, up x2, down, right x2, down, right x2, down, right, down x2, left.
+8. Leonard: repeat steps 2-5.
+9. Leonard: repeat steps 2-3.
+10. Roy: move left x2.
+11. Roy: do Leonard's steps 2-7.
+12. Roy: do Leonard's steps 2-5.
+13. Roy: do Leonard's step 2.
+14. Both: walk to the exit.
 
 ---
 
