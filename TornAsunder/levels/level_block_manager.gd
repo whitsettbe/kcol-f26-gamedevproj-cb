@@ -45,6 +45,23 @@ const INPUT_RUN_INTERVAL = 0.15 # seconds between
 const PORTAL_IN_TEXTURE_LOC = Vector2i(0,3)
 const EXIT_TEXTURE_LOC = Vector2i(2,3)
 
+# Track whether this is the last level
+var is_final = false
+
+# Track which properties should be saved as the game runs
+func _get_property_list() -> Array[Dictionary]:
+	# Declare array of property data with strictly-specified
+	#  type Array[Dictionary], so parse-time typing checks
+	#  will recognize the variable type
+	var serializable: Array[Dictionary] = [
+		{
+			"name": "is_final",
+			"usage": PropertyUsageFlags.PROPERTY_USAGE_NO_EDITOR,
+			"type": TYPE_BOOL,
+		},
+	]
+	return serializable
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,6 +88,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		align_tile_designs()
+		is_final = (name == "FINAL")
 	else:
 		# While the level is in an unsafe state
 		#  (say, if multiple blocks are in the same place),
@@ -160,7 +178,7 @@ func align_tile_designs():
 			align_single_block_design(node)
 		elif node is PortalIn:
 			align_portal_design(node)
-      
+	
 	# Set spritesheets based on the exported "layer" variable
 	for node in get_descendents(self):
 		if node is TileMapLayer:
@@ -200,8 +218,9 @@ func align_single_block_design(node : Block):
 #  (this script is connected to the relevant signals
 #  at runtime - see self._ready() )
 func _on_player_on_exit() -> void:
-	if $EXIT_L.players_exiting > 0 \
-			and $EXIT_R.players_exiting > 0:
+	var players_exiting_threshold = 1 if not is_final else 2
+	if $EXIT_L.players_exiting >= players_exiting_threshold \
+			and $EXIT_R.players_exiting >= players_exiting_threshold:
 		emit_signal("level_completed")
 		
 
@@ -220,8 +239,10 @@ func get_solid_invariant() -> int:
 	var hole_squares = []
 	
 	# Recognize squares where there are active blocks
+	# (note that dead players are still counted because
+	#  they don't fill holes)
 	for node in get_children():
-		if node is Block and not node.dead:
+		if node is Block and (node is Player or not node.dead):
 			solid_squares.append(
 				GridArea2D.pos_to_tile_coords(node.position)
 			)
@@ -242,9 +263,19 @@ func get_solid_invariant() -> int:
 		solid_squares_dict[s_sq] = true
 	for h_sq in hole_squares:
 		hole_squares_dict[h_sq] = true
+		
+	# Compute the invariant
+	var out = len(solid_squares_dict) - len(hole_squares_dict)
+	
+	# If the two players are in one square
+	#  during the final level,
+	#  add one to the invariant (since that's
+	#  allowed in the final level)
+	if is_final and $Leonard.position == $Roy.position:
+		out += 1
 	
 	# The difference should be invariant
-	return len(solid_squares_dict) - len(hole_squares_dict)
+	return out
 
 
 # Indicate whether any blocks in the level are currently

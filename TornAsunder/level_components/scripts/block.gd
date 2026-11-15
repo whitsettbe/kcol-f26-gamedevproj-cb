@@ -1,6 +1,15 @@
 class_name Block
 extends GridArea2D
 
+@onready var sfx_block_push: AudioStreamPlayer = $sfx_block_push
+@onready var sfx_eblock_push: AudioStreamPlayer = $sfx_eblock_push
+@onready var sfx_roll: AudioStreamPlayer = $sfx_roll
+@onready var sfx_eroll: AudioStreamPlayer = $sfx_eroll
+@onready var sfx_footstep: AudioStreamPlayer = $sfx_footstep
+@onready var sfx_wipe_paint: AudioStreamPlayer = $sfx_wipe_paint
+@onready var sfx_fill_hole: AudioStreamPlayer = $sfx_fill_hole
+
+
 
 const inputs = {
 	# mapping pressable actions to translation directions
@@ -102,8 +111,8 @@ func move_if_possible(dir_vect : Vector2) -> bool:
 	var successors = get_all_successors(dir_vect, blockColor)
 
 	# DEBUG
-	print(Time.get_ticks_usec(), ' us: ', self,
-			' moving into ', successors)
+	#print(Time.get_ticks_usec(), ' us: ', self,
+	#		' moving into ', successors)
 	
 	# If some unmovable successor was found, don't move
 	if null in successors:
@@ -177,8 +186,10 @@ func get_all_successors(
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	if collider != null:
-		immediate.push_back(collider 
-				if collider is Block else null)
+		# Skip players pushing players
+		if not (self is Player and collider is Player):
+			immediate.push_back(collider 
+					if collider is Block else null)
 	
 	# Add successors of later blocks
 	for successor in immediate:
@@ -244,8 +255,10 @@ func move_single(
 		last_move_time = now
 	
 	
-	$SpriteTile.position -= dir_vect
+	$SpriteTile.shift_back(dir_vect)
 	position += dir_vect
+	
+	play_block_sfx()
 	
 	# If a rolling block, try to move again
 	if rolling:
@@ -285,6 +298,9 @@ func fill_hole():
 		# disabling of block physics)
 		dead = true
 
+		# Play fill hole sfx
+		get_tree().create_tween().tween_callback(
+			sfx_fill_hole.play).set_delay(PUSH_DURATION)
 
 # Replace the current tile with just floor
 # if it is paint, leaving this block unaffected.
@@ -293,3 +309,23 @@ func check_for_paint():
 		# Replace the floor tile, delaying a visual change
 		#  until the push is over
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
+		sfx_wipe_paint.play()
+		
+# Plays appropriate sound effect when a block moves. 
+func play_block_sfx():
+	# Player
+	if (self.blockType == BlockType.PLAYER):
+		sfx_footstep.play()
+	# Square block
+	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
+		sfx_block_push.play()
+	# Entangled square block
+	elif (self.blockType == BlockType.ENTANGLED) && (self.rolling == false):
+		sfx_eblock_push.play()
+	# Rolling block
+	elif(self.rolling == true && !self.blockType == BlockType.ENTANGLED):
+		sfx_roll.play()
+	# Entangled rolling block
+	elif (self.rolling == true):
+		sfx_eroll.play()
+	
