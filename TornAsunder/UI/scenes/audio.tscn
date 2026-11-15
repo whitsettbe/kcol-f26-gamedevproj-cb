@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byvj0dtiq0e3v"]
 
 [ext_resource type="Script" uid="uid://jr3ebejgwesq" path="res://UI/scripts/audio.gd" id="1_6n3bj"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
 
 [node name="Audio" type="Node2D" unique_id=2082160121]
 script = ExtResource("1_6n3bj")

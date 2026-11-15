@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkfychypjd3f"]
 
 [ext_resource type="Script" uid="uid://dwxmmwq4vvpdo" path="res://UI/scripts/ruins_navigator.gd" id="1_r8620"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_5h517"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_5h517"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="3_uumw1"]
 
 [node name="Ruins Navigator" type="Node2D" unique_id=1750589878]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn3ph6jfq01xw"]
 
 [ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://UI/scripts/layer_navigator.gd" id="1_hwvb6"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_8dti4"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_8dti4"]
 [ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://UI/scenes/caves_navigator.tscn" id="3_nmdk5"]
 [ext_resource type="PackedScene" uid="uid://cmtde1klxwn3u" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
 [ext_resource type="PackedScene" uid="uid://dkfychypjd3f" path="res://UI/scenes/ruins_navigator.tscn" id="5_nqh8f"]

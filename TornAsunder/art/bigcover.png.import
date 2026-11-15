@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsekbinnjf7k"
-path="res://.godot/imported/LevelNavigatorConceptButtonless.png-31ddb64576be3cee1955c06480bce67b.ctex"
+uid="uid://cjnrk1axdf0oe"
+path="res://.godot/imported/bigcover.png-6c84549e3035a53a960d2217430cfdae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LevelNavigatorConceptButtonless.png"
-dest_files=["res://.godot/imported/LevelNavigatorConceptButtonless.png-31ddb64576be3cee1955c06480bce67b.ctex"]
+source_file="res://art/bigcover.png"
+dest_files=["res://.godot/imported/bigcover.png-6c84549e3035a53a960d2217430cfdae.ctex"]
 
 [params]
 
