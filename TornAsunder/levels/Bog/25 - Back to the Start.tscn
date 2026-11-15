@@ -1,101 +1,103 @@
 [gd_scene format=4 uid="uid://cxaiyym73nk2u"]
 
-[ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_3dsdf"]
-[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://all_tiles.tres" id="1_dkwxx"]
-[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_kwvxx"]
-[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_15uq3"]
-[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="4_nt0vj"]
-[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_kwvxx"]
-[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="7_g4qwi"]
+[ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_xynme"]
+[ext_resource type="TileSet" uid="uid://hugiu72j6udd" path="res://sprites/bog_tiles.tres" id="2_xynme"]
+[ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_l8d16"]
+[ext_resource type="PackedScene" uid="uid://docdtip3clf4" path="res://level_components/scenes/portal_out.tscn" id="4_ajsm1"]
+[ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="5_8jrjo"]
+[ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="6_w54w4"]
+[ext_resource type="Script" uid="uid://cql1obqj20n4f" path="res://level_components/scripts/entangled.gd" id="7_qry7k"]
 
 [node name="PjBackToTheStart" type="Node2D" unique_id=618452502]
-script = ExtResource("1_3dsdf")
+script = ExtResource("1_xynme")
+layer = 2
+is_final = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1618678142]
 tile_map_data = PackedByteArray("AAACAAkAAAACAAYAAAADAAIAAAACAAYAAAADAAkAAAABAAcAAAAEAAIAAAABAAcAAAAEAAkAAAAFAAYAAAAEAAoAAAAFAAQAAAAFAAIAAAAFAAYAAAAFAAMAAAAFAAQAAAAFAAUAAAAFAAYAAAAFAAYAAAAFAAgAAAAFAAcAAAAFAAkAAAAFAAkAAAAFAAcAAAAFAAoAAAAFAAQAAAAGAAIAAAAFAAYAAAAGAAMAAAAFAAQAAAAGAAUAAAAGAAcAAAAGAAYAAAAEAAUAAAAGAAcAAAAGAAkAAAAGAAkAAAAGAAcAAAAGAAoAAAAGAAQAAAAHAAIAAAAGAAcAAAAHAAMAAAAAAAgAAAAHAAoAAAAAAAcAAAAHAAsAAAAGAAkAAAAIAAMAAAADAAQAAAAIAAoAAAADAAYAAAAJAAkAAAACAAkAAAAOAAkAAAADAAUAAAAPAAMAAAABAAgAAAAPAAoAAAABAAcAAAAQAAIAAAAFAAYAAAAQAAMAAAAFAAQAAAAQAAoAAAAEAAQAAAAQAAsAAAAGAAkAAAARAAIAAAAFAAYAAAARAAMAAAAFAAkAAAARAAUAAAAFAAcAAAARAAYAAAAFAAgAAAARAAcAAAAFAAQAAAARAAkAAAAFAAYAAAARAAoAAAAFAAQAAAASAAIAAAAAAAcAAAASAAMAAAAGAAkAAAASAAUAAAAGAAcAAAASAAYAAAAEAAUAAAASAAcAAAAGAAkAAAASAAkAAAAFAAYAAAASAAoAAAAFAAQAAAATAAIAAAACAAYAAAATAAkAAAAAAAcAAAATAAoAAAAGAAkAAAAUAAIAAAADAAQAAAAUAAkAAAACAAYAAAAVAAkAAAACAAkAAAABAAkAAAAAAAkAAAACAAIAAAABAAQAAAACAAMAAAAAAAUAAAACAAQAAAAAAAUAAAACAAUAAAAAAAUAAAACAAYAAAAAAAUAAAACAAcAAAAAAAUAAAACAAgAAAAAAAUAAAADAAEAAAAAAAQAAAADAAoAAAAEAAkAAAAEAAMAAAAEAAkAAAAEAAUAAAAEAAcAAAAEAAYAAAAGAAUAAAAEAAcAAAAEAAkAAAAFAAgAAAAAAAUAAAAGAAsAAAAEAAkAAAAIAAQAAAAAAAUAAAAIAAUAAAAAAAUAAAAIAAYAAAAAAAUAAAAIAAcAAAAAAAUAAAAIAAgAAAAAAAUAAAAIAAkAAAABAAUAAAANAAkAAAAAAAkAAAAOAAMAAAABAAQAAAAOAAQAAAAAAAUAAAAOAAUAAAAAAAUAAAAOAAYAAAAAAAUAAAAOAAcAAAAAAAUAAAAOAAgAAAAAAAUAAAAOAAoAAAABAAYAAAAPAAIAAAAEAAcAAAAPAAsAAAAEAAkAAAAQAAUAAAAEAAcAAAAQAAYAAAAGAAUAAAAQAAcAAAAEAAkAAAAQAAkAAAAEAAcAAAARAAQAAAAAAAUAAAATAAEAAAAAAAQAAAAUAAMAAAAAAAUAAAAUAAQAAAAAAAUAAAAUAAUAAAAAAAUAAAAUAAYAAAAAAAUAAAAUAAcAAAAAAAUAAAAUAAgAAAAAAAUAAAA=")
-tile_set = ExtResource("1_dkwxx")
+tile_set = ExtResource("2_xynme")
 
-[node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_kwvxx")]
+[node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_l8d16")]
 position = Vector2(112, 48)
 is_exit = true
 
-[node name="EXIT_R" parent="." unique_id=625930087 instance=ExtResource("3_kwvxx")]
+[node name="EXIT_R" parent="." unique_id=625930087 instance=ExtResource("3_l8d16")]
 position = Vector2(624, 48)
 is_exit = true
 
-[node name="PortalIn_left" parent="." unique_id=2075559468 node_paths=PackedStringArray("target") instance=ExtResource("3_kwvxx")]
+[node name="PortalIn_left" parent="." unique_id=2075559468 node_paths=PackedStringArray("target") instance=ExtResource("3_l8d16")]
 position = Vector2(240, 112)
 target = NodePath("../PortalOut_left")
 
-[node name="PortalIn_right" parent="." unique_id=1369425117 node_paths=PackedStringArray("target") instance=ExtResource("3_kwvxx")]
+[node name="PortalIn_right" parent="." unique_id=1369425117 node_paths=PackedStringArray("target") instance=ExtResource("3_l8d16")]
 position = Vector2(496, 112)
 target = NodePath("../PortalOut_right")
 
-[node name="PortalOut_left" parent="." unique_id=20745320 instance=ExtResource("4_nt0vj")]
+[node name="PortalOut_left" parent="." unique_id=20745320 instance=ExtResource("4_ajsm1")]
 position = Vector2(208, 368)
 
-[node name="PortalOut_right" parent="." unique_id=1124647234 instance=ExtResource("4_nt0vj")]
+[node name="PortalOut_right" parent="." unique_id=1124647234 instance=ExtResource("4_ajsm1")]
 position = Vector2(528, 368)
 
 [node name="FloorOverlays" type="TileMapLayer" parent="." unique_id=1371645484]
 tile_map_data = PackedByteArray("AAD/////AAAEAA0AAAD//wAAAAAGAAsAAAD//wEAAAAGAAsAAAD//wIAAAAGAAsAAAD//wMAAAAGAAsAAAD//wQAAAAGAAsAAAD//wUAAAAGAAsAAAD//wYAAAAGAAsAAAD//wcAAAAGAAsAAAD//wgAAAAGAAsAAAD//wkAAAAGAAsAAAD//woAAAAGAAsAAAD//wsAAAAGAAsAAAD//wwAAAAGAAsAAAD//w0AAAAEAA8AAAAAAP//AAAFAAwAAAAAAAAAAAAFAA4AAAAAAAEAAAAFAA4AAAAAAAIAAAAFAA4AAAAAAAMAAAAFAA4AAAAAAAQAAAAFAA4AAAAAAAUAAAAFAA4AAAAAAAYAAAAFAA4AAAAAAAcAAAAFAA4AAAAAAAgAAAAEAAoAAAAAAAkAAAAEAAsAAAAAAAoAAAAEAAwAAAAAAAsAAAAFAA4AAAAAAAwAAAAFAA4AAAAAAA0AAAAFAAoAAAABAP//AAAFAAwAAAABAAAAAAAFAA4AAAABAAEAAAAEAAoAAAABAAIAAAAEAAsAAAABAAMAAAAEAAsAAAABAAQAAAAEAAsAAAABAAUAAAAEAAsAAAABAAYAAAAEAAsAAAABAAcAAAAEAAsAAAABAAgAAAAGAA8AAAABAAoAAAAFAAwAAAABAAsAAAAFAA4AAAABAAwAAAAFAA4AAAABAA0AAAAFAAoAAAACAP//AAAFAAwAAAACAAAAAAAEAAoAAAACAAEAAAAGAA8AAAACAAgAAAAGAAEAAAACAAoAAAAGAA0AAAACAAsAAAAEAAwAAAACAAwAAAAFAA4AAAACAA0AAAAFAAoAAAADAP//AAAFAAwAAAADAAAAAAAFAAoAAAADAAgAAAABAAwAAAADAAsAAAAFAAwAAAADAAwAAAAFAA4AAAADAA0AAAAFAAoAAAAEAP//AAAFAAwAAAAEAAAAAAAGAAoAAAAEAAQAAAACAA8AAAAEAAgAAAACAA8AAAAEAAsAAAAFAAwAAAAEAAwAAAAFAA4AAAAEAA0AAAAFAAoAAAAFAP//AAAFAAwAAAAFAAAAAAAFAA4AAAAFAAEAAAAFAAoAAAAFAAQAAAADAAMAAAAFAAsAAAAGAA0AAAAFAAwAAAAEAAwAAAAFAA0AAAAFAAoAAAAGAP//AAAFAAwAAAAGAAAAAAAFAA4AAAAGAAEAAAAFAAoAAAAGAAQAAAAAAA8AAAAGAAwAAAAFAAwAAAAGAA0AAAAFAAoAAAAHAP//AAAFAAwAAAAHAAAAAAAFAA4AAAAHAAEAAAAFAAoAAAAHAAQAAAADAAoAAAAHAAgAAAADAAsAAAAHAAwAAAAFAAwAAAAHAA0AAAAFAAoAAAAIAP//AAAFAAwAAAAIAAAAAAAFAA4AAAAIAAEAAAAGAAoAAAAIAAwAAAAGAAwAAAAIAA0AAAAFAAoAAAAJAP//AAAFAAwAAAAJAAAAAAAFAA4AAAAJAAEAAAAFAA4AAAAJAAIAAAAGAAoAAAAJAAsAAAAGAAwAAAAJAAwAAAAFAA4AAAAJAA0AAAAFAAoAAAAKAP//AAAFAAwAAAAKAAAAAAAFAA4AAAAKAAEAAAAFAA4AAAAKAAIAAAAFAA4AAAAKAAMAAAAFAA4AAAAKAAQAAAAFAA4AAAAKAAUAAAAFAA4AAAAKAAYAAAAFAA4AAAAKAAcAAAAFAA4AAAAKAAgAAAAGAAoAAAAKAAoAAAAGAAwAAAAKAAsAAAAFAA4AAAAKAAwAAAAFAA4AAAAKAA0AAAAFAAoAAAALAP//AAAFAAwAAAALAAAAAAAFAA4AAAALAAEAAAAFAA4AAAALAAIAAAAFAA4AAAALAAMAAAAFAA4AAAALAAQAAAAFAA4AAAALAAUAAAAFAA4AAAALAAYAAAAFAA4AAAALAAcAAAAFAA4AAAALAAgAAAAFAA4AAAALAAkAAAAFAA4AAAALAAoAAAAFAA4AAAALAAsAAAAFAA4AAAALAAwAAAAFAA4AAAALAA0AAAAFAAoAAAAMAP//AAAFAAwAAAAMAAAAAAAFAA4AAAAMAAEAAAAFAA4AAAAMAAIAAAAFAA4AAAAMAAMAAAAFAA4AAAAMAAQAAAAFAA4AAAAMAAUAAAAFAA4AAAAMAAYAAAAFAA4AAAAMAAcAAAAFAA4AAAAMAAgAAAAEAAoAAAAMAAkAAAAEAAsAAAAMAAoAAAAEAAwAAAAMAAsAAAAFAA4AAAAMAAwAAAAFAA4AAAAMAA0AAAAFAAoAAAANAP//AAAFAAwAAAANAAAAAAAFAA4AAAANAAEAAAAFAA4AAAANAAIAAAAEAAoAAAANAAMAAAAEAAsAAAANAAQAAAAEAAsAAAANAAUAAAAEAAsAAAANAAYAAAAEAAsAAAANAAcAAAAEAAsAAAANAAgAAAAGAA8AAAANAAoAAAAGAA0AAAANAAsAAAAEAAwAAAANAAwAAAAFAA4AAAANAA0AAAAFAAoAAAAOAP//AAAFAAwAAAAOAAAAAAAFAA4AAAAOAAEAAAAEAAoAAAAOAAIAAAAGAA8AAAAOAAsAAAAGAA0AAAAOAAwAAAAEAAwAAAAOAA0AAAAFAAoAAAAPAP//AAAFAAwAAAAPAAAAAAAFAA4AAAAPAAEAAAAFAAoAAAAPAAwAAAAFAAwAAAAPAA0AAAAFAAoAAAAQAP//AAAFAAwAAAAQAAAAAAAFAA4AAAAQAAEAAAAFAAoAAAAQAAQAAAACAA8AAAAQAAgAAAACAA8AAAAQAAwAAAAFAAwAAAAQAA0AAAAFAAoAAAARAP//AAAFAAwAAAARAAAAAAAFAA4AAAARAAEAAAAFAAoAAAARAAQAAAAGAAIAAAARAAgAAAADAAMAAAARAAwAAAAGAAwAAAARAA0AAAAFAAoAAAASAP//AAAFAAwAAAASAAAAAAAEAAoAAAASAAEAAAAGAA8AAAASAAQAAAAAAA8AAAASAAgAAAAAAA8AAAASAAsAAAAFAAwAAAASAAwAAAAFAA4AAAASAA0AAAAFAAoAAAATAP//AAAFAAwAAAATAAAAAAAFAAoAAAATAAQAAAADAAsAAAATAAgAAAADAAwAAAATAAsAAAAFAAwAAAATAAwAAAAFAA4AAAATAA0AAAAFAAoAAAAUAP//AAAFAAwAAAAUAAAAAAAGAAoAAAAUAAgAAAAGAAIAAAAUAAsAAAAGAAwAAAAUAAwAAAAFAA4AAAAUAA0AAAAFAAoAAAAVAP//AAAFAAwAAAAVAAAAAAAFAA4AAAAVAAEAAAAGAAoAAAAVAAgAAAAEAA8AAAAVAAoAAAAFAAwAAAAVAAsAAAAFAA4AAAAVAAwAAAAFAA4AAAAVAA0AAAAFAAoAAAAWAP//AAAFAAwAAAAWAAAAAAAFAA4AAAAWAAEAAAAFAA4AAAAWAAIAAAAFAA4AAAAWAAMAAAAFAA4AAAAWAAQAAAAFAA4AAAAWAAUAAAAFAA4AAAAWAAYAAAAFAA4AAAAWAAcAAAAFAA4AAAAWAAgAAAAGAAoAAAAWAAoAAAAGAAwAAAAWAAsAAAAFAA4AAAAWAAwAAAAFAA4AAAAWAA0AAAAFAAoAAAAXAP//AAAGAA0AAAAXAAAAAAAEAAsAAAAXAAEAAAAEAAsAAAAXAAIAAAAEAAsAAAAXAAMAAAAEAAsAAAAXAAQAAAAEAAsAAAAXAAUAAAAEAAsAAAAXAAYAAAAEAAsAAAAXAAcAAAAEAAsAAAAXAAgAAAAEAAsAAAAXAAkAAAAEAAsAAAAXAAoAAAAEAAsAAAAXAAsAAAAEAAsAAAAXAAwAAAAEAAsAAAAXAA0AAAAGAA8AAAADAAMAAAAAAAoAAAADAAQAAAABAAsAAAADAAUAAAAAAAsAAAADAAYAAAAAAAsAAAADAAcAAAAAAAsAAAAEAAEAAAAEAA8AAAAFAAMAAAAGAAIAAAAGAAgAAAAAAA8AAAAHAAUAAAAAAAsAAAAHAAYAAAAAAAsAAAAHAAcAAAAAAAsAAAAHAAkAAAAAAAwAAAAIAAIAAAAEAA8AAAAIAAsAAAAEAA0AAAAJAAMAAAAGAAsAAAAJAAQAAAAGAAsAAAAJAAUAAAAGAAsAAAAJAAYAAAAGAAsAAAAJAAcAAAAGAAsAAAAJAAgAAAAEAA8AAAAJAAoAAAAEAA0AAAAKAAkAAAAGAAsAAAAPAAQAAAABAAoAAAAPAAUAAAAAAAsAAAAPAAYAAAAAAAsAAAAPAAcAAAAAAAsAAAAPAAgAAAABAAsAAAAPAAkAAAAAAAwAAAARAAMAAAAGAAEAAAARAAsAAAAEAA0AAAATAAMAAAAAAAoAAAATAAUAAAAAAAsAAAATAAYAAAAAAAsAAAATAAcAAAAAAAsAAAAUAAEAAAAEAA8AAAAUAAoAAAAEAA0AAAAVAAIAAAAGAAsAAAAVAAMAAAAGAAsAAAAVAAQAAAAGAAsAAAAVAAUAAAAGAAsAAAAVAAYAAAAGAAsAAAAVAAcAAAAGAAsAAAAWAAkAAAAGAAsAAAA=")
-tile_set = ExtResource("1_dkwxx")
+tile_set = ExtResource("2_xynme")
 
 [node name="FalseOverlays" type="TileMapLayer" parent="." unique_id=1470796601]
-tile_set = ExtResource("1_dkwxx")
+tile_set = ExtResource("2_xynme")
 
-[node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("4_15uq3")]
+[node name="Leonard" parent="." unique_id=1094868734 instance=ExtResource("5_8jrjo")]
 position = Vector2(240, 368)
-script = ExtResource("5_kwvxx")
+script = ExtResource("6_w54w4")
 side = 0
 blockType = 1
 blockColor = 1
 
-[node name="Roy" parent="." unique_id=1902531403 instance=ExtResource("4_15uq3")]
+[node name="Roy" parent="." unique_id=1902531403 instance=ExtResource("5_8jrjo")]
 position = Vector2(496, 368)
-script = ExtResource("5_kwvxx")
+script = ExtResource("6_w54w4")
 side = 1
 blockType = 1
 blockColor = 2
 
-[node name="Block_blue_left" parent="." unique_id=422655848 instance=ExtResource("4_15uq3")]
+[node name="Block_blue_left" parent="." unique_id=422655848 instance=ExtResource("5_8jrjo")]
 position = Vector2(112, 80)
 blockColor = 1
 
-[node name="Block_blue_right" parent="." unique_id=1694234425 instance=ExtResource("4_15uq3")]
+[node name="Block_blue_right" parent="." unique_id=1694234425 instance=ExtResource("5_8jrjo")]
 position = Vector2(656, 304)
 blockColor = 1
 
-[node name="Block_red_left" parent="." unique_id=1367119563 instance=ExtResource("4_15uq3")]
+[node name="Block_red_left" parent="." unique_id=1367119563 instance=ExtResource("5_8jrjo")]
 position = Vector2(624, 80)
 blockColor = 2
 
-[node name="Block_red_right" parent="." unique_id=1484500850 instance=ExtResource("4_15uq3")]
+[node name="Block_red_right" parent="." unique_id=1484500850 instance=ExtResource("5_8jrjo")]
 position = Vector2(80, 304)
 blockColor = 2
 
-[node name="EBlock_right_roll" parent="." unique_id=1611620582 node_paths=PackedStringArray("partner") instance=ExtResource("4_15uq3")]
+[node name="EBlock_right_roll" parent="." unique_id=1611620582 node_paths=PackedStringArray("partner") instance=ExtResource("5_8jrjo")]
 position = Vector2(560, 208)
-script = ExtResource("7_g4qwi")
+script = ExtResource("7_qry7k")
 partner = NodePath("../EBlock_left_roll")
 blockType = 2
 rolling = true
 
-[node name="EBlock_left_roll" parent="." unique_id=1729591116 node_paths=PackedStringArray("partner") instance=ExtResource("4_15uq3")]
+[node name="EBlock_left_roll" parent="." unique_id=1729591116 node_paths=PackedStringArray("partner") instance=ExtResource("5_8jrjo")]
 position = Vector2(176, 208)
-script = ExtResource("7_g4qwi")
+script = ExtResource("7_qry7k")
 partner = NodePath("../EBlock_right_roll")
 blockType = 2
 rolling = true
 
-[node name="EBlock_left" parent="." unique_id=1373533627 node_paths=PackedStringArray("partner") instance=ExtResource("4_15uq3")]
+[node name="EBlock_left" parent="." unique_id=1373533627 node_paths=PackedStringArray("partner") instance=ExtResource("5_8jrjo")]
 position = Vector2(144, 336)
-script = ExtResource("7_g4qwi")
+script = ExtResource("7_qry7k")
 partner = NodePath("../EBlock_right")
 blockType = 2
 
-[node name="EBlock_right" parent="." unique_id=1016736978 node_paths=PackedStringArray("partner") instance=ExtResource("4_15uq3")]
+[node name="EBlock_right" parent="." unique_id=1016736978 node_paths=PackedStringArray("partner") instance=ExtResource("5_8jrjo")]
 position = Vector2(528, 336)
-script = ExtResource("7_g4qwi")
+script = ExtResource("7_qry7k")
 partner = NodePath("../EBlock_left")
 blockType = 2
