@@ -234,7 +234,7 @@
 8. Roy: Push the same entangled block right 2, up 1. Then paint yourself blue and push the entangled rolling block down. Paint yourself red.
 9. Leonard: Push the rolling block left, paint yourself red, and return to the alcove.
 10. Roy: Push the rightmost entangled red block up 1. Paint yourself blue, then go down, left, then up, and into the space with the unentangled blue block.
-11. Leonard: Push the entangled block left 1 and navigate to the exit. Push the other entangled block left 1.
+11. Leonard: Push the entangled block left 1 and navigate towards the exit. Push the other entangled block left 1.
 12. Roy: Push the blue block right into the hole and proceed to the exit.
 13. Leonard: Push the same block right into its previous position and proceed to the exit.
 
