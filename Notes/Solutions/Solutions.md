@@ -116,9 +116,9 @@
 
 ---
 
-**Level Name:** Know Expectations  
-**Authors:** Clara Siefke
-**Intended layer:** Caves 
+**Level Name:** Know Expectations   
+**Authors:** Clara Siefke  
+**Intended layer:** Caves  
 
 1. Roy moves left eight, up two, right two, and down one, moving the first red entangled block down.
 2. Roy moves up one, right two, and down one, moving the second red entangled block down.
@@ -209,11 +209,12 @@
 13. Leonard moves down three and left one, pushing the rolling entangled block into a hole.
 14. Roy moves down three and left two, landing on the exit.
 15. Leonard moves left two, landing on the exit.
-**Level Name:** Acupuncture
-**Authors:** Vivian 
-**Intended layer:** Caves
 
 ---
+
+**Level Name:** Acupuncture
+**Authors:** Vivian 
+**Intended layer:** Bog
 
 1. Leonard: Push the block to your left down, in line with the one below you.
 2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
@@ -227,9 +228,9 @@
 
 ---
 
-**Level Name:** A Fresh Coat
-**Authors:** Vivian 
-**Intended layer:** Bog
+**Level Name:** A Fresh Coat  
+**Authors:** Vivian   
+**Intended layer:** Bog 
 
 1. Leonard: Paint yourself red and push the red block up as far as it will go.
 2. Roy: Push the entangled block to the right as far as it will go.
@@ -241,9 +242,9 @@
 
 ---
 
-**Level Name:** Listening to Paint Dry
-**Authors:** Vivian 
-**Intended layer:** Bog
+**Level Name:** Listening to Paint Dry  
+**Authors:** Vivian  
+**Intended layer:** Bog 
 
 1. Leonard: Push the red block down, push the blue block down, and then walk below it and push it back up.
 2. Roy: Push the red block right 2.
@@ -258,6 +259,21 @@
 11. Leonard: Push the entangled block left 1 and navigate towards the exit. Push the other entangled block left 1.
 12. Roy: Push the blue block right into the hole and proceed to the exit.
 13. Leonard: Push the same block right into its previous position and proceed to the exit.
+
+
+---
+
+**Level Name:** Back to the Start  
+**Authors:** Phoebe  
+**Intended layer:** Bog  
+
+1. Roy: Push entangled colorless block 1 space up
+2. Leonard: Push entangled colorless block two spaces to the right, then walk into the middle chamber. 
+3. Roy: Push entangled colorless block into the hole and enter the middle chamber. 
+4. Roy: Walk into the upper chamber, changing color to blue. 
+5. Leonard: push rolling block into the hole, then enter the upper chamber, changing color to red. 
+6. Both: teleport back to the start. 
+7. Both: Push blocks out of the way and walk towards your corresponding exit, crossing over paint to be able to push the second block. 
 
 
 ---
@@ -296,9 +312,9 @@
 
 ---
 
-**Level Name:** Magic Eraser
-**Authors:** Vivian 
-**Intended layer:** Bog
+**Level Name:** Magic Eraser  
+**Authors:** Vivian   
+**Intended layer:** Bog 
 
 1. Leonard: Push the lower blue block to the left, into the hole, and push the upper one up 2 and to the right.
 2. Leonard: Paint yourself red and push the entangled block downwards and left on top of the higher blue paint.
