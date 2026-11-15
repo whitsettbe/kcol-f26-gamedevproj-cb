@@ -20,7 +20,9 @@ const LEVEL_CHANGE_DUR = 1.0 # seconds
 
 var level_fading = false # indicate whether a fade is in progress
 
-
+@onready var caves_playlist: AudioStreamPlayer = $caves_playlist
+@onready var ruins_playlist: AudioStreamPlayer = $ruins_playlist
+@onready var bog_playlist: AudioStreamPlayer = $bog_playlist
 @onready var sfx_restart: AudioStreamPlayer = $sfx_restart
 @onready var sfx_undo: AudioStreamPlayer = $sfx_undo
 
@@ -45,9 +47,9 @@ func load_level(idx : int) -> void:
 	level_scene_stack = []
 	level_scene_stack_times = []
 	compute_level_transform()
-	print(current_layer)
+	#DEBUG: print(current_layer)
 	check_for_layer_change(Globals.level_scene.layer)
-	print(current_layer)
+	#DEBUG: print(current_layer)
 # Connect the level scene's signals to scripts in this file
 func connect_level_signals() -> void:
 	Globals.level_scene.connect("level_completed",
@@ -218,10 +220,31 @@ func compute_level_transform() -> void:
 	$LevelFrame/Bottom.position = \
 			Vector2(0, viewport_size.y - open_bottom)
 
+#Checks to see if layers have changed between
+#levels. If they have, then the Playlist of music corrosponding 
+#to the approproate layer plays. 
 
+#Note: Currently, this function is called when you use the level
+#navigator to go to a level in the layer you are already in, 
+#this is less than ideal but works good enough for now. 
 func check_for_layer_change(newLayer) -> void:
 	if (newLayer != current_layer):
-		#change playlist
+		
+		#stop previous playlist
+		caves_playlist.stop()
+		ruins_playlist.stop()
+		bog_playlist.stop()
+		
+		#play correct playlist
+		if (newLayer == 0):
+			caves_playlist.play()
+		if (newLayer == 1):
+			ruins_playlist.play()
+		if(newLayer == 2):
+			bog_playlist.play()
+		
+		#update layer
 		current_layer = newLayer
-		print("Layer Change")
+		
+		#DEBUG: print("Layer Change")
 		

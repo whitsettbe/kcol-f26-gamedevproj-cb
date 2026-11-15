@@ -29,6 +29,8 @@ stream_count = 2
 stream_0 = ExtResource("6_uyyhw")
 stream_1 = ExtResource("7_uydqu")
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_8bs6t"]
+
 [node name="Multilevel" type="Node2D" unique_id=1547019737]
 script = ExtResource("1_wvn4e")
 
@@ -86,9 +88,11 @@ color = Color(0, 0, 0, 1)
 [node name="caves_playlist" type="AudioStreamPlayer" parent="." unique_id=1913306556]
 stream = SubResource("AudioStreamPlaylist_hlb1k")
 volume_db = -4.204
-autoplay = true
 bus = &"Music"
 script = ExtResource("8_jxyuu")
 
 [node name="ruins_playlist" type="AudioStreamPlayer" parent="." unique_id=1315990646]
 stream = ExtResource("9_uig46")
+
+[node name="bog_playlist" type="AudioStreamPlayer" parent="." unique_id=1973466169]
+stream = SubResource("AudioStreamPlaylist_8bs6t")
