@@ -76,6 +76,7 @@ func _on_area_exited(area: Area2D) -> void:
 	
 	if is_exit:
 		players_exiting -= 1
-		#reset the bool so if the player steps on the exit again, 
-		#the sound effect can play again.
+		
+		# Reset the bool so if the player steps on the exit again, 
+		#  the sound effect can play again.
 		has_exit_buzz_sfx_played = false

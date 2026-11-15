@@ -297,7 +297,8 @@ func fill_hole():
 		# (triggers fade-out by the SpriteTile and
 		# disabling of block physics)
 		dead = true
-		#play fill hole sfx
+
+		# Play fill hole sfx
 		get_tree().create_tween().tween_callback(
 			sfx_fill_hole.play).set_delay(PUSH_DURATION)
 
@@ -310,21 +311,21 @@ func check_for_paint():
 		set_tile(TILE_IDS["floor"], PUSH_DURATION)
 		sfx_wipe_paint.play()
 		
-#Plays appropriate sound effect when a block moves. 
+# Plays appropriate sound effect when a block moves. 
 func play_block_sfx():
-	#player
+	# Player
 	if (self.blockType == BlockType.PLAYER):
 		sfx_footstep.play()
-	#square block
+	# Square block
 	if (self.blockType == BlockType.BLOCK) && (self.rolling == false):
 		sfx_block_push.play()
-	#entangled square block
+	# Entangled square block
 	elif (self.blockType == BlockType.ENTANGLED) && (self.rolling == false):
 		sfx_eblock_push.play()
-	#rolling block
+	# Rolling block
 	elif(self.rolling == true && !self.blockType == BlockType.ENTANGLED):
 		sfx_roll.play()
-	#entangled rolling block
+	# Entangled rolling block
 	elif (self.rolling == true):
 		sfx_eroll.play()
 	

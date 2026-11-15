@@ -4,9 +4,10 @@ extends Node2D
 #  and the times when states were pushed to it
 var level_scene_stack = []
 var level_scene_stack_times = [] # seconds
-var current_layer #the current layer the level being played is. 
-				  # used to keep track of layer changes, so 
-				  #the playlist can change too. 
+var current_layer
+	# The current layer the level being played is. 
+	#  Used to keep track of layer changes, so 
+	#  the playlist can change too. 
 const STACK_DELETION_TIME_WINDOW = 0.03 # seconds
 	# indicates how long a stack state is allowed to be removed
 	# before it takes an explicit undo to be dropped
@@ -51,8 +52,9 @@ func load_level(idx : int) -> void:
 	level_scene_stack = []
 	level_scene_stack_times = []
 	compute_level_transform()
-	#check to see if the playlist should be changed,
-	#or if the final level audio should play. 
+	
+	# Check to see if the playlist should be changed,
+	#  or if the final level audio should play. 
 	check_for_layer_change(Globals.level_scene.layer)
 	check_for_final_level()
 
@@ -93,8 +95,10 @@ func _on_level_completed() -> void:
 
 # Fade out the level
 func fadeout() -> void:
-	#play_level_transition SFX
+	
+	# Play_level_transition SFX
 	sfx_level_fade_out.play()
+
 	level_fading = true
 	$TransitionCanvas/Cover.modulate.a = 0
 	var tween = get_tree().create_tween()
@@ -156,14 +160,16 @@ func _on_state_undo_requested() -> void:
 		level_scene_stack_times.pop_back()
 		call_deferred("add_child", Globals.level_scene)
 		connect_level_signals()
-		#undo sfx
+		
+		# Undo sfx
 		sfx_undo.play()
 		
 # Reset the current level
 func _on_level_reset_requested() -> void:
 	Globals.level_scene.queue_free()
 	load_level(Globals.level_idx)
-	#restart sfx
+	
+	# Restart sfx
 	sfx_restart.play()
 
 # Translate and scale the level to center it on the screen
@@ -230,22 +236,23 @@ func compute_level_transform() -> void:
 	$LevelFrame/Bottom.position = \
 			Vector2(0, viewport_size.y - open_bottom)
 
-#Checks to see if layers have changed between
-#levels. If they have, then the Playlist of music corrosponding 
-#to the approproate layer plays. 
 
-#Note: Currently, this function is called when you use the level
-#navigator to go to a level in the layer you are already in, 
-#this is less than ideal but works good enough for now. 
+# Checks to see if layers have changed between
+#  levels. If they have, then the Playlist of music corrosponding 
+#  to the approproate layer plays.
+#  
+#  NOTE: Currently, this function is called when you use the level
+#  navigator to go to a level in the layer you are already in, 
+#  this is less than ideal but works good enough for now. 
 func check_for_layer_change(newLayer) -> void:
 	if (newLayer != current_layer):
 		
-		#stop previous playlist
+		# Stop previous playlist
 		caves_playlist.stop()
 		ruins_playlist.stop()
 		bog_playlist.stop()
 		
-		#play correct playlist
+		# Play correct playlist
 		if (newLayer == 0):
 			caves_playlist.play()
 		if (newLayer == 1):
@@ -253,19 +260,19 @@ func check_for_layer_change(newLayer) -> void:
 		if(newLayer == 2):
 			bog_playlist.play()
 		
-		#update layer
+		# Update layer
 		current_layer = newLayer
 
-#checks to see if the level is the final level,
-#if so, play the finale music.
+# Checks to see if the level is the final level,
+#  If so, play the finale music.
 func check_for_final_level()-> void:
 		if(Globals.level_scene.is_final == true):
 			
-			#stop music currently playing
+			# Stop music currently playing
 			caves_playlist.stop()
 			ruins_playlist.stop()
 			bog_playlist.stop()
 			
-			#play false reverie
+			# Play false reverie
 			false_reverie.play()
 		
