@@ -53,7 +53,7 @@ func check_for_paint():
 		# Request a sprite update from the parent scene
 		get_parent().align_single_block_design(self)
 		
-		#play paint squishh SFX
+		#play paint squish SFX
 		sfx_squish_paint.play()
 		
 

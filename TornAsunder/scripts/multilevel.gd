@@ -257,11 +257,11 @@ func check_for_layer_change(newLayer) -> void:
 		current_layer = newLayer
 
 #checks to see if the level is the final level,
-#if so, play the finalie music.
+#if so, play the finale music.
 func check_for_final_level()-> void:
 		if(Globals.level_scene.is_final == true):
 			
-			#stop music currenlty playing
+			#stop music currently playing
 			caves_playlist.stop()
 			ruins_playlist.stop()
 			bog_playlist.stop()
