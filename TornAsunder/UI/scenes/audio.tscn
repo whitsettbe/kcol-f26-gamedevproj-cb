@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jr3ebejgwesq" path="res://UI/scripts/audio.gd" id="1_6n3bj"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+[ext_resource type="PackedScene" uid="uid://bgiykgandeg1s" path="res://UI/scenes/volume_slider.tscn" id="3_dsgt3"]
 
 [node name="Audio" type="Node2D" unique_id=2082160121]
 script = ExtResource("1_6n3bj")
@@ -21,6 +22,36 @@ offset_bottom = 640.0
 [node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1853731434]
 layout_mode = 2
 alignment = 1
+
+[node name="Master Volume" type="Label" parent="PanelContainer/Button_manager" unique_id=771175153]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master Slider" parent="PanelContainer/Button_manager" unique_id=1100189886 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music Volume" type="Label" parent="PanelContainer/Button_manager" unique_id=1346411971]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Slider" parent="PanelContainer/Button_manager" unique_id=348178138 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Sound Effect Volume" type="Label" parent="PanelContainer/Button_manager" unique_id=210345723]
+layout_mode = 2
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound Effect Slider" parent="PanelContainer/Button_manager" unique_id=473648538 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "SFX"
 
 [node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=475274310]
 layout_mode = 2
