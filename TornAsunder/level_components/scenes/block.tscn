@@ -158,55 +158,61 @@ collision_enabled = false
 
 [node name="sfx_block_push" type="AudioStreamPlayer" parent="." unique_id=1094610803]
 stream = SubResource("AudioStreamRandomizer_8bs6t")
+volume_db = 9.0
 max_polyphony = 2
 bus = &"SFX"
 
 [node name="sfx_eblock_push" type="AudioStreamPlayer" parent="." unique_id=416626239]
 stream = SubResource("AudioStreamRandomizer_hlb1k")
-volume_db = -7.243
+volume_db = 7.0
 max_polyphony = 2
 bus = &"SFX"
 
 [node name="sfx_roll" type="AudioStreamPlayer" parent="." unique_id=1577871173]
 stream = SubResource("AudioStreamRandomizer_ec57p")
+volume_db = 7.0
 max_polyphony = 3
 bus = &"SFX"
 
 [node name="sfx_eroll" type="AudioStreamPlayer" parent="." unique_id=1708896506]
 stream = SubResource("AudioStreamRandomizer_6yt5s")
+volume_db = 7.0
 max_polyphony = 2
 bus = &"SFX"
 
 [node name="sfx_footstep" type="AudioStreamPlayer" parent="." unique_id=164321373]
 stream = SubResource("AudioStreamRandomizer_sc3p2")
-volume_db = 8.0
+volume_db = 18.0
 max_polyphony = 5
 bus = &"SFX"
 
 [node name="sfx_fill_hole" type="AudioStreamPlayer" parent="." unique_id=2102893740]
 stream = SubResource("AudioStreamRandomizer_x1vbr")
+volume_db = 6.0
 max_polyphony = 5
 bus = &"SFX"
 
 [node name="sfx_bump" type="AudioStreamPlayer" parent="." unique_id=1109554374]
 stream = SubResource("AudioStreamRandomizer_jv1ff")
-volume_db = -6.0
+volume_db = 7.0
 max_polyphony = 4
 bus = &"SFX"
 
 [node name="sfx_squish_paint" type="AudioStreamPlayer" parent="." unique_id=713436021]
 stream = SubResource("AudioStreamRandomizer_a61iq")
-volume_db = -3.0
+volume_db = 6.0
 max_polyphony = 2
 bus = &"SFX"
 
 [node name="sfx_wipe_paint" type="AudioStreamPlayer" parent="." unique_id=866994960]
 stream = SubResource("AudioStreamRandomizer_n4wmb")
+volume_db = 5.0
 max_polyphony = 3
 bus = &"SFX"
 
 [node name="sfx_fall_player" type="AudioStreamPlayer" parent="." unique_id=1737326278]
 stream = SubResource("AudioStreamRandomizer_ddddk")
+volume_db = 6.0
 pitch_scale = 0.7
 max_polyphony = 3
 bus = &"SFX"

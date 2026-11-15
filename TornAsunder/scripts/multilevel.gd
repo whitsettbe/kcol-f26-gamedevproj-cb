@@ -26,6 +26,9 @@ var level_fading = false # indicate whether a fade is in progress
 @onready var false_reverie: AudioStreamPlayer = $false_reverie
 @onready var sfx_restart: AudioStreamPlayer = $sfx_restart
 @onready var sfx_undo: AudioStreamPlayer = $sfx_undo
+@onready var sfx_level_fade_out: AudioStreamPlayer = $sfx_level_fade_out
+@onready var sfx_level_fade_in: AudioStreamPlayer = $sfx_level_fade_in
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -70,6 +73,7 @@ func connect_level_signals() -> void:
 # When a level ends, delete it and load the next one,
 #  or quit if there is none (temporary behavior)
 func _on_level_completed() -> void:
+
 	# If there is already a fade happening,
 	#  don't advance a second time
 	if not fade_is_complete():
@@ -89,6 +93,8 @@ func _on_level_completed() -> void:
 
 # Fade out the level
 func fadeout() -> void:
+	#play_level_transition SFX
+	sfx_level_fade_out.play()
 	level_fading = true
 	$TransitionCanvas/Cover.modulate.a = 0
 	var tween = get_tree().create_tween()
@@ -99,6 +105,7 @@ func fadeout() -> void:
 
 # Fade into the level
 func fadein() -> void:
+	sfx_level_fade_in.play()
 	$TransitionCanvas/Cover.modulate.a = 1
 	var tween = get_tree().create_tween()
 	tween.tween_property($TransitionCanvas/Cover, "modulate:a",

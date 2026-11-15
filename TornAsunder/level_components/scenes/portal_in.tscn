@@ -35,11 +35,12 @@ tile_set = ExtResource("1_566q2")
 
 [node name="sfx_teleport" type="AudioStreamPlayer" parent="." unique_id=663824238]
 stream = SubResource("AudioStreamRandomizer_sf8h5")
-volume_db = -4.0
+volume_db = 8.0
 max_polyphony = 2
 
 [node name="sfx_exit_buzz" type="AudioStreamPlayer" parent="." unique_id=454412255]
 stream = SubResource("AudioStreamRandomizer_hlb1k")
+volume_db = 5.0
 max_polyphony = 2
 bus = &"SFX"
 
