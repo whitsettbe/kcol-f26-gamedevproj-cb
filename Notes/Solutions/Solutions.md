@@ -280,8 +280,8 @@
 **Intended layer:** Bog
 
 1. Leonard: Push the lower blue block to the left, into the hole, and push the upper one up 2 and to the right.
-2. Leonard: Paint yourself red and push the entangled block downwards and left ontop of the higher blue paint.
-3. Roy: Push the unentangled block into the hole and push the entanged block down 2.
+2. Leonard: Paint yourself red and push the entangled block downwards and left on top of the higher blue paint.
+3. Roy: Push the unentangled block down straight into the hole and push the entanged block down 2.
 4. Roy: Paint yourself blue.
 5. Leonard: Push the entangled block to the left as far as it will go and then up as far as it will go.
 6. Roy: Push the blue block one space to the right.
