@@ -18,5 +18,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Scrolling_Elements.position.y -= delta * scroll_speed
-	if $Scrolling_Elements.position.y < -text_height:
+	if $Scrolling_Elements.position.y < -text_height \
+			or Input.is_action_pressed("skip_request"):
 		level_completed.emit()

@@ -66,6 +66,8 @@ func load_level(idx : int) -> void:
 	# Hide HUD etc. if on a cut scene
 	for ui_element in [$PauseCanvas, $LevelFrame, $HUD]:
 		ui_element.visible = (Globals.level_scene is Level)
+	for ui_element in [$CutHUD]:
+		ui_element.visible = (Globals.level_scene is CutScene)
 
 
 # Connect the level scene's signals to scripts in this file
