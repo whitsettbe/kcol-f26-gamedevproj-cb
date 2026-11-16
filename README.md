@@ -52,3 +52,60 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 ## License
 
 - [LICENSE file - TBD]
+
+## Credits
+
+### **Music**
+
+“8 Bit Adventure” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green/8-bit-adventure-1/
+
+“8 Bit Ancient Ruins” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/orange-season-4/8-bit-ancient-ruins/
+
+“Beyond Time” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/beyond-time/
+
+“Decision” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/decision/
+
+“False Reverie” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/false-reverie/
+
+“Hope and Love” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/hope-and-love/
+
+“Inner Conflict” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/inner-conflict-1/
+
+“Introductory World” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green-1/introductory-world-1/
+
+“Jungle Video Game Level” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/green-season-3/jungle-video-game-level/
+
+“Not In Vain” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/not-in-vain/ 
+
+“Video Game Snowy Night” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green-1/video-game-snowy-night-1/ 
+
+> **All music by Kirk Osamaso is licensed under CC BY 4.0, Attribution 4.0 International License: 
+https://creativecommons.org/licenses/by/4.0/
+https://freemusicarchive.org/music/kirk-osamayo**
+
+
+> **All Music by Kirk Osamayo has been modified for this game using Reaper: 
+https://www.reaper.fm/** 
+
+> **All music courtesy of Free Music Archive
+https://freemusicarchive.org/** 
+
+
+### **Sound Effects**
+
+> **All sound effects were sourced from Freesound.org https://freesound.org/ under CC0 1.0 Universal License: 
+https://creativecommons.org/publicdomain/zero/1.0/ Or were recorded by our team.**
+
+> All sound effects were modified for this game using Reaper.
+https://www.reaper.fm/ 
