@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmtde1klxwn3u"]
 
 [ext_resource type="Script" uid="uid://cetruuv5p2wh8" path="res://UI/scripts/playground_navigator.gd" id="1_ag88b"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="1_ivfs6"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="1_ivfs6"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="3_yfdwp"]
 
 [node name="playground_navigator" type="Node2D" unique_id=534790582]
