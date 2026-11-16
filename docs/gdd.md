@@ -6,7 +6,7 @@
 
 ## 1. Game Concept
 
-**Working Title: Torn Asunder**  
+**Title: Torn Asunder**  
 
 **Genre: Sokoban**  
 
@@ -97,71 +97,54 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 ---
 
-## 6. Visual & Audio Style
+## 6. Visual Style
 
 **Art Style Reference: small size pixel art**
 
 **Color Palette:**
 
-The color palette for the environment will be a two tone palette, with one main hue with value variations. The second hue will serve as a highlight. The players and level objects will have their own palette (fixed throughout the game) to contrast with their environment and make levels more readable.
+Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornasunder.gpl`.
 
-Mock-ups are being done with the palette below, called "Darkworld Palette", by Solitaire on lospec.com
-
-https://lospec.com/palette-list/darkworld
-
-```
-0	0	0	000000
-36	1	66	240142
-41	5	115	290573
-74	28	184	4a1cb8
-115	18	252	7312fc
-160	101	227	a065e3
-207	132	240	cf84f0
-227	178	252	e3b2fc
-253	205	134	fdcd86
-```
-
-**Music/Audio Resources:**
-
-https://www.bfxr.net
-https://sfbgames.itch.io/chiptone
-https://yurisizov.itch.io/boscaceoil-blue
 ---
 
 ## 7. User Interface
 
-**HUD Elements: progress tracking**
+**HUD Elements:**
 
 At top of screen:
  - Current Layer
+ - Universal controls
  - Current Level/Levels in Layer
 
-**Menus (main, pause, inventory, etc.):**
+At bottom of screen:
+ - Left player controls
+ - Right player controls
+
+**Menus:**
 
 - Pause Menu
     - Resume
-    - Hint
     - Level Navigator
-        - Layer 3
-            - Level n
-            - ...
-            - Level 2
+        - Caves
             - Level 1
-        - Layer 2
-            - Level m
             - ...
-            - Level 2
-            - Level 1
-        - Layer 1
-            - Level p
+            - Level 10
+        - Ruins
+            - Level 11
             - ...
-            - Level 2
-            - Level 1
+            - Level 20
+        - Bog
+            - Level 21
+            - ...
+            - Level 30
+        - Back
     - Settings
         - Audio
+            - Master Volume
             - Music Volume
             - Sound Effect Volume
-    - Title Screen
+        - Back
+    - Exit to Title Screen
 
 - Title Screen
     - Continue
@@ -171,8 +154,11 @@ At top of screen:
 
 **Accessibility Features:**
 
-- Block colors and shapes will be designed in a color-blind-friendly manner.
-- Hints will be available.
+- Block are designed to be distinguished by shape, texture, and color (using a color-blind-friendly color palette).
+- Players may press shift to undo their most recent actions or press space to restart the level.
+- Players may adjust the music volume and sound effect volume separately in the settings.
+- A solutions guide is available if players get stuck.
+- Levels progress is unlocked, so players can also skip levels if they get stuck.
 
 ---
 
@@ -182,8 +168,11 @@ At top of screen:
 
 **Programming Language: GDScript**
 
-**Tools for Assets (art, sound, etc.): (TBD)**
-
+**Tools for Assets (art, sound, etc.):**
+Visual
+- Aseprite https://aseprite.org/
+- Google Draw
+    
 Audio
 - All sound effects and music were edited using Reaper: https://www.reaper.fm/
 - All Music was sourced from Free Music Archive: https://freemusicarchive.org/home

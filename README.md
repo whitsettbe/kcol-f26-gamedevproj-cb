@@ -15,11 +15,15 @@ A freak plane crash has buried the two halves of Leroy's body alive in separate 
 
 In each level, One player will play as Leonard, and the other as Roy. They will solve puzzles collaboratively by pushing blocks in the two halves of a maze, with the goal of advancing from designated entrance to a designated exit. When both players reach their exits, they will mutually advance to a new level. Once Leonard and Roy have advanced through all three layers of puzzles of increasing difficulty, they will be unified once again.
 
-This game is recommended to people who enjoy collaborative puzzle solving, and couch- co op style games. 
+This game is recommended to people who enjoy collaborative puzzle solving, and couch co-op style games. 
 
 ## Screenshots
 
-[Optional but strongly recommended. Include 1-3 screenshots or GIFs showing the game in action. This makes the README visually engaging.]
+![Caves Level: Co-op 101](screenshots/co-op_101.png)
+
+![Ruins Level: Not My Block](screenshots/not_my_block.png)
+
+![Bog Level: A Fresh Coat](screenshots/a_fresh_coat.png)
 
 ## How to Play
 
@@ -43,7 +47,7 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 - **Engine:** Godot 4.x
 - **Language:** GDScript
-- **Art Style:** [e.g., Small-size pixel art using the Darkworld Palette]
+- **Art Style:** Small size pixel art, using a 54 color palette made for Torn Asunder.
 
 ## Design Documents
 
@@ -51,7 +55,7 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 ## License
 
-- [License](LICENSE.txt)
+- [LICENSE file](LICENSE.txt)
 
 ## Credits
 
@@ -95,7 +99,7 @@ https://creativecommons.org/licenses/by/4.0/
 https://freemusicarchive.org/music/kirk-osamayo**
 
 
-> **All Music by Kirk Osamayo has been modified for this game using Reaper: 
+> **All music by Kirk Osamayo has been modified for this game using Reaper: 
 https://www.reaper.fm/** 
 
 > **All music courtesy of Free Music Archive
@@ -105,7 +109,7 @@ https://freemusicarchive.org/**
 ### **Sound Effects**
 
 > **All sound effects were sourced from Freesound.org https://freesound.org/ under CC0 1.0 Universal License: 
-https://creativecommons.org/publicdomain/zero/1.0/ Or were recorded by our team.**
+https://creativecommons.org/publicdomain/zero/1.0/ or were recorded by our team.**
 
 > All sound effects were modified for this game using Reaper.
 https://www.reaper.fm/ 
