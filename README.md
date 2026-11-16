@@ -19,7 +19,11 @@ This game is recommended to people who enjoy collaborative puzzle solving.
 
 ## Screenshots
 
-[Optional but strongly recommended. Include 1-3 screenshots or GIFs showing the game in action. This makes the README visually engaging.]
+![Caves Level: Co-op 101](screenshots/co-op_101.png)
+
+![Ruins Level: Not My Block](screenshots/not_my_block.png)
+
+![Bog Level: A Fresh Coat](screenshots/a_fresh_coat.png)
 
 ## How to Play
 
