@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byvj0dtiq0e3v"]
 
 [ext_resource type="Script" uid="uid://jr3ebejgwesq" path="res://UI/scripts/audio.gd" id="1_6n3bj"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_86jf4"]
 [ext_resource type="PackedScene" uid="uid://bgiykgandeg1s" path="res://UI/scenes/volume_slider.tscn" id="3_dsgt3"]
 
@@ -28,6 +28,7 @@ alignment = 1
 
 [node name="Master Volume" type="Label" parent="Button_manager" unique_id=771175153]
 layout_mode = 2
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_86jf4")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
@@ -40,6 +41,7 @@ bus_name = "Master"
 
 [node name="Music Volume" type="Label" parent="Button_manager" unique_id=1346411971]
 layout_mode = 2
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_86jf4")
 theme_override_font_sizes/font_size = 32
 text = "Music Volume"
@@ -52,6 +54,7 @@ bus_name = "Music"
 
 [node name="Sound Effect Volume" type="Label" parent="Button_manager" unique_id=210345723]
 layout_mode = 2
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_86jf4")
 theme_override_font_sizes/font_size = 32
 text = "Sound Effect Volume"
@@ -64,6 +67,7 @@ bus_name = "SFX"
 
 [node name="Back" type="Button" parent="Button_manager" unique_id=475274310]
 layout_mode = 2
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_86jf4")
 theme_override_font_sizes/font_size = 32
 text = "Back"
