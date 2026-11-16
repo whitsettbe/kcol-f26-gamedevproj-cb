@@ -1,6 +1,6 @@
 # Torn Asunder
 
-In this couch-co-op block-pushing puzzle game, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.
+### In this couch-co-op block-pushing puzzle game, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.
 
 ## Play the Game
 
@@ -13,9 +13,9 @@ To run the game locally:
 
 A freak plane crash has buried the two halves of Leroy's body alive in separate dimensions. Much as the two halves, Leonard and Roy, are linked, so too are the twisted mazes they find themselves trapped in. Leroy's halves must use the links between their worlds to help each other escape. Though torn asunder, they may yet reunite as one.
 
-In each level, Leonard and Roy will walk around and push blocks in the two halves of a maze, each advancing from designated entrance to a designated exit. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
+In each level, One player will play as Leonard, and the other as Roy. They will solve puzzles collaboratively by pushing blocks in the two halves of a maze, with the goal of advancing from designated entrance to a designated exit. When both players reach their exits, they will mutually advance to a new level. Once Leonard and Roy have advanced through all three layers of puzzles of increasing difficulty, they will be unified once again.
 
-This game is recommended to people who enjoy collaborative puzzle solving.
+This game is recommended to people who enjoy collaborative puzzle solving, and couch- co op style games. 
 
 ## Screenshots
 
@@ -51,7 +51,7 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 ## License
 
-- [LICENSE file - TBD]
+- [License](LICENSE.txt)
 
 ## Credits
 
