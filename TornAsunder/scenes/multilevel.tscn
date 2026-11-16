@@ -137,6 +137,8 @@ bus = &"Music"
 stream = SubResource("AudioStreamRandomizer_jv1ff")
 volume_db = 3.0
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="sfx_level_fade_in" type="AudioStreamPlayer" parent="." unique_id=1574168766]
 stream = ExtResource("19_fjrja")
+bus = &"SFX"

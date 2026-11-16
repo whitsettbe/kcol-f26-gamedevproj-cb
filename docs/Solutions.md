@@ -152,6 +152,23 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Ladders  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: push the first entangled block down.
+2. Leonard: push the next entangled block down.
+3. Roy: push the next entangled block down.
+4. Leonard: push the last entangled block in the column down.
+5. Roy: push the bottommost row of entangled blocks right once.
+6. Leonard: push the second row of entangled blocks right once.
+7. Roy: push the third row of entangled blocks left once.
+8. Leonard: push the top row of entangled blocks left once.
+9. Roy: walk to the exit.
+10. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Jump Around  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
@@ -182,6 +199,43 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Halberd
+**Authors:** Clara Siefke  
+**Intended layer:** Ruins  
+
+1. Leonard moves up one and left two, pushing the first blue entangled block into a hole.
+2. Roy moves up one, left seven, and up two, pushing the first red entangled block into a hole.
+3. Leonard moves down one, left five, up nine, right nine, down three, and left one, pushing a generic block.
+4. Leonard moves right one, up three, left nine, down six, and right two, going through the first portal.
+5. Roy moves down two, right four, up five, left two, and up two, pushing the second red entangled block into a hole.
+6. Leonard moves right one, pushing the second blue entangled block into a hole.
+7. Roy moves up one, right seven, down six, left one, and down one, pushing the third red entangled block onto a portal destination.
+8. Leonard moves down one, right one, down three, and left two, landing on the portal.
+9. Roy moves up one and left one, landing on the portal.
+
+---
+
+**Level Name:** Flip Flop  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Leonard: move up x5, left x2.
+2. Leonard: move up, down.
+3. Leonard: move left x2, up x2, down, right, down x2, left.
+4. Leonard: repeat step 2.
+5. Leonard: move left x2, up, left x2, up x2, down, right x2, down, right, down x2, left.
+6. Leonard: repeat steps 2-4.
+7. Leonard: move left x2, up, left x2, up, left x2, up x2, down, right x2, down, right x2, down, right, down x2, left.
+8. Leonard: repeat steps 2-5.
+9. Leonard: repeat steps 2-3.
+10. Roy: move left x2.
+11. Roy: do Leonard's steps 2-7.
+12. Roy: do Leonard's steps 2-5.
+13. Roy: do Leonard's step 2.
+14. Both: walk to the exit.
+
+---
+
 **Level Name:** Rolling  
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
@@ -191,6 +245,44 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 3. Roy moves right two, up five, left two, down two, and left one to fill the second hole for Leonard.
 4. Leonard moves up two, left nine, and up five, landing on the exit portal.
 5. Roy moves right one, up two, right two, up two, and left nine, landing on the exit portal.
+
+---
+
+**Level Name:** Ooze Maker
+**Authors:** Clara Siefke
+**Intended layer:** Bog  
+
+1. Leonard moves right nine and down one.
+2. Roy moves down one and right two, pushing the rolling block to Leonard.
+3. Leonard moves down eight and left one.
+4. Roy moves up one, right six, and down one, pushing the rolling block to Leonard.
+5. Leonard moves left eight and up one.
+6. Roy moves right one, down seven, and left one, pushing the rolling block to Leonard.
+7. Leonard moves up five and right four, pushing the entangled block.
+8. Roy moves up seven, left three, and down three, pushing the entangled block into a hole.
+9. Leonard moves right two.
+10. Roy moves up one, left five, down six, right one, and up one, pushing the rolling entangled block.
+11. Roy moves left one, up five, and right one, pushing the rolling entangled block to Leonard.
+12. Roy moves down five, right seven, up seven, left three, and down two, psuhing the rolling entangled block.
+13. Leonard moves down three and left one, pushing the rolling entangled block into a hole.
+14. Roy moves down three and left two, landing on the exit.
+15. Leonard moves left two, landing on the exit.
+
+---
+
+**Level Name:** Acupuncture
+**Authors:** Vivian 
+**Intended layer:** Bog
+
+1. Leonard: Push the block to your left down, in line with the one below you.
+2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
+3. Leonard: Push the two blocks to the left until both have filled holes.
+4. Roy: Push the entangled block into the path that you came through where it fills a hole for Leonard and becomes a wall.
+5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
+6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one up 1, right 2, up 2, and right 3.
+7. Roy: Push the entangled block down until it fills the hole.
+8. Leonard: Navigate to the exit.
+9. Roy: Push the first block left into a hole and the second down into a hole and navigate to the exit.
 
 ---
 
@@ -225,6 +317,21 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 11. Leonard: Push the entangled block left 1 and navigate towards the exit. Push the other entangled block left 1.
 12. Roy: Push the blue block right into the hole and proceed to the exit.
 13. Leonard: Push the same block right into its previous position and proceed to the exit.
+
+
+---
+
+**Level Name:** Back to the Start  
+**Authors:** Phoebe  
+**Intended layer:** Bog  
+
+1. Roy: Push entangled colorless block 1 space up
+2. Leonard: Push entangled colorless block two spaces to the right, then walk into the middle chamber. 
+3. Roy: Push entangled colorless block into the hole and enter the middle chamber. 
+4. Roy: Walk into the upper chamber, changing color to blue. 
+5. Leonard: push rolling block into the hole, then enter the upper chamber, changing color to red. 
+6. Both: teleport back to the start. 
+7. Both: Push blocks out of the way and walk towards your corresponding exit, crossing over paint to be able to push the second block. 
 
 
 ---
