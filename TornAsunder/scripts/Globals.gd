@@ -29,7 +29,9 @@ var level_paths = [
 	"res://levels/Bog/27 - Not-So-Speedy Delivery.tscn",
 	"res://levels/Bog/28 - Acupuncture.tscn",
 	"res://levels/Bog/29 - Magic Eraser.tscn",
-	"res://levels/Bog/30 - Leroy.tscn"
+	"res://levels/Bog/30 - Leroy.tscn",
+	"res://cut-scenes/final.tscn",
+	"res://cut-scenes/credits.tscn",
 	]
 var level_paths_reduced = [] # Keep a list skipping cut scenes
 	

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cp7j8e4r4r1ok"]
+
+[ext_resource type="Script" uid="uid://cvlmlib0voj8t" path="res://cut-scenes/cut-scene.gd" id="1_knkmu"]
+
+[node name="Credits" type="Node2D" unique_id=385759495]
+script = ExtResource("1_knkmu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=835922579]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scrolling_Elements" type="VBoxContainer" parent="." unique_id=1001904933]
+offset_right = 1152.0
+offset_bottom = 49.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
+layout_mode = 2
+text = "LABEL:
+Entry
+Entry2"
+horizontal_alignment = 1
