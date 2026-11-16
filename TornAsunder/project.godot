@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="TornAsunder"
+config/name="Torn Asunder"
 run/main_scene="uid://b340cpsu2kk05"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://cjnrk1axdf0oe"
+config/icon="uid://cjnrk1axdf0oe"
+boot_splash/minimum_display_time=5000
 
 [audio]
 
