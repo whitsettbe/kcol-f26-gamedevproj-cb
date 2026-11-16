@@ -1,12 +1,11 @@
 # Game Design Document (GDD)
-### Team's Project Template
 
-**Team: Computer Business**
-**Authors: Calvin Nyeholt, Clara Siefke, Phoebe Tozer, Benjamin Whitsett**
+### **Team:** Computer Business   
+### **Authors:** Calvin Nyeholt, Clara Siefke, Phoebe Tozer, Benjamin Whitsett
 
 ## 1. Game Concept
 
-**Working Title: Torn Asunder**  
+**Title: Torn Asunder**  
 
 **Genre: Sokoban**  
 
@@ -21,7 +20,7 @@
 
 ## 2. Core Loop
 
-The two players will respectively move around the maze and push blocks. The effect of these actions will be advancement of players from a designated entrance to a designated exit, or them falling into holes and needing to restart the level or undo their most recent actions. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
+The two players will move around the maze and push blocks in their respective maze. The effect of these actions will be advancement of players from a designated entrance to a designated exit, or them falling into holes and needing to restart the level or undo their most recent actions. Each time both players reach the exits, they will mutually advance to a new level. Once the characters have passed through all levels in the maze, they will be unified once again.
 
 ---
 
@@ -55,7 +54,7 @@ The primary reward system will be intrinsic in nature: the progress from level t
 
 **Feedback:**
 
-Audio-visual cues during the level will be neutral in nature, as the same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
+All major actions the player can take will have audio and visual feedback.    Audio-visual cues during the level will be neutral in nature, reinforcing the action taken by the player. The same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
 
 ---
 
@@ -81,7 +80,7 @@ Naturally, Leonard and Roy do not want to be buried alive and in separate dimens
 
 This is a cooperative escape game where both halves of our hero have been trapped against their will in a series of elaborate mazes. Teamwork, communication, and collaboration between the two players will be necessary to complete levels and progress towards freedom. Only if they are able to think as one will the two halves of our hero be able to escape the tunnels and re-unite.
 
-The setting is an interdimensional series of tunnels, with certain entangled blocks existing in two dimensions at once. The world is full of interdimensional magic, which causes different objects to behave in strange ways. 
+The setting is an interdimensional series of mazes, with certain entangled blocks existing in two dimensions at once. The world is full of interdimensional magic, which causes different objects to behave in strange ways. 
 
 **Level Structure:**
 
@@ -89,7 +88,7 @@ The game will have a linear structure, with an embedded narrative. There will on
 
 **Tutorial/Onboarding:**
 
-Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include colored blocks and portals. The third will introduce rolling blocks (blocks that keep moving after being pushed) and paint, which changes player colors. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
+Mechanics will gradually be revealed to players throughout the game, with players learning the nature of the mechanics by trial and error. Levels will be grouped into three *layers*, each of which has a dedicated list of available mechanics for level design. The first layer will introduce players to movement, block pushing, entangled blocks, and holes. The second will include colored blocks and portals. The third will introduce rolling blocks and paint. Mechanics and the ways they can be made to interact will be revealed gradually throughout each layer.
 
 **Progression:**
 
@@ -123,9 +122,11 @@ https://lospec.com/palette-list/darkworld
 
 **Music/Audio Resources:**
 
-https://www.bfxr.net
-https://sfbgames.itch.io/chiptone
-https://yurisizov.itch.io/boscaceoil-blue
+> https://www.bfxr.net  
+https://sfbgames.itch.io/chiptone  
+https://yurisizov.itch.io/boscaceoil-blue  
+https://freesound.org/  
+https://freemusicarchive.org/home/   
 ---
 
 ## 7. User Interface
@@ -136,7 +137,7 @@ At top of screen:
  - Current Layer
  - Current Level/Levels in Layer
 
-**Menus (main, pause, inventory, etc.):**
+**Menus:**
 
 - Pause Menu
     - Resume
@@ -159,6 +160,7 @@ At top of screen:
             - Level 1
     - Settings
         - Audio
+            - Master Volume
             - Music Volume
             - Sound Effect Volume
     - Title Screen
@@ -172,21 +174,26 @@ At top of screen:
 **Accessibility Features:**
 
 - Block colors and shapes will be designed in a color-blind-friendly manner.
-- Hints will be available.
+- Hints will be available, and players will always be able to skip levels. 
+- All audio is in Mono.
+- All Audio can be adjusted on sliders in the audio settings menu.
 
 ---
 
 ## 8. Technical Requirements
 
-**Engine: Godot**
+**Engine:** Godot
 
-**Programming Language: GDScript**
+**Programming Language:** GDScript
 
-**Tools for Assets (art, sound, etc.): (TBD)**
+**Tools for Assets:**
 
-Audio
+#### Audio
 - All sound effects and music were edited using Reaper: https://www.reaper.fm/
 - All Music was sourced from Free Music Archive: https://freemusicarchive.org/home
 - All Sound effects were either sourced from Freesound: https://freesound.org/ , or recorded by our team.
 
-**Deployment Platform: Web for Desktop (tested in Chrome and Firefox)**
+All project source files for the assets in the game can be found under src\assets
+
+#### **Deployment Platform:**
+Web for Desktop (tested in Chrome and Firefox)
