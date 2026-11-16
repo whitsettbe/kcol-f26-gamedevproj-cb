@@ -43,7 +43,7 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 - **Engine:** Godot 4.x
 - **Language:** GDScript
-- **Art Style:** [e.g., Small-size pixel art using the Darkworld Palette]
+- **Art Style:** Small size pixel art, using a 54 color palette made for Torn Asunder.
 
 ## Design Documents
 
