@@ -16,24 +16,23 @@ offset_bottom = 648.0
 texture = ExtResource("3_6wm04")
 expand_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=538472348]
-offset_right = 1152.0
-offset_bottom = 640.0
-
-[node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=2146537553]
-layout_mode = 2
+[node name="Button_manager" type="VBoxContainer" parent="." unique_id=2146537553]
+offset_left = 512.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 384.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Audio" type="Button" parent="PanelContainer/Button_manager" unique_id=142189831]
+[node name="Audio" type="Button" parent="Button_manager" unique_id=142189831]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_qt4fy")
 theme_override_font_sizes/font_size = 32
 text = "Audio"
 
-[node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=1359650625]
+[node name="Back" type="Button" parent="Button_manager" unique_id=1359650625]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_qt4fy")
 theme_override_font_sizes/font_size = 32
@@ -42,5 +41,5 @@ text = "Back"
 [node name="Audio" parent="." unique_id=2082160121 instance=ExtResource("2_r6d6q")]
 visible = false
 
-[connection signal="pressed" from="PanelContainer/Button_manager/Audio" to="Audio" method="open"]
-[connection signal="pressed" from="PanelContainer/Button_manager/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button_manager/Audio" to="Audio" method="open"]
+[connection signal="pressed" from="Button_manager/Back" to="." method="_on_back_pressed"]
