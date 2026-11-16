@@ -35,6 +35,7 @@ func create_buttons():
 					.bind(levels[i].replace(".remap", "")))
 			buttons[i].add_theme_font_override("font", load("res://Fonts/Minecraft.ttf"))
 			buttons[i].add_theme_font_size_override("font_size", 24)
+			buttons[i].add_theme_constant_override("outline_size", 16)
 			add_child(buttons[i])
 
 # Goes to level corresponding to button pressed
