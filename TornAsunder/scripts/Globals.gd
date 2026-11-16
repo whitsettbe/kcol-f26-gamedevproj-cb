@@ -1,6 +1,7 @@
 extends Node
 
 var level_paths = [
+	"res://cut-scenes/intro.tscn",
 	#"res://levels/Playgrounds/playground0.tscn",
 	#"res://levels/Playgrounds/playground1.tscn",
 	#"res://levels/Playgrounds/playground2.tscn",
@@ -30,6 +31,7 @@ var level_paths = [
 	"res://levels/Bog/29 - Magic Eraser.tscn",
 	"res://levels/Bog/30 - Leroy.tscn"
 	]
+var level_paths_reduced = [] # Keep a list skipping cut scenes
 	
 var level_idx = 0
 
@@ -44,8 +46,22 @@ func _ready() -> void:
 	for path in level_paths:
 		assert(ResourceLoader.exists(path),
 			"Path \"{0}\" not found.".format([path]))
+		if is_level_object_path(path):
+			level_paths_reduced.append(path)
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+# Indicate if a scene corresponds to an actual level
+#  (loads the scene when checking)
+func is_level_object_path(scene_path):
+	var scene : PackedScene = load(scene_path) 
+	var instance := scene.instantiate()
+	var out = (instance is Level)
+	instance.free()
+	return out
+	
