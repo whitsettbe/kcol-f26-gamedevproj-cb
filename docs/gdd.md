@@ -96,7 +96,7 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 ---
 
-## 6. Visual & Audio Style
+## 6. Visual Style
 
 **Art Style Reference: small size pixel art**
 
@@ -131,39 +131,38 @@ https://freemusicarchive.org/home/
 
 ## 7. User Interface
 
-**HUD Elements: progress tracking**
+**HUD Elements:**
 
 At top of screen:
  - Current Layer
+ - Universal controls
  - Current Level/Levels in Layer
 
 **Menus:**
 
 - Pause Menu
     - Resume
-    - Hint
     - Level Navigator
-        - Layer 3
-            - Level n
-            - ...
-            - Level 2
+        - Caves
             - Level 1
-        - Layer 2
-            - Level m
             - ...
-            - Level 2
-            - Level 1
-        - Layer 1
-            - Level p
+            - Level 10
+        - Ruins
+            - Level 11
             - ...
-            - Level 2
-            - Level 1
+            - Level 20
+        - Bog
+            - Level 21
+            - ...
+            - Level 30
+        - Back
     - Settings
         - Audio
             - Master Volume
             - Music Volume
             - Sound Effect Volume
-    - Title Screen
+        - Back
+    - Exit to Title Screen
 
 - Title Screen
     - Continue
@@ -173,10 +172,11 @@ At top of screen:
 
 **Accessibility Features:**
 
-- Block colors and shapes will be designed in a color-blind-friendly manner.
-- Hints will be available, and players will always be able to skip levels. 
-- All audio is in Mono.
-- All Audio can be adjusted on sliders in the audio settings menu.
+- Block are designed to be distinguished by shape, texture, and color (using a color-blind-friendly color palette).
+- Players may press shift to undo their most recent actions or press space to restart the level.
+- Players may adjust the music volume and sound effect volume separately in the settings.
+- A solutions guide is available if players get stuck.
+- Levels progress is unlocked, so players can also skip levels if they get stuck.
 
 ---
 
@@ -186,9 +186,12 @@ At top of screen:
 
 **Programming Language:** GDScript
 
-**Tools for Assets:**
-
-#### Audio
+**Tools for Assets (art, sound, etc.):**
+Visual
+- Aseprite https://aseprite.org/
+- Google Draw
+    
+Audio
 - All sound effects and music were edited using Reaper: https://www.reaper.fm/
 - All Music was sourced from Free Music Archive: https://freemusicarchive.org/home
 - All Sound effects were either sourced from Freesound: https://freesound.org/ , or recorded by our team.
