@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dl3jgwwaem1m2"]
 
 [ext_resource type="Script" uid="uid://d2sii1nleum0m" path="res://levels/level_block_manager.gd" id="1_qat6o"]
-[ext_resource type="TileSet" uid="uid://cog8fixeioj4v" path="res://sprites/cave_tiles.tres" id="2_8h6tc"]
+[ext_resource type="TileSet" uid="uid://hugiu72j6udd" path="res://sprites/bog_tiles.tres" id="2_8h6tc"]
 [ext_resource type="PackedScene" uid="uid://cuba4r5drblv1" path="res://level_components/scenes/portal_in.tscn" id="3_o7igf"]
 [ext_resource type="PackedScene" uid="uid://bmgltflbc15gb" path="res://level_components/scenes/block.tscn" id="4_aaboc"]
 [ext_resource type="Script" uid="uid://dhm1jiir4y22f" path="res://level_components/scripts/player.gd" id="5_aftwd"]
@@ -10,6 +10,7 @@
 [node name="22 - Ooze Maker" type="Node2D" unique_id=443176109]
 position = Vector2(1, 0)
 script = ExtResource("1_qat6o")
+layer = 2
 is_final = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1455588640]
