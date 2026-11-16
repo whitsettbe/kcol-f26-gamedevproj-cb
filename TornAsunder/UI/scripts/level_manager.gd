@@ -28,9 +28,11 @@ func create_buttons():
 		levels = DirAccess.get_files_at(layer_path)
 		for i in range(len(levels)):
 			buttons.append(Button.new())
-			buttons[i].text = levels[i].replace(".tscn", "")
+			buttons[i].text = levels[i].replace(".tscn", "") \
+					.replace(".remap", "")
 			print(buttons[i].text)
-			buttons[i].pressed.connect(Callable(self, "_on_button_pressed").bind(levels[i]))
+			buttons[i].pressed.connect(Callable(self, "_on_button_pressed") \
+					.bind(levels[i].replace(".remap", "")))
 			buttons[i].add_theme_font_override("font", load("res://Fonts/Minecraft.ttf"))
 			buttons[i].add_theme_font_size_override("font_size", 24)
 			add_child(buttons[i])
