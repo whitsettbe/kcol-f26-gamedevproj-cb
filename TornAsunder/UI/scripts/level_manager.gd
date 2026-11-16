@@ -32,7 +32,7 @@ func create_buttons():
 			print(buttons[i].text)
 			buttons[i].pressed.connect(Callable(self, "_on_button_pressed").bind(levels[i]))
 			buttons[i].add_theme_font_override("font", load("res://Fonts/Minecraft.ttf"))
-			buttons[i].add_theme_font_size_override("font_size", 32)
+			buttons[i].add_theme_font_size_override("font_size", 24)
 			add_child(buttons[i])
 
 # Goes to level corresponding to button pressed

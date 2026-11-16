@@ -30,7 +30,7 @@ script = ExtResource("3_uumw1")
 [node name="Back" type="Button" parent="PlaygroundVbox" unique_id=1409495963]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_e5s1r")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [connection signal="pressed" from="PlaygroundVbox/Back" to="." method="_on_back_pressed"]
