@@ -11,9 +11,9 @@
 
 **Platform: Web (Desktop)**  
 
-**Elevator Pitch: In a couch-co-op Sokoban, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.** 
+**Elevator Pitch:** In a couch-co-op Sokoban, your character has been TORN ASUNDER. Two players escape through parallel worlds, interacting through "entangled blocks" that, when pushed, move in *both* universes.
 
-**Target Audience: People who enjoy collaborative puzzle solving.** 
+**Target Audience:** People who enjoy collaborative puzzle solving. 
 
 
 ---
@@ -177,6 +177,7 @@ At top of screen:
 - Players may adjust the music volume and sound effect volume separately in the settings.
 - A solutions guide is available if players get stuck.
 - Levels progress is unlocked, so players can also skip levels if they get stuck.
+
 
 ---
 
