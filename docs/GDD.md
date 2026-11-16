@@ -102,7 +102,7 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 **Color Palette:**
 
-Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornassunder.gpl`.
+Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornasunder.gpl`.
 
 ---
 
