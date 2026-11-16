@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://byvj0dtiq0e3v"]
 
 [ext_resource type="Script" uid="uid://jr3ebejgwesq" path="res://UI/scripts/audio.gd" id="1_6n3bj"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://LevelNavigatorConceptButtonless.png" id="2_bwtr5"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_86jf4"]
+[ext_resource type="PackedScene" uid="uid://bgiykgandeg1s" path="res://UI/scenes/volume_slider.tscn" id="3_dsgt3"]
 
 [node name="Audio" type="Node2D" unique_id=2082160121]
 script = ExtResource("1_6n3bj")
@@ -14,16 +16,56 @@ offset_bottom = 648.0
 texture = ExtResource("2_bwtr5")
 expand_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=824639251]
-offset_right = 1152.0
-offset_bottom = 640.0
-
-[node name="Button_manager" type="VBoxContainer" parent="PanelContainer" unique_id=1853731434]
-layout_mode = 2
+[node name="Button_manager" type="VBoxContainer" parent="." unique_id=1853731434]
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 512.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Back" type="Button" parent="PanelContainer/Button_manager" unique_id=475274310]
+[node name="Master Volume" type="Label" parent="Button_manager" unique_id=771175153]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_86jf4")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master Slider" parent="Button_manager" unique_id=1100189886 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music Volume" type="Label" parent="Button_manager" unique_id=1346411971]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_86jf4")
+theme_override_font_sizes/font_size = 32
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Slider" parent="Button_manager" unique_id=348178138 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Sound Effect Volume" type="Label" parent="Button_manager" unique_id=210345723]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_86jf4")
+theme_override_font_sizes/font_size = 32
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound Effect Slider" parent="Button_manager" unique_id=473648538 instance=ExtResource("3_dsgt3")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Back" type="Button" parent="Button_manager" unique_id=475274310]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_86jf4")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
-[connection signal="pressed" from="PanelContainer/Button_manager/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button_manager/Back" to="." method="_on_back_pressed"]

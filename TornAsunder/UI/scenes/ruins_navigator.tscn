@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwxmmwq4vvpdo" path="res://UI/scripts/ruins_navigator.gd" id="1_r8620"]
 [ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_5h517"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="3_uumw1"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="4_e5s1r"]
 
 [node name="Ruins Navigator" type="Node2D" unique_id=1750589878]
 script = ExtResource("1_r8620")
@@ -15,17 +16,21 @@ offset_bottom = 648.0
 texture = ExtResource("2_5h517")
 expand_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1595294376]
-offset_right = 1152.0
-offset_bottom = 640.0
-
-[node name="PlaygroundVbox" type="VBoxContainer" parent="PanelContainer" unique_id=1719549633]
-layout_mode = 2
+[node name="PlaygroundVbox" type="VBoxContainer" parent="." unique_id=1719549633]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 576.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
 alignment = 1
 script = ExtResource("3_uumw1")
 
-[node name="Back" type="Button" parent="PanelContainer/PlaygroundVbox" unique_id=1409495963]
+[node name="Back" type="Button" parent="PlaygroundVbox" unique_id=1409495963]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_e5s1r")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
-[connection signal="pressed" from="PanelContainer/PlaygroundVbox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PlaygroundVbox/Back" to="." method="_on_back_pressed"]
