@@ -17,11 +17,11 @@ tile_map_data = PackedByteArray("AAAIAAYAAAAEAAcAAAAJAAYAAAAFAAYAAAAKAAYAAAAFAAY
 tile_set = ExtResource("2_8h6tc")
 
 [node name="EXIT_L" parent="." unique_id=756625967 instance=ExtResource("3_o7igf")]
-position = Vector2(360, 400)
+position = Vector2(367, 400)
 is_exit = true
 
 [node name="EXIT_R" parent="." unique_id=1762104493 instance=ExtResource("3_o7igf")]
-position = Vector2(776, 400)
+position = Vector2(783, 400)
 is_exit = true
 
 [node name="FloorOverlays" type="TileMapLayer" parent="." unique_id=1084747402]
