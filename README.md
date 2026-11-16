@@ -51,7 +51,7 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 ## License
 
-- [LICENSE file - TBD]
+- [LICENSE file](LICENSE.txt)
 
 ## Credits
 
@@ -95,7 +95,7 @@ https://creativecommons.org/licenses/by/4.0/
 https://freemusicarchive.org/music/kirk-osamayo**
 
 
-> **All Music by Kirk Osamayo has been modified for this game using Reaper: 
+> **All music by Kirk Osamayo has been modified for this game using Reaper: 
 https://www.reaper.fm/** 
 
 > **All music courtesy of Free Music Archive
@@ -105,7 +105,7 @@ https://freemusicarchive.org/**
 ### **Sound Effects**
 
 > **All sound effects were sourced from Freesound.org https://freesound.org/ under CC0 1.0 Universal License: 
-https://creativecommons.org/publicdomain/zero/1.0/ Or were recorded by our team.**
+https://creativecommons.org/publicdomain/zero/1.0/ or were recorded by our team.**
 
 > All sound effects were modified for this game using Reaper.
 https://www.reaper.fm/ 

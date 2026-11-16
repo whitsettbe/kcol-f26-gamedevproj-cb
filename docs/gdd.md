@@ -6,7 +6,7 @@
 
 ## 1. Game Concept
 
-**Working Title: Torn Asunder**  
+**Title: Torn Asunder**  
 
 **Genre: Sokoban**  
 
@@ -97,16 +97,13 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 ---
 
-## 6. Visual & Audio Style
+## 6. Visual Style
 
 **Art Style Reference: small size pixel art**
 
 **Color Palette:**
 
 Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornasunder.gpl`.
-
-**Music/Audio Resources:**
-
 
 ---
 
