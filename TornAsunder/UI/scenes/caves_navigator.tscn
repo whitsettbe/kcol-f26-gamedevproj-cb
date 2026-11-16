@@ -30,7 +30,7 @@ script = ExtResource("2_va5dg")
 [node name="Back" type="Button" parent="CavesVbox" unique_id=731831224]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ai74d")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [connection signal="pressed" from="CavesVbox/Back" to="." method="_on_back_pressed"]
