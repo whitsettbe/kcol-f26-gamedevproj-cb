@@ -27,7 +27,7 @@ Globals="*uid://bm7ytviahvi7u"
 [display]
 
 window/size/viewport_height=640
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor]
 

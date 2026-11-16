@@ -1,3 +1,7 @@
+Note: In the below instructions, block colors are always listed as "blue" and "red," regardless of layer-dependent coloration schemes. "Blue" refers to Leonard's default color, and "red" refers to Roy's default color.
+
+---
+
 **Level Name:** Just Walk  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
@@ -116,7 +120,7 @@
 
 ---
 
-**Level Name:** Know Expectations   
+**Level Name:** Know Expectations  
 **Authors:** Clara Siefke  
 **Intended layer:** Caves  
 
@@ -244,9 +248,31 @@
 
 ---
 
-**Level Name:** Acupuncture  
-**Authors:** Vivian  
-**Intended layer:** Caves 
+**Level Name:** Ooze Maker
+**Authors:** Clara Siefke
+**Intended layer:** Bog  
+
+1. Leonard moves right nine and down one.
+2. Roy moves down one and right two, pushing the rolling block to Leonard.
+3. Leonard moves down eight and left one.
+4. Roy moves up one, right six, and down one, pushing the rolling block to Leonard.
+5. Leonard moves left eight and up one.
+6. Roy moves right one, down seven, and left one, pushing the rolling block to Leonard.
+7. Leonard moves up five and right four, pushing the entangled block.
+8. Roy moves up seven, left three, and down three, pushing the entangled block into a hole.
+9. Leonard moves right two.
+10. Roy moves up one, left five, down six, right one, and up one, pushing the rolling entangled block.
+11. Roy moves left one, up five, and right one, pushing the rolling entangled block to Leonard.
+12. Roy moves down five, right seven, up seven, left three, and down two, psuhing the rolling entangled block.
+13. Leonard moves down three and left one, pushing the rolling entangled block into a hole.
+14. Roy moves down three and left two, landing on the exit.
+15. Leonard moves left two, landing on the exit.
+
+---
+
+**Level Name:** Acupuncture
+**Authors:** Vivian 
+**Intended layer:** Bog
 
 1. Leonard: Push the block to your left down, in line with the one below you.
 2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
@@ -261,8 +287,8 @@
 ---
 
 **Level Name:** A Fresh Coat  
-**Authors:** Vivian   
-**Intended layer:** Bog 
+**Authors:** Vivian  
+**Intended layer:** Bog  
 
 1. Leonard: Paint yourself red and push the red block up as far as it will go.
 2. Roy: Push the entangled block to the right as far as it will go.
@@ -276,7 +302,7 @@
 
 **Level Name:** Listening to Paint Dry  
 **Authors:** Vivian  
-**Intended layer:** Bog 
+**Intended layer:** Bog  
 
 1. Leonard: Push the red block down, push the blue block down, and then walk below it and push it back up.
 2. Roy: Push the red block right 2.
@@ -344,9 +370,25 @@
 
 ---
 
+**Level Name:** Acupuncture  
+**Authors:** Vivian  
+**Intended layer:** Bog  
+
+1. Leonard: Push the block to your left down, in line with the one below you.
+2. Roy: Push the aligned blocks upwards into the holes and push the nearby block left; take the path around to the other side of the level.
+3. Leonard: Push the two blocks to the left until both have filled holes.
+4. Roy: Push the entangled block into the path that you came through where it fills a hole for Leonard and becomes a wall.
+5. Leonard: Push the other block from the first room into the second and use it to fill the hole separating you from the entangled block.
+6. Leonard: Push the rightmost bottom block up into the hole and pass the leftmost one up 1, right 2, up 2, and right 3.
+7. Roy: Push the entangled block down until it fills the hole.
+8. Leonard: Navigate to the exit.
+9. Roy: Push the first block left into a hole and the second down into a hole and navigate to the exit.
+
+---
+
 **Level Name:** Magic Eraser  
-**Authors:** Vivian   
-**Intended layer:** Bog 
+**Authors:** Vivian  
+**Intended layer:** Bog  
 
 1. Leonard: Push the lower blue block to the left, into the hole, and push the upper one up 2 and to the right.
 2. Leonard: Paint yourself red and push the entangled block downwards and left on top of the higher blue paint.
@@ -371,15 +413,3 @@
 4. Roy: follow Leonard's actions from steps 1-3, only pushing blocks leftward into the holes.
 5. Leonard and Roy: walk to the middle and enjoy being Leroy again.
 6. Leonard and Roy: walk to the exit.
-
----
-
-**Level Name:** (name)  
-**Authors:** (authors)  
-**Intended layer:** (layer)  
-
-1. do this
-2. do that
-3. go to the exit
-
----
