@@ -54,7 +54,7 @@ The primary reward system will be intrinsic in nature: the progress from level t
 
 **Feedback:**
 
-All major actions the player can take will have audio and visual feedback. Audio-visual cues during the level will be neutral in nature, reinforcing the action taken by the player. The same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
+All major actions the player can take will have audio and visual feedback. Audio-visual cues during the level will reinforce player actions. However, these cues will not have inherently positive or negative connotations because the same player action may be beneficial in one context and harmful in another; the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
 
 ---
 
