@@ -1,0 +1,1091 @@
+<REAPER_PROJECT 0.1 "7.47/win64" 1794727839
+  <NOTES 0 2
+  >
+  RIPPLE 0 0
+  GROUPOVERRIDE 0 0 0
+  AUTOXFADE 129
+  ENVATTACH 3
+  POOLEDENVATTACH 0
+  TCPUIFLAGS 0
+  MIXERUIFLAGS 11 48
+  ENVFADESZ10 40
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 0
+  GRID 3455 8 1 8 1 0 0 0
+  TIMEMODE 1 5 -1 30 0 0 -1
+  VIDEO_CONFIG 0 0 65792
+  PANMODE 3
+  PANLAWFLAGS 3
+  CURSOR 0
+  ZOOM 3.21218874041402 0 0
+  VZOOMEX 10.69594574 0
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
+  LOOP 0
+  LOOPGRAN 0 4
+  RECORD_PATH "Media" ""
+  <RECORD_CFG
+    ZXZhdxgAAQ==
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE "C:\Users\phoeb\Music\TornAsunderAudio\edited_music\hope_and_love.ogg"
+  RENDER_FMT 0 1 44100
+  RENDER_1X 0
+  RENDER_RANGE 6 0 0 0 1000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 4096
+  RENDER_DITHER 0
+  RENDER_TRIM 0.000001 0.000001 0 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 1
+  DEFPITCHMODE 589824 0
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+    dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==
+  >
+  LOCK 16384
+  <METRONOME 6 2
+    VOL 0.25 0.125
+    BEATLEN 4
+    FREQ 1760 880 1
+    SAMPLES "" "" "" ""
+    SPLIGNORE 0 0
+    SPLDEF 2 660 "" 0 ""
+    SPLDEF 3 440 "" 0 ""
+    PATTERN 0 169
+    PATTERNSTR ABBB
+    MULT 1
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120 4 4 0
+  PLAYRATE 1 0 0.25 4
+  SELECTION 0 0
+  SELECTION2 0 0
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 0 0 0 0 0 0 0 0 0 1
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_PANMODE 3
+  MASTER_PANLAWFLAGS 3
+  MASTER_FX 1
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {6F4C7B3A-84DE-469C-9BBF-E7E348EB546E}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {18A43DD5-ABDA-45AB-8837-6A4672902C11}
+    ACT 0 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  MARKER 1 0 "" 0 0 1 R {398EA98D-B6AC-4C5B-913D-3C842FE121B7} 0
+  <PROJBAY
+  >
+  <TRACK {3D83CBB8-C3BF-40AB-9377-8967A467F1A2}
+    NAME "8 Bit Ancient Ruins"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1.91622308369501 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {3D83CBB8-C3BF-40AB-9377-8967A467F1A2}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 3.50671917285551
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 1
+      IGUID {D4822B0D-312B-4DD8-88A5-92B59EEBB8C4}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 0
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D02D4FEE-53D5-4CEE-BCD0-45C695FC8BDD}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 4.5
+      SNAPOFFS 0
+      LENGTH 2.29846099109083
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 2
+      IGUID {A9479703-589F-415C-A745-0AD79DE11688}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 3.53618740119884
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {143796CD-60DD-4D4F-9AB6-6ACC58F95CA2}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 6.79846099109083
+      SNAPOFFS 0
+      LENGTH 2.19481983605366
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 3
+      IGUID {AB5D881B-3D81-4409-A005-C27E2BF1C392}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 5.85396319053414
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {21B8A61C-7CDC-46D3-8001-6207CF27F39D}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 8.99328082714449
+      SNAPOFFS 0
+      LENGTH 1.99396825396828
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 3
+      IGUID {BFBFD5F9-B379-43B8-AB49-836519F8594F}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 10.09011604641854
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {46ACA4DA-3327-493C-B8AD-8480FAB97DBC}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 10.99931257317621
+      SNAPOFFS 0
+      LENGTH 1.99396825396828
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 3
+      IGUID {CEF65845-4E52-4F26-A215-F86C084AEA36}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 10.09011604641854
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {18C8B30D-742F-4FA5-B9F4-E0E286FDF1AE}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 12.99328082714449
+      SNAPOFFS 0
+      LENGTH 180.00715211640215
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      BEAT 1
+      SEL 0
+      GROUP 3
+      IGUID {4720D0A2-978C-4569-B145-DDD16C83EA5A}
+      IID 1
+      NAME "Kirk Osamayo - 8 Bit Ancient Ruins.mp3"
+      VOLPAN 0.27227 0 1 -1
+      SOFFS 12.10084033613445
+      PLAYRATE 1.00840336134454 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E59B4C1E-696C-4654-A645-3BB82D008EF1}
+      <SOURCE MP3
+        FILE "C:\Users\phoeb\Music\TornAsunderAudio\unedited_music\Kirk Osamayo - 8 Bit Ancient Ruins.mp3" 1
+      >
+    >
+  >
+  <TRACK {72E3A877-B13D-4B58-8C54-33F62EBEBD8C}
+    NAME "Introductory World"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1.3648053125715 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {72E3A877-B13D-4B58-8C54-33F62EBEBD8C}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 23 51 784 424
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 3.4317985299901
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 4
+      IGUID {F3D470A8-7BB0-4396-B9B1-2A7817B29727}
+      IID 7
+      NAME "Kirk Osamayo - Introductory World.mp3"
+      VOLPAN 0.568853 0 1 -1
+      SOFFS 0.00938732553047
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {FBFA9145-2E6A-489A-A576-093B66180FF7}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Introductory World.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 3.43283958818581
+      SNAPOFFS 0
+      LENGTH 3.53441851313435
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1.1 0 0.1012299543671 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 4
+      IGUID {C853D556-B2D0-4441-8CF1-0A1F90137EC0}
+      IID 7
+      NAME "Kirk Osamayo - Introductory World.mp3"
+      VOLPAN 0.568853 0 1 -1
+      SOFFS 0.00104105819571
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {EB37C01A-1B49-4020-83B4-890E5C185A28}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Introductory World.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 6.86602814695306
+      SNAPOFFS 0
+      LENGTH 185.12458452751642
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0 0.1012299543671 1 1 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 4
+      IGUID {B1985709-EB45-4E7D-B3CF-7AA6AC2EBEBD}
+      IID 7
+      NAME "Kirk Osamayo - Introductory World.mp3"
+      VOLPAN 0.568853 0 1 -1
+      SOFFS 6.86374195175256
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {311561F3-818A-45F3-81BD-F840791551F6}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Introductory World.mp3" 1
+      >
+    >
+  >
+  <TRACK {FBA466AE-8321-4C76-8D8B-01B5B199F223}
+    NAME decision
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {FBA466AE-8321-4C76-8D8B-01B5B199F223}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 8.11080322771467
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1.1 0.01 0.11080322771467 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 5
+      IGUID {EEA8C702-E54C-4E30-BD4A-B35B3E69619B}
+      IID 14
+      NAME "Kirk Osamayo - decision.mp3"
+      VOLPAN 0.785236 0 1 -1
+      SOFFS 8.45029478458044
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {39BBC609-9FB9-4CA4-B800-461B66B7530A}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - decision.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 8
+      SNAPOFFS 0
+      LENGTH 8.41473922902501
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 0.11080322771467 1 1 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 5
+      IGUID {E94B6D9D-0820-4AE2-B8EE-900F9A64B7FE}
+      IID 14
+      NAME "Kirk Osamayo - decision.mp3"
+      VOLPAN 0.785236 0 1 -1
+      SOFFS 8
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {9043986B-B58A-444A-96B2-BB399048986C}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - decision.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 16.41473922902501
+      SNAPOFFS 0
+      LENGTH 149.085260770975
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 5
+      IGUID {EEA55223-CF03-4439-A2AC-0A2A771E94DD}
+      IID 14
+      NAME "Kirk Osamayo - decision.mp3"
+      VOLPAN 0.609537 0 1 -1
+      SOFFS 16.41473922902501
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {262BD28B-33F7-4E6A-A7F7-17409DB04409}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - decision.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 165.5
+      SNAPOFFS 0
+      LENGTH 0.03902494331066
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 6
+      IGUID {1AAC62B2-71C6-4116-8ED1-61ECF441D060}
+      IID 14
+      NAME "Kirk Osamayo - decision.mp3"
+      VOLPAN 0.609537 0 1 -1
+      SOFFS 165.5
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {734C2FEB-1B48-4C22-A3E1-B12805F0C3E7}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - decision.mp3" 1
+      >
+    >
+  >
+  <TRACK {5A3B45D9-520F-402F-ADA0-91E7DE725C94}
+    NAME "Kirk Osamayo - Video Game Snowy Night"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {5A3B45D9-520F-402F-ADA0-91E7DE725C94}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 311.38065759637186
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {34FE1C05-91FC-4932-B63A-FBBB49AB89EE}
+      IID 18
+      NAME "Kirk Osamayo - Video Game Snowy Night.mp3"
+      VOLPAN 0.822243 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {658C866E-8909-4B47-B588-3BC33ACF4B0B}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Video Game Snowy Night.mp3" 1
+      >
+    >
+  >
+  <TRACK {775ADA57-9539-4848-8380-4B654FA25B6E}
+    NAME "not in vain"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {775ADA57-9539-4848-8380-4B654FA25B6E}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 4.75265727934177
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1.1 0.01 0.724117310801 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B96FCBDA-A490-42D3-A2B8-83D159F57AAD}
+      IID 19
+      NAME "Kirk Osamayo - not in vain.mp3"
+      VOLPAN 0.699842 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {A527651D-D5E7-4656-A3CE-E4C4A025B51F}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - not in vain.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 4.02853996854077
+      SNAPOFFS 0
+      LENGTH 183.71619504236699
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 0.724117310801 1 1 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {DFBE9E36-DD5F-4D8D-9126-C4982ACE334E}
+      IID 19
+      NAME "Kirk Osamayo - not in vain.mp3"
+      VOLPAN 0.699842 0 1 -1
+      SOFFS 8.78119724788255
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {DF44D06F-667E-4350-81E5-0BCE85B00BDF}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - not in vain.mp3" 1
+      >
+    >
+  >
+  <TRACK {C8FA6400-D86E-45C9-B27B-DA6255A2819B}
+    NAME "video game home"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {C8FA6400-D86E-45C9-B27B-DA6255A2819B}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 176.7455555555556
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B5E0101E-2847-4235-A079-F8151743FEB7}
+      IID 22
+      NAME "Kirk Osamayo - Video Game Home.mp3"
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {F25C0296-23B5-4CD7-884E-90EE0AC32C01}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Video Game Home.mp3" 1
+      >
+    >
+  >
+  <TRACK {CA21B223-5F9C-41EA-8711-A69E1A78DC1E}
+    NAME "inner conflict"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {CA21B223-5F9C-41EA-8711-A69E1A78DC1E}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 5.56476674324553
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.02871080788572 0 1 0 0 0
+      FADEOUT 1.1 0.01 0.07970369033294 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 8
+      IGUID {D270540A-4779-46EB-B1EB-BCB4A12E06C0}
+      IID 23
+      NAME "Kirk Osamayo - inner conflict.mp3"
+      VOLPAN 0.831764 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {9FB1C380-550D-409E-A520-105B4A92DFE9}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - inner conflict.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 5.48506305291258
+      SNAPOFFS 0
+      LENGTH 182.41445719925522
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 0.07970369033294 1 1 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 8
+      IGUID {FBB765E6-BE6F-4C2B-963B-7CAA6DF4044C}
+      IID 23
+      NAME "Kirk Osamayo - inner conflict.mp3"
+      VOLPAN 0.758578 0 1 -1
+      SOFFS 16.58330630087921
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {540DDA7E-10FF-48A0-B604-CEB83E0812A6}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - inner conflict.mp3" 1
+      >
+    >
+  >
+  <TRACK {B4AD893E-C056-4F8E-BC2F-42B647D4782D}
+    NAME 8_bit_adventure
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {B4AD893E-C056-4F8E-BC2F-42B647D4782D}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.59714375905459
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 9
+      IGUID {B6FBD095-0752-4422-9F82-D95DAC9A9C8E}
+      IID 31
+      NAME "Kirk Osamayo - 8 Bit Adventure.mp3"
+      VOLPAN 0.891251 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {56C07DB6-AB17-44AA-95D9-79F7FD3ADFFA}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - 8 Bit Adventure.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 0.59714375905459
+      SNAPOFFS 0
+      LENGTH 1.7502489489531
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1.1 0.01 0.03603453718434 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 9
+      IGUID {17C7912E-2390-46D1-A3CC-4D86CC4D1542}
+      IID 31
+      NAME "Kirk Osamayo - 8 Bit Adventure.mp3"
+      VOLPAN 0.794328 0 1 -1
+      SOFFS 0.59714375905459
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {985BE5C3-43DD-4212-9B68-FCD39C850B4D}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - 8 Bit Adventure.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 2.31135817082335
+      SNAPOFFS 0
+      LENGTH 0.59199596802825
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0 0.03603453718434 1 1 0 0
+      FADEOUT 1.1 0 0.01143330408739 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 9
+      IGUID {2B48D4AE-92B2-4400-AA90-F9F418FFCC50}
+      IID 31
+      NAME "Kirk Osamayo - 8 Bit Adventure.mp3"
+      VOLPAN 0.891251 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {64944A24-09C4-472C-9247-2A26258B0A11}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - 8 Bit Adventure.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 2.89192083476422
+      SNAPOFFS 0
+      LENGTH 145.82409735419512
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0 0.01143330408739 1 1 0 0
+      FADEOUT 1 4.03570604461214 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 9
+      IGUID {BA84419C-2048-4F3C-A036-4888A724C640}
+      IID 31
+      NAME "Kirk Osamayo - 8 Bit Adventure.mp3"
+      VOLPAN 0.431519 0 1 -1
+      SOFFS 3.31002962993189
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {DACB707C-F3C4-46BC-9AA5-D34DFC553A0C}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - 8 Bit Adventure.mp3" 1
+      >
+    >
+  >
+  <TRACK {AB715088-AA07-49C3-870B-5777EA991037}
+    NAME "Kirk Osamayo - Jungle Video Game Level"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {AB715088-AA07-49C3-870B-5777EA991037}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 124.23925041700518
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.05796632024214 0 1 0 0 0
+      FADEOUT 1 0.03995490781404 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {E1B3CB4A-2FAE-4E55-8BDD-AA6030CFE15D}
+      IID 36
+      NAME "Kirk Osamayo - Jungle Video Game Level.mp3"
+      VOLPAN 0.716143 0 1 -1
+      SOFFS 10.26630513855029
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {B39E8A97-F2F7-4412-BA7C-13F0C9131B44}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - Jungle Video Game Level.mp3" 1
+      >
+    >
+  >
+  <TRACK {4537A32D-A72A-45D2-BC2D-3E3E7338BAF7}
+    NAME "Kirk Osamayo - beyond time"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {4537A32D-A72A-45D2-BC2D-3E3E7338BAF7}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 211.05604230407806
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.3732405025143 0 1 0 0 0
+      FADEOUT 1 0.05139083265612 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {7D15B566-1077-4CEE-BC46-46E21215E52A}
+      IID 37
+      NAME "Kirk Osamayo - beyond time.mp3"
+      VOLPAN 1 0 1 -1
+      SOFFS 14.85196223106937
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {566C6037-89F0-4A69-BB1D-FC3688FA87B7}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - beyond time.mp3" 1
+      >
+    >
+  >
+  <TRACK {B8930057-AA97-4427-BB76-16C749B051B8}
+    NAME "false reverie"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {B8930057-AA97-4427-BB76-16C749B051B8}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 7.27415841193168
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1.1 0.01 0.20205995588699 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {79BD21EC-2A7C-4677-86D4-FBCC208E7708}
+      IID 38
+      NAME "Kirk Osamayo - false reverie.mp3"
+      VOLPAN 0.732825 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {C645A977-FE08-49B2-AF20-ED75FDEBB1A6}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - false reverie.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 7.07209845604469
+      SNAPOFFS 0
+      LENGTH 205.26517134101778
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 0.20205995588699 1 1 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {956B0B97-7304-48E0-9F86-69C1B8825621}
+      IID 38
+      NAME "Kirk Osamayo - false reverie.mp3"
+      VOLPAN 0.623735 0 1 -1
+      SOFFS 8.36528217372144
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {72259464-9652-4BEA-955C-BC18A452325E}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - false reverie.mp3" 1
+      >
+    >
+  >
+  <TRACK {91E290A4-2942-458F-8A95-E9A497DA736E}
+    NAME "Kirk Osamayo - hope and love"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {91E290A4-2942-458F-8A95-E9A497DA736E}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 2.5738955131663
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.24247194706439 0 1 0 0 0
+      FADEOUT 1.1 0 0.00514779102633 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 10
+      IGUID {217484FE-1B90-4E42-A7C0-EC4D0DD6A9A6}
+      IID 40
+      NAME "Kirk Osamayo - hope and love.mp3"
+      VOLPAN 0.562341 0 1 -1
+      SOFFS 2.26941207835966
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {FB408778-32CD-480C-B506-20A00C8B2EEE}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - hope and love.mp3" 1
+      >
+    >
+    <ITEM
+      POSITION 2.56874772213997
+      SNAPOFFS 0
+      LENGTH 147.96131637579498
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0 0.00514779102633 1 1 0 0
+      FADEOUT 1 1.18755070185998 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      GROUP 10
+      IGUID {F680AE3C-07D1-4DA2-8E71-4FF26072775E}
+      IID 40
+      NAME "Kirk Osamayo - hope and love.mp3"
+      VOLPAN 0.562341 0 1 -1
+      SOFFS 9.63648407771965
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {3181A1C1-8445-428A-8D12-5723F4AB6B9F}
+      <SOURCE MP3
+        FILE "Media\Kirk Osamayo - hope and love.mp3" 1
+      >
+    >
+  >
+>
