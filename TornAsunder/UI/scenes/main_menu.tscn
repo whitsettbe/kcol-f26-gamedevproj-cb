@@ -37,8 +37,8 @@ offset_right = 768.0
 offset_bottom = 512.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 16
 focus_mode = 1
+theme_override_constants/separation = 16
 alignment = 1
 script = SubResource("GDScript_bqqt6")
 
