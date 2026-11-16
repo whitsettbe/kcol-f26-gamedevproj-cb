@@ -174,6 +174,7 @@ At bottom of screen:
 **Tools for Assets (art, sound, etc.):**
 Visual
 - Aseprite https://aseprite.org/
+- Google Draw
     
 Audio
 - All sound effects and music were edited using Reaper: https://www.reaper.fm/
