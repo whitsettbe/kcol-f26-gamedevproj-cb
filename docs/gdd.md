@@ -103,29 +103,11 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 **Color Palette:**
 
-The color palette for the environment will be a two tone palette, with one main hue with value variations. The second hue will serve as a highlight. The players and level objects will have their own palette (fixed throughout the game) to contrast with their environment and make levels more readable.
-
-Mock-ups are being done with the palette below, called "Darkworld Palette", by Solitaire on lospec.com
-
-https://lospec.com/palette-list/darkworld
-
-```
-0	0	0	000000
-36	1	66	240142
-41	5	115	290573
-74	28	184	4a1cb8
-115	18	252	7312fc
-160	101	227	a065e3
-207	132	240	cf84f0
-227	178	252	e3b2fc
-253	205	134	fdcd86
-```
+Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornasunder.gpl`.
 
 **Music/Audio Resources:**
 
-https://www.bfxr.net
-https://sfbgames.itch.io/chiptone
-https://yurisizov.itch.io/boscaceoil-blue
+
 ---
 
 ## 7. User Interface
@@ -182,6 +164,7 @@ At top of screen:
 
 **Programming Language: GDScript**
 
-**Tools for Assets (art, sound, etc.): (TBD)**
+**Tools for Assets (art, sound, etc.):**
+    Aseprite https://aseprite.org/
 
 **Deployment Platform: Web for Desktop (tested in Chrome and Firefox)**
