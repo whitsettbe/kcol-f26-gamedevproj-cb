@@ -54,7 +54,7 @@ The primary reward system will be intrinsic in nature: the progress from level t
 
 **Feedback:**
 
-All major actions the player can take will have audio and visual feedback.    Audio-visual cues during the level will be neutral in nature, reinforcing the action taken by the player. The same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
+All major actions the player can take will have audio and visual feedback. Audio-visual cues during the level will be neutral in nature, reinforcing the action taken by the player. The same player action may be beneficial in one level and harmful in another, and the task of determining the distinction is left to the players. A "progress" noise will be played between levels. HUD indicators of game completion fraction will also provide feedback to players on the scale of the eventual game course.
 
 ---
 
@@ -102,31 +102,8 @@ We intend to provide a gradual difficulty curve, with an interesting balance of 
 
 **Color Palette:**
 
-The color palette for the environment will be a two tone palette, with one main hue with value variations. The second hue will serve as a highlight. The players and level objects will have their own palette (fixed throughout the game) to contrast with their environment and make levels more readable.
+Torn Asunder uses three twenty-color palettes with a full 54 colors. They are contained in `../src/assets/visual/tornassunder.gpl`.
 
-Mock-ups are being done with the palette below, called "Darkworld Palette", by Solitaire on lospec.com
-
-https://lospec.com/palette-list/darkworld
-
-```
-0	0	0	000000
-36	1	66	240142
-41	5	115	290573
-74	28	184	4a1cb8
-115	18	252	7312fc
-160	101	227	a065e3
-207	132	240	cf84f0
-227	178	252	e3b2fc
-253	205	134	fdcd86
-```
-
-**Music/Audio Resources:**
-
-> https://www.bfxr.net  
-https://sfbgames.itch.io/chiptone  
-https://yurisizov.itch.io/boscaceoil-blue  
-https://freesound.org/  
-https://freemusicarchive.org/home/   
 ---
 
 ## 7. User Interface
@@ -137,6 +114,10 @@ At top of screen:
  - Current Layer
  - Universal controls
  - Current Level/Levels in Layer
+
+At bottom of screen:
+ - Left player controls
+ - Right player controls
 
 **Menus:**
 
@@ -199,5 +180,4 @@ Audio
 
 All project source files for the assets in the game can be found under src\assets
 
-#### **Deployment Platform:**
-Web for Desktop (tested in Chrome and Firefox)
+#### **Deployment Platform:** Web for Desktop (tested in Chrome and Firefox)
