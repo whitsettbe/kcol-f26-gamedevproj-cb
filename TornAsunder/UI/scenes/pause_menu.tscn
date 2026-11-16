@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duwftmqtn2xj8"]
 
 [ext_resource type="Script" uid="uid://coe1ivrq30r0k" path="res://UI/scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="2_atlor"]
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://UI/scenes/layer_navigator.tscn" id="2_myx47"]
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_kukqi"]
 
@@ -16,29 +17,40 @@ script = ExtResource("1_n87rw")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1637213426]
 layout_mode = 0
-offset_left = 376.0
+offset_left = 384.0
 offset_top = 192.0
-offset_right = 760.0
+offset_right = 768.0
 offset_bottom = 448.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=388158766]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=148653766]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_atlor")
+theme_override_font_sizes/font_size = 32
 text = "Resume"
 
 [node name="Levels" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1272091518]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_atlor")
+theme_override_font_sizes/font_size = 32
 text = "Levels"
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1666451631]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_atlor")
+theme_override_font_sizes/font_size = 32
 text = "Settings"
 
 [node name="Title Screen" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1482347671]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_atlor")
+theme_override_font_sizes/font_size = 32
 text = "Exit to Title Screen"
 
 [node name="Layer Navigator" parent="." unique_id=2131716285 instance=ExtResource("2_myx47")]
