@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dywt7a1qcqq5b" path="res://sfx/level_transition/level_fade_out/level_fade_out_2.wav" id="17_fjrja"]
 [ext_resource type="AudioStream" uid="uid://cxe04q6r1boly" path="res://sfx/level_transition/level_fade_out/level_fade_out_3.wav" id="18_iogpy"]
 [ext_resource type="AudioStream" uid="uid://4v7ywsa0laah" path="res://sfx/level_transition/level_fade_in/level_fade_in.wav" id="19_fjrja"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="20_iogpy"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlb1k"]
 random_pitch = 1.0594631
@@ -142,3 +143,37 @@ bus = &"SFX"
 [node name="sfx_level_fade_in" type="AudioStreamPlayer" parent="." unique_id=1574168766]
 stream = ExtResource("19_fjrja")
 bus = &"SFX"
+
+[node name="CutHUD" type="CanvasLayer" parent="." unique_id=236564476]
+
+[node name="LeftInstructions" type="Label" parent="CutHUD" unique_id=1284762678]
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 0.0034722222
+anchor_bottom = 0.1
+offset_left = -96.0
+offset_top = 496.0
+offset_right = 252.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("20_iogpy")
+theme_override_font_sizes/font_size = 20
+text = "Skip: Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RightInstructions" type="Label" parent="CutHUD" unique_id=1787635589]
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 0.0034722222
+anchor_bottom = 0.1
+offset_left = 896.0
+offset_top = 496.0
+offset_right = 1244.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("20_iogpy")
+theme_override_font_sizes/font_size = 20
+text = "Skip: Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
