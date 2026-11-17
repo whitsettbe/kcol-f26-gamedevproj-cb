@@ -51,25 +51,38 @@ func load_level(idx : int) -> void:
 	connect_level_signals()
 	level_scene_stack = []
 	level_scene_stack_times = []
-	compute_level_transform()
 	
-	# Check to see if the playlist should be changed,
-	#  or if the final level audio should play. 
-	check_for_layer_change(Globals.level_scene.layer)
-	check_for_final_level()
+	if Globals.level_scene is Level:
+		# These things don't make sense for cut scenes
+
+		compute_level_transform()
+		
+		# Check to see if the playlist should be changed,
+		#  or if the final level audio should play. 
+		check_for_layer_change(Globals.level_scene.layer)
+		check_for_final_level()
+	
+	
+	# Hide HUD etc. if on a cut scene
+	for ui_element in [$LevelFrame, $HUD]:
+		ui_element.visible = (Globals.level_scene is Level)
+	for ui_element in [$CutHUD]:
+		ui_element.visible = (Globals.level_scene is CutScene)
+
 
 # Connect the level scene's signals to scripts in this file
 func connect_level_signals() -> void:
 	Globals.level_scene.connect("level_completed",
 			_on_level_completed)
-	Globals.level_scene.connect("state_push_requested",
-			_on_state_push_requested)
-	Globals.level_scene.connect("state_drop_requested",
-			_on_state_drop_requested)
-	Globals.level_scene.connect("state_undo_requested",
-			_on_state_undo_requested)
-	Globals.level_scene.connect("level_reset_requested",
-			_on_level_reset_requested)
+	if Globals.level_scene is not CutScene:
+		Globals.level_scene.connect("state_push_requested",
+				_on_state_push_requested)
+		Globals.level_scene.connect("state_drop_requested",
+				_on_state_drop_requested)
+		Globals.level_scene.connect("state_undo_requested",
+				_on_state_undo_requested)
+		Globals.level_scene.connect("level_reset_requested",
+				_on_level_reset_requested)
 
 
 # When a level ends, delete it and load the next one,
@@ -163,7 +176,8 @@ func _on_state_undo_requested() -> void:
 		
 		# Undo sfx
 		sfx_undo.play()
-		
+
+
 # Reset the current level
 func _on_level_reset_requested() -> void:
 	Globals.level_scene.queue_free()
@@ -171,6 +185,7 @@ func _on_level_reset_requested() -> void:
 	
 	# Restart sfx
 	sfx_restart.play()
+
 
 # Translate and scale the level to center it on the screen
 #  and maximize its size. Canvas elements are also arranged

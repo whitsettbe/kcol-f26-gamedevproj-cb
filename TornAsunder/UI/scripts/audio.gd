@@ -11,8 +11,12 @@ func _process(delta: float) -> void:
 	pass
 
 func open():
+	get_parent().get_child(1).hide()
 	show()
+	$Button_manager.get_child(1).grab_focus()
 
 # Opens previous page.
 func _on_back_pressed() -> void:
 	hide()
+	get_parent().get_child(1).show()
+	get_parent().get_child(1).get_child(0).grab_focus()

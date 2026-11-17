@@ -20,6 +20,7 @@ func resume():
 func pause():
 	get_tree().paused = true
 	show()
+	get_child(0).get_child(0).get_child(0).grab_focus()
 
 # This will go in the _process function so the player can unpause with these buttons in the pause menu since player input is disabled
 func pauseInput():

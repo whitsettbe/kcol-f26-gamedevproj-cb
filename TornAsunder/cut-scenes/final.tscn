@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://rofv6e4e3sgj"]
+
+[ext_resource type="Script" uid="uid://cvlmlib0voj8t" path="res://cut-scenes/cut-scene.gd" id="1_hvd8d"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="2_qgvsu"]
+
+[node name="Final" type="Node2D" unique_id=385759495]
+script = ExtResource("1_hvd8d")
+
+[node name="Background" type="ColorRect" parent="." unique_id=835922579]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scrolling_Elements" type="VBoxContainer" parent="." unique_id=1001904933]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qgvsu")
+theme_override_font_sizes/font_size = 64
+text = "UNITED AGAIN!"
+horizontal_alignment = 1
+uppercase = true

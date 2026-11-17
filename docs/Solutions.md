@@ -24,6 +24,26 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Old Circle 
+**Authors:** Clara Siefke  
+**Intended layer:** Caves  
+
+1. Leonard moves up one and right three, pushing the first block.
+2. Leonard moves up one, right one, up one, and left two, pushing the second block.
+3. Leonard moves up two and right two, pushing the third block.
+4. Leonard moves up two, left one, and up one, pushing the fourth block.
+5. Leonard moves left five, pushing two blocks.
+6. Leonard moves up one, landing on the portal.
+7. Roy moves up one, left one, and up one, pushing the first block up.
+8. Roy moves left three, pushing the second block left.
+9. Roy moves up six, pushing the third block up.
+10. Roy moves right five, pushing three blocks right.
+11. Roy moves down one, right two, and up one, pushing the middle block up.
+12. Roy moves left one, pushing the left block left.
+13. Roy moves up one and right one, pushing the middle block right and landing on the portal.
+
+---
+
 **Level Name:** Co-op 101  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
@@ -106,6 +126,40 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Decisions  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: push the first entangled block upward.
+2. Leonard: in the room on the right, push the top unentangled block right, then the bottom two unentangled blocks each up one, then push the duo rightward into the remaining holes in the hallway.
+3. Roy: walk into the upper-left room and push the entangled block right.
+4. Leonard: walk through the middle hallway you just opened up and push the entangled block down twice.
+5. Roy: walk to the middle-right room and push the unentangled block right twice.
+6. Leonard: walk into the upper-left room, push the unentangled block right three times, and walk to the exit.
+7. Roy: walk into the upper-middle room and stand to the right of the mid-room wall. Then move down, left x2, down, left, up, right x3, up x2, left x2, down, up, right x2, down x2, left x2, down, left, up, right, up, left, and walk to the exit.
+
+---
+
+**Level Name:** Bring Your Luggage  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: push the lower unentangled block up into the hole.
+2. Roy: push the unentangled blocks down twice.
+3. Leonard: push the other unentangled block leftward until it is directly above the lower-left entangled block.
+4. Roy: push the unentangled block on top of the former hole leftward as far as possible, then push the entangled block up once.
+5. Leonard: push the entangled block right, then push your unentangled block up until it is adjacent to the upper-left entangled block.
+6. Roy: push your unentangled block up until it is immediately down and to the right of the upper-left entangled block.
+7. Leonard: push the entangled block right.
+8. Roy: push the unentangled block up.
+9. Leonard: push your unentangled block into the top-right room until it is adjacent to the central wall.
+10. Roy: push your unentangled block down and right until it is adjacent to the top-right entangled block.
+11. Roy: push the entangled block left once.
+12. Leonard: push your unentangled block down x2, right, down x2, and walk to the exit.
+13. Roy: push your unentangled block down x3 and walk to the exit.
+
+---
+
 **Level Name:** Not My Block  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
@@ -117,6 +171,23 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 5. Leonard: walk into the fifth room and push that entangled block left twice.
 6. Roy: push the uncolored block up and walk to the exit.
 7. Leonard: walk to the exit.
+
+---
+
+**Level Name:** Ladders  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: push the first entangled block down.
+2. Leonard: push the next entangled block down.
+3. Roy: push the next entangled block down.
+4. Leonard: push the last entangled block in the column down.
+5. Roy: push the bottommost row of entangled blocks right once.
+6. Leonard: push the second row of entangled blocks right once.
+7. Roy: push the third row of entangled blocks left once.
+8. Leonard: push the top row of entangled blocks left once.
+9. Roy: walk to the exit.
+10. Leonard: walk to the exit.
 
 ---
 
@@ -149,23 +220,6 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 8. Roy: push the red entangled block right.
 9. Leonard: walk to the exit.
 10. Roy: walk to the exit.
-
----
-
-**Level Name:** Ladders  
-**Authors:** Benjamin  
-**Intended layer:** Ruins  
-
-1. Roy: push the first entangled block down.
-2. Leonard: push the next entangled block down.
-3. Roy: push the next entangled block down.
-4. Leonard: push the last entangled block in the column down.
-5. Roy: push the bottommost row of entangled blocks right once.
-6. Leonard: push the second row of entangled blocks right once.
-7. Roy: push the third row of entangled blocks left once.
-8. Leonard: push the top row of entangled blocks left once.
-9. Roy: walk to the exit.
-10. Leonard: walk to the exit.
 
 ---
 
