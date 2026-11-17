@@ -21,6 +21,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_xf62s")
+theme_override_font_sizes/font_size = 24
 text = "
 
 
@@ -42,11 +43,11 @@ Please buckle your seatbelt and remain seated.”
 
 
 Interdimensional turbulence?
- Did you hear them right? 
+Did you hear them right? 
 
 
 You feel the plane suddenly lurch to the side, then up,
- then down into a nosedive. 
+then down into a nosedive. 
 
 
 Thick green clouds block your view of the sky. 
@@ -63,17 +64,19 @@ With a sickening explosion the plane crashes into
 the ground.
 
 
- A splitting pain erupts down your middle.
- It feels as though your body is being split in two! 
+A splitting pain erupts down your middle.
+It feels as though your body is being split in two! 
+
 
 You feel yourself…
+no…
+both of yourselves…
 
- both of yourselves,
 Once Leroy, now Leonard and Roy, 
 being buried deep below the surface. 
 
 
- Layers and layers of rock between you 
+Layers and layers of rock between you 
 and the world you knew. 
 
 

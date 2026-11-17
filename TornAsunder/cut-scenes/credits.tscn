@@ -16,11 +16,17 @@ offset_right = 1152.0
 offset_bottom = 49.0
 alignment = 1
 
-[node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
+[node name="Label1" type="Label" parent="Scrolling_Elements" unique_id=974171709]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kn4f5")
-text = "TORN ASUNDER
+theme_override_font_sizes/font_size = 30
+text = "TORN ASUNDER"
+horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="Scrolling_Elements" unique_id=142031636]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kn4f5")
+text = "
 --- Lead Developers ---
 Benjamin Whitsett
 Clara Siefke
@@ -55,6 +61,7 @@ Clara Siefke
 Teddy Jacobsen
 
 --- Music ---
+
 “8 Bit Adventure” by Kirk Osamayo
 https://freemusicarchive.org/music/kirk-osamayo/season-4-green/8-bit-adventure-1/
 
@@ -125,6 +132,12 @@ This game is licensed under the following license:
 GNU AFFERO GENERAL PUBLIC LICENSE: https://www.gnu.org/licenses/agpl-3.0.en.html
 
 
-Thanks for Playing!
 "
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Scrolling_Elements" unique_id=208824559]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kn4f5")
+theme_override_font_sizes/font_size = 30
+text = "Thanks for Playing!"
 horizontal_alignment = 1
