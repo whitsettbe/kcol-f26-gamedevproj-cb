@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6ewj6tmx2ihi"]
 
 [ext_resource type="Script" uid="uid://cvlmlib0voj8t" path="res://cut-scenes/cut-scene.gd" id="1_lu0bb"]
+[ext_resource type="AudioStream" uid="uid://dbhppq5q1wh2m" path="res://music/opening_scene/hope_and_love.ogg" id="2_02ddn"]
 
 [node name="Intro" type="Node2D" unique_id=385759495]
 script = ExtResource("1_lu0bb")
@@ -12,12 +13,72 @@ color = Color(0, 0, 0, 1)
 
 [node name="Scrolling_Elements" type="VBoxContainer" parent="." unique_id=1001904933]
 offset_right = 1152.0
-offset_bottom = 49.0
+offset_bottom = 959.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
 layout_mode = 2
-text = "LABEL:
-Entry
-Entry2"
+size_flags_horizontal = 4
+text = "
+
+
+
+
+
+Boarding the plane, it was business as usual. 
+Just like any other day. 
+
+
+Sitting packed into your chair, you listen as an 
+announcement plays from the overhead speakers. 
+
+
+“This is your captain speaking, 
+It appears we are currently experiencing 
+some interdimensional turbulence. 
+Please buckle your seatbelt and remain seated.” 
+
+
+Interdimensional turbulence?
+ Did you hear them right? 
+
+
+You feel the plane suddenly lurch to the side, then up,
+ then down into a nosedive. 
+
+
+Thick green clouds block your view of the sky. 
+
+
+You start seeing double and your body feels funny.
+Something isn't right. 
+
+
+“Please brace yourselves for an emergency landing!”
+
+
+With a sickening explosion the plane crashes into 
+the ground.
+
+
+ A splitting pain erupts down your middle.
+ It feels as though your body is being split in two! 
+
+You feel yourself…
+
+ both of yourselves,
+Once Leroy, now Leonard and Roy, 
+being buried deep below the surface. 
+
+
+ Layers and layers of rock between you 
+and the world you knew. 
+
+
+It seems as if you have been … TORN ASUNDER!"
 horizontal_alignment = 1
+
+[node name="hope_and_love" type="AudioStreamPlayer" parent="." unique_id=1630439514]
+stream = ExtResource("2_02ddn")
+autoplay = true
+bus = &"Music"
