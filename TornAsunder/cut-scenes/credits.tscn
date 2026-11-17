@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp7j8e4r4r1ok"]
 
 [ext_resource type="Script" uid="uid://cvlmlib0voj8t" path="res://cut-scenes/cut-scene.gd" id="1_knkmu"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="2_kn4f5"]
 
 [node name="Credits" type="Node2D" unique_id=385759495]
 script = ExtResource("1_knkmu")
@@ -17,6 +18,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kn4f5")
 text = "TORN ASUNDER
 
 --- Lead Developers ---
