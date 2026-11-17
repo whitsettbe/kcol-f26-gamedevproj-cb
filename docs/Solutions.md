@@ -270,6 +270,17 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Fractured Labyrinth  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: move up, down, up, down, left, right, left, right.
+2. Leonard: move up, down, up, down, left, right, left, right.
+3. Roy: walk to the exit.
+3. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Rolling  
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
