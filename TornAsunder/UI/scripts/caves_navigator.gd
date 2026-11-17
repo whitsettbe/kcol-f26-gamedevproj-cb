@@ -10,10 +10,13 @@ func _process(delta: float) -> void:
 	pass
 
 func open():
+	get_parent().get_child(1).hide()
 	Globals.current_layer_menu = "Caves"
 	show()
 
 # Opens previous page.
 func _on_back_pressed() -> void:
 	hide()
+	get_parent().get_child(1).show()
 	Globals.current_layer_menu = ""
+	get_parent().get_child(1).get_child(1).grab_focus()

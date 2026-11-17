@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		layer_path = "res://levels/" + Globals.current_layer_menu + "/"
 		create_buttons()
 		move_child($Back, len(get_children()) - 1)
+		get_child(0).grab_focus()
 	if(not is_visible_in_tree()):
 		for button in buttons:
 			button.queue_free()
