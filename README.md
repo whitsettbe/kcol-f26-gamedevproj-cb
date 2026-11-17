@@ -59,6 +59,10 @@ This game was developed as part of COMP 480/490: Game Design & Development at Ka
 
 ## Credits
 
+### **Engine**
+
+Godot Engine: [license](https://godotengine.org/license/)
+
 ### **Music**
 
 “8 Bit Adventure” by Kirk Osamayo
