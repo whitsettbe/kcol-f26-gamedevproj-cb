@@ -8,6 +8,7 @@ var level_paths = [
 	"res://cut-scenes/welcome_caves.tscn",
 	"res://levels/Caves/01 - Just Walk.tscn",
 	"res://levels/Caves/02 - Push Through.tscn",
+	"res://levels/Caves/03 - Old Circle.tscn",
 	"res://levels/Caves/04 - Co-op 101.tscn",
 	"res://levels/Caves/05 - Working Blind.tscn",
 	"res://levels/Caves/06 - Mind the Gap.tscn",
