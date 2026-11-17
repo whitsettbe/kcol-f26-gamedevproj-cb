@@ -236,6 +236,18 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Hourglass   
+**Authors:** Vivian  
+**Intended layer:** Ruins 
+
+1. 
+2. 
+3. 
+4. 
+5. 
+
+---
+
 **Level Name:** Rolling  
 **Authors:** Clara Siefke  
 **Intended layer:** Bog  
