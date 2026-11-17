@@ -106,6 +106,20 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Decisions  
+**Authors:** Benjamin  
+**Intended layer:** Caves  
+
+1. Leonard: push the first entangled block upward.
+2. Leonard: in the room on the right, push the top unentangled block right, then the bottom two unentangled blocks each up one, then push the duo rightward into the remaining holes in the hallway.
+3. Roy: walk into the upper-left room and push the entangled block right.
+4. Leonard: walk through the middle hallway you just opened up and push the entangled block down twice.
+5. Roy: walk to the middle-right room and push the unentangled block right twice.
+6. Leonard: walk into the upper-left room, push the unentangled block right three times, and walk to the exit.
+7. Roy: walk into the upper-middle room and stand to the right of the mid-room wall. Then move down, left x2, down, left, up, right x3, up x2, left x2, down, up, right x2, down x2, left x2, down, left, up, right, up, left, and walk to the exit.
+
+---
+
 **Level Name:** Not My Block  
 **Authors:** Benjamin  
 **Intended layer:** Ruins  
