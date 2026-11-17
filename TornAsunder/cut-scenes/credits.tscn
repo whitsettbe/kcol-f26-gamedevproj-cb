@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp7j8e4r4r1ok"]
 
 [ext_resource type="Script" uid="uid://cvlmlib0voj8t" path="res://cut-scenes/cut-scene.gd" id="1_knkmu"]
+[ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="2_kn4f5"]
 
 [node name="Credits" type="Node2D" unique_id=385759495]
 script = ExtResource("1_knkmu")
@@ -17,7 +18,113 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Scrolling_Elements" unique_id=974171709]
 layout_mode = 2
-text = "LABEL:
-Entry
-Entry2"
+theme_override_fonts/font = ExtResource("2_kn4f5")
+text = "TORN ASUNDER
+
+--- Lead Developers ---
+Benjamin Whitsett
+Clara Siefke
+Phoebe Tozer
+Vivian Nyeholt
+
+--- Level Design and Concept Design ---
+Benjamin Whitsett
+Clara Siefke
+Phoebe Tozer
+Vivian Nyeholt
+
+--- Mechanics Lead ---
+Benjamin Whitsett
+
+--- Visual Art Lead ---
+Vivian Nyeholt
+
+--- UI Lead ---
+Clara Siefke
+
+--- Audio Lead ---
+Phoebe Tozer
+
+--- Pixel Art and Sprite Creation ---
+Vivian Nyholt
+
+--- UI Art Created by ---
+Clara Siefke
+
+--- Programming Consultant ---
+Teddy Jacobsen
+
+--- Music ---
+“8 Bit Adventure” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green/8-bit-adventure-1/
+
+“8 Bit Ancient Ruins” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/orange-season-4/8-bit-ancient-ruins/
+
+“Beyond Time” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/beyond-time/
+
+“Decision” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/decision/
+
+“False Reverie” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/false-reverie/
+
+“Hope and Love” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/hope-and-love/
+
+“Inner Conflict” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/inner-conflict-1/
+
+“Introductory World” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green-1/introductory-world-1/
+
+“Jungle Video Game Level” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/green-season-3/jungle-video-game-level/
+
+“Not In Vain” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/single/not-in-vain/ 
+
+“Video Game Snowy Night” by Kirk Osamayo
+https://freemusicarchive.org/music/kirk-osamayo/season-4-green-1/video-game-snowy-night-1/ 
+
+All music by Kirk Osamaso is licensed under CC BY 4.0, Attribution 4.0 International License: https://creativecommons.org/licenses/by/4.0/ 
+https://freemusicarchive.org/music/kirk-osamayo 
+
+All Music by Kirk Osamayo has been modified from its original version for this game using Reaper: https://www.reaper.fm/ 
+
+All music courtesy of Free Music Archive
+https://freemusicarchive.org/ 
+
+--- Sound Effects ---
+
+All sound effects were sourced from Freesound under CC0 1.0 Universal License, 
+https://freesound.org/ 
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Or recorded by our team. 
+
+All sound effects were modified for this game using Reaper.
+https://www.reaper.fm/ 
+
+--- Playtesting ---
+Abram Haynes
+Hailey Metzler
+Ingrid Gardner
+Juniper Pasternak
+Leon Wilson
+Owen Warren
+CS490 Classmates
+
+--- Special Thanks to  ---
+Dr. Vargas-Pérez, our CS490 Classmates, and friends for everything!
+
+This game uses Godot Engine, available under the following license: godotengine.org/license
+
+This game is licensed under the following license:
+GNU AFFERO GENERAL PUBLIC LICENSE: https://www.gnu.org/licenses/agpl-3.0.en.html
+
+
+Thanks for Playing!
+"
 horizontal_alignment = 1

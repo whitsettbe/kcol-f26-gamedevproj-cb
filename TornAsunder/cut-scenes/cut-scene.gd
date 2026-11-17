@@ -3,7 +3,7 @@ class_name CutScene
 
 signal level_completed
 
-@export var scroll_speed = 100 # pixels/sec
+@export var scroll_speed = 50 # pixels/sec
 
 @onready var viewport_height = \
 	get_viewport_rect().end.y

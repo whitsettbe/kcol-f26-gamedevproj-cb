@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/hope_and_love.ogg-a230576d651dc746bcf50077cb8
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
