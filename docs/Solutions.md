@@ -24,6 +24,26 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Old Circle 
+**Authors:** Clara Siefke  
+**Intended layer:** Caves  
+
+1. Leonard moves up one and right three, pushing the first block.
+2. Leonard moves up one, right one, up one, and left two, pushing the second block.
+3. Leonard moves up two and right two, pushing the third block.
+4. Leonard moves up two, left one, and up one, pushing the fourth block.
+5. Leonard moves left five, pushing two blocks.
+6. Leonard moves up one, landing on the portal.
+7. Roy moves up one, left one, and up one, pushing the first block up.
+8. Roy moves left three, pushing the second block left.
+9. Roy moves up six, pushing the third block up.
+10. Roy moves right five, pushing three blocks right.
+11. Roy moves down one, right two, and up one, pushing the middle block up.
+12. Roy moves left one, pushing the left block left.
+13. Roy moves up one and right one, pushing the middle block right and landing on the portal.
+
+---
+
 **Level Name:** Co-op 101  
 **Authors:** Benjamin  
 **Intended layer:** Caves  
