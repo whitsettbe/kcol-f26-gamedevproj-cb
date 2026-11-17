@@ -19,40 +19,40 @@ alignment = 1
 layout_mode = 2
 text = "TORN ASUNDER
 
-Lead Developers
+--- Lead Developers ---
 Benjamin Whitsett
 Clara Siefke
 Phoebe Tozer
 Vivian Nyeholt
 
-Level Design and Concept Design
+--- Level Design and Concept Design ---
 Benjamin Whitsett
 Clara Siefke
 Phoebe Tozer
 Vivian Nyeholt
 
-Mechanics Lead
+--- Mechanics Lead ---
 Benjamin Whitsett
 
-Visual Art Lead
+--- Visual Art Lead ---
 Vivian Nyeholt
 
-UI Lead
+--- UI Lead ---
 Clara Siefke
 
-Audio Lead
+--- Audio Lead ---
 Phoebe Tozer
 
-Pixel Art and Sprite Creation 
+--- Pixel Art and Sprite Creation ---
 Vivian Nyholt
 
-UI Art Created by 
+--- UI Art Created by ---
 Clara Siefke
 
-Programming Consultant
+--- Programming Consultant ---
 Teddy Jacobsen
 
-Music
+--- Music ---
 “8 Bit Adventure” by Kirk Osamayo
 https://freemusicarchive.org/music/kirk-osamayo/season-4-green/8-bit-adventure-1/
 
@@ -94,8 +94,7 @@ All Music by Kirk Osamayo has been modified from its original version for this g
 All music courtesy of Free Music Archive
 https://freemusicarchive.org/ 
 
-
-Sound Effects
+--- Sound Effects ---
 
 All sound effects were sourced from Freesound under CC0 1.0 Universal License, 
 https://freesound.org/ 
@@ -106,16 +105,16 @@ Or recorded by our team.
 All sound effects were modified for this game using Reaper.
 https://www.reaper.fm/ 
 
-Playtesting
+--- Playtesting ---
 Abram Haynes
-CS490 Classmates
 Hailey Metzler
 Ingrid Gardner
 Juniper Pasternak
 Leon Wilson
 Owen Warren
+CS490 Classmates
 
-Special Thanks to 
+--- Special Thanks to  ---
 Dr. Vargas-Pérez, our CS490 Classmates, and friends for everything!
 
 This game uses Godot Engine, available under the following license: godotengine.org/license
