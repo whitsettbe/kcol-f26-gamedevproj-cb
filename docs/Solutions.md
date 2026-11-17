@@ -154,6 +154,23 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 
 ---
 
+**Level Name:** Ladders  
+**Authors:** Benjamin  
+**Intended layer:** Ruins  
+
+1. Roy: push the first entangled block down.
+2. Leonard: push the next entangled block down.
+3. Roy: push the next entangled block down.
+4. Leonard: push the last entangled block in the column down.
+5. Roy: push the bottommost row of entangled blocks right once.
+6. Leonard: push the second row of entangled blocks right once.
+7. Roy: push the third row of entangled blocks left once.
+8. Leonard: push the top row of entangled blocks left once.
+9. Roy: walk to the exit.
+10. Leonard: walk to the exit.
+
+---
+
 **Level Name:** Know Expectations  
 **Authors:** Clara Siefke  
 **Intended layer:** Caves  
@@ -183,23 +200,6 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 8. Roy: push the red entangled block right.
 9. Leonard: walk to the exit.
 10. Roy: walk to the exit.
-
----
-
-**Level Name:** Ladders  
-**Authors:** Benjamin  
-**Intended layer:** Ruins  
-
-1. Roy: push the first entangled block down.
-2. Leonard: push the next entangled block down.
-3. Roy: push the next entangled block down.
-4. Leonard: push the last entangled block in the column down.
-5. Roy: push the bottommost row of entangled blocks right once.
-6. Leonard: push the second row of entangled blocks right once.
-7. Roy: push the third row of entangled blocks left once.
-8. Leonard: push the top row of entangled blocks left once.
-9. Roy: walk to the exit.
-10. Leonard: walk to the exit.
 
 ---
 
