@@ -294,9 +294,9 @@ Note: In the below instructions, block colors are always listed as "blue" and "r
 **Authors:** Vivian  
 **Intended layer:** Ruins 
 
-1. Roy: Push the entangled block up 2, then push the one in the top right down 1.
+1. Roy: Push the entangled block up 2, then push the one in the top left room down 1.
 2. Leonard: Move right 1, up 2, down 1, left 1.
-3. Roy: Push the same block up 1, then move down1 left 1 and push the entangled block down 1 again.
+3. Roy: Push the same block up 1, then move down 1 left 1 and push the entangled block down 1 again.
 4. Leonard: Move into the upper portal and push the upper entangled block down 2. Enter the portal and move down and left.
 5. Repeat step 3.
 6. Leonard: Enter the lower portal and push the entangled block left 1.
