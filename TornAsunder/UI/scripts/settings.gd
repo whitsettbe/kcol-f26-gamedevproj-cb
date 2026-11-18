@@ -23,4 +23,6 @@ func _on_back_pressed() -> void:
 	hide()
 	if(get_parent().get_node("PanelContainer") != null):
 		get_parent().get_node("PanelContainer").show()
-	get_parent().get_child(0).get_child(0).get_child(0).grab_focus()
+		get_parent().get_child(0).get_child(0).get_child(0).grab_focus()
+	else:
+		get_parent().get_child(1).get_child(0).grab_focus()

@@ -1,10 +1,36 @@
 [gd_scene format=3 uid="uid://b340cpsu2kk05"]
 
 [ext_resource type="Script" uid="uid://b0gdogms6nhfh" path="res://UI/scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://b651o48s6s4un" path="res://art/blankcover.png" id="2_6qo3m"]
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://UI/scenes/layer_navigator.tscn" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://d2j4wru802yse" path="res://art/Main Menu Concept Buttonless.png" id="2_eslsf"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_6qo3m"]
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ddkho1ypjlb4e" path="res://art/Title.png" id="4_3yjjd"]
+
+[sub_resource type="Gradient" id="Gradient_3yjjd"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fd6j1"]
+gradient = SubResource("Gradient_3yjjd")
+
+[sub_resource type="Gradient" id="Gradient_mi3sl"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6qo3m"]
+gradient = SubResource("Gradient_mi3sl")
+fill = 1
+fill_from = Vector2(0.50427353, 0.47863248)
+fill_to = Vector2(0.6367521, 0.21367522)
+
+[sub_resource type="Gradient" id="Gradient_s4ap2"]
+offsets = PackedFloat32Array(0, 0.47826087, 0.9695652, 1)
+colors = PackedColorArray(1, 1, 1, 0.8627451, 1, 1, 1, 0.5372549, 1, 1, 1, 0.018380225, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0u"]
+gradient = SubResource("Gradient_s4ap2")
+fill = 1
+fill_from = Vector2(0.5, 0.25641027)
+fill_to = Vector2(0.76495725, 0.23504274)
 
 [sub_resource type="GDScript" id="GDScript_bqqt6"]
 script/source = "extends VBoxContainer
@@ -23,14 +49,45 @@ func _process(delta: float) -> void:
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=687194478]
+[node name="Black" type="TextureRect" parent="." unique_id=577363938]
 offset_right = 1152.0
 offset_bottom = 640.0
-texture = ExtResource("2_eslsf")
+texture = SubResource("GradientTexture2D_fd6j1")
 expand_mode = 1
 
-[node name="Button_manager" type="VBoxContainer" parent="TextureRect" unique_id=1862597158]
+[node name="Background" type="TextureRect" parent="Black" unique_id=687194478]
 layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
+texture = ExtResource("2_6qo3m")
+expand_mode = 1
+
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=1668357320]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 656.0
+texture = SubResource("GradientTexture2D_6qo3m")
+
+[node name="TitleVignette" type="TextureRect" parent="Black" unique_id=1426005261]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_mhl0u")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="Black" unique_id=1837755769]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 72.0
+offset_right = 776.0
+offset_bottom = 264.0
+texture = ExtResource("4_3yjjd")
+expand_mode = 1
+
+[node name="Button_manager" type="VBoxContainer" parent="." unique_id=1862597158]
 offset_left = 384.0
 offset_top = 256.0
 offset_right = 768.0
@@ -42,28 +99,28 @@ theme_override_constants/separation = 16
 alignment = 1
 script = SubResource("GDScript_bqqt6")
 
-[node name="Continue" type="Button" parent="TextureRect/Button_manager" unique_id=1111363939]
+[node name="Continue" type="Button" parent="Button_manager" unique_id=1111363939]
 layout_mode = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_6qo3m")
 theme_override_font_sizes/font_size = 32
 text = "Continue"
 
-[node name="Level Navigator" type="Button" parent="TextureRect/Button_manager" unique_id=1700296141]
+[node name="Level Navigator" type="Button" parent="Button_manager" unique_id=1700296141]
 layout_mode = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_6qo3m")
 theme_override_font_sizes/font_size = 32
 text = "Level Navigator"
 
-[node name="Settings" type="Button" parent="TextureRect/Button_manager" unique_id=253402286]
+[node name="Settings" type="Button" parent="Button_manager" unique_id=253402286]
 layout_mode = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_6qo3m")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
-[node name="Quit" type="Button" parent="TextureRect/Button_manager" unique_id=2016063207]
+[node name="Quit" type="Button" parent="Button_manager" unique_id=2016063207]
 layout_mode = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_6qo3m")
@@ -76,7 +133,7 @@ visible = false
 [node name="Settings" parent="." unique_id=1706435238 instance=ExtResource("3_bqqt6")]
 visible = false
 
-[connection signal="pressed" from="TextureRect/Button_manager/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="TextureRect/Button_manager/Level Navigator" to="Layer Navigator" method="open"]
-[connection signal="pressed" from="TextureRect/Button_manager/Settings" to="Settings" method="open"]
-[connection signal="pressed" from="TextureRect/Button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button_manager/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Button_manager/Level Navigator" to="Layer Navigator" method="open"]
+[connection signal="pressed" from="Button_manager/Settings" to="Settings" method="open"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]

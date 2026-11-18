@@ -1,20 +1,47 @@
 [gd_scene format=3 uid="uid://dkfychypjd3f"]
 
 [ext_resource type="Script" uid="uid://dwxmmwq4vvpdo" path="res://UI/scripts/ruins_navigator.gd" id="1_r8620"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_5h517"]
+[ext_resource type="Texture2D" uid="uid://b651o48s6s4un" path="res://art/blankcover.png" id="2_e5s1r"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="3_uumw1"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="4_e5s1r"]
+
+[sub_resource type="Gradient" id="Gradient_e5s1r"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_deg7q"]
+gradient = SubResource("Gradient_e5s1r")
+
+[sub_resource type="Gradient" id="Gradient_ugit4"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_akh7p"]
+gradient = SubResource("Gradient_ugit4")
+fill = 1
+fill_from = Vector2(0.50427353, 0.47863248)
+fill_to = Vector2(0.6367521, 0.21367522)
 
 [node name="Ruins Navigator" type="Node2D" unique_id=1750589878]
 script = ExtResource("1_r8620")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=600693257]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 648.0
-texture = ExtResource("2_5h517")
+[node name="Black" type="TextureRect" parent="." unique_id=907459002]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_deg7q")
 expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Black" unique_id=1876956961]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
+texture = ExtResource("2_e5s1r")
+expand_mode = 1
+
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=1625349158]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 656.0
+texture = SubResource("GradientTexture2D_akh7p")
 
 [node name="PlaygroundVbox" type="VBoxContainer" parent="." unique_id=1719549633]
 offset_left = 320.0
