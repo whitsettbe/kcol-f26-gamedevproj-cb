@@ -139,9 +139,9 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="Scrolling_Elements/Label2" unique_id=140438452]
 layout_mode = 0
 offset_left = 413.0
-offset_top = 1860.0
+offset_top = 1879.0
 offset_right = 418.0
-offset_bottom = 1876.0
+offset_bottom = 1895.0
 rotation = 1.5707964
 theme_override_fonts/font = ExtResource("2_kn4f5")
 text = "`"
