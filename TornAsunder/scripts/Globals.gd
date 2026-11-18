@@ -26,6 +26,7 @@ var level_paths = [
 	"res://levels/Ruins/17 - Halberd.tscn",
 	"res://levels/Ruins/18 - Flip Flop.tscn",
 	"res://levels/Ruins/19 - Hourglass.tscn",
+	"res://levels/Ruins/20 - Fractured Labyrinth.tscn",
 	"res://cut-scenes/welcome_bog.tscn",
 	"res://levels/Bog/21 - Rolling.tscn",
 	"res://levels/Bog/22 - Ooze Maker.tscn",

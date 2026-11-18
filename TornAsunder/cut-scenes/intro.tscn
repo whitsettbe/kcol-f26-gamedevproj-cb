@@ -28,36 +28,36 @@ text = "
 
 
 
-Boarding the plane, it was business as usual. 
-Just like any other day. 
+Boarding the plane, it was business as usual.
+Just like any other day.
 
 
-Sitting packed into your chair, you listen as an 
-announcement plays from the overhead speakers. 
+Sitting packed into your chair, you listen as an
+announcement plays from the overhead speakers.
 
 
-“This is your captain speaking, 
-It appears we are currently experiencing 
-some interdimensional turbulence. 
-Please buckle your seatbelt and remain seated.” 
+''This is your captain speaking,
+It appears we are currently experiencing
+some interdimensional turbulence.
+Please buckle your seatbelt and remain seated.''
 
 
 Interdimensional turbulence?
-Did you hear them right? 
+Did you hear them right?
 
 
 You feel the plane suddenly lurch to the side, then up,
-then down into a nosedive. 
+then down into a nosedive.
 
 
-Thick green clouds block your view of the sky. 
+Thick green clouds block your view of the sky.
 
 
 You start seeing double and your body feels funny.
-Something isn't right. 
+Something isn't right.
 
 
-“Please brace yourselves for an emergency landing!”
+''Please brace yourselves for an emergency landing!''
 
 
 With a sickening explosion the plane crashes into 
@@ -68,9 +68,9 @@ A splitting pain erupts down your middle.
 It feels as though your body is being split in two! 
 
 
-You feel yourself…
-no…
-both of yourselves…
+You feel yourself...
+no...
+both of yourselves...
 
 Once Leroy, now Leonard and Roy, 
 being buried deep below the surface. 
@@ -80,7 +80,7 @@ Layers and layers of rock between you
 and the world you knew. 
 
 
-It seems as if you have been … TORN ASUNDER!"
+It seems as if you have been ... TORN ASUNDER!"
 horizontal_alignment = 1
 
 [node name="hope_and_love" type="AudioStreamPlayer" parent="." unique_id=1630439514]
