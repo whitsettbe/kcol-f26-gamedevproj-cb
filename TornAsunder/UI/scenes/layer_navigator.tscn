@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://cn3ph6jfq01xw"]
 
 [ext_resource type="Script" uid="uid://hcecr0uuwn0b" path="res://UI/scripts/layer_navigator.gd" id="1_hwvb6"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_8dti4"]
+[ext_resource type="Texture2D" uid="uid://b651o48s6s4un" path="res://art/blankcover.png" id="2_55ivg"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_55ivg"]
 [ext_resource type="PackedScene" uid="uid://dvfhbabj0kal0" path="res://UI/scenes/caves_navigator.tscn" id="3_nmdk5"]
 [ext_resource type="PackedScene" uid="uid://cmtde1klxwn3u" path="res://UI/scenes/playground_navigator.tscn" id="4_tg101"]
 [ext_resource type="PackedScene" uid="uid://dkfychypjd3f" path="res://UI/scenes/ruins_navigator.tscn" id="5_nqh8f"]
 [ext_resource type="PackedScene" uid="uid://dtj5qxl735uyx" path="res://UI/scenes/bog_navigator.tscn" id="6_55ivg"]
+
+[sub_resource type="Gradient" id="Gradient_55ivg"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0u"]
+gradient = SubResource("Gradient_55ivg")
+fill = 1
+fill_from = Vector2(0.50427353, 0.47863248)
+fill_to = Vector2(0.6367521, 0.21367522)
 
 [node name="Layer Navigator" type="Node2D" unique_id=846608510]
 script = ExtResource("1_hwvb6")
@@ -16,8 +25,14 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 1160.0
 offset_bottom = 648.0
-texture = ExtResource("2_8dti4")
+texture = ExtResource("2_55ivg")
 expand_mode = 1
+
+[node name="Vignette" type="TextureRect" parent="TextureRect" unique_id=14850433]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 656.0
+texture = SubResource("GradientTexture2D_mhl0u")
 
 [node name="Button_manager" type="VBoxContainer" parent="." unique_id=1393864001]
 offset_left = 448.0

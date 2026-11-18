@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dvfhbabj0kal0"]
 
 [ext_resource type="Script" uid="uid://ca0o7f82vjujb" path="res://UI/scripts/caves_navigator.gd" id="1_qrj24"]
-[ext_resource type="Texture2D" uid="uid://bgsekbinnjf7k" path="res://art/LevelNavigatorConceptButtonless.png" id="2_uobnm"]
+[ext_resource type="Texture2D" uid="uid://b651o48s6s4un" path="res://art/blankcover.png" id="2_ai74d"]
 [ext_resource type="Script" uid="uid://bl7ykll8yao4" path="res://UI/scripts/level_manager.gd" id="2_va5dg"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="4_ai74d"]
+
+[sub_resource type="Gradient" id="Gradient_5tyaj"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1tf8t"]
+gradient = SubResource("Gradient_5tyaj")
+fill = 1
+fill_from = Vector2(0.50427353, 0.47863248)
+fill_to = Vector2(0.6367521, 0.21367522)
 
 [node name="Caves Navigator" type="Node2D" unique_id=794097652]
 script = ExtResource("1_qrj24")
@@ -13,8 +22,14 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 1160.0
 offset_bottom = 648.0
-texture = ExtResource("2_uobnm")
+texture = ExtResource("2_ai74d")
 expand_mode = 1
+
+[node name="Vignette" type="TextureRect" parent="TextureRect" unique_id=677712776]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 656.0
+texture = SubResource("GradientTexture2D_1tf8t")
 
 [node name="CavesVbox" type="VBoxContainer" parent="." unique_id=1266873305]
 offset_left = 320.0
