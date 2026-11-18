@@ -8,10 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dkfychypjd3f" path="res://UI/scenes/ruins_navigator.tscn" id="5_nqh8f"]
 [ext_resource type="PackedScene" uid="uid://dtj5qxl735uyx" path="res://UI/scenes/bog_navigator.tscn" id="6_55ivg"]
 
+[sub_resource type="Gradient" id="Gradient_3yjjd"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55ivg"]
+gradient = SubResource("Gradient_3yjjd")
+
 [sub_resource type="Gradient" id="Gradient_55ivg"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0u"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c5mmk"]
 gradient = SubResource("Gradient_55ivg")
 fill = 1
 fill_from = Vector2(0.50427353, 0.47863248)
@@ -20,19 +26,25 @@ fill_to = Vector2(0.6367521, 0.21367522)
 [node name="Layer Navigator" type="Node2D" unique_id=846608510]
 script = ExtResource("1_hwvb6")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=558872497]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 648.0
+[node name="Black" type="TextureRect" parent="." unique_id=1746618744]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_55ivg")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Black" unique_id=1738602376]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
 texture = ExtResource("2_55ivg")
 expand_mode = 1
 
-[node name="Vignette" type="TextureRect" parent="TextureRect" unique_id=14850433]
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=1936437471]
 layout_mode = 0
 offset_right = 1168.0
 offset_bottom = 656.0
-texture = SubResource("GradientTexture2D_mhl0u")
+texture = SubResource("GradientTexture2D_c5mmk")
 
 [node name="Button_manager" type="VBoxContainer" parent="." unique_id=1393864001]
 offset_left = 448.0

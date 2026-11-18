@@ -6,10 +6,16 @@
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_qt4fy"]
 
 [sub_resource type="Gradient" id="Gradient_qt4fy"]
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r7321"]
 gradient = SubResource("Gradient_qt4fy")
+
+[sub_resource type="Gradient" id="Gradient_l31ti"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jkm6y"]
+gradient = SubResource("Gradient_l31ti")
 fill = 1
 fill_from = Vector2(0.50427353, 0.47863248)
 fill_to = Vector2(0.6367521, 0.21367522)
@@ -17,19 +23,25 @@ fill_to = Vector2(0.6367521, 0.21367522)
 [node name="Settings" type="Node2D" unique_id=1706435238]
 script = ExtResource("1_5p8wc")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1656755563]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 648.0
+[node name="Black" type="TextureRect" parent="." unique_id=174737739]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_r7321")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Black" unique_id=1828878050]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
 texture = ExtResource("2_qt4fy")
 expand_mode = 1
 
-[node name="Vignette" type="TextureRect" parent="TextureRect" unique_id=307358733]
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=1445500866]
 layout_mode = 0
 offset_right = 1168.0
 offset_bottom = 656.0
-texture = SubResource("GradientTexture2D_r7321")
+texture = SubResource("GradientTexture2D_jkm6y")
 
 [node name="Button_manager" type="VBoxContainer" parent="." unique_id=2146537553]
 offset_left = 512.0

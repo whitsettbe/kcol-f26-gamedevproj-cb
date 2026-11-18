@@ -7,21 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://ddkho1ypjlb4e" path="res://art/Title.png" id="4_3yjjd"]
 
-[sub_resource type="Gradient" id="Gradient_55ivg"]
+[sub_resource type="Gradient" id="Gradient_3yjjd"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fd6j1"]
+gradient = SubResource("Gradient_3yjjd")
+
+[sub_resource type="Gradient" id="Gradient_mi3sl"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6qo3m"]
-gradient = SubResource("Gradient_55ivg")
+gradient = SubResource("Gradient_mi3sl")
 fill = 1
 fill_from = Vector2(0.50427353, 0.47863248)
 fill_to = Vector2(0.6367521, 0.21367522)
 
-[sub_resource type="Gradient" id="Gradient_mi3sl"]
+[sub_resource type="Gradient" id="Gradient_s4ap2"]
 offsets = PackedFloat32Array(0, 0.47826087, 0.9695652, 1)
 colors = PackedColorArray(1, 1, 1, 0.8627451, 1, 1, 1, 0.5372549, 1, 1, 1, 0.018380225, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0u"]
-gradient = SubResource("Gradient_mi3sl")
+gradient = SubResource("Gradient_s4ap2")
 fill = 1
 fill_from = Vector2(0.5, 0.25641027)
 fill_to = Vector2(0.76495725, 0.23504274)
@@ -43,21 +49,27 @@ func _process(delta: float) -> void:
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
 
-[node name="Background" type="TextureRect" parent="." unique_id=687194478]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 648.0
+[node name="Black" type="TextureRect" parent="." unique_id=577363938]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_fd6j1")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Black" unique_id=687194478]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
 texture = ExtResource("2_6qo3m")
 expand_mode = 1
 
-[node name="BGVignette" type="TextureRect" parent="Background" unique_id=1668357320]
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=1668357320]
 layout_mode = 0
 offset_right = 1168.0
 offset_bottom = 656.0
 texture = SubResource("GradientTexture2D_6qo3m")
 
-[node name="TitleVignette" type="TextureRect" parent="Background" unique_id=1426005261]
+[node name="TitleVignette" type="TextureRect" parent="Black" unique_id=1426005261]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -66,7 +78,7 @@ offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_mhl0u")
 expand_mode = 1
 
-[node name="Title" type="TextureRect" parent="Background" unique_id=1837755769]
+[node name="Title" type="TextureRect" parent="Black" unique_id=1837755769]
 layout_mode = 0
 offset_left = 392.0
 offset_top = 72.0

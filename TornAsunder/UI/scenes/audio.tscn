@@ -5,11 +5,17 @@
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_86jf4"]
 [ext_resource type="PackedScene" uid="uid://bgiykgandeg1s" path="res://UI/scenes/volume_slider.tscn" id="3_dsgt3"]
 
-[sub_resource type="Gradient" id="Gradient_aa8uq"]
+[sub_resource type="Gradient" id="Gradient_86jf4"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aa8uq"]
+gradient = SubResource("Gradient_86jf4")
+
+[sub_resource type="Gradient" id="Gradient_getu7"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_getu7"]
-gradient = SubResource("Gradient_aa8uq")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c7pqr"]
+gradient = SubResource("Gradient_getu7")
 fill = 1
 fill_from = Vector2(0.50427353, 0.47863248)
 fill_to = Vector2(0.6367521, 0.21367522)
@@ -17,19 +23,25 @@ fill_to = Vector2(0.6367521, 0.21367522)
 [node name="Audio" type="Node2D" unique_id=2082160121]
 script = ExtResource("1_6n3bj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1018301718]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 648.0
+[node name="Black" type="TextureRect" parent="." unique_id=2023018830]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_aa8uq")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Black" unique_id=716758477]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 640.0
 texture = ExtResource("2_86jf4")
 expand_mode = 1
 
-[node name="Vignette" type="TextureRect" parent="TextureRect" unique_id=2589878]
+[node name="BGVignette" type="TextureRect" parent="Black" unique_id=166591154]
 layout_mode = 0
 offset_right = 1168.0
 offset_bottom = 656.0
-texture = SubResource("GradientTexture2D_getu7")
+texture = SubResource("GradientTexture2D_c7pqr")
 
 [node name="Button_manager" type="VBoxContainer" parent="." unique_id=1853731434]
 offset_left = 384.0
