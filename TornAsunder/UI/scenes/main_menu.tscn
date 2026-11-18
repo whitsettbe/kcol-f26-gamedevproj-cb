@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cn3ph6jfq01xw" path="res://UI/scenes/layer_navigator.tscn" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://slu7qqljw5oa" path="res://Fonts/Minecraft.ttf" id="3_6qo3m"]
 [ext_resource type="PackedScene" uid="uid://bdox7jqnw8suf" path="res://UI/scenes/settings.tscn" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ddkho1ypjlb4e" path="res://art/Title.png" id="4_3yjjd"]
 
 [sub_resource type="Gradient" id="Gradient_55ivg"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.30980393)
@@ -28,6 +29,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
+
+[sub_resource type="Gradient" id="Gradient_mi3sl"]
+offsets = PackedFloat32Array(0, 0.47826087, 0.9695652, 1)
+colors = PackedColorArray(1, 1, 1, 0.8627451, 1, 1, 1, 0.5372549, 1, 1, 1, 0.018380225, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0u"]
+gradient = SubResource("Gradient_mi3sl")
+fill = 1
+fill_from = Vector2(0.5, 0.25641027)
+fill_to = Vector2(0.76495725, 0.23504274)
 
 [node name="Main Menu" type="Node2D" unique_id=341045344]
 script = ExtResource("1_l6cm7")
@@ -85,6 +96,20 @@ theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_6qo3m")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1426005261]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture2D_mhl0u")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1837755769]
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 256.0
+texture = ExtResource("4_3yjjd")
+expand_mode = 1
 
 [node name="Layer Navigator" parent="." unique_id=846608510 instance=ExtResource("2_ekxnf")]
 visible = false
